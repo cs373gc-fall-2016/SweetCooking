@@ -44,6 +44,9 @@ Food Product
 ** Alex Irion ** 
 
 ** Kristofer Vandercook **
+4th year CS student 
+Likes: some things
+Dislikes: lots of things
 
 ** Rafik Rizik **
 
