@@ -2,17 +2,7 @@
 
 FILES :=                              \
     SweetCooking.html                      \
-    SweetCooking.log                       \
-    SweetCooking.py                        \
-    RunSweetCooking.in                     \
-    RunSweetCooking.out                    \
-    RunSweetCooking.py                     \
-    TestSweetCooking.out                   \
-    TestSweetCooking.py                    \
-    # SweetCooking-tests/aji272-RunSweetCooking.in   \
-    # SweetCooking-tests/aji272-RunSweetCooking.out  \
-    # SweetCooking-tests/aji272-TestSweetCooking.out \
-    # SweetCooking-tests/aji272-TestSweetCooking.py  \
+    SweetCooking.log                       
 
 ifeq ($(shell uname), Darwin)          # Apple
     PYTHON   := python3.5
@@ -112,31 +102,6 @@ status:
 	git remote -v
 	git status
 
-test: SweetCooking.html SweetCooking.log RunSweetCooking.tmp TestSweetCooking.tmp SweetCooking-tests check
+#test: SweetCooking.html SweetCooking.log RunSweetCooking.tmp TestSweetCooking.tmp SweetCooking-tests check
 
-versions:
-	which make
-	make --version
-	@echo
-	which git
-	git --version
-	@echo
-	which $(PYTHON)
-	$(PYTHON) --version
-	@echo
-	which $(PIP)
-	$(PIP) --version
-	@echo
-	which $(PYLINT)
-	$(PYLINT) --version
-	@echo
-	which $(COVERAGE)
-	$(COVERAGE) --version
-	@echo
-	which $(PYDOC)
-	$(PYDOC) --version
-	@echo
-	which $(AUTOPEP8)
-	$(AUTOPEP8) --version
-	@echo
-	$(PIP) list
+test: check
