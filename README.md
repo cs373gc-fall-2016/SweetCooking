@@ -35,6 +35,10 @@ Food Product
 - similiar_foods
 - nutritional_info
 
+database uml url:
+
+http://yuml.me/edit/e12e96dd
+
 -- About -- 
 
 ** Guande Lyu **
