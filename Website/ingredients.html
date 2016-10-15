@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Sweet Cooking</title>
+    <title>Ingredients</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -42,15 +42,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="">SweetCooking</a>
+          <a class="navbar-brand" href="index.html">SweetCooking</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="recipes.html">Recipes</a></li>
-            <li><a href="ingredients.html">Ingredients</a></li>
+            <li class="active"><a href="ingredients.html">Ingredients</a></li>
             <li><a href="foodproducts.html">FoodProducts</a></li>
             <li><a href="lifestyles.html">LifeStyles</a></li>
 
@@ -65,17 +65,35 @@
       </div>
     </nav>
 
-
     <div class="container">
-      <div class="starter-template">
-        <h1>Sweek Cooking</h1>
-        <p class="lead"> Apple-Pen, Pineapple-Pen Uh! Pen-Pineapple-Apple-Pen Pen-Pineapple-Apple-Pen </p>
-        <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for...">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button">Go!</button>
-          </span>
-        </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th> </th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Ratios</th>
+            <th>Products</th>
+            <th>Nutrition</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>verse 1</td> <td>I have a pen</td> <td>I have a apple</td> <td>Uh!</td>  <td>Apple-Pen!</td>
+          </tr>
+
+          <tr>
+            <th scope="row">2</th>
+            <td>verse 1</td> <td>I have a pen</td> <td>I have a pineapple</td> <td>Uh!</td>  <td>Pineapple-Pen!</td>
+          </tr>
+
+          <tr>
+            <th scope="row">3</th>
+            <td>verse 3</td> <td>Apple-Pen</td> <td>Pineapple-Pen</td> <td>Uh!</td>  <td>Pen-Pineapple-Apple-Pen</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
 
