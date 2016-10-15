@@ -1,5 +1,11 @@
 from flask import Flask
-app = Flask(__name__)
+from flask_sqlalchemy import SQLAlchemy
 
-import views
+app = Flask(__name__)
+app.config.from_object('app.config')
+
+db = SQLAlchemy(app)
+
+
+from app import views, models
 

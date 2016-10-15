@@ -1,5 +1,4 @@
 #!/bin/bash
-
 clear
 
 echo "Starting SweetCooking FLASK APP"
