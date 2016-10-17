@@ -105,3 +105,4 @@ status:
 #test: SweetCooking.html SweetCooking.log RunSweetCooking.tmp TestSweetCooking.tmp SweetCooking-tests check
 
 test: check
+
