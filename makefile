@@ -9,10 +9,10 @@ FILES :=                              \
     RunSweetCooking.py                     \
     TestSweetCooking.out                   \
     TestSweetCooking.py                    \
-    # SweetCooking-tests/aji272-RunSweetCooking.in   \
-    # SweetCooking-tests/aji272-RunSweetCooking.out  \
-    # SweetCooking-tests/aji272-TestSweetCooking.out \
-    # SweetCooking-tests/aji272-TestSweetCooking.py  \
+    # SweetCooking-tests/EID-RunSweetCooking.in   \
+    # SweetCooking-tests/EID-RunSweetCooking.out  \
+    # SweetCooking-tests/EID-TestSweetCooking.out \
+    # SweetCooking-tests/EID-TestSweetCooking.py  \
 
 ifeq ($(shell uname), Darwin)          # Apple
     PYTHON   := python3.5
