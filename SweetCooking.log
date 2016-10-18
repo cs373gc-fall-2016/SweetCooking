@@ -1,1 +1,139 @@
-1
+commit 30750e05b7385979b8d770cea96e6e3b7085729c
+Author: Alex Irion <alexirion10@gmail.com>
+Date:   Tue Oct 18 14:32:56 2016 -0500
+
+    updated readme with info for About page
+
+commit f399fd86b13b4eddffab8e1d05ac1a40e7f0b3c6
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Tue Oct 18 06:36:43 2016 -0500
+
+    added about me pic
+
+commit 06b66fa28797fd41fdde72a11202ae1d793209ac
+Author: cyberwyvern696 <cyberwyvern696@gmail.com>
+Date:   Mon Oct 17 20:22:28 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 33b2d2a3e5d58631b849d22dc321170a7c42ee8c
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Sat Oct 15 11:42:13 2016 -0500
+
+    database uml diagram
+
+commit 2e220ec1f5c9c514ae6b0a46d296d752d4662b2e
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Sat Oct 15 11:41:24 2016 -0500
+
+    database uml diagram url added
+
+commit 9197ca17b4e92a8df33c30f3a6a99c98899f2d61
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Fri Oct 14 23:02:39 2016 -0500
+
+    updated db with more models
+
+commit 68a55a24d74d2b60dca814bb5dea66656a5d040b
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Fri Oct 14 22:56:59 2016 -0500
+
+    added basics for db and first table
+
+commit d2a9683907646c8ffd876d0775715382b4d4cedc
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Fri Oct 14 14:44:42 2016 -0500
+
+    changed bash file name
+
+commit 10451df8a20e41d778301d24133880d0dcb1d20c
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Fri Oct 14 14:43:21 2016 -0500
+
+    added flask basics
+
+commit 4f3605eed16b9bf0c11ae569073cfb4607c95f69
+Merge: 894cd75 242c148
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Fri Oct 14 13:16:13 2016 -0500
+
+    :x
+    :Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit 894cd75cb079b407ae644facb5efa557d88a27d5
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Fri Oct 14 13:16:01 2016 -0500
+
+    added patrick's website
+
+commit 242c148cadf150a9ebd39fab9faec19c292e40b6
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Fri Oct 14 13:15:38 2016 -0500
+
+    Update README.md
+
+commit 29c54fd186fdf6cdf1bfe03876580cdec1301f62
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Fri Oct 14 13:14:30 2016 -0500
+
+    Update README.md
+
+commit 26f697f93794998866233686e226a6b075d1b471
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Fri Oct 14 12:09:48 2016 -0500
+
+    Add files via upload
+
+commit 402e20e2b5919f2c51823a97307211748c7fb43a
+Author: Alex Irion <alexirion10@gmail.com>
+Date:   Thu Oct 13 23:50:57 2016 -0500
+
+    added file of static content
+
+commit c1a98b6c79a1268cb270cac096750bc59fd4676c
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 13 20:54:36 2016 -0500
+
+    Add files via upload
+
+commit 6a1b2746e24dc974bd0ec92d8bac10d291d39aaf
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 13 20:53:11 2016 -0500
+
+    Add files via upload
+
+commit 1217bad25a172b92549f5c3ffe709978bf4f3ba0
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 13 20:51:47 2016 -0500
+
+    Update README.md
+
+commit 93397b984922cd364d96de3e9f32457be5d36958
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 13 20:50:53 2016 -0500
+
+    Add files via upload
+
+commit 05ead903dbea182cae0913f964128a9a147e6633
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 13 19:05:53 2016 -0500
+
+    Update README.md
+
+commit b11652de854344e3bc9508f3e5e1018ae30e4f15
+Author: Evan Carrillo <evan.carrillo@utexas.edu>
+Date:   Thu Oct 13 14:58:35 2016 -0500
+
+    Delete ev_test.txt
+
+commit 1e58157a9dd0850e9e813436f041ec72f5b3f850
+Author: Evan Carrillo <evan.carrillo@utexas.edu>
+Date:   Thu Oct 13 14:57:47 2016 -0500
+
+    Create ev_test.txt
+
+commit a4a1ff00e8efca61f6d2a696e86becf94a55907c
+Author: Alex Irion <alexirion10@gmail.com>
+Date:   Thu Oct 13 14:49:36 2016 -0500
+
+    first commit
