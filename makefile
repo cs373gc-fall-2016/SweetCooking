@@ -2,21 +2,7 @@
 
 FILES :=                              \
     SweetCooking.html                      \
-<<<<<<< HEAD
-    SweetCooking.log                       \
-    SweetCooking.py                        \
-    RunSweetCooking.in                     \
-    RunSweetCooking.out                    \
-    RunSweetCooking.py                     \
-    TestSweetCooking.out                   \
-    TestSweetCooking.py                    \
-    # SweetCooking-tests/EID-RunSweetCooking.in   \
-    # SweetCooking-tests/EID-RunSweetCooking.out  \
-    # SweetCooking-tests/EID-TestSweetCooking.out \
-    # SweetCooking-tests/EID-TestSweetCooking.py  \
-=======
     SweetCooking.log                       
->>>>>>> dev
 
 ifeq ($(shell uname), Darwin)          # Apple
     PYTHON   := python3.5
