@@ -5,7 +5,7 @@ yUML.me code snippet
 [Recipe|name:string;price:string;category:string;origin:string;cook_time:string;nutritional_info:string;]<->[Ingredient|name:string;price:string;ratios:string;products:string;nutritional_info:string]
 
 database uml url:  
-http://yuml.me/edit/e5257604
+http://yuml.me/edit/58e78d83
 
 -- Pillars --
 Lifestyle
