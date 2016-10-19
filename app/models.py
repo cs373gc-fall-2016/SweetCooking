@@ -19,6 +19,14 @@ class Ingredient(db.Model):
     recipes = db.relationship('Recipe', secondary=irtable, backref='ingredients', lazy='dynamic')
     nutrition = db.relationship('Nutrition', backref='ingredient', lazy='dynamic', uselist=False)
 
+    def __init__(self, name, price=0, season='none'):
+        self.name = name
+        self.price = price
+        self.season = season
+
+    def __repr__(self):
+        return 'Ingredient: {}'.format(self.name)
+
 class Recipe(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
@@ -27,6 +35,15 @@ class Recipe(db.Model):
     cooktime = db.Column(db.Integer)
     nutrition = db.relationship('Nutrition', backref='recipe', lazy='dynamic', uselist=False)
     lifestyle = db.relationship('Lifestyle', backref='recipe', lazy='dynamic', uselist=False)
+
+    def __init__(self, name, price=0, origin='unknown', cooktime=0):
+        self.name = name
+        self.price = price
+        self.origin = origin
+        self.cooktime = cooktime
+
+    def __repr__(self):
+        return 'Recipe: {}'.format(self.name)
 
 class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -37,14 +54,34 @@ class Product(db.Model):
     nutrition = db.relationship('Nutrition', backref='product', lazy='dynamic', uselist=False)
     lifestyle = db.relationship('Lifestyle', backref='product', lazy='dynamic', uselist=False)
 
-class LifeStyle(db.Model):
+    def __init__(self, name, price=0, description='unknown'):
+        self.name = name
+        self.price = price
+        self.description = description
+
+    def __repr__(self):
+        return 'Product: {}'.format(self.name)
+
+class Lifestyle(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     weight_management = db.Column(db.Boolean)
-    dietary_restricion = db.Column(db.String(80))
+    dietary_restriction = db.Column(db.String(80))
     gluten_free = db.Column(db.Boolean)
     carb_free = db.Column(db.Boolean)
     vegetarian = db.Column(db.Boolean)
     vegan = db.Column(db.Boolean)
+
+    def __init__(self, weight_management=False, dietary_restriction='none', gluten_free=False,
+                 carb_free=False, vegetarian=False, vegan=False):
+        self.weight_management = weight_management
+        self.dietary_restriction = dietary_restriction
+        self.gluten_fee = gluten_free
+        self.carb_free = carb_free
+        self.vegetarian = vegetarian
+        self.vegan = vegan
+
+    def __repr__(self):
+        return 'Lifestyle: {}'.format(self.id)
 
 class Nutrition(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -54,9 +91,25 @@ class Nutrition(db.Model):
     protein = db.Column(db.Integer)
     carbs = db.Column(db.Integer)
 
+    def __init__(self, serving_size='none', calories=0, fat=0, protein=0, carbs=0):
+        self.serving_size = serving_size
+        self.calories = calories
+        self.fat = fat
+        self.protein = protein
+        self.carbs = carbs
+
+    def __repr__(self):
+        return 'Nutrition: {}'.format(self.id)
+
 class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
     products = db.relationship('Product', backref='category', lazy='dynamic')
     recipes = db.relationship('Recipe', backref='category', lazy='dynamic')
+
+    def __init__(self, name):
+        self.name = name
+
+    def __repr__(self):
+        return 'Category: {}'.format(self.name)
 
