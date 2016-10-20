@@ -60,3 +60,7 @@ def tostito_product():
 @app.route('/weightloss_lifestyle')
 def weightloss_lifestyle():
     return render_template('weightloss_lifestyle.html')
+
+@app.route('/sushi')
+def sushi():
+    return render_template('sushi.html')
