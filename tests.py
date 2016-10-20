@@ -8,21 +8,18 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config.from_object('app.config')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
 
 db = SQLAlchemy(app)
 import unittest
 from unittest import main, TestCase
-from models import Ingredient, Recipe, Product, Lifestyle
+from app.models import Ingredient, Recipe, Product, Lifestyle
 
 
 # ----------------
 # TestIngredient
 # ----------------
 class TestIngredient(TestCase):
-
-    def create_app(self):
-        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
-        return app
 
     def setUp(self):
         db.create_all()
@@ -40,12 +37,12 @@ class TestIngredient(TestCase):
         self.assertEqual(len(ingredients), 2)
         
     def test_filter_1(self):
-        ingredient = Ingredient.query.filter(Ingredient.name == 'name1')
-        assertEqual(ingredient.price, 0)
+        ingredient = Ingredient.query.filter(Ingredient.name == 'name1').first()
+        self.assertEqual(ingredient.price, 0)
 
     def test_filter_2(self):
-        ingredient = Ingredient.query.filter(Ingredient.price == 5)
-        assertEqual(ingredient.name, 'name2')
+        ingredient = Ingredient.query.filter(Ingredient.price == 5).first()
+        self.assertEqual(ingredient.name, 'name2')
 
     def test_add_delete(self):
         ingredient = Ingredient('name3')
@@ -60,10 +57,6 @@ class TestIngredient(TestCase):
 # TestRecipe
 # ----------------
 class TestRecipe(TestCase):
-
-    def create_app(self):
-        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
-        return app
 
     def setUp(self):
         db.create_all()
@@ -81,12 +74,12 @@ class TestRecipe(TestCase):
         self.assertEqual(len(recipes), 2)
         
     def test_filter_1(self):
-        recipe = Recipe.query.filter(Recipe.name == 'name1')
-        assertEqual(recipe.price, 0)
+        recipe = Recipe.query.filter(Recipe.name == 'name1').first()
+        self.assertEqual(recipe.price, 0)
 
     def test_filter_2(self):
-        recipe = Recipe.query.filter(Recipe.price == 5)
-        assertEqual(recipe.name, 'name2')
+        recipe = Recipe.query.filter(Recipe.price == 5).first()
+        self.assertEqual(recipe.name, 'name2')
 
     def test_add_delete(self):
         recipe = Recipe('name3')
@@ -101,10 +94,6 @@ class TestRecipe(TestCase):
 # TestProduct
 # ----------------
 class TestProduct(TestCase):
-
-    def create_app(self):
-        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
-        return app
 
     def setUp(self):
         db.create_all()
@@ -122,12 +111,12 @@ class TestProduct(TestCase):
         self.assertEqual(len(products), 2)
         
     def test_filter_1(self):
-        product = Product.query.filter(Product.name == 'name1')
-        assertEqual(product.price, 0)
+        product = Product.query.filter(Product.name == 'name1').first()
+        self.assertEqual(product.price, 0)
 
     def test_filter_2(self):
-        product = Product.query.filter(Product.price == 5)
-        assertEqual(product.name, 'name2')
+        product = Product.query.filter(Product.price == 5).first()
+        self.assertEqual(product.name, 'name2')
 
     def test_add_delete(self):
         product = Product('name3')
@@ -142,10 +131,6 @@ class TestProduct(TestCase):
 # TestLifestyle
 # ----------------
 class TestLifestyle(TestCase):
-
-    def create_app(self):
-        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
-        return app
 
     def setUp(self):
         db.create_all()
@@ -163,12 +148,12 @@ class TestLifestyle(TestCase):
         self.assertEqual(len(lifestyles), 2)
         
     def test_filter_1(self):
-        lifestyle = Lifestyle.query.filter(Lifestyle.dietary_restriction == 'none')
-        assertEqual(lifestyle.price, 0)
+        lifestyle = Lifestyle.query.filter(Lifestyle.dietary_restriction == 'none').first()
+        self.assertEqual(lifestyle.price, 0)
 
     def test_filter_2(self):
-        lifestyle = Lifestyle.query.filter(Lifestyle.gluten_free == True)
-        assertEqual(lifestyle.dietary_restriction, 'nadda')
+        lifestyle = Lifestyle.query.filter(Lifestyle.gluten_free == True).first()
+        self.assertEqual(lifestyle.dietary_restriction, 'nadda')
 
     def test_add_delete(self):
         lifestyle = Lifestyle(dietary_restriction='delete me')
