@@ -1,3 +1,107 @@
+commit 0bb86bfb78b5fa8f367d68abf703d86a2f71103b
+Author: Alex Irion <alexirion10@gmail.com>
+Date:   Thu Oct 20 16:14:59 2016 -0500
+
+    reshaped Website directory
+
+commit 3e204dd9c9d9d980279aba78345b51a2eb55e9c5
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 16:05:31 2016 -0500
+
+    Update ingredients.html
+
+commit c7d4813e5c9858afbd7efd06e9bdb264c9b5e863
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 16:04:57 2016 -0500
+
+    Update foodproducts.html
+
+commit bff4e7984162f2b4a0af18211334f973dbbd7f31
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 16:04:18 2016 -0500
+
+    Update pizza.html
+
+commit 6c7ae19b6bc360f8f13ed273d63748c43f044a49
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 16:03:29 2016 -0500
+
+    Add files via upload
+
+commit 67166577ac42a7b57597c08379e677d9d0e5ed0c
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 16:02:19 2016 -0500
+
+    Add files via upload
+
+commit ff7fd68cf40e43cbfe8c16fe7b466fa58ce0fbe1
+Merge: 9ca06cc e83d7ac
+Author: Evan Carrillo <evancarrillo@hotmail.com>
+Date:   Thu Oct 20 15:56:14 2016 -0500
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit 9ca06ccf6b54f642cc79ba9d895c1d403e773738
+Author: Evan Carrillo <evancarrillo@hotmail.com>
+Date:   Thu Oct 20 15:56:11 2016 -0500
+
+    evan_mess with string editor script
+
+commit e83d7ac83770b51aa13316a82d03cd2a86364a7d
+Author: Guande Lyu <guandelyu@wireless-10-147-46-151.public.utexas.edu>
+Date:   Thu Oct 20 15:28:34 2016 -0500
+
+    more and more links to each other
+
+commit 129035dcae8ed63e9a926baf793ef25dd74d3dbf
+Author: Guande Lyu <guandelyu@wireless-10-147-46-151.public.utexas.edu>
+Date:   Thu Oct 20 15:15:25 2016 -0500
+
+    more links
+
+commit fa68d9d8d89f8bd76e4896007910ce18e6c1f77d
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 14:31:04 2016 -0500
+
+    Update about.html
+
+commit d5c46dc76b6d99b7578da5bc310d250228cf48b7
+Author: Guande Lyu <guandelyu@wireless-10-145-102-63.public.utexas.edu>
+Date:   Thu Oct 20 12:57:30 2016 -0500
+
+    close #19
+
+commit d0ff90fa99ee3f797cf485246a8d368d39a3a718
+Author: Guande Lyu <guandelyu@wireless-10-145-102-63.public.utexas.edu>
+Date:   Thu Oct 20 12:56:07 2016 -0500
+
+    close #19
+
+commit fa9ade2028ff99c06153b5a8e425af6f7ac36380
+Merge: 7b61441 37f8893
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Thu Oct 20 12:50:37 2016 -0500
+
+    Merge branch 'master' of github.com:cs373gc-fall-2016/SweetCooking
+
+commit 7b61441f351e1b0b196c6c48adad0692c338f252
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Thu Oct 20 12:50:16 2016 -0500
+
+    adding photos
+
+commit 37f8893845837c4ca55ea02f4aac87484800a50a
+Author: Guande Lyu <guandelyu@wireless-10-145-102-63.public.utexas.edu>
+Date:   Thu Oct 20 12:46:45 2016 -0500
+
+    close #18
+
+commit 7abe3ad485bf136b0b9d712beca4c7c83c7f7df8
+Author: Alex Irion <alexirion10@gmail.com>
+Date:   Wed Oct 19 21:45:28 2016 -0500
+
+    updated git log
+
 commit a1b6ddb60e5202cc29bb8b7bc6098053c68ccaac
 Author: Lei Lin <kris_lin@utexas.edu>
 Date:   Wed Oct 19 21:44:42 2016 -0500
