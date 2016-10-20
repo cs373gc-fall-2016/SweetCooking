@@ -1,0 +1,2 @@
+.html -- begin everything with /
+anything -- beging with /static/
