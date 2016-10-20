@@ -1,24 +1,24 @@
 from app import app
 from flask import render_template
 
-@app.route('/index.html')
-@app.route('/index')
 @app.route('/')
+@app.route('/index')
+@app.route('/index.html')
 def index():
     return render_template('index.html')
 
-@app.route('/about.html')
 @app.route('/about')
+@app.route('/about.html')
 def about():
     return render_template('about.html')
 
-@app.route('/foodproducts.html')
 @app.route('/foodproducts')
+@app.route('/foodproducts.html')
 def foodproducts():
     return render_template('foodproducts.html')
 
-@app.route('/ingredients.html')
 @app.route('/ingredients')
+@app.route('/ingredients.html')
 def ingredients():
     return render_template('ingredients.html')
 
