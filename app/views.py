@@ -107,23 +107,27 @@ def bbq_sauce():
 def cheese_ingredient():
     return render_template('cheese_ingredient.html')
 
-@app.route('/chicken_ingredient')
-@app.route('/chicken_ingredient.html')
+@app.route('/water_ingredient')
+@app.route('/water_ingredient.html')
 def chicken():
-    return render_template('chicken_ingredient.html')
+    return render_template('water_ingredient.html')
+
+@app.route('/pasta_product')
+@app.route('/pasta_product.html')
+def onion():
+    return render_template('pasta_product.html')
+
+@app.route('/ground_beef_ingredient')
+@app.route('/ground_beef_ingredient.html')
+def onion():
+    return render_template('ground_beef_ingredient.html')
+
+@app.route('/parmesan_cheese_ingredient')
+@app.route('/parmesan_cheese_ingredient.html')
+def onion():
+    return render_template('parmesan_cheese_ingredient.html')
 
 @app.route('/onion_ingredient')
 @app.route('/onion_ingredient.html')
 def onion():
     return render_template('onion_ingredient.html')
-
-
-
-
-
-
-
-
-
-
-
