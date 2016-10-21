@@ -16,6 +16,11 @@
 
     <!-- Custom styles for this template -->
     <link href="/static/starter-template.css" rel="stylesheet">
+    <link href="/static/myButton.css" rel="stylesheet">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://tablesorter.com/__jquery.tablesorter.js"></script>
+    <script type="text/javascript" src="http://tablesorter.com/addons/pager/jquery.tablesorter.pager.js"></script>
 
   </head>
 
@@ -57,45 +62,46 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th> </th>
-            <th>Weight management</th>
-            <th>Dietary restrictions</th>
-            <th>Gluten-free</th>
-            <th>Carb-free</th>
-            <th>Vegetarian/vegan</th>
-            <th>Products</th>
-            <th>Recipes</th>
+            <th><button class="button button1">Weight management</button></th>
+            <th><button class="button button1">Dietary restrictions</button></th>
+            <th><button class="button button1">Gluten-free</button></th>
+            <th><button class="button button1">Carb-free</button></th>
+            <th><button class="button button1">Vegetarian/vegan</button></th>
+            <th><button class="button button1">Products</button></th>
+            <th><button class="button button1">Recipes</button></th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
-            <td><a href="weightloss_lifestyle.html">Weight loss</a></td> <td>Consume less than 2000 Calories per day</td> <td>Depends on Person</td> <td>No</td>  <td>Depends</td> <td>Oreo</td> <td>sushi</td>
+            <td><a href="weightloss_lifestyle.html">Weight loss</a></td> <td>Consume less than 2000 Calories per day</td> <td>Depends on Person</td> <td>No</td>  <td>Depends</td> <td></td> <td>sushi</td>
           </tr>
 
           <tr>
-            <th scope="row">2</th>
             <td><a href="vegan_lifestyle.html">Vegan</a></td> <td>Do not consume anything from animals</td> <td>No</td> <td>No</td>  <td>All Vegans are Vegetarians</td> <td>Oreo</td> <td>sushi</td>
           </tr>
 
           <tr>
-            <th scope="row">2</th>
-            <td><a href="fit_lifestyle.html">Fit</a></td> <td> Consume higher protein and less carbs</td> <td> Depends </td> <td> Depends </td>  <td>It is possible </td> <td>Oreo</td> <td>sushi</td>
+            <td><a href="fit_lifestyle.html">Fit</a></td> <td> Consume higher protein and less carbs</td> <td> Depends </td> <td> Depends </td>  <td>It is possible </td> <td></td> <td>sushi</td>
           </tr>
 
         </tbody>
       </table>
     </div>
 
-
+    <script>
+      $(document).ready(function() { 
+      $("table").tablesorter({  
+          sortList: [[0,0],[2,0]] 
+      }); 
+    });
+    </script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
-    <script src="bootstrap.min.js"></script>
+    <script src="/static/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="ie10-viewport-bug-workaround.js"></script>
   </body>

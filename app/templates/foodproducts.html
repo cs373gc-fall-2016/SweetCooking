@@ -16,7 +16,11 @@
 
     <!-- Custom styles for this template -->
     <link href="/static/starter-template.css" rel="stylesheet">
+    <link href="/static/myButton.css" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://tablesorter.com/__jquery.tablesorter.js"></script>
+    <script type="text/javascript" src="http://tablesorter.com/addons/pager/jquery.tablesorter.pager.js"></script>
   </head>
 
   <body>
@@ -58,57 +62,56 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th> </th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Desciption</th>
-            <th>Similiar foods</th>
-            <th>Nutrition</th>
-            <th>Ingredients</th>
-            <th>Category</th>
-            <th>Lifestyle</th>
+            <th><button class="button button1">Name</button></th>
+            <th><button class="button button1">Price</button></th>
+            <th><button class="button button1">Desciption</button></th>
+            <th><button class="button button1">Similiar foods</button></th>
+            <th><button class="button button1">Nutrition</button></th>
+            <th><button class="button button1">Ingredients</button></th>
+            <th><button class="button button1">Category</button></th>
+            <th><button class="button button1">Lifestyle</button></th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
-            <td><a href="oreo_product.html">Oreo</a></td> <td>$4</td> <td>delicious icing sandwhich in chocolate crackers</td> <td> Chips Ahoy! </td>  <td>Calories 140 Sodium 90 mgTotal Fat 7 g Potassium 35 mg Saturated 2 g Total Carbs 21 g</td> <td> sugar</td> <td> snack</td> <td> healthy</td>
+            <td><a href="oreo_product.html">Oreo</a></td> <td>$4</td> <td>delicious icing sandwhich in chocolate crackers</td> <td> Chips Ahoy! </td>  <td>Calories 140 Sodium 90 mgTotal Fat 7 g Potassium 35 mg Saturated 2 g Total Carbs 21 g</td> <td> sugar</td> <td> snack</td> <td> unhealthy</td>
           </tr>
 
           <tr>
-            <th scope="row">2</th>
-            <td><a href="peanutbutter_product.html">Jiff Peanut Butter</a></td> <td>$2.48</td> <td>Peanuts crushed into a cream</td> <td> Nutella, Jelly</td>  <td>16 g fat 190 calories per serving</td> <td> sugar</td> <td> snack</td> <td> healthy</td>
+            <td><a href="peanutbutter_product.html">Jiff Peanut Butter</a></td> <td>$2.48</td> <td>Peanuts crushed into a cream</td> <td> Nutella, Jelly</td>  <td>16 g fat 190 calories per serving</td> <td> sugar</td> <td> snack</td> <td> unhealthy</td>
           </tr>
           
           <tr>
-            <th scope="row">3</th>
             <td><a href="tostito_product.html">Tostitos Chips</a></td> <td>$3.99</td> <td>Restaurant style tortilla chips</td> <td> Doritos, Fritos</td>  <td>7g fat 140 calories per serving</td> <td> sugar</td> <td> snack</td> <td> healthy</td>
           </tr>
           
           <tr>
-            <th scope="row">3</th>
-            <td><a href="tomato_sauce_product.html">Tomato Sauce</a></td> <td> $0.81 </td> <td> tomoato product </td> <td> Year Round </td> <td> 0 calories in 1 tbsp </td> <td> sugar</td> <td> snack</td> <td> healthy</td>
+            <td><a href="tomato_sauce_product.html">Tomato Sauce</a></td> <td> $0.81 </td> <td> tomoato product </td> <td> Year Round </td> <td> 10 calories in 1 tbsp </td> <td> sugar</td> <td> snack</td> <td> healthy</td>
           </tr> 
 
           <tr>
-            <th scope="row">3</th>
-            <td><a href="bbq_sauce_product.html">Bbq Sauce</a></td> <td> $0.81 </td> <td> BBQ product </td>  <td> Year Round </td> <td> 0 calories in 1 tbsp </td> <td> sugar</td> <td> snack</td> <td> healthy</td> 
+            <td><a href="bbq_sauce_product.html">Bbq Sauce</a></td> <td> $5.09 </td> <td> BBQ product </td>  <td> Year Round </td> <td> 50 calories in 1 tbsp </td> <td> sugar</td> <td> snack</td> <td> unhealthy</td> 
           </tr>
 
         </tbody>
       </table>
     </div>
 
-
+    <script>
+      $(document).ready(function() { 
+      $("table").tablesorter({  
+          sortList: [[0,0],[2,0]] 
+      }); 
+    });
+    </script>
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
     <script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
-    <script src="bootstrap.min.js"></script>
+    <script src="/static/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="ie10-viewport-bug-workaround.js"></script>
   </body>

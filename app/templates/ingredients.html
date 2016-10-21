@@ -16,7 +16,11 @@
 
     <!-- Custom styles for this template -->
     <link href="/static/starter-template.css" rel="stylesheet">
+    <link href="/static/myButton.css" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://tablesorter.com/__jquery.tablesorter.js"></script>
+    <script type="text/javascript" src="http://tablesorter.com/addons/pager/jquery.tablesorter.pager.js"></script>
   </head>
 
   <body>
@@ -57,59 +61,57 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th> </th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Season</th>
-            <th>Nutrition</th>
-            <th>Recipes</th>
-            <th>Products</th>
+            <th><button class="button button1">Name</button></th>
+            <th><button class="button button1">Price</button></th>
+            <th><button class="button button1">Season</button></th>
+            <th><button class="button button1">Nutrition</button></th>
+            <th><button class="button button1">Recipes</button></th>
+            <th><button class="button button1">Products</button></th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
             <td><a href="salt_ingredient.html">Salt</a></td> <td> $0.81 </td> <td> Year Round </td> <td> 0 calories in 1 tbsp </td> 
             <td> Sushi </td> <td> Oreo </td>
           </tr> 
           <tr>
-            <th scope="row">2</th>
             <td><a href="tomato_ingredient.html">Tomato</a></td> <td> $0.12 </td> <td> Spring and Summer </td> <td> 22 calories in 1 medium whole Red Tomato. Calorie breakdown: 9% fat, 78% carbs, 13% protein. Other Common Serving </td> <td> Pizza </td> <td> ketchup </td>
           </tr>
 
           <tr>
-            <th scope="row">3</th>
             <td><a href="sugar_ingredient.html">Sugar</a></td> <td> $0.81 </td> <td> Year Round </td> <td> 0 calories in 1 tbsp </td> <td> Pizza </td> <td> Oreo </td>
           </tr>
           
           <tr>
-            <th scope="row">3</th>
-            <td><a href="onion_ingredient.html">Onion</a></td> <td> $0.81 </td> <td> Year Round </td> <td> 0 calories in 1 tbsp </td> <td> Pizza </td> <td> Oreo </td>
+            <td><a href="onion_ingredient.html">Onion</a></td> <td> $1.40 </td> <td> Year Round </td> <td> 30 calories per bulb </td> <td> Pizza </td> <td> </td>
           </tr>
 
           <tr>
-            <th scope="row">3</th>
-            <td><a href="chicken_ingredient.html">Chicken</a></td> <td> $0.81 </td> <td> Year Round </td> <td> 0 calories in 1 tbsp </td> <td> Pizza </td> <td> Oreo </td>
+            <td><a href="chicken_ingredient.html">Chicken</a></td> <td> $7.99 </td> <td> Year Round </td> <td> 200 calories per ounce </td> <td> Pizza </td> <td> </td>
           </tr>
 
           <tr>
-            <th scope="row">3</th>
-            <td><a href="cheese_ingredient.html">Cheese</a></td> <td> $0.81 </td> <td> Year Round </td> <td> 0 calories in 1 tbsp </td> <td> Pizza </td> <td> Oreo </td>
+            <td><a href="cheese_ingredient.html">Cheese</a></td> <td> $0.81 </td> <td> Year Round </td> <td> 0 calories in 1 tbsp </td> <td> Pizza </td> <td>  </td>
           </tr>
-
         </tbody>
       </table>
     </div>
-
+   
+    <script>
+      $(document).ready(function() { 
+      $("table").tablesorter({  
+          sortList: [[0,0],[2,0]] 
+      }); 
+    });
+    </script>
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
-    <script src="bootstrap.min.js"></script>
+    <script src="/static/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="ie10-viewport-bug-workaround.js"></script>
   </body>
