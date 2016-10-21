@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>app.models</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Package&nbsp;app ::
+        Module&nbsp;models
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="app.models-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="app.models-module.html">Module app.models</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-docstring">"""models file"""</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">app</tt> <tt class="py-keyword">import</tt> <tt class="py-name">db</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment">#pylint: disable=E1101</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment">#pylint: disable=R0903</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment">#pylint: disable=R0913</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment">#pylint: disable=C0103</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"># join table for ingredients and products</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt id="link-0" class="py-name" targets="Variable app.models.IPTABLE=app.models-module.html#IPTABLE"><a title="app.models.IPTABLE" class="py-name" href="#" onclick="return doclink('link-0', 'IPTABLE', 'link-0');">IPTABLE</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Table</tt><tt class="py-op">(</tt><tt class="py-string">'IPTABLE'</tt><tt class="py-op">,</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line">                   <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-string">'ing_id'</tt><tt class="py-op">,</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line">                             <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt class="py-string">'ingredient.id'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line">                   <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-string">'pro_id'</tt><tt class="py-op">,</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt class="py-string">'product.id'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment"># join table for ingredients and recipes</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt id="link-1" class="py-name" targets="Variable app.models.IRTABLE=app.models-module.html#IRTABLE"><a title="app.models.IRTABLE" class="py-name" href="#" onclick="return doclink('link-1', 'IRTABLE', 'link-1');">IRTABLE</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Table</tt><tt class="py-op">(</tt><tt class="py-string">'IRTABLE'</tt><tt class="py-op">,</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line">                   <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-string">'ing_id'</tt><tt class="py-op">,</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">                             <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt class="py-string">'ingredient.id'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">                   <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-string">'rec_id'</tt><tt class="py-op">,</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt class="py-string">'recipe.id'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"> </tt>
+<a name="Ingredient"></a><div id="Ingredient-def"><a name="L20"></a><tt class="py-lineno"> 20</tt> <a class="py-toggle" href="#" id="Ingredient-toggle" onclick="return toggle('Ingredient');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="app.models.Ingredient-class.html">Ingredient</a><tt class="py-op">(</tt><tt class="py-base-class">db</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Ingredient-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Ingredient-expanded"><a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">    <tt class="py-docstring">""" Ingredient table"""</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">    <tt id="link-2" class="py-name" targets="Variable app.models.Category.id=app.models.Category-class.html#id,Variable app.models.Ingredient.id=app.models.Ingredient-class.html#id,Variable app.models.Lifestyle.id=app.models.Lifestyle-class.html#id,Variable app.models.Nutrition.id=app.models.Nutrition-class.html#id,Variable app.models.Product.id=app.models.Product-class.html#id,Variable app.models.Recipe.id=app.models.Recipe-class.html#id"><a title="app.models.Category.id
+app.models.Ingredient.id
+app.models.Lifestyle.id
+app.models.Nutrition.id
+app.models.Product.id
+app.models.Recipe.id" class="py-name" href="#" onclick="return doclink('link-2', 'id', 'link-2');">id</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">primary_key</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">    <tt id="link-3" class="py-name" targets="Variable app.models.Category.name=app.models.Category-class.html#name,Variable app.models.Ingredient.name=app.models.Ingredient-class.html#name,Variable app.models.Product.name=app.models.Product-class.html#name,Variable app.models.Recipe.name=app.models.Recipe-class.html#name"><a title="app.models.Category.name
+app.models.Ingredient.name
+app.models.Product.name
+app.models.Recipe.name" class="py-name" href="#" onclick="return doclink('link-3', 'name', 'link-3');">name</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">    <tt id="link-4" class="py-name" targets="Variable app.models.Ingredient.price=app.models.Ingredient-class.html#price,Variable app.models.Product.price=app.models.Product-class.html#price,Variable app.models.Recipe.price=app.models.Recipe-class.html#price"><a title="app.models.Ingredient.price
+app.models.Product.price
+app.models.Recipe.price" class="py-name" href="#" onclick="return doclink('link-4', 'price', 'link-4');">price</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">)</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">    <tt id="link-5" class="py-name" targets="Variable app.models.Ingredient.season=app.models.Ingredient-class.html#season"><a title="app.models.Ingredient.season" class="py-name" href="#" onclick="return doclink('link-5', 'season', 'link-5');">season</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">    <tt id="link-6" class="py-name" targets="Variable app.models.Category.products=app.models.Category-class.html#products,Variable app.models.Ingredient.products=app.models.Ingredient-class.html#products"><a title="app.models.Category.products
+app.models.Ingredient.products" class="py-name" href="#" onclick="return doclink('link-6', 'products', 'link-6');">products</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">relationship</tt><tt class="py-op">(</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">        <tt class="py-string">'Product'</tt><tt class="py-op">,</tt> <tt class="py-name">secondary</tt><tt class="py-op">=</tt><tt id="link-7" class="py-name"><a title="app.models.IPTABLE" class="py-name" href="#" onclick="return doclink('link-7', 'IPTABLE', 'link-0');">IPTABLE</a></tt><tt class="py-op">,</tt> <tt class="py-name">backref</tt><tt class="py-op">=</tt><tt class="py-string">'ingredients'</tt><tt class="py-op">,</tt> <tt class="py-name">lazy</tt><tt class="py-op">=</tt><tt class="py-string">'dynamic'</tt><tt class="py-op">)</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">    <tt id="link-8" class="py-name" targets="Variable app.models.Category.recipes=app.models.Category-class.html#recipes,Variable app.models.Ingredient.recipes=app.models.Ingredient-class.html#recipes"><a title="app.models.Category.recipes
+app.models.Ingredient.recipes" class="py-name" href="#" onclick="return doclink('link-8', 'recipes', 'link-8');">recipes</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">relationship</tt><tt class="py-op">(</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">        <tt class="py-string">'Recipe'</tt><tt class="py-op">,</tt> <tt class="py-name">secondary</tt><tt class="py-op">=</tt><tt id="link-9" class="py-name"><a title="app.models.IRTABLE" class="py-name" href="#" onclick="return doclink('link-9', 'IRTABLE', 'link-1');">IRTABLE</a></tt><tt class="py-op">,</tt> <tt class="py-name">backref</tt><tt class="py-op">=</tt><tt class="py-string">'ingredients'</tt><tt class="py-op">,</tt> <tt class="py-name">lazy</tt><tt class="py-op">=</tt><tt class="py-string">'dynamic'</tt><tt class="py-op">)</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">    <tt id="link-10" class="py-name" targets="Variable app.models.Ingredient.nutrition=app.models.Ingredient-class.html#nutrition,Variable app.models.Product.nutrition=app.models.Product-class.html#nutrition,Variable app.models.Recipe.nutrition=app.models.Recipe-class.html#nutrition"><a title="app.models.Ingredient.nutrition
+app.models.Product.nutrition
+app.models.Recipe.nutrition" class="py-name" href="#" onclick="return doclink('link-10', 'nutrition', 'link-10');">nutrition</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">relationship</tt><tt class="py-op">(</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">        <tt class="py-string">'Nutrition'</tt><tt class="py-op">,</tt> <tt class="py-name">backref</tt><tt class="py-op">=</tt><tt class="py-string">'ingredient'</tt><tt class="py-op">,</tt> <tt class="py-name">lazy</tt><tt class="py-op">=</tt><tt class="py-string">'dynamic'</tt><tt class="py-op">)</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"> </tt>
+<a name="Ingredient.__init__"></a><div id="Ingredient.__init__-def"><a name="L33"></a><tt class="py-lineno"> 33</tt> <a class="py-toggle" href="#" id="Ingredient.__init__-toggle" onclick="return toggle('Ingredient.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.Ingredient-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">,</tt> <tt class="py-param">price</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-param">season</tt><tt class="py-op">=</tt><tt class="py-string">'none'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Ingredient.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Ingredient.__init__-expanded"><a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="app.models.Category.name
+app.models.Ingredient.name
+app.models.Product.name
+app.models.Recipe.name" class="py-name" href="#" onclick="return doclink('link-11', 'name', 'link-3');">name</a></tt> <tt class="py-op">=</tt> <tt id="link-12" class="py-name"><a title="app.models.Category.name
+app.models.Ingredient.name
+app.models.Product.name
+app.models.Recipe.name" class="py-name" href="#" onclick="return doclink('link-12', 'name', 'link-3');">name</a></tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name"><a title="app.models.Ingredient.price
+app.models.Product.price
+app.models.Recipe.price" class="py-name" href="#" onclick="return doclink('link-13', 'price', 'link-4');">price</a></tt> <tt class="py-op">=</tt> <tt id="link-14" class="py-name"><a title="app.models.Ingredient.price
+app.models.Product.price
+app.models.Recipe.price" class="py-name" href="#" onclick="return doclink('link-14', 'price', 'link-4');">price</a></tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name"><a title="app.models.Ingredient.season" class="py-name" href="#" onclick="return doclink('link-15', 'season', 'link-5');">season</a></tt> <tt class="py-op">=</tt> <tt id="link-16" class="py-name"><a title="app.models.Ingredient.season" class="py-name" href="#" onclick="return doclink('link-16', 'season', 'link-5');">season</a></tt> </tt>
+</div><a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"> </tt>
+<a name="Ingredient.__repr__"></a><div id="Ingredient.__repr__-def"><a name="L38"></a><tt class="py-lineno"> 38</tt> <a class="py-toggle" href="#" id="Ingredient.__repr__-toggle" onclick="return toggle('Ingredient.__repr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.Ingredient-class.html#__repr__">__repr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Ingredient.__repr__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Ingredient.__repr__-expanded"><a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'Ingredient: {}'</tt><tt class="py-op">.</tt><tt class="py-name">format</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name"><a title="app.models.Category.name
+app.models.Ingredient.name
+app.models.Product.name
+app.models.Recipe.name" class="py-name" href="#" onclick="return doclink('link-17', 'name', 'link-3');">name</a></tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"> </tt>
+<a name="Recipe"></a><div id="Recipe-def"><a name="L42"></a><tt class="py-lineno"> 42</tt> <a class="py-toggle" href="#" id="Recipe-toggle" onclick="return toggle('Recipe');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="app.models.Recipe-class.html">Recipe</a><tt class="py-op">(</tt><tt class="py-base-class">db</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Recipe-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Recipe-expanded"><a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">    <tt class="py-docstring">""" Recipe table"""</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">    <tt id="link-18" class="py-name"><a title="app.models.Category.id
+app.models.Ingredient.id
+app.models.Lifestyle.id
+app.models.Nutrition.id
+app.models.Product.id
+app.models.Recipe.id" class="py-name" href="#" onclick="return doclink('link-18', 'id', 'link-2');">id</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">primary_key</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">    <tt id="link-19" class="py-name"><a title="app.models.Category.name
+app.models.Ingredient.name
+app.models.Product.name
+app.models.Recipe.name" class="py-name" href="#" onclick="return doclink('link-19', 'name', 'link-3');">name</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">    <tt id="link-20" class="py-name"><a title="app.models.Ingredient.price
+app.models.Product.price
+app.models.Recipe.price" class="py-name" href="#" onclick="return doclink('link-20', 'price', 'link-4');">price</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">)</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">    <tt id="link-21" class="py-name" targets="Variable app.models.Recipe.origin=app.models.Recipe-class.html#origin"><a title="app.models.Recipe.origin" class="py-name" href="#" onclick="return doclink('link-21', 'origin', 'link-21');">origin</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">100</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">    <tt id="link-22" class="py-name" targets="Variable app.models.Recipe.cooktime=app.models.Recipe-class.html#cooktime"><a title="app.models.Recipe.cooktime" class="py-name" href="#" onclick="return doclink('link-22', 'cooktime', 'link-22');">cooktime</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">)</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">    <tt id="link-23" class="py-name"><a title="app.models.Ingredient.nutrition
+app.models.Product.nutrition
+app.models.Recipe.nutrition" class="py-name" href="#" onclick="return doclink('link-23', 'nutrition', 'link-10');">nutrition</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">relationship</tt><tt class="py-op">(</tt><tt class="py-string">'Nutrition'</tt><tt class="py-op">,</tt> <tt class="py-name">backref</tt><tt class="py-op">=</tt><tt class="py-string">'recipe'</tt><tt class="py-op">,</tt> <tt class="py-name">lazy</tt><tt class="py-op">=</tt><tt class="py-string">'dynamic'</tt><tt class="py-op">)</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">    <tt id="link-24" class="py-name" targets="Variable app.models.Product.lifestyle=app.models.Product-class.html#lifestyle,Variable app.models.Recipe.lifestyle=app.models.Recipe-class.html#lifestyle"><a title="app.models.Product.lifestyle
+app.models.Recipe.lifestyle" class="py-name" href="#" onclick="return doclink('link-24', 'lifestyle', 'link-24');">lifestyle</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">relationship</tt><tt class="py-op">(</tt><tt class="py-string">'Lifestyle'</tt><tt class="py-op">,</tt> <tt class="py-name">backref</tt><tt class="py-op">=</tt><tt class="py-string">'recipe'</tt><tt class="py-op">,</tt> <tt class="py-name">lazy</tt><tt class="py-op">=</tt><tt class="py-string">'dynamic'</tt><tt class="py-op">)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">    <tt id="link-25" class="py-name" targets="Variable app.models.Product.category_id=app.models.Product-class.html#category_id,Variable app.models.Recipe.category_id=app.models.Recipe-class.html#category_id"><a title="app.models.Product.category_id
+app.models.Recipe.category_id" class="py-name" href="#" onclick="return doclink('link-25', 'category_id', 'link-25');">category_id</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt class="py-string">'category.id'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"> </tt>
+<a name="Recipe.__init__"></a><div id="Recipe.__init__-def"><a name="L53"></a><tt class="py-lineno"> 53</tt> <a class="py-toggle" href="#" id="Recipe.__init__-toggle" onclick="return toggle('Recipe.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.Recipe-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">,</tt> <tt class="py-param">price</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-param">origin</tt><tt class="py-op">=</tt><tt class="py-string">'unknown'</tt><tt class="py-op">,</tt> <tt class="py-param">cooktime</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Recipe.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Recipe.__init__-expanded"><a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name"><a title="app.models.Category.name
+app.models.Ingredient.name
+app.models.Product.name
+app.models.Recipe.name" class="py-name" href="#" onclick="return doclink('link-26', 'name', 'link-3');">name</a></tt> <tt class="py-op">=</tt> <tt id="link-27" class="py-name"><a title="app.models.Category.name
+app.models.Ingredient.name
+app.models.Product.name
+app.models.Recipe.name" class="py-name" href="#" onclick="return doclink('link-27', 'name', 'link-3');">name</a></tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name"><a title="app.models.Ingredient.price
+app.models.Product.price
+app.models.Recipe.price" class="py-name" href="#" onclick="return doclink('link-28', 'price', 'link-4');">price</a></tt> <tt class="py-op">=</tt> <tt id="link-29" class="py-name"><a title="app.models.Ingredient.price
+app.models.Product.price
+app.models.Recipe.price" class="py-name" href="#" onclick="return doclink('link-29', 'price', 'link-4');">price</a></tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-30" class="py-name"><a title="app.models.Recipe.origin" class="py-name" href="#" onclick="return doclink('link-30', 'origin', 'link-21');">origin</a></tt> <tt class="py-op">=</tt> <tt id="link-31" class="py-name"><a title="app.models.Recipe.origin" class="py-name" href="#" onclick="return doclink('link-31', 'origin', 'link-21');">origin</a></tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name"><a title="app.models.Recipe.cooktime" class="py-name" href="#" onclick="return doclink('link-32', 'cooktime', 'link-22');">cooktime</a></tt> <tt class="py-op">=</tt> <tt id="link-33" class="py-name"><a title="app.models.Recipe.cooktime" class="py-name" href="#" onclick="return doclink('link-33', 'cooktime', 'link-22');">cooktime</a></tt> </tt>
+</div><a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"> </tt>
+<a name="Recipe.__repr__"></a><div id="Recipe.__repr__-def"><a name="L59"></a><tt class="py-lineno"> 59</tt> <a class="py-toggle" href="#" id="Recipe.__repr__-toggle" onclick="return toggle('Recipe.__repr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.Recipe-class.html#__repr__">__repr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Recipe.__repr__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Recipe.__repr__-expanded"><a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'Recipe: {}'</tt><tt class="py-op">.</tt><tt class="py-name">format</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="app.models.Category.name
+app.models.Ingredient.name
+app.models.Product.name
+app.models.Recipe.name" class="py-name" href="#" onclick="return doclink('link-34', 'name', 'link-3');">name</a></tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"> </tt>
+<a name="Product"></a><div id="Product-def"><a name="L63"></a><tt class="py-lineno"> 63</tt> <a class="py-toggle" href="#" id="Product-toggle" onclick="return toggle('Product');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="app.models.Product-class.html">Product</a><tt class="py-op">(</tt><tt class="py-base-class">db</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Product-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Product-expanded"><a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">    <tt class="py-docstring">""" Product table"""</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">    <tt id="link-35" class="py-name"><a title="app.models.Category.id
+app.models.Ingredient.id
+app.models.Lifestyle.id
+app.models.Nutrition.id
+app.models.Product.id
+app.models.Recipe.id" class="py-name" href="#" onclick="return doclink('link-35', 'id', 'link-2');">id</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">primary_key</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">    <tt id="link-36" class="py-name"><a title="app.models.Category.name
+app.models.Ingredient.name
+app.models.Product.name
+app.models.Recipe.name" class="py-name" href="#" onclick="return doclink('link-36', 'name', 'link-3');">name</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">    <tt id="link-37" class="py-name"><a title="app.models.Ingredient.price
+app.models.Product.price
+app.models.Recipe.price" class="py-name" href="#" onclick="return doclink('link-37', 'price', 'link-4');">price</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">)</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">    <tt id="link-38" class="py-name" targets="Variable app.models.Product.description=app.models.Product-class.html#description"><a title="app.models.Product.description" class="py-name" href="#" onclick="return doclink('link-38', 'description', 'link-38');">description</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">200</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">    <tt id="link-39" class="py-name" targets="Variable app.models.Product.similarproducts=app.models.Product-class.html#similarproducts"><a title="app.models.Product.similarproducts" class="py-name" href="#" onclick="return doclink('link-39', 'similarproducts', 'link-39');">similarproducts</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">relationship</tt><tt class="py-op">(</tt><tt class="py-string">'Product'</tt><tt class="py-op">,</tt> <tt class="py-name">lazy</tt><tt class="py-op">=</tt><tt class="py-string">'dynamic'</tt><tt class="py-op">)</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">    <tt id="link-40" class="py-name"><a title="app.models.Ingredient.nutrition
+app.models.Product.nutrition
+app.models.Recipe.nutrition" class="py-name" href="#" onclick="return doclink('link-40', 'nutrition', 'link-10');">nutrition</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">relationship</tt><tt class="py-op">(</tt><tt class="py-string">'Nutrition'</tt><tt class="py-op">,</tt> <tt class="py-name">backref</tt><tt class="py-op">=</tt><tt class="py-string">'product'</tt><tt class="py-op">,</tt> <tt class="py-name">lazy</tt><tt class="py-op">=</tt><tt class="py-string">'dynamic'</tt><tt class="py-op">)</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">    <tt id="link-41" class="py-name"><a title="app.models.Product.lifestyle
+app.models.Recipe.lifestyle" class="py-name" href="#" onclick="return doclink('link-41', 'lifestyle', 'link-24');">lifestyle</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">relationship</tt><tt class="py-op">(</tt><tt class="py-string">'Lifestyle'</tt><tt class="py-op">,</tt> <tt class="py-name">backref</tt><tt class="py-op">=</tt><tt class="py-string">'product'</tt><tt class="py-op">,</tt> <tt class="py-name">lazy</tt><tt class="py-op">=</tt><tt class="py-string">'dynamic'</tt><tt class="py-op">)</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">    <tt id="link-42" class="py-name"><a title="app.models.Product.category_id
+app.models.Recipe.category_id" class="py-name" href="#" onclick="return doclink('link-42', 'category_id', 'link-25');">category_id</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt class="py-string">'category.id'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">    <tt id="link-43" class="py-name" targets="Variable app.models.Lifestyle.product_id=app.models.Lifestyle-class.html#product_id,Variable app.models.Nutrition.product_id=app.models.Nutrition-class.html#product_id,Variable app.models.Product.product_id=app.models.Product-class.html#product_id"><a title="app.models.Lifestyle.product_id
+app.models.Nutrition.product_id
+app.models.Product.product_id" class="py-name" href="#" onclick="return doclink('link-43', 'product_id', 'link-43');">product_id</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt class="py-string">'product.id'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"> </tt>
+<a name="Product.__init__"></a><div id="Product.__init__-def"><a name="L75"></a><tt class="py-lineno"> 75</tt> <a class="py-toggle" href="#" id="Product.__init__-toggle" onclick="return toggle('Product.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.Product-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">,</tt> <tt class="py-param">price</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-param">description</tt><tt class="py-op">=</tt><tt class="py-string">'unknown'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Product.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Product.__init__-expanded"><a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-44" class="py-name"><a title="app.models.Category.name
+app.models.Ingredient.name
+app.models.Product.name
+app.models.Recipe.name" class="py-name" href="#" onclick="return doclink('link-44', 'name', 'link-3');">name</a></tt> <tt class="py-op">=</tt> <tt id="link-45" class="py-name"><a title="app.models.Category.name
+app.models.Ingredient.name
+app.models.Product.name
+app.models.Recipe.name" class="py-name" href="#" onclick="return doclink('link-45', 'name', 'link-3');">name</a></tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name"><a title="app.models.Ingredient.price
+app.models.Product.price
+app.models.Recipe.price" class="py-name" href="#" onclick="return doclink('link-46', 'price', 'link-4');">price</a></tt> <tt class="py-op">=</tt> <tt id="link-47" class="py-name"><a title="app.models.Ingredient.price
+app.models.Product.price
+app.models.Recipe.price" class="py-name" href="#" onclick="return doclink('link-47', 'price', 'link-4');">price</a></tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-48" class="py-name"><a title="app.models.Product.description" class="py-name" href="#" onclick="return doclink('link-48', 'description', 'link-38');">description</a></tt> <tt class="py-op">=</tt> <tt id="link-49" class="py-name"><a title="app.models.Product.description" class="py-name" href="#" onclick="return doclink('link-49', 'description', 'link-38');">description</a></tt> </tt>
+</div><a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"> </tt>
+<a name="Product.__repr__"></a><div id="Product.__repr__-def"><a name="L80"></a><tt class="py-lineno"> 80</tt> <a class="py-toggle" href="#" id="Product.__repr__-toggle" onclick="return toggle('Product.__repr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.Product-class.html#__repr__">__repr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Product.__repr__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Product.__repr__-expanded"><a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'Product: {}'</tt><tt class="py-op">.</tt><tt class="py-name">format</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-50" class="py-name"><a title="app.models.Category.name
+app.models.Ingredient.name
+app.models.Product.name
+app.models.Recipe.name" class="py-name" href="#" onclick="return doclink('link-50', 'name', 'link-3');">name</a></tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"> </tt>
+<a name="Lifestyle"></a><div id="Lifestyle-def"><a name="L84"></a><tt class="py-lineno"> 84</tt> <a class="py-toggle" href="#" id="Lifestyle-toggle" onclick="return toggle('Lifestyle');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="app.models.Lifestyle-class.html">Lifestyle</a><tt class="py-op">(</tt><tt class="py-base-class">db</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Lifestyle-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Lifestyle-expanded"><a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">    <tt class="py-docstring">""" Lifestyle table"""</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">    <tt id="link-51" class="py-name"><a title="app.models.Category.id
+app.models.Ingredient.id
+app.models.Lifestyle.id
+app.models.Nutrition.id
+app.models.Product.id
+app.models.Recipe.id" class="py-name" href="#" onclick="return doclink('link-51', 'id', 'link-2');">id</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">primary_key</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">    <tt id="link-52" class="py-name" targets="Variable app.models.Lifestyle.weight_management=app.models.Lifestyle-class.html#weight_management"><a title="app.models.Lifestyle.weight_management" class="py-name" href="#" onclick="return doclink('link-52', 'weight_management', 'link-52');">weight_management</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Boolean</tt><tt class="py-op">)</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">    <tt id="link-53" class="py-name" targets="Variable app.models.Lifestyle.dietary_restriction=app.models.Lifestyle-class.html#dietary_restriction"><a title="app.models.Lifestyle.dietary_restriction" class="py-name" href="#" onclick="return doclink('link-53', 'dietary_restriction', 'link-53');">dietary_restriction</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">    <tt id="link-54" class="py-name" targets="Variable app.models.Lifestyle.gluten_free=app.models.Lifestyle-class.html#gluten_free"><a title="app.models.Lifestyle.gluten_free" class="py-name" href="#" onclick="return doclink('link-54', 'gluten_free', 'link-54');">gluten_free</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Boolean</tt><tt class="py-op">)</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">    <tt id="link-55" class="py-name" targets="Variable app.models.Lifestyle.carb_free=app.models.Lifestyle-class.html#carb_free"><a title="app.models.Lifestyle.carb_free" class="py-name" href="#" onclick="return doclink('link-55', 'carb_free', 'link-55');">carb_free</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Boolean</tt><tt class="py-op">)</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">    <tt id="link-56" class="py-name" targets="Variable app.models.Lifestyle.vegetarian=app.models.Lifestyle-class.html#vegetarian"><a title="app.models.Lifestyle.vegetarian" class="py-name" href="#" onclick="return doclink('link-56', 'vegetarian', 'link-56');">vegetarian</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Boolean</tt><tt class="py-op">)</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">    <tt id="link-57" class="py-name" targets="Variable app.models.Lifestyle.vegan=app.models.Lifestyle-class.html#vegan"><a title="app.models.Lifestyle.vegan" class="py-name" href="#" onclick="return doclink('link-57', 'vegan', 'link-57');">vegan</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Boolean</tt><tt class="py-op">)</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">    <tt id="link-58" class="py-name" targets="Variable app.models.Lifestyle.recipe_id=app.models.Lifestyle-class.html#recipe_id,Variable app.models.Nutrition.recipe_id=app.models.Nutrition-class.html#recipe_id"><a title="app.models.Lifestyle.recipe_id
+app.models.Nutrition.recipe_id" class="py-name" href="#" onclick="return doclink('link-58', 'recipe_id', 'link-58');">recipe_id</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt class="py-string">'recipe.id'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">    <tt id="link-59" class="py-name"><a title="app.models.Lifestyle.product_id
+app.models.Nutrition.product_id
+app.models.Product.product_id" class="py-name" href="#" onclick="return doclink('link-59', 'product_id', 'link-43');">product_id</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt class="py-string">'product.id'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"> </tt>
+<a name="Lifestyle.__init__"></a><div id="Lifestyle.__init__-def"><a name="L96"></a><tt class="py-lineno"> 96</tt> <a class="py-toggle" href="#" id="Lifestyle.__init__-toggle" onclick="return toggle('Lifestyle.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.Lifestyle-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">weight_management</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">,</tt> <tt class="py-param">dietary_restriction</tt><tt class="py-op">=</tt><tt class="py-string">'none'</tt><tt class="py-op">,</tt> <tt class="py-param">gluten_free</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">,</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">                 <tt class="py-param">carb_free</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">,</tt> <tt class="py-param">vegetarian</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">,</tt> <tt class="py-param">vegan</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Lifestyle.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Lifestyle.__init__-expanded"><a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-60" class="py-name"><a title="app.models.Lifestyle.weight_management" class="py-name" href="#" onclick="return doclink('link-60', 'weight_management', 'link-52');">weight_management</a></tt> <tt class="py-op">=</tt> <tt id="link-61" class="py-name"><a title="app.models.Lifestyle.weight_management" class="py-name" href="#" onclick="return doclink('link-61', 'weight_management', 'link-52');">weight_management</a></tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-62" class="py-name"><a title="app.models.Lifestyle.dietary_restriction" class="py-name" href="#" onclick="return doclink('link-62', 'dietary_restriction', 'link-53');">dietary_restriction</a></tt> <tt class="py-op">=</tt> <tt id="link-63" class="py-name"><a title="app.models.Lifestyle.dietary_restriction" class="py-name" href="#" onclick="return doclink('link-63', 'dietary_restriction', 'link-53');">dietary_restriction</a></tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">gluten_fee</tt> <tt class="py-op">=</tt> <tt id="link-64" class="py-name"><a title="app.models.Lifestyle.gluten_free" class="py-name" href="#" onclick="return doclink('link-64', 'gluten_free', 'link-54');">gluten_free</a></tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-65" class="py-name"><a title="app.models.Lifestyle.carb_free" class="py-name" href="#" onclick="return doclink('link-65', 'carb_free', 'link-55');">carb_free</a></tt> <tt class="py-op">=</tt> <tt id="link-66" class="py-name"><a title="app.models.Lifestyle.carb_free" class="py-name" href="#" onclick="return doclink('link-66', 'carb_free', 'link-55');">carb_free</a></tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-67" class="py-name"><a title="app.models.Lifestyle.vegetarian" class="py-name" href="#" onclick="return doclink('link-67', 'vegetarian', 'link-56');">vegetarian</a></tt> <tt class="py-op">=</tt> <tt id="link-68" class="py-name"><a title="app.models.Lifestyle.vegetarian" class="py-name" href="#" onclick="return doclink('link-68', 'vegetarian', 'link-56');">vegetarian</a></tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-69" class="py-name"><a title="app.models.Lifestyle.vegan" class="py-name" href="#" onclick="return doclink('link-69', 'vegan', 'link-57');">vegan</a></tt> <tt class="py-op">=</tt> <tt id="link-70" class="py-name"><a title="app.models.Lifestyle.vegan" class="py-name" href="#" onclick="return doclink('link-70', 'vegan', 'link-57');">vegan</a></tt> </tt>
+</div><a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"> </tt>
+<a name="Lifestyle.__repr__"></a><div id="Lifestyle.__repr__-def"><a name="L105"></a><tt class="py-lineno">105</tt> <a class="py-toggle" href="#" id="Lifestyle.__repr__-toggle" onclick="return toggle('Lifestyle.__repr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.Lifestyle-class.html#__repr__">__repr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Lifestyle.__repr__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Lifestyle.__repr__-expanded"><a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'Lifestyle: {}'</tt><tt class="py-op">.</tt><tt class="py-name">format</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-71" class="py-name"><a title="app.models.Category.id
+app.models.Ingredient.id
+app.models.Lifestyle.id
+app.models.Nutrition.id
+app.models.Product.id
+app.models.Recipe.id" class="py-name" href="#" onclick="return doclink('link-71', 'id', 'link-2');">id</a></tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"> </tt>
+<a name="Nutrition"></a><div id="Nutrition-def"><a name="L109"></a><tt class="py-lineno">109</tt> <a class="py-toggle" href="#" id="Nutrition-toggle" onclick="return toggle('Nutrition');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="app.models.Nutrition-class.html">Nutrition</a><tt class="py-op">(</tt><tt class="py-base-class">db</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Nutrition-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Nutrition-expanded"><a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">    <tt class="py-docstring">""" Nutrition table"""</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">    <tt id="link-72" class="py-name"><a title="app.models.Category.id
+app.models.Ingredient.id
+app.models.Lifestyle.id
+app.models.Nutrition.id
+app.models.Product.id
+app.models.Recipe.id" class="py-name" href="#" onclick="return doclink('link-72', 'id', 'link-2');">id</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">primary_key</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">    <tt id="link-73" class="py-name" targets="Variable app.models.Nutrition.serving_size=app.models.Nutrition-class.html#serving_size"><a title="app.models.Nutrition.serving_size" class="py-name" href="#" onclick="return doclink('link-73', 'serving_size', 'link-73');">serving_size</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">    <tt id="link-74" class="py-name" targets="Variable app.models.Nutrition.calories=app.models.Nutrition-class.html#calories"><a title="app.models.Nutrition.calories" class="py-name" href="#" onclick="return doclink('link-74', 'calories', 'link-74');">calories</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">)</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">    <tt id="link-75" class="py-name" targets="Variable app.models.Nutrition.fat=app.models.Nutrition-class.html#fat"><a title="app.models.Nutrition.fat" class="py-name" href="#" onclick="return doclink('link-75', 'fat', 'link-75');">fat</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">)</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">    <tt id="link-76" class="py-name" targets="Variable app.models.Nutrition.protein=app.models.Nutrition-class.html#protein"><a title="app.models.Nutrition.protein" class="py-name" href="#" onclick="return doclink('link-76', 'protein', 'link-76');">protein</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">)</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">    <tt id="link-77" class="py-name" targets="Variable app.models.Nutrition.carbs=app.models.Nutrition-class.html#carbs"><a title="app.models.Nutrition.carbs" class="py-name" href="#" onclick="return doclink('link-77', 'carbs', 'link-77');">carbs</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">)</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">    <tt id="link-78" class="py-name" targets="Variable app.models.Nutrition.ingredient_id=app.models.Nutrition-class.html#ingredient_id"><a title="app.models.Nutrition.ingredient_id" class="py-name" href="#" onclick="return doclink('link-78', 'ingredient_id', 'link-78');">ingredient_id</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt class="py-string">'ingredient.id'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">    <tt id="link-79" class="py-name"><a title="app.models.Lifestyle.recipe_id
+app.models.Nutrition.recipe_id" class="py-name" href="#" onclick="return doclink('link-79', 'recipe_id', 'link-58');">recipe_id</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt class="py-string">'recipe.id'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">    <tt id="link-80" class="py-name"><a title="app.models.Lifestyle.product_id
+app.models.Nutrition.product_id
+app.models.Product.product_id" class="py-name" href="#" onclick="return doclink('link-80', 'product_id', 'link-43');">product_id</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">ForeignKey</tt><tt class="py-op">(</tt><tt class="py-string">'product.id'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"> </tt>
+<a name="Nutrition.__init__"></a><div id="Nutrition.__init__-def"><a name="L121"></a><tt class="py-lineno">121</tt> <a class="py-toggle" href="#" id="Nutrition.__init__-toggle" onclick="return toggle('Nutrition.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.Nutrition-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">serving_size</tt><tt class="py-op">=</tt><tt class="py-string">'none'</tt><tt class="py-op">,</tt> <tt class="py-param">calories</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-param">fat</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-param">protein</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-param">carbs</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Nutrition.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Nutrition.__init__-expanded"><a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-81" class="py-name"><a title="app.models.Nutrition.serving_size" class="py-name" href="#" onclick="return doclink('link-81', 'serving_size', 'link-73');">serving_size</a></tt> <tt class="py-op">=</tt> <tt id="link-82" class="py-name"><a title="app.models.Nutrition.serving_size" class="py-name" href="#" onclick="return doclink('link-82', 'serving_size', 'link-73');">serving_size</a></tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-83" class="py-name"><a title="app.models.Nutrition.calories" class="py-name" href="#" onclick="return doclink('link-83', 'calories', 'link-74');">calories</a></tt> <tt class="py-op">=</tt> <tt id="link-84" class="py-name"><a title="app.models.Nutrition.calories" class="py-name" href="#" onclick="return doclink('link-84', 'calories', 'link-74');">calories</a></tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-85" class="py-name"><a title="app.models.Nutrition.fat" class="py-name" href="#" onclick="return doclink('link-85', 'fat', 'link-75');">fat</a></tt> <tt class="py-op">=</tt> <tt id="link-86" class="py-name"><a title="app.models.Nutrition.fat" class="py-name" href="#" onclick="return doclink('link-86', 'fat', 'link-75');">fat</a></tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-87" class="py-name"><a title="app.models.Nutrition.protein" class="py-name" href="#" onclick="return doclink('link-87', 'protein', 'link-76');">protein</a></tt> <tt class="py-op">=</tt> <tt id="link-88" class="py-name"><a title="app.models.Nutrition.protein" class="py-name" href="#" onclick="return doclink('link-88', 'protein', 'link-76');">protein</a></tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-89" class="py-name"><a title="app.models.Nutrition.carbs" class="py-name" href="#" onclick="return doclink('link-89', 'carbs', 'link-77');">carbs</a></tt> <tt class="py-op">=</tt> <tt id="link-90" class="py-name"><a title="app.models.Nutrition.carbs" class="py-name" href="#" onclick="return doclink('link-90', 'carbs', 'link-77');">carbs</a></tt> </tt>
+</div><a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"> </tt>
+<a name="Nutrition.__repr__"></a><div id="Nutrition.__repr__-def"><a name="L128"></a><tt class="py-lineno">128</tt> <a class="py-toggle" href="#" id="Nutrition.__repr__-toggle" onclick="return toggle('Nutrition.__repr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.Nutrition-class.html#__repr__">__repr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Nutrition.__repr__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Nutrition.__repr__-expanded"><a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'Nutrition: {}'</tt><tt class="py-op">.</tt><tt class="py-name">format</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-91" class="py-name"><a title="app.models.Category.id
+app.models.Ingredient.id
+app.models.Lifestyle.id
+app.models.Nutrition.id
+app.models.Product.id
+app.models.Recipe.id" class="py-name" href="#" onclick="return doclink('link-91', 'id', 'link-2');">id</a></tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"> </tt>
+<a name="Category"></a><div id="Category-def"><a name="L132"></a><tt class="py-lineno">132</tt> <a class="py-toggle" href="#" id="Category-toggle" onclick="return toggle('Category');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="app.models.Category-class.html">Category</a><tt class="py-op">(</tt><tt class="py-base-class">db</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Category-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Category-expanded"><a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">    <tt class="py-docstring">""" Category table"""</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">    <tt id="link-92" class="py-name"><a title="app.models.Category.id
+app.models.Ingredient.id
+app.models.Lifestyle.id
+app.models.Nutrition.id
+app.models.Product.id
+app.models.Recipe.id" class="py-name" href="#" onclick="return doclink('link-92', 'id', 'link-2');">id</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">primary_key</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">    <tt id="link-93" class="py-name"><a title="app.models.Category.name
+app.models.Ingredient.name
+app.models.Product.name
+app.models.Recipe.name" class="py-name" href="#" onclick="return doclink('link-93', 'name', 'link-3');">name</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">    <tt id="link-94" class="py-name"><a title="app.models.Category.products
+app.models.Ingredient.products" class="py-name" href="#" onclick="return doclink('link-94', 'products', 'link-6');">products</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">relationship</tt><tt class="py-op">(</tt><tt class="py-string">'Product'</tt><tt class="py-op">,</tt> <tt class="py-name">backref</tt><tt class="py-op">=</tt><tt class="py-string">'category'</tt><tt class="py-op">,</tt> <tt class="py-name">lazy</tt><tt class="py-op">=</tt><tt class="py-string">'dynamic'</tt><tt class="py-op">)</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">    <tt id="link-95" class="py-name"><a title="app.models.Category.recipes
+app.models.Ingredient.recipes" class="py-name" href="#" onclick="return doclink('link-95', 'recipes', 'link-8');">recipes</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">relationship</tt><tt class="py-op">(</tt><tt class="py-string">'Recipe'</tt><tt class="py-op">,</tt> <tt class="py-name">backref</tt><tt class="py-op">=</tt><tt class="py-string">'category'</tt><tt class="py-op">,</tt> <tt class="py-name">lazy</tt><tt class="py-op">=</tt><tt class="py-string">'dynamic'</tt><tt class="py-op">)</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"> </tt>
+<a name="Category.__init__"></a><div id="Category.__init__-def"><a name="L139"></a><tt class="py-lineno">139</tt> <a class="py-toggle" href="#" id="Category.__init__-toggle" onclick="return toggle('Category.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.Category-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Category.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Category.__init__-expanded"><a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-96" class="py-name"><a title="app.models.Category.name
+app.models.Ingredient.name
+app.models.Product.name
+app.models.Recipe.name" class="py-name" href="#" onclick="return doclink('link-96', 'name', 'link-3');">name</a></tt> <tt class="py-op">=</tt> <tt id="link-97" class="py-name"><a title="app.models.Category.name
+app.models.Ingredient.name
+app.models.Product.name
+app.models.Recipe.name" class="py-name" href="#" onclick="return doclink('link-97', 'name', 'link-3');">name</a></tt> </tt>
+</div><a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line"> </tt>
+<a name="Category.__repr__"></a><div id="Category.__repr__-def"><a name="L142"></a><tt class="py-lineno">142</tt> <a class="py-toggle" href="#" id="Category.__repr__-toggle" onclick="return toggle('Category.__repr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="app.models.Category-class.html#__repr__">__repr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Category.__repr__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Category.__repr__-expanded"><a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'Category: {}'</tt><tt class="py-op">.</tt><tt class="py-name">format</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-98" class="py-name"><a title="app.models.Category.name
+app.models.Ingredient.name
+app.models.Product.name
+app.models.Recipe.name" class="py-name" href="#" onclick="return doclink('link-98', 'name', 'link-3');">name</a></tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Fri Oct 21 00:23:04 2016
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

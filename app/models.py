@@ -1,23 +1,34 @@
+"""models file"""
 from app import db
 
+#pylint: disable=E1101
+#pylint: disable=R0903
+#pylint: disable=R0913
+#pylint: disable=C0103
 # join table for ingredients and products
-iptable = db.Table('iptable',
-        db.Column('ing_id', db.Integer, db.ForeignKey('ingredient.id')),
-        db.Column('pro_id', db.Integer, db.ForeignKey('product.id')))
+IPTABLE = db.Table('IPTABLE',
+                   db.Column('ing_id', db.Integer,
+                             db.ForeignKey('ingredient.id')),
+                   db.Column('pro_id', db.Integer, db.ForeignKey('product.id')))
 
 # join table for ingredients and recipes
-irtable = db.Table('irtable',
-        db.Column('ing_id', db.Integer, db.ForeignKey('ingredient.id')),
-        db.Column('rec_id', db.Integer, db.ForeignKey('recipe.id')))
+IRTABLE = db.Table('IRTABLE',
+                   db.Column('ing_id', db.Integer,
+                             db.ForeignKey('ingredient.id')),
+                   db.Column('rec_id', db.Integer, db.ForeignKey('recipe.id')))
 
 class Ingredient(db.Model):
+    """ Ingredient table"""
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
     price = db.Column(db.Integer)
     season = db.Column(db.String(80))
-    products = db.relationship('Product', secondary=iptable, backref='ingredients', lazy='dynamic')
-    recipes = db.relationship('Recipe', secondary=irtable, backref='ingredients', lazy='dynamic')
-    nutrition = db.relationship('Nutrition', backref='ingredient', lazy='dynamic')
+    products = db.relationship(
+        'Product', secondary=IPTABLE, backref='ingredients', lazy='dynamic')
+    recipes = db.relationship(
+        'Recipe', secondary=IRTABLE, backref='ingredients', lazy='dynamic')
+    nutrition = db.relationship(
+        'Nutrition', backref='ingredient', lazy='dynamic')
 
     def __init__(self, name, price=0, season='none'):
         self.name = name
@@ -27,7 +38,9 @@ class Ingredient(db.Model):
     def __repr__(self):
         return 'Ingredient: {}'.format(self.name)
 
+
 class Recipe(db.Model):
+    """ Recipe table"""
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
     price = db.Column(db.Integer)
@@ -46,7 +59,9 @@ class Recipe(db.Model):
     def __repr__(self):
         return 'Recipe: {}'.format(self.name)
 
+
 class Product(db.Model):
+    """ Product table"""
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
     price = db.Column(db.Integer)
@@ -65,7 +80,9 @@ class Product(db.Model):
     def __repr__(self):
         return 'Product: {}'.format(self.name)
 
+
 class Lifestyle(db.Model):
+    """ Lifestyle table"""
     id = db.Column(db.Integer, primary_key=True)
     weight_management = db.Column(db.Boolean)
     dietary_restriction = db.Column(db.String(80))
@@ -88,7 +105,9 @@ class Lifestyle(db.Model):
     def __repr__(self):
         return 'Lifestyle: {}'.format(self.id)
 
+
 class Nutrition(db.Model):
+    """ Nutrition table"""
     id = db.Column(db.Integer, primary_key=True)
     serving_size = db.Column(db.String(80))
     calories = db.Column(db.Integer)
@@ -109,7 +128,9 @@ class Nutrition(db.Model):
     def __repr__(self):
         return 'Nutrition: {}'.format(self.id)
 
+
 class Category(db.Model):
+    """ Category table"""
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
     products = db.relationship('Product', backref='category', lazy='dynamic')
@@ -120,4 +141,3 @@ class Category(db.Model):
 
     def __repr__(self):
         return 'Category: {}'.format(self.name)
-
