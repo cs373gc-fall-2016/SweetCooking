@@ -1,3 +1,60 @@
+commit 4f19aaaa3780cef3820c893bde7947b43d86e988
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Thu Oct 20 19:37:57 2016 -0500
+
+    ok
+
+commit 23a2550ef54fda828ff42807d03740f7240fc3b0
+Merge: 9360210 56a3bfb
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Thu Oct 20 19:35:56 2016 -0500
+
+    Merge branch 'master' of github.com:cs373gc-fall-2016/SweetCooking
+
+commit 9360210ab4b879993ba678d2b3d90f34d09d8fe3
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Thu Oct 20 19:35:51 2016 -0500
+
+    new views
+
+commit 56a3bfb759b49e8e71f5fbcab84fcb161fd6595d
+Merge: 64b2859 c8b6b2d
+Author: Guande Lyu <guandelyu@wireless-10-147-46-151.public.utexas.edu>
+Date:   Thu Oct 20 19:27:44 2016 -0500
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit 64b2859dd1a9fc76d93a25d8627777e72a65c036
+Author: Guande Lyu <guandelyu@wireless-10-147-46-151.public.utexas.edu>
+Date:   Thu Oct 20 19:27:22 2016 -0500
+
+    deleting .DS_Store file and update log file
+
+commit c8b6b2d5ade60c3a1917ed24e20c25c144a82af0
+Merge: 78fffbd a56d978
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Thu Oct 20 19:25:43 2016 -0500
+
+    xMerge branch 'master' of github.com:cs373gc-fall-2016/SweetCooking
+
+commit 78fffbd4f0224746f77159d120d1b86fc74e1cdd
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Thu Oct 20 19:25:28 2016 -0500
+
+    pulled
+
+commit d5b453e043b1b253c3b5d9eac37192e3d0c02f9d
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Thu Oct 20 19:25:10 2016 -0500
+
+    docs
+
+commit a56d9780ec2223837a147dfbf4d566c2d4587c5b
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 19:25:01 2016 -0500
+
+    Update sugar_ingredient.html
+
 commit 5aedc3c2dfb94e3d5ff4ec3b4229091018f8b44e
 Author: Guande Lyu <guandelyu@wireless-10-147-46-151.public.utexas.edu>
 Date:   Thu Oct 20 19:24:01 2016 -0500
@@ -15,6 +72,12 @@ Author: Guande Lyu <guandelyu@wireless-10-147-46-151.public.utexas.edu>
 Date:   Thu Oct 20 19:19:45 2016 -0500
 
     added sorting function for lifestyle and recipes table. --Chris Lin
+
+commit 941b9b6535a269456a1a5706d811cb89d9de76a1
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Thu Oct 20 19:15:57 2016 -0500
+
+    ok
 
 commit 4a31a1f399c1ce7e1b4856edc84ae0056487d5e7
 Merge: 4d4c1f6 cda9bc7
