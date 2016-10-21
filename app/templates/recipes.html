@@ -16,7 +16,11 @@
 
     <!-- Custom styles for this template -->
     <link href="/static/starter-template.css" rel="stylesheet">
+    <link href="/static/myButton.css" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://tablesorter.com/__jquery.tablesorter.js"></script>
+    <script type="text/javascript" src="http://tablesorter.com/addons/pager/jquery.tablesorter.pager.js"></script>
   </head>
 
   <body>
@@ -58,43 +62,44 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th> </th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Category</th>
-            <th>Origin</th>
-            <th>Cook time</th>
-            <th>Nutrition</th>
-            <th>Lifestyle</th>
-            <th>Ingredients</th>
+            <th><button class="button button1">Name</button></th>
+            <th><button class="button button1">Price</button></th>
+            <th><button class="button button1">Category</button></th>
+            <th><button class="button button1">Origin</button></th>
+            <th><button class="button button1">Cook time</button></th>
+            <th><button class="button button1">Nutrition</button></th>
+            <th><button class="button button1">Lifestyle</button></th>
+            <th><button class="button button1">Ingredients</button></th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
             <td><a href="/sushi.html">California Sushi Roll</a></td> <td>$8</td> <td>sushi</td> <td>Japan</td>  <td>1.5 hours</td> <td>8 Pieces, Calories: 255, Fat: 7g, Carbs: 38g, Protein: 9g</td> <td>fit, vegan</td> <td>rice</td> 
           </tr>
 
           <tr>
-            <th scope="row">2</th>
             <td><a href="/spaghetti_meatballs.html">Spaghetti meatballs</a></td> <td>$7</td> <td>spaghetti</td> <td>Italian - American</td>  <td>1 hour</td> <td>220 Calories per serving, 8g Protein, 183mg Sodium</td> <td>healthy</td> <td>pork floor</td> 
           </tr>
 
           <tr>
-            <th scope="row">3</th>
             <td><a href="/pizza.html">Chicken pizza</a></td> <td>$6</td> <td>pizza</td> <td>Italian</td>  <td>1.5 hours</td> <td>184 Calories per serving, 13g Protein, 382mg Sodium</td> <td>healthy</td> <td>cheese</td> 
           </tr>
         </tbody>
       </table>
     </div>
 
-
+    <script>
+      $(document).ready(function() { 
+      $("table").tablesorter({  
+          sortList: [[0,0],[2,0]] 
+      }); 
+    });
+    </script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
     <script src="/static/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
