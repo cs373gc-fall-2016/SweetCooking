@@ -23,75 +23,65 @@ Simple API for looking up various recipes, ingredients, and food products.
             "and": {
                 "recipes": [
                 {
-                    "id": 1
-                    "name": "brocolli casserole"
-                    "price": 2.00
-                    "origin": "american"
-                    "cooktime": 120
-                    "category": 1
-                    "ingredients": [
-                                        5,
-                                        7,
-                                        25,
-                                        68
-                                    ],
-                    "nutrion": 1
-                    "lifestyle": 1
+                    "id": 1,
+                    "name": "brocolli casserole",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "time": 120,
+                    "ingredients": 1,
+                    "lifestyles": [1],
+                    "servings": 8,
+                    "instructions": "make it correctly..."
                 },
                 ...
                 ],
                 "ingredients": [
                 {
-                    "id": 2
-                    "name": "brocolli"
-                    "price": .75
-                    "season": "all year"
-                    "products": [
-                                    3,
-                                    17,
-                                    33,
-                                    52
-                                ],
+                    "id": 2,
+                    "name": "brocolli",
+                    "calories": 10,
+                    "protein": 2,
+                    "fat": 0,
+                    "carbs": 5,
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
                     "recipes": [
                                     1,
                                     42,
                                     76
                                 ],
-                    "nutrition": 2
+                    "lifestyles": [1]
                 },
                 ...
                 ],
                 "products": [
                 {
-                    "id": 3
-                    "name": "brocolli slaw"
-                    "price": 1
-                    "description": "brocolli coleslaw mix"
-                    "similarproducts": [
-                                            1,
-                                            53,
-                                            87
-                                        ],
-                    "nutrition": 3
-                    "ingredients": [
-                                        2,
-                                        4",
-                                        66
-                                    ],
-                    "category": 1
-                    "lifestyle": 2
+                    "id": 3,
+                    "name": "brocolli slaw",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "calories": 50,
+                    "protein": 5,
+                    "fat": 5,
+                    "satfat": 2,
+                    "transfat": 3,
+                    "carbs": 10,
+                    "sugar": 5,
+                    "lifestyles": [2],
+                    "servingsize": 20
                 },
                 ...
                 ],
                 "lifestyle": [
                 {
                     "id": 40
-                    "weightmanage": true
-                    "dietaryrestrion": "none"
-                    "glutenfree": true
-                    "carbfree": false
-                    "vegetarian": true
-                    "vegan": true
+                    "name": "vegan",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "description": "no animals for you",
+                    "weightmanage": true,
+                    "glutenfree": true,
+                    "ketogenic": false,
+                    "vegetarian": true,
+                    "vegan": true,
+                    "cheap": false,
+                    "dairyfree": false,
                     "products": [
                                     1,
                                     33
@@ -100,6 +90,7 @@ Simple API for looking up various recipes, ingredients, and food products.
                                     3,
                                     47
                                 ],
+                    "ingredients": [1]
                 },
                 ...
                 ]
@@ -108,75 +99,65 @@ Simple API for looking up various recipes, ingredients, and food products.
                 "brocolli": {
                 "recipes": [
                 {
-                    "id": 1
-                    "name": "brocolli casserole"
-                    "price": 2
-                    "origin": "american"
-                    "cooktime": 120
-                    "category": 1
-                    "ingredients": [
-                                        5,
-                                        7,
-                                        25,
-                                        68
-                                    ],
-                    "nutrion": 1
-                    "lifestyle": 1
+                    "id": 1,
+                    "name": "brocolli casserole",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "time": 120,
+                    "ingredients": 1,
+                    "lifestyles": [1],
+                    "servings": 8,
+                    "instructions": "make it correctly..."
                 },
                 ...
                 ],
                 "ingredients": [
                 {
-                    "id": 2
-                    "name": "brocolli"
-                    "price": .75
-                    "season": "all year"
-                    "products": [
-                                    3,
-                                    17,
-                                    33,
-                                    52
-                                ],
+                    "id": 2,
+                    "name": "brocolli",
+                    "calories": 10,
+                    "protein": 2,
+                    "fat": 0,
+                    "carbs": 5,
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
                     "recipes": [
                                     1,
                                     42,
                                     76
                                 ],
-                    "nutrition": 2
+                    "lifestyles": [1]
                 },
                 ...
                 ],
                 "products": [
                 {
-                    "id": 3
-                    "name": "brocolli slaw"
-                    "price": 1
-                    "description": "brocolli coleslaw mix"
-                    "similarproducts": [
-                                            1,
-                                            53,
-                                            87
-                                        ],
-                    "nutrition": 3
-                    "ingredients": [
-                                        2,
-                                        46,
-                                        66
-                                    ],
-                    "category": 1
-                    "lifestyle": 2
+                    "id": 3,
+                    "name": "brocolli slaw",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "calories": 50,
+                    "protein": 5,
+                    "fat": 5,
+                    "satfat": 2,
+                    "transfat": 3,
+                    "carbs": 10,
+                    "sugar": 5,
+                    "lifestyles": [2],
+                    "servingsize": 20
                 },
                 ...
                 ],
                 "lifestyle": [
                 {
                     "id": 40
-                    "weightmanage": true
-                    "dietaryrestrion": "none"
-                    "glutenfree": true
-                    "carbfree": false
-                    "vegetarian": true
-                    "vegan": true
+                    "name": "vegan",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "description": "no animals for you",
+                    "weightmanage": true,
+                    "glutenfree": true,
+                    "ketogenic": false,
+                    "vegetarian": true,
+                    "vegan": true,
+                    "cheap": false,
+                    "dairyfree": false,
                     "products": [
                                     1,
                                     33
@@ -185,6 +166,7 @@ Simple API for looking up various recipes, ingredients, and food products.
                                     3,
                                     47
                                 ],
+                    "ingredients": [1]
                 },
                 ...
                 ]
@@ -207,20 +189,14 @@ Simple API for looking up various recipes, ingredients, and food products.
             "and": {
                 "recipes": [
                 {
-                    "id": 1
-                    "name": "brocolli casserole"
-                    "price": 2
-                    "origin": "american"
-                    "cooktime": 120
-                    "category": 1
-                    "ingredients": [
-                                        5,
-                                        7,
-                                        2",
-                                        68
-                                    ],
-                    "nutrion": 1
-                    "lifestyle": 1
+                    "id": 1,
+                    "name": "brocolli casserole",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "time": 120,
+                    "ingredients": 1,
+                    "lifestyles": [1],
+                    "servings": 8,
+                    "instructions": "make it correctly..."
                 },
                 ...
                 ],
@@ -229,20 +205,14 @@ Simple API for looking up various recipes, ingredients, and food products.
                 "brocolli": {
                 "recipes": [
                 {
-                    "id": 1
-                    "name": "brocolli casserole"
-                    "price": 2
-                    "origin": "american"
-                    "cooktime": 120
-                    "category": 1
-                    "ingredients": [
-                                        5,
-                                        7,
-                                        25,
-                                        68
-                                    ],
-                    "nutrion": 1
-                    "lifestyle": 1
+                    "id": 1,
+                    "name": "brocolli casserole",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "time": 120,
+                    "ingredients": 1,
+                    "lifestyles": [1],
+                    "servings": 8,
+                    "instructions": "make it correctly..."
                 },
                 ...
                 ],
@@ -265,22 +235,19 @@ Simple API for looking up various recipes, ingredients, and food products.
             "and": {
                 "ingredients": [
                 {
-                    "id": 2
-                    "name": "brocolli"
-                    "price": .75
-                    "season": "all year"
-                    "products": [
-                                    3,
-                                    17,
-                                    33,
-                                    52
-                                ],
+                    "id": 2,
+                    "name": "brocolli",
+                    "calories": 10,
+                    "protein": 2,
+                    "fat": 0,
+                    "carbs": 5,
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
                     "recipes": [
                                     1,
                                     42,
                                     76
                                 ],
-                    "nutrition": 2
+                    "lifestyles": [1]
                 },
                 ...
                 ],
@@ -289,22 +256,19 @@ Simple API for looking up various recipes, ingredients, and food products.
                 "brocolli": {
                 "ingredients": [
                 {
-                    "id": 2
-                    "name": "brocolli"
-                    "price": .75
-                    "season": "all year"
-                    "products": [
-                                    3,
-                                    17,
-                                    33,
-                                    52
-                                ],
+                    "id": 2,
+                    "name": "brocolli",
+                    "calories": 10,
+                    "protein": 2,
+                    "fat": 0,
+                    "carbs": 5,
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
                     "recipes": [
                                     1,
                                     42,
                                     76
                                 ],
-                    "nutrition": 2
+                    "lifestyles": [1]
                 },
                 ...
                 ],
@@ -327,23 +291,18 @@ Simple API for looking up various recipes, ingredients, and food products.
             "and": {
                 "products": [
                 {
-                    "id": 3
-                    "name": "brocolli slaw"
-                    "price": 1
-                    "description": "brocolli coleslaw mix"
-                    "similarproducts": [
-                                            1,
-                                            53,
-                                            87
-                                        ],
-                    "nutrition": 3
-                    "ingredients": [
-                                        2,
-                                        46,
-                                        66
-                                    ],
-                    "category": 1
-                    "lifestyle": 2
+                    "id": 3,
+                    "name": "brocolli slaw",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "calories": 50,
+                    "protein": 5,
+                    "fat": 5,
+                    "satfat": 2,
+                    "transfat": 3,
+                    "carbs": 10,
+                    "sugar": 5,
+                    "lifestyles": [2],
+                    "servingsize": 20
                 },
                 ...
                 ],
@@ -352,23 +311,18 @@ Simple API for looking up various recipes, ingredients, and food products.
                 "brocolli": {
                 "products": [
                 {
-                    "id": 3
-                    "name": "brocolli slaw"
-                    "price": 1
-                    "description": "brocolli coleslaw mix"
-                    "similarproducts": [
-                                            1,
-                                            53,
-                                            87
-                                        ],
-                    "nutrition": 3
-                    "ingredients": [
-                                        2,
-                                        46,
-                                        66
-                                    ],
-                    "category": 1
-                    "lifestyle": 2
+                    "id": 3,
+                    "name": "brocolli slaw",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "calories": 50,
+                    "protein": 5,
+                    "fat": 5,
+                    "satfat": 2,
+                    "transfat": 3,
+                    "carbs": 10,
+                    "sugar": 5,
+                    "lifestyles": [2],
+                    "servingsize": 20
                 },
                 ...
                 ],
@@ -392,12 +346,16 @@ Simple API for looking up various recipes, ingredients, and food products.
                 "lifestyle": [
                 {
                     "id": 40
-                    "weightmanage": true
-                    "dietaryrestrion": "none"
-                    "glutenfree": true
-                    "carbfree": false
-                    "vegetarian": true
-                    "vegan": true
+                    "name": "vegan",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "description": "no animals for you",
+                    "weightmanage": true,
+                    "glutenfree": true,
+                    "ketogenic": false,
+                    "vegetarian": true,
+                    "vegan": true,
+                    "cheap": false,
+                    "dairyfree": false,
                     "products": [
                                     1,
                                     33
@@ -406,6 +364,7 @@ Simple API for looking up various recipes, ingredients, and food products.
                                     3,
                                     47
                                 ],
+                    "ingredients": [1]
                 },
                 ...
                 ],
@@ -415,12 +374,16 @@ Simple API for looking up various recipes, ingredients, and food products.
                 "lifestyle": [
                 {
                     "id": 40
-                    "weightmanage": true
-                    "dietaryrestrion": "none"
-                    "glutenfree": true
-                    "carbfree": false
-                    "vegetarian": true
-                    "vegan": true
+                    "name": "vegan",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "description": "no animals for you",
+                    "weightmanage": true,
+                    "glutenfree": true,
+                    "ketogenic": false,
+                    "vegetarian": true,
+                    "vegan": true,
+                    "cheap": false,
+                    "dairyfree": false,
                     "products": [
                                     1,
                                     33
@@ -429,9 +392,10 @@ Simple API for looking up various recipes, ingredients, and food products.
                                     3,
                                     47
                                 ],
+                    "ingredients": [1]
                 },
                 ...
-                ],
+                ]
             }
         }
 
@@ -463,33 +427,27 @@ Defaults sorted descending by name.
 + Response 200 (application/json)
     + Attributes (object)
         + name: "brocolli casserole" (string) - name of recipe
-        + price: 2 (number) - price per serving of recipe
-        + origin: "american" (string) - origin of recipe
-        + cooktime: 120 (number) - time in minutes to prepare recipe
-        + category: 1 (number) - category id number
-        + ingredients: [] (array[number]) - array of ingredient ids
-        + nutrition: 1 (number) - nutritional info id
-        + lifestyle: 2 (number) - lifestyle id
+        + img: "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg" (string) - url of image
+        + time: 120 (number) - time in minutes to prepare recipe
+        + ingredients: 1 (number) - id of ingredient list
+        + lifestyles: [1] (array[number]) - lifestyle ids
+        + servings (number) - number of servings recipe makes
+        + instuctions (string) - instructions for making the recipe
        + Body
         {
             "recipes": [
-            {
-                "id": 1
-                "name": "brocolli casserole"
-                "price": 2
-                "origin": "american"
-                "cooktime": 120
-                "category": 1
-                "ingredients": [
-                                5,
-                                7,
-                                25,
-                                68
-                                ],
-                "nutrition": 1
-                "lifestyle": 2
-            }
-            ],
+                {
+                    "id": 1,
+                    "name": "brocolli casserole",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "time": 120,
+                    "ingredients": 1,
+                    "lifestyles": [1],
+                    "servings": 8,
+                    "instructions": "make it correctly..."
+                },
+                ...
+                ],
             "pagenum": 1,
             "size": 1,
             "total": 578
@@ -509,33 +467,27 @@ Request information about recipes related to **ids**
 + Response 200 (application/json)
     + Attributes (object)
         + name: "brocolli casserole" (string) - name of recipe
-        + price: 2 (number) - price per serving of recipe
-        + origin: "american" (string) - origin of recipe
-        + cooktime: 120 (number) - time in minutes to prepare recipe
-        + category: 1 (number) - category id number
-        + ingredients: [] (array[number]) - array of ingredient ids
-        + nutrition: 1 (number) - nutritional info id
-        + lifestyle: 2 (number) - lifestyle id
+        + img: "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg" (string) - url of image
+        + time: 120 (number) - time in minutes to prepare recipe
+        + ingredients: 1 (number) - id of ingredient list
+        + lifestyles: [1] (array[number]) - lifestyle ids
+        + servings (number) - number of servings recipe makes
+        + instuctions (string) - instructions for making the recipe
        + Body
         {
             "recipes": [
-            {
-                "id": 1
-                "name": "brocolli casserole"
-                "price": 2
-                "origin": "american"
-                "cooktime": 120
-                "category": 1
-                "ingredients": [
-                                5,
-                                7,
-                                25,
-                                68
-                                ],
-                "nutrition": 1
-                "lifestyle": 2
-            }
-            ],
+                {
+                    "id": 1,
+                    "name": "brocolli casserole",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "time": 120,
+                    "ingredients": 1,
+                    "lifestyles": [1],
+                    "servings": 8,
+                    "instructions": "make it correctly..."
+                },
+                ...
+                ],
         }
 
 # Group Ingredients
@@ -565,30 +517,33 @@ Defaults sorted descending by name.
 + Response 200 (application/json)
     + Attributes (object)
         + name: "brocolli" (string) - name of recipe
-        + price: .75 (number) - price per serving of recipe
-        + season: "all year" (string) - season to best find ingredient
-        + products: [] (array[number]) - array of product ids
-        + recipes: [] (array[number]) - array of recipe ids
-        + nutrition: 1 (number) - nutritional info id
+        + calories: 10 (number) - calories per serving
+        + protein: 2 (number) - protein per serving
+        + fat: 0 (number) - fat per serving
+        + carbs: 5 (number) - carbs per serving
+        + img: "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg" (string) - image url
+        + recipes: [] (array[number]) - array of ingredient list ids
+        + lifestyles: [] (array[number]) - array of lifestyle ids
        + Body
         {
             "ingredients": [
-            {
-                "id": 1,
-                "name": "brocolli casserole",
-                "price": .75,
-                "season": "all year",
-                "products": [
-                            2,
-                            7
-                            ],
-                "recipes": [
-                            5,
-                            9
-                            ],
-                "nutrition": 1
-            }
-            ],
+                {
+                    "id": 2,
+                    "name": "brocolli",
+                    "calories": 10,
+                    "protein": 2,
+                    "fat": 0,
+                    "carbs": 5,
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "recipes": [
+                                    1,
+                                    42,
+                                    76
+                                ],
+                    "lifestyles": [1]
+                },
+                ...
+                ],
             "pagenum": 1,
             "size": 1,
             "total": 578
@@ -607,35 +562,34 @@ Request information about ingredients related to **ids**
 ### GET Specific Ingredients [GET]
 + Response 200 (application/json)
     + Attributes (object)
-        + name: "brocolli" (string) - name of ingredient
-        + price: .75 (number) - price per serving of ingredient
-        + season: "all year" (string) - season to best find ingredient
-        + products: [] (array[number]) - array of product ids
-        + recipes: [] (array[number]) - array of recipe ids
-        + nutrition: 1 (number) - nutritional info id
-        + lifestyle: 2 (number) - lifestyle id
+        + name: "brocolli" (string) - name of recipe
+        + calories: 10 (number) - calories per serving
+        + protein: 2 (number) - protein per serving
+        + fat: 0 (number) - fat per serving
+        + carbs: 5 (number) - carbs per serving
+        + img: "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg" (string) - image url
+        + recipes: [] (array[number]) - array of ingredient list ids
+        + lifestyles: [] (array[number]) - array of lifestyle ids
        + Body
         {
             "ingredients": [
-            {
-                "id": 1,
-                "name": "brocolli casserole",
-                "price": .75,
-                "season": "all year",
-                "products": [
-                            2,
-                            7
-                            ],
-                "recipes": [
-                            5,
-                            9
-                            ],
-                "nutrition": 1
-            }
-            ],
-            "pagenum": 1,
-            "size": 1,
-            "total": 578
+                {
+                    "id": 2,
+                    "name": "brocolli",
+                    "calories": 10,
+                    "protein": 2,
+                    "fat": 0,
+                    "carbs": 5,
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "recipes": [
+                                    1,
+                                    42,
+                                    76
+                                ],
+                    "lifestyles": [1]
+                },
+                ...
+                ],
         }
 
 # Group Products
@@ -665,35 +619,35 @@ Defaults sorted descending by name.
 + Response 200 (application/json)
     + Attributes (object)
         + name: "brocolli slaw" (string) - name of product
-        + price: 1 (number) - price per serving of product
-        + description: "brocolli cole slaw" (string) - description of product
-        + simlarproducts: [] (array[number]) - array of similar product ids
-        + nutrition: 1 (number) - nutritional info id
-        + ingredients: [] (array[number][number]) - array of ingredient ids
-        + category: 1 (number) - category id
-        + lifestyle: 1 (number) - lifestyle id
+        + img: "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg" (string) - image url
+        + calories: 50 (number) - calories per serving
+        + protein: 5 (number) - protein per serving
+        + fat: 5 (number) - fat per serving
+        + satfat: 2 (number) - saturated fat per serving
+        + transfat: 3 (number) - trans fat per serving
+        + carbs: 10 (number) - carbs per serving
+        + sugar: 5 (number) - sugar per serving
+        + lifestyles: [2] (array[number]) - lifestyle ids
+        + servingsize: 20 (number) - serving size
        + Body
         {
             "products": [
-            {
-                "id": 1,
-                "name": "brocolli slaw",
-                "price": 1,
-                "description": "brocolli cole slaw",
-                "similarproducts": [
-                                     2,
-                                     7
-                                    ],
-                "nutrition": 1
-                "ingredients": [
-                                4,
-                                8,
-                                34
-                                ],
-                "category": 1,
-                "lifestyle": 1
-            }
-            ],
+                {
+                    "id": 3,
+                    "name": "brocolli slaw",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "calories": 50,
+                    "protein": 5,
+                    "fat": 5,
+                    "satfat": 2,
+                    "transfat": 3,
+                    "carbs": 10,
+                    "sugar": 5,
+                    "lifestyles": [2],
+                    "servingsize": 20
+                },
+                ...
+                ],
             "pagenum": 1,
             "size": 1,
             "total": 578
@@ -713,35 +667,35 @@ Request information about products related to **ids**
 + Response 200 (application/json)
     + Attributes (object)
         + name: "brocolli slaw" (string) - name of product
-        + price: 1 (number) - price per serving of product
-        + description: "brocolli cole slaw" (string) - description of product
-        + simlarproducts: [] (array[number]) - array of similar product ids
-        + nutrition: 1 (number) - nutritional info id
-        + ingredients: [] (array[number]) - array of ingredient ids
-        + category: 1 (number) - category id
-        + lifestyle: 1 (number) - lifestyle id
+        + img: "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg" (string) - image url
+        + calories: 50 (number) - calories per serving
+        + protein: 5 (number) - protein per serving
+        + fat: 5 (number) - fat per serving
+        + satfat: 2 (number) - saturated fat per serving
+        + transfat: 3 (number) - trans fat per serving
+        + carbs: 10 (number) - carbs per serving
+        + sugar: 5 (number) - sugar per serving
+        + lifestyles: [2] (array[number]) - lifestyle ids
+        + servingsize: 20 (number) - serving size
        + Body
         {
             "products": [
-            {
-                "id": 1,
-                "name": "brocolli slaw",
-                "price": 1,
-                "description": "brocolli cole slaw",
-                "similarproducts": [
-                                     2,
-                                     7
-                                    ],
-                "nutrition": 1
-                "ingredients": [
-                                4,
-                                8,
-                                34
-                                ],
-                "category": 1,
-                "lifestyle": 1
-            }
-            ],
+                {
+                    "id": 3,
+                    "name": "brocolli slaw",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "calories": 50,
+                    "protein": 5,
+                    "fat": 5,
+                    "satfat": 2,
+                    "transfat": 3,
+                    "carbs": 10,
+                    "sugar": 5,
+                    "lifestyles": [2],
+                    "servingsize": 20
+                },
+                ...
+                ],
         }
 
 # Group Lifestyles
@@ -768,31 +722,46 @@ Defaults sorted descending by name.
 ### GET List Lifestyles [GET]
 + Response 200 (application/json)
     + Attributes (object)
-        + weightmanagement: true (boolean)
-        + dietaryrestriction: "none" (string) - dietary restrictions
+        + name: "vegan" (string) - name of lifestyle
+        + img: "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg" (string) - image url
+        + description: "no animals for you" (string) - description of lifestyle
+        + weightmanage: true (boolean)
         + glutenfree: true (boolean)
-        + carbfree: true (boolean)
+        + ketogenic: false (boolean)
         + vegetarian: true (boolean)
         + vegan: true (boolean)
-        + products: [] (array[number]) - array of product ids
-        + recipes: [] (array[number]) - array of recipe ids
+        + cheap: false (boolean)
+        + dairyfree: false (boolean)
+        + products: [1,33] (array[number]) - array of product ids
+        + recipes: [3,47] (array[number]) - array of recipe ids
+        + ingredients: [1] (array[number]) - array of ingredient ids
        + Body
         {
-            "products": [
-            {
-                "id": 1,
-                "weightmanagement": true,
-                "dietaryrestriction": "none",
-                "glutenfree": true,
-                "carbfree": true,
-                "vegetarian": true,
-                "vegan": true,
-                "products": [
-                            5
-                            ],
-                "recipes": []
-            }
-            ],
+            "lifestyle": [
+                {
+                    "id": 40
+                    "name": "vegan",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "description": "no animals for you",
+                    "weightmanage": true,
+                    "glutenfree": true,
+                    "ketogenic": false,
+                    "vegetarian": true,
+                    "vegan": true,
+                    "cheap": false,
+                    "dairyfree": false,
+                    "products": [
+                                    1,
+                                    33
+                                ],
+                    "recipes": [
+                                    3,
+                                    47
+                                ],
+                    "ingredients": [1]
+                },
+                ...
+                ]
             "pagenum": 1,
             "size": 1,
             "total": 578
@@ -806,43 +775,61 @@ Request information about products related to **ids**
 
 
 + Parameters
-    + ids: 1 (string, required) - comma separated list of ids
+    + ids: 40 (string, required) - comma separated list of ids
     
 ### GET Specific Lifestyles [GET]
 + Response 200 (application/json)
     + Attributes (object)
-        + weightmanagement: true (boolean)
-        + dietaryrestriction: "none" (string) - dietary restrictions
+        + name: "vegan" (string) - name of lifestyle
+        + img: "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg" (string) - image url
+        + description: "no animals for you" (string) - description of lifestyle
+        + weightmanage: true (boolean)
         + glutenfree: true (boolean)
-        + carbfree: true (boolean)
+        + ketogenic: false (boolean)
         + vegetarian: true (boolean)
         + vegan: true (boolean)
-        + products: [] (array[number]) - array of product ids
-        + recipes: [] (array[number]) - array of recipe ids
+        + cheap: false (boolean)
+        + dairyfree: false (boolean)
+        + products: [1,33] (array[number]) - array of product ids
+        + recipes: [3,47] (array[number]) - array of recipe ids
+        + ingredients: [1] (array[number]) - array of ingredient ids
        + Body
         {
-            "products": [
-            {
-                "id": 1,
-                "weightmanagement": true,
-                "dietaryrestriction": "none",
-                "glutenfree": true,
-                "carbfree": true,
-                "vegetarian": true,
-                "vegan": true,
-                "products": [
-                            5
-                            ],
-                "recipes": []
-            }
-            ],
+            "lifestyle": [
+                {
+                    "id": 40
+                    "name": "vegan",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "description": "no animals for you",
+                    "weightmanage": true,
+                    "glutenfree": true,
+                    "ketogenic": false,
+                    "vegetarian": true,
+                    "vegan": true,
+                    "cheap": false,
+                    "dairyfree": false,
+                    "products": [
+                                    1,
+                                    33
+                                ],
+                    "recipes": [
+                                    3,
+                                    47
+                                ],
+                    "ingredients": [1]
+                },
+                ...
+                ]
+            "pagenum": 1,
+            "size": 1,
+            "total": 578
         }
 
 
-# Group Nutritional Info
-## Specific Nutritional Info [/nutrition{?ids}]
-<code>/nutrition?ids={ids}</code><br>
-Request information about nutritional info related to **ids**
+# Group Ingredient List
+## Specific Nutritional Info [/inglist{?ids}]
+<code>/inglist?ids={ids}</code><br>
+Request information about ingredient list related to **ids**
 #### Parameters
 - <code>ids</code> *(string, required)* - comma separated list of ids
 
@@ -853,56 +840,24 @@ Request information about nutritional info related to **ids**
 ### GET Specific Nutritional Info [GET]
 + Response 200 (application/json)
     + Attributes (object)
-        + serving: "5 oz" (string) - serving size
-        + calories: 20 (number) - calories per serving
-        + fat: 10 (number) - grams of fat per serving
-        + protein: 10 (number) - grams of protein per serving
-        + carbs: 10 (number) - grams of carbs per serving
+        + ingredients [] (array[object]) - array of ingredients
+        + ingid: 2 (number) - ingredient id
+        + amount: 5 (number) - amount of ingredient
+        + unit: "oz" (string) - unit of measurement for ingredient
+        + recid: 1 (number) - recipe is for this ingredient list
        + Body
         {
-            "nutritions": [
+            "inglists": [
             {
                 "id": 1,
-                "serving": "5 oz",
-                "calories": 10,
-                "fat": 10,
-                "protein": 10,
-                "carbs": 10
-            }
-            ],
-        }
-
-# Group Categories
-## Specific Categories [/category{?ids}]
-<code>/category?ids={ids}</code><br>
-Request information about categories related to **ids**
-#### Parameters
-- <code>ids</code> *(string, required)* - comma separated list of ids
-
-
-+ Parameters
-    + ids: 1 (string, required) - comma separated list of ids
-    
-### GET Specific Category [GET]
-+ Response 200 (application/json)
-    + Attributes (object)
-        + name: "soup" (string) - name of category
-        + products: [] (array[number]) - array of product ids
-        + recipes: [] (array[number]) - array of recipe ids
-       + Body
-        {
-            "categories": [
-            {
-                "id": 1,
-                "name": "soup",
-                "products": [
-                            2,
-                            5
-                            ],
-                "recipes": [
-                            4,
-                            7
-                            ],
+                "ingredients": [
+                {
+                    "ingid": 2,
+                    "amount": 5,
+                    "unit": "oz"
+                }
+                ],
+                "recid": 1,
             }
             ],
         }
