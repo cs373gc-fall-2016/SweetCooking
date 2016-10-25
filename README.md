@@ -4,8 +4,14 @@ yUML.me code snippet
 
 [Recipe|name:string;price:string;category:string;origin:string;cook_time:string;nutritional_info:string;]<->[Ingredient|name:string;price:string;ratios:string;products:string;nutritional_info:string]
 
-database uml url:  
-http://yuml.me/edit/58e78d83
+old database uml url:  
+http://yuml.me/edit/58e78d83  
+new database uml url:  
+http://yuml.me/edit/a1beb5f9
+
+check word count:  
+git clone https://github.com/cs373gc-fall-2016/SweetCooking.wiki.git  
+find . -type f -name '*.md' | xargs wc -w
 
 -- Pillars --
 Lifestyle
