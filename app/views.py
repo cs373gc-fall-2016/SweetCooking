@@ -12,26 +12,38 @@ def about():
 @app.route('/foodproducts', defaults={'page_id': -1})
 @app.route('/foodproducts/<int:page_id>')
 def foodproducts(page_id):
-    id = page_id
-    return render_template('foodproducts.html')
+    this_id = page_id
+    if(this_id == -1):
+        return render_template('foodproducts.html')
+    else:
+        return render_template('foodproduct.html', id=this_id)
 
 @app.route('/ingredients', defaults={'page_id': -1})
 @app.route('/ingredients/<int:page_id>')
 def ingredients(page_id):
-    id = page_id
-    return render_template('ingredients.html')
+    this_id = page_id
+    if(this_id == -1):
+        return render_template('ingredients.html')
+    else:
+        return render_template('ingredient.html', id=this_id)
 
 @app.route('/lifestyle', defaults={'page_id': -1})
 @app.route('/lifestyle/<int:page_id>')
 def lifestyles(page_id):
-    id = page_id
-    return render_template('lifestyles.html')
+    this_id = page_id
+    if(this_id == -1):
+        return render_template('lifestyles.html')
+    else:
+        return render_template('lifestyle.html', id=this_id)
 
 @app.route('/recipes', defaults={'page_id': -1})
 @app.route('/recipes/<int:page_id>')
 def recipes(page_id):
-    id = page_id
-    return render_template('recipes.html')
+    this_id = page_id
+    if(this_id == -1):
+        return render_template('recipes.html')
+    else:
+        return render_template('recipe.html', id=this_id)
 
 @app.route('/oreo_product')
 def oreo_product():
