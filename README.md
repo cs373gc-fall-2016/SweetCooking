@@ -7,7 +7,7 @@ yUML.me code snippet
 old database uml url:  
 http://yuml.me/edit/58e78d83  
 new database uml url:  
-http://yuml.me/edit/4928ca25
+http://yuml.me/edit/97febb29
 
 check word count:  
 git clone https://github.com/cs373gc-fall-2016/SweetCooking.wiki.git  
