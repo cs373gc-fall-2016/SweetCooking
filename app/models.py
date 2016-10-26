@@ -1,9 +1,9 @@
 from app import db
 
 # join table for ingredients and an ingredient list
-iitable = db.Table('iitable',
-        db.Column('ing_id', db.Integer, db.ForeignKey('ingredient.id')),
-        db.Column('inglist_id', db.Integer, db.ForeignKey('ingredientlist.id')))
+#iitable = db.Table('iitable',
+        #db.Column('ing_id', db.Integer, db.ForeignKey('ingredient.id')),
+        #db.Column('inglist_id', db.Integer, db.ForeignKey('ingredientlist.id')))
 
 # join table for ingredients and lifestyles
 iltable = db.Table('iltable',
@@ -23,21 +23,24 @@ pltable = db.Table('pltable',
 class Ingredient(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
-    img = db.column(db.String(200))
+    img = db.Column(db.String(200))
     calories = db.Column(db.Integer)
     protein = db.Column(db.Integer)
     fat = db.Column(db.Integer)
     carbs = db.Column(db.Integer)
-    ingredientlists = db.relationship('Ingredientlist', secondary=iitable, backref='ingredients', lazy='dynamic')
+    ingredientlists = db.relationship('Ingredientlist', backref='ingredient', lazy='dynamic')
     lifestyles = db.relationship('Lifestyle', secondary=iltable, backref='ingredients', lazy='dynamic')
 
-    def __init__(self, name, img='', calories=0, protein=0, fat=0, carbs=0):
+    def __init__(self, name, img='', calories=0, protein=0, fat=0, carbs=0, lifestyles=[]):
         self.name = name
         self.img = img
         self.calories = calories
         self.protein = protein
         self.fat = fat
         self.carbs = carbs
+        if lifestyles:
+            for lifestyle in lifestyles:
+                self.lifestyles.append(lifestyle)
 
     def __repr__(self):
         return 'Ingredient: {}'.format(self.name)
@@ -49,15 +52,18 @@ class Recipe(db.Model):
     time = db.Column(db.Integer)
     instructions = db.Column(db.String(1000))
     servings = db.Column(db.Integer)
-    ingredientlist = db.relationship('Ingredientlist', backref='recipe', uselist=False)
+    ingredientlists = db.relationship('Ingredientlist', backref='recipe', lazy='dynamic')
     lifestyles = db.relationship('Lifestyle', secondary=rltable, backref='recipes', lazy='dynamic')
 
-    def __init__(self, name, img='', time=0, instructions='', servings=0):
+    def __init__(self, name, img='', time=0, instructions='', servings=0, lifestyles=[]):
         self.name = name
         self.img = img
         self.time = time
         self.instructions = instructions
         self.servings = servings
+        if lifestyles:
+            for lifestyle in lifestyles:
+                self.lifestyles.append(lifestyle)
 
     def __repr__(self):
         return 'Recipe: {}'.format(self.name)
@@ -77,7 +83,7 @@ class Product(db.Model):
     lifestyles = db.relationship('Lifestyle', secondary=pltable, backref='products', lazy='dynamic')
 
     def __init__(self, name, img='', servingsize=0, calories=0, protein=0, fat=0, satfat=0,
-                 transfat=0, carbs=0, sugar=0):
+                 transfat=0, carbs=0, sugar=0, lifestyles=[]):
         self.name = name
         self.img = img
         self.servingsize = servingsize
@@ -88,6 +94,9 @@ class Product(db.Model):
         self.transfat = transfat
         self.carbs = carbs
         self.sugar = sugar
+        if lifestyles:
+            for lifestyle in lifestyles:
+                self.lifestyles.append(lifestyle)
 
     def __repr__(self):
         return 'Product: {}'.format(self.name)
@@ -125,11 +134,16 @@ class Ingredientlist(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     amount = db.Column(db.Integer)
     unit = db.Column(db.String(10))
+    ingredient_id = db.Column(db.Integer, db.ForeignKey('ingredient.id'))
     recipe_id = db.Column(db.Integer, db.ForeignKey('recipe.id'))
 
-    def __init__(self, amount=0, unit=''):
+    def __init__(self, amount=0, unit='', recipe=None, ingredient=None):
         self.amount = amount
         self.unit = unit
+        if recipe:
+            recipe.ingredientlists.append(self)
+        if ingredient:
+            ingredient.ingredientlists.append(self)
 
     def __repr__(self):
         return 'Ingredientlist: {}'.format(self.id)
