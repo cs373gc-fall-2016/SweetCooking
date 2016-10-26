@@ -80,7 +80,8 @@ def weightloss_lifestyle():
 @app.route('/sushi')
 @app.route('/sushi.html')
 def sushi():
-    return render_template('sushi.html')
+    ingredientsArray = [water, sugar, tomato]    
+return render_template('sushi.html', title='California Sushi Roll',description= 'A California roll is a makuzushi, a kind of suchi roll, usually made inside-out',price= 8, ingredients=ingredientsArray, origin='Japan', nutrition='8 pieces, Calorias 255, fat 7g, Carbs 38g, Protein 9g')
 
 @app.route('/fit_lifestyle')
 @app.route('/fit_lifestyle.html')
