@@ -72,7 +72,7 @@ class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200))
     img = db.Column(db.String(200))
-    servingsize = db.Column(db.Integer)
+    servingsize = db.Column(db.String(100))
     calories = db.Column(db.Integer)
     protein = db.Column(db.Integer)
     fat = db.Column(db.Integer)
