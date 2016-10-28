@@ -22,7 +22,7 @@ pltable = db.Table('pltable',
 
 class Ingredient(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80))
+    name = db.Column(db.String(200))
     img = db.Column(db.String(200))
     calories = db.Column(db.Integer)
     protein = db.Column(db.Integer)
@@ -47,7 +47,7 @@ class Ingredient(db.Model):
 
 class Recipe(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80))
+    name = db.Column(db.String(200))
     img = db.Column(db.String(200))
     time = db.Column(db.Integer)
     instructions = db.Column(db.String(10000))
@@ -70,7 +70,7 @@ class Recipe(db.Model):
 
 class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80))
+    name = db.Column(db.String(200))
     img = db.Column(db.String(200))
     servingsize = db.Column(db.Integer)
     calories = db.Column(db.Integer)
