@@ -120,7 +120,7 @@ class Lifestyle(db.Model):
         self.img = img
         self.description = description
         self.weight_management = weight_management
-        self.gluten_fee = gluten_free
+        self.gluten_free = gluten_free
         self.ketogenic = ketogenic 
         self.vegetarian = vegetarian
         self.vegan = vegan
