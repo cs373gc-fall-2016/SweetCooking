@@ -133,7 +133,7 @@ class Lifestyle(db.Model):
 class Ingredientlist(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     amount = db.Column(db.Float)
-    unit = db.Column(db.String(10))
+    unit = db.Column(db.String(50))
     ingredient_id = db.Column(db.Integer, db.ForeignKey('ingredient.id'))
     recipe_id = db.Column(db.Integer, db.ForeignKey('recipe.id'))
 
