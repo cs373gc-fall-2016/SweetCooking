@@ -50,7 +50,7 @@ class Recipe(db.Model):
     name = db.Column(db.String(80))
     img = db.Column(db.String(200))
     time = db.Column(db.Integer)
-    instructions = db.Column(db.String(1000))
+    instructions = db.Column(db.String(10000))
     servings = db.Column(db.Integer)
     ingredientlists = db.relationship('Ingredientlist', backref='recipe', lazy='dynamic')
     lifestyles = db.relationship('Lifestyle', secondary=rltable, backref='recipes', lazy='dynamic')
