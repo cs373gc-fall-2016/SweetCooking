@@ -1,10 +1,5 @@
 from app import db
 
-# join table for ingredients and an ingredient list
-#iitable = db.Table('iitable',
-        #db.Column('ing_id', db.Integer, db.ForeignKey('ingredient.id')),
-        #db.Column('inglist_id', db.Integer, db.ForeignKey('ingredientlist.id')))
-
 # join table for ingredients and lifestyles
 iltable = db.Table('iltable',
         db.Column('ing_id', db.Integer, db.ForeignKey('ingredient.id')),
