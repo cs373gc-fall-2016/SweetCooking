@@ -848,7 +848,7 @@ Request information about ingredient list related to **ids**
 + Parameters
     + ids: 1 (string, required) - comma separated list of ids
     
-### GET Specific Nutritional Info [GET]
+### GET Specific Ingredient List Info [GET]
 + Response 200 (application/json)
     + Attributes (object)
         + ingredients [] (array[object]) - array of ingredients
@@ -861,13 +861,9 @@ Request information about ingredient list related to **ids**
             "inglists": [
             {
                 "id": 1,
-                "ingredients": [
-                {
-                    "ingid": 2,
-                    "amount": 5,
-                    "unit": "oz"
-                }
-                ],
+                "ingid": 2,
+                "amount": 5,
+                "unit": "oz"
                 "recid": 1,
             }
             ],
