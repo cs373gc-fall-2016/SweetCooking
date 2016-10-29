@@ -1,1 +1,926 @@
-1
+commit 4f19aaaa3780cef3820c893bde7947b43d86e988
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Thu Oct 20 19:37:57 2016 -0500
+
+    ok
+
+commit 23a2550ef54fda828ff42807d03740f7240fc3b0
+Merge: 9360210 56a3bfb
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Thu Oct 20 19:35:56 2016 -0500
+
+    Merge branch 'master' of github.com:cs373gc-fall-2016/SweetCooking
+
+commit 9360210ab4b879993ba678d2b3d90f34d09d8fe3
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Thu Oct 20 19:35:51 2016 -0500
+
+    new views
+
+commit 56a3bfb759b49e8e71f5fbcab84fcb161fd6595d
+Merge: 64b2859 c8b6b2d
+Author: Guande Lyu <guandelyu@wireless-10-147-46-151.public.utexas.edu>
+Date:   Thu Oct 20 19:27:44 2016 -0500
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit 64b2859dd1a9fc76d93a25d8627777e72a65c036
+Author: Guande Lyu <guandelyu@wireless-10-147-46-151.public.utexas.edu>
+Date:   Thu Oct 20 19:27:22 2016 -0500
+
+    deleting .DS_Store file and update log file
+
+commit c8b6b2d5ade60c3a1917ed24e20c25c144a82af0
+Merge: 78fffbd a56d978
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Thu Oct 20 19:25:43 2016 -0500
+
+    xMerge branch 'master' of github.com:cs373gc-fall-2016/SweetCooking
+
+commit 78fffbd4f0224746f77159d120d1b86fc74e1cdd
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Thu Oct 20 19:25:28 2016 -0500
+
+    pulled
+
+commit d5b453e043b1b253c3b5d9eac37192e3d0c02f9d
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Thu Oct 20 19:25:10 2016 -0500
+
+    docs
+
+commit a56d9780ec2223837a147dfbf4d566c2d4587c5b
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 19:25:01 2016 -0500
+
+    Update sugar_ingredient.html
+
+commit 5aedc3c2dfb94e3d5ff4ec3b4229091018f8b44e
+Author: Guande Lyu <guandelyu@wireless-10-147-46-151.public.utexas.edu>
+Date:   Thu Oct 20 19:24:01 2016 -0500
+
+    fixed buttons in lifestyle table. --Chris Lin
+
+commit 5fd44d3152c6ac70d2dfc2c7a21a64b2b2d43452
+Author: Guande Lyu <guandelyu@wireless-10-147-46-151.public.utexas.edu>
+Date:   Thu Oct 20 19:21:04 2016 -0500
+
+    updating logs
+
+commit c432c2402959d3b76c10cd17fbf09a9f5351a084
+Author: Guande Lyu <guandelyu@wireless-10-147-46-151.public.utexas.edu>
+Date:   Thu Oct 20 19:19:45 2016 -0500
+
+    added sorting function for lifestyle and recipes table. --Chris Lin
+
+commit 941b9b6535a269456a1a5706d811cb89d9de76a1
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Thu Oct 20 19:15:57 2016 -0500
+
+    ok
+
+commit 4a31a1f399c1ce7e1b4856edc84ae0056487d5e7
+Merge: 4d4c1f6 cda9bc7
+Author: Guande Lyu <guandelyu@wireless-10-147-46-151.public.utexas.edu>
+Date:   Thu Oct 20 19:15:46 2016 -0500
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit 4d4c1f64ccafbc22123b771ea96bb34ece3afdf1
+Author: Guande Lyu <guandelyu@wireless-10-147-46-151.public.utexas.edu>
+Date:   Thu Oct 20 19:15:24 2016 -0500
+
+    added sorting function for foodproducts and ingredients --Chris lin
+
+commit cda9bc7f901e348cc968035e9659bf636b5164c9
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 19:13:58 2016 -0500
+
+    Update recipes.html
+
+commit 9a10480c4e3154d8a07ad2783d4be0df7d94c20a
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 19:10:54 2016 -0500
+
+    Update sugar_ingredient.html
+
+commit 14977fd0e9d7df09436aec08acf3136efb1994e9
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 19:07:35 2016 -0500
+
+    Update tomato_ingredient.html
+
+commit a639b9e49b2162ad3cb087094cfb654da3615fcc
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 19:06:18 2016 -0500
+
+    Update water_ingredient.html
+
+commit dde3c51d0f6ee089bbd4d6cbd92ba04941032013
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 19:05:04 2016 -0500
+
+    Update spaghetti_meatballs.html
+
+commit 2b5318262d1ce134ba1befa00cf4f75ec6b10527
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 19:03:29 2016 -0500
+
+    Update foodproducts.html
+
+commit 7473b7c28c7a24e42b7f6738faff86cba9536575
+Author: Guande <patricklyu216@gmail.com>
+Date:   Thu Oct 20 19:02:56 2016 -0500
+
+    Update lifestyles.html
+
+commit 2ff848831b86a605e1a7d38c62dfd72ac5305ec3
+Author: Guande <patricklyu216@gmail.com>
+Date:   Thu Oct 20 19:02:40 2016 -0500
+
+    Update lifestyles.html
+
+commit b45682f9a34921052f1445b5068b24006321696b
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 19:01:53 2016 -0500
+
+    Update lifestyles.html
+
+commit e738ed510cabb2556c73e41387f145a03a1a1c12
+Author: Guande <patricklyu216@gmail.com>
+Date:   Thu Oct 20 19:00:56 2016 -0500
+
+    Update foodproducts.html
+
+commit 65ffefb9610eecbdac0bad1aa1528b6934eae750
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 18:59:58 2016 -0500
+
+    Update foodproducts.html
+
+commit 5b146ccddb5a08ad9aa9fa94ecb26a74092e7471
+Author: Guande <patricklyu216@gmail.com>
+Date:   Thu Oct 20 18:59:54 2016 -0500
+
+    Update ingredients.html
+    
+    drops down
+
+commit cd986fd5b62be79ec5364f6d34a093d9d9923c2e
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 18:58:55 2016 -0500
+
+    Update ingredients.html
+
+commit 2d9dbfa859b09cf9d9f88b865a1fc704c7bb0f4c
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 18:44:09 2016 -0500
+
+    Update sushi.html
+
+commit 2258ad053bb1cf53a2d2c1c61c02bf3c9c8b3856
+Merge: 1868a37 4b62471
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Thu Oct 20 23:43:31 2016 +0000
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit 4b62471f754883729f103880065404c7573104e9
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 18:43:13 2016 -0500
+
+    Update sushi.html
+
+commit 1868a376875fdb0ff5ff58206108aaf0b670bee6
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Thu Oct 20 23:43:02 2016 +0000
+
+    ok
+
+commit 6969292081f7fffbf4480078b4b0070a4227f9bb
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Thu Oct 20 23:42:14 2016 +0000
+
+    ok
+
+commit 32c45146015e7d76d1a43d1eb859a8093328dc3a
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 18:42:10 2016 -0500
+
+    Update vegan_lifestyle.html
+
+commit f271fae81640365c83dcc4e389ba198c95cc98f1
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Thu Oct 20 23:41:33 2016 +0000
+
+    flaskapp.wsgi
+
+commit 2c3bcffa08a04837cb6df4a30c5e9843ee12714a
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 18:40:50 2016 -0500
+
+    Update pasta_product.html
+
+commit 829efd8a478a5d7d3c10197dedfe77d8294c3563
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 18:40:06 2016 -0500
+
+    Update parmesan_cheese_ingredient.html
+
+commit b7268a5a92cb78e9e3888633674ba18bb26eee6f
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 18:39:38 2016 -0500
+
+    Update onion_ingredient.html
+
+commit 7543c7d8ad003a2628cc50099dde84458ec722c4
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 18:38:49 2016 -0500
+
+    Update ground_beef_ingredient.html
+
+commit 1f312b584e303f0c234079ea463130e4c658bf80
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 18:38:02 2016 -0500
+
+    Update fit_lifestyle.html
+
+commit 287dcec333f405dcbdd994c4766116d9830b2ee9
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 18:36:38 2016 -0500
+
+    Update chicken_ingredient.html
+
+commit c419e117dcacb1ea15b27ce0903ec45d6f714f23
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 18:35:47 2016 -0500
+
+    Update cheese_ingredient.html
+
+commit 2eb616ea8c7cb8870015cdfeb0b499351e9568c0
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 18:34:46 2016 -0500
+
+    Update bbq_sauce_product.html
+
+commit 8a0cafb51c419ed333bf528e9b9825659e13bf9a
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 18:33:12 2016 -0500
+
+    Update bbq_sauce_product.html
+
+commit 7a5d5d6ec197ae9fb1543c552c41645a1ed86db6
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Thu Oct 20 23:28:17 2016 +0000
+
+    removed evan file
+
+commit 057fca905f74672a62f9767cda29419a66795eb4
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Thu Oct 20 23:27:05 2016 +0000
+
+    removed website, use app instead
+
+commit 6478264888a78a587dfb259418e9156ad4dbd7aa
+Author: Guande Lyu <guandelyu@wireless-10-147-46-151.public.utexas.edu>
+Date:   Thu Oct 20 18:24:29 2016 -0500
+
+    sushi
+
+commit 46663335c9502be0c862a810127d6ca7ed11794d
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Thu Oct 20 23:17:36 2016 +0000
+
+    web/template
+
+commit f7f601e061627999aa1308e5a049d2d6004fe161
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Thu Oct 20 23:02:23 2016 +0000
+
+    OK
+
+commit 648b8d1f6d5d50139eda9f6b9c8a4ee447675832
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Thu Oct 20 22:59:51 2016 +0000
+
+    about
+
+commit ae136cd8f1de187436deae6ec5f16ed04a3317e5
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Thu Oct 20 22:43:42 2016 +0000
+
+    updated static and templates
+
+commit 9742206191eec32a484028176877408a3d02d8ca
+Merge: 1c1c1b6 8290870
+Author: Alex Irion <alexirion10@gmail.com>
+Date:   Thu Oct 20 17:05:37 2016 -0500
+
+    merge rafik and alex href updates
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit 1c1c1b609f1101c770b1ff51222eff9497e25423
+Author: Alex Irion <alexirion10@gmail.com>
+Date:   Thu Oct 20 17:05:35 2016 -0500
+
+    updated templates
+
+commit 8290870b6ee2d7983d9ac3ced7855f27f063e37e
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Thu Oct 20 17:02:02 2016 -0500
+
+    added static to css files
+
+commit 6595467c1a0c8fcf909b506e11f0ab8c3d154e6f
+Author: Guande Lyu <guandelyu@wireless-10-147-46-151.public.utexas.edu>
+Date:   Thu Oct 20 16:47:56 2016 -0500
+
+    table attributes done
+
+commit 6fef381dff55eb30d11614f23b61554bfbdab941
+Author: Guande Lyu <guandelyu@wireless-10-147-46-151.public.utexas.edu>
+Date:   Thu Oct 20 16:43:57 2016 -0500
+
+    tire of this
+
+commit 87ff26a9f60d23a39602ae553bc81366ba6bf835
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 16:35:33 2016 -0500
+
+    Update spaghetti_meatballs.html
+
+commit d55d39a052afe45e2c86a2993078aa6f8e2fa521
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 16:34:11 2016 -0500
+
+    Add files via upload
+
+commit b5ace7d60a62cb68f24699f47990d0b74f11e93f
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 16:33:50 2016 -0500
+
+    Add files via upload
+
+commit a4d38569f137573bf776305cc7a3f8abfd7fbb6d
+Author: Alex Irion <alexirion10@gmail.com>
+Date:   Thu Oct 20 16:19:41 2016 -0500
+
+    updated git log
+
+commit 0bb86bfb78b5fa8f367d68abf703d86a2f71103b
+Author: Alex Irion <alexirion10@gmail.com>
+Date:   Thu Oct 20 16:14:59 2016 -0500
+
+    reshaped Website directory
+
+commit 3e204dd9c9d9d980279aba78345b51a2eb55e9c5
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 16:05:31 2016 -0500
+
+    Update ingredients.html
+
+commit c7d4813e5c9858afbd7efd06e9bdb264c9b5e863
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 16:04:57 2016 -0500
+
+    Update foodproducts.html
+
+commit bff4e7984162f2b4a0af18211334f973dbbd7f31
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 16:04:18 2016 -0500
+
+    Update pizza.html
+
+commit 6c7ae19b6bc360f8f13ed273d63748c43f044a49
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 16:03:29 2016 -0500
+
+    Add files via upload
+
+commit 67166577ac42a7b57597c08379e677d9d0e5ed0c
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 16:02:19 2016 -0500
+
+    Add files via upload
+
+commit ff7fd68cf40e43cbfe8c16fe7b466fa58ce0fbe1
+Merge: 9ca06cc e83d7ac
+Author: Evan Carrillo <evancarrillo@hotmail.com>
+Date:   Thu Oct 20 15:56:14 2016 -0500
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit 9ca06ccf6b54f642cc79ba9d895c1d403e773738
+Author: Evan Carrillo <evancarrillo@hotmail.com>
+Date:   Thu Oct 20 15:56:11 2016 -0500
+
+    evan_mess with string editor script
+
+commit e83d7ac83770b51aa13316a82d03cd2a86364a7d
+Author: Guande Lyu <guandelyu@wireless-10-147-46-151.public.utexas.edu>
+Date:   Thu Oct 20 15:28:34 2016 -0500
+
+    more and more links to each other
+
+commit 129035dcae8ed63e9a926baf793ef25dd74d3dbf
+Author: Guande Lyu <guandelyu@wireless-10-147-46-151.public.utexas.edu>
+Date:   Thu Oct 20 15:15:25 2016 -0500
+
+    more links
+
+commit fa68d9d8d89f8bd76e4896007910ce18e6c1f77d
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 14:31:04 2016 -0500
+
+    Update about.html
+
+commit d5c46dc76b6d99b7578da5bc310d250228cf48b7
+Author: Guande Lyu <guandelyu@wireless-10-145-102-63.public.utexas.edu>
+Date:   Thu Oct 20 12:57:30 2016 -0500
+
+    close #19
+
+commit d0ff90fa99ee3f797cf485246a8d368d39a3a718
+Author: Guande Lyu <guandelyu@wireless-10-145-102-63.public.utexas.edu>
+Date:   Thu Oct 20 12:56:07 2016 -0500
+
+    close #19
+
+commit fa9ade2028ff99c06153b5a8e425af6f7ac36380
+Merge: 7b61441 37f8893
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Thu Oct 20 12:50:37 2016 -0500
+
+    Merge branch 'master' of github.com:cs373gc-fall-2016/SweetCooking
+
+commit 7b61441f351e1b0b196c6c48adad0692c338f252
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Thu Oct 20 12:50:16 2016 -0500
+
+    adding photos
+
+commit 37f8893845837c4ca55ea02f4aac87484800a50a
+Author: Guande Lyu <guandelyu@wireless-10-145-102-63.public.utexas.edu>
+Date:   Thu Oct 20 12:46:45 2016 -0500
+
+    close #18
+
+commit 7abe3ad485bf136b0b9d712beca4c7c83c7f7df8
+Author: Alex Irion <alexirion10@gmail.com>
+Date:   Wed Oct 19 21:45:28 2016 -0500
+
+    updated git log
+
+commit a1b6ddb60e5202cc29bb8b7bc6098053c68ccaac
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Wed Oct 19 21:44:42 2016 -0500
+
+    adding sweet-cooking app with react, version 1
+
+commit 82d4c7bafee2b4f4c843c66264d44c29399ddbd4
+Author: Guande Lyu <guandelyu@wireless-10-147-46-151.public.utexas.edu>
+Date:   Wed Oct 19 21:42:22 2016 -0500
+
+    htmls and single page
+
+commit 2e24bed625c05668d823b53c94cb456438594e19
+Merge: 3106d2d d0a67ca
+Author: Kris Vandercook <cyberwyvern696@gmail.com>
+Date:   Wed Oct 19 21:40:05 2016 -0500
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit 3106d2d2756dfe24cfdace92791d72260bb07d1a
+Author: Kris Vandercook <cyberwyvern696@gmail.com>
+Date:   Wed Oct 19 21:39:23 2016 -0500
+
+    tests
+
+commit d0a67ca30b8c4d1a97b7c0000fa232fbea26a360
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Wed Oct 19 21:31:48 2016 -0500
+
+    Update views.py
+
+commit 01d82de9f8450d5b5e7b61b33272c78c6cb5b59b
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Wed Oct 19 21:29:17 2016 -0500
+
+    Update views.py
+
+commit 8ff6b9035012f375017011748efe7d4641d69fe1
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Wed Oct 19 21:27:51 2016 -0500
+
+    Update views.py
+
+commit adcfefa741cfdd692240e2422e28084dfc7eeb3a
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Wed Oct 19 21:07:55 2016 -0500
+
+    Update about.html
+
+commit 251e443815935ec6b7fc9c817caf25725dc22e00
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Wed Oct 19 20:45:32 2016 -0500
+
+    Delete kris_vandercook.jpg
+
+commit 7e77c5e4675fbae0451c2de2bba488fc91cfdeba
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Wed Oct 19 20:45:23 2016 -0500
+
+    Delete alex_irion.jpg
+
+commit 406bed872d8cf271df381230199e2291db2e9106
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Wed Oct 19 20:32:26 2016 -0500
+
+    Update foodproducts.html
+
+commit 3503f02e8ac08632f9ce9a2d21fa52db786902b0
+Merge: 3d632c8 5686baf
+Author: Evan Carrillo <evancarrillo@hotmail.com>
+Date:   Wed Oct 19 20:31:27 2016 -0500
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit 5686baf53dc813ed965399dace25261745252981
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Wed Oct 19 20:31:17 2016 -0500
+
+    Update lifestyles.html
+
+commit 3d632c8ed362568665c7ed247a2d709e5231d99d
+Author: Evan Carrillo <evancarrillo@hotmail.com>
+Date:   Wed Oct 19 20:31:15 2016 -0500
+
+    updating static pages
+
+commit 483abbc0a4636f5fd62b40042efd61b63c980274
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Wed Oct 19 20:30:53 2016 -0500
+
+    Update ingredients.html
+
+commit 2926b45d9a0fa13073627e5db4984387db6d6ce8
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Wed Oct 19 20:30:33 2016 -0500
+
+    Update recipes.html
+
+commit dd5c5ea32bad8bd1c2080cef48c7d16ba7c8d9aa
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Wed Oct 19 20:30:10 2016 -0500
+
+    Update index.html
+
+commit 34c6b0e1e3ad136b730c25ae7337571fbba799b8
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Wed Oct 19 20:24:23 2016 -0500
+
+    Update index.html
+
+commit ec09a96569cc788f9bed74b0594ca9835c30a95f
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Wed Oct 19 20:19:36 2016 -0500
+
+    Update about.html
+
+commit 17aba6444eddeb9c9de90f1f6d7592e43d1dc086
+Merge: d2d0e48 1837520
+Author: Evan Carrillo <evancarrillo@hotmail.com>
+Date:   Wed Oct 19 20:18:28 2016 -0500
+
+    Merge branch 'dev'
+
+commit 1837520f33b6d4ac912a7e89d4d2689bae6195af
+Merge: 19f6454 8fc61f7
+Author: Evan Carrillo <evancarrillo@hotmail.com>
+Date:   Wed Oct 19 20:17:31 2016 -0500
+
+    Merge branch 'dev' of https://github.com/cs373gc-fall-2016/SweetCooking into dev
+
+commit 19f64549e3e43abfd57820baeb265d7483fb26df
+Author: Evan Carrillo <evancarrillo@hotmail.com>
+Date:   Wed Oct 19 20:16:57 2016 -0500
+
+    implementing static pages
+
+commit d2d0e489d3dace78118af25a5c00ab4e899d7368
+Merge: ccafff8 8fc61f7
+Author: Kris Vandercook <cyberwyvern696@gmail.com>
+Date:   Wed Oct 19 20:14:03 2016 -0500
+
+    Merge branch 'dev'
+
+commit 8fc61f7a5fea525aa9afc21f0ac29d86b9b7e19f
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Wed Oct 19 20:00:28 2016 -0500
+
+    Update tests.py
+
+commit 833a2899876873eb9c8782947c323c6d61c9b5e4
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Wed Oct 19 19:35:49 2016 -0500
+
+    Create tests.py
+
+commit ccafff8a1da11139b28c48f0e624a49a56bab97d
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Wed Oct 19 18:45:54 2016 -0500
+
+    Add files via upload
+
+commit 53d880dc3242a1216293057ae104af5d329fd291
+Author: Guande Lyu <guandelyu@wireless-10-147-46-151.public.utexas.edu>
+Date:   Wed Oct 19 18:05:01 2016 -0500
+
+    more htmls
+
+commit 484c7884338c7afcb51158274d07278e172ca124
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Wed Oct 19 17:38:23 2016 -0500
+
+    Add files via upload
+
+commit a9ced38e0ef8a9399cb71eef3d3f95b2c60818b1
+Author: Evan Carrillo <evancarrillo@hotmail.com>
+Date:   Wed Oct 19 10:54:57 2016 -0500
+
+    update makefile and pass travis
+
+commit 4b52a1650de2cd61460a33cd331b18eef93524af
+Merge: c9a213b 7cd4093
+Author: Evan Carrillo <evancarrillo@hotmail.com>
+Date:   Wed Oct 19 10:51:22 2016 -0500
+
+    update master branch
+
+commit 7cd40938b99659024c04a1b09d9a3f8bd23481be
+Author: Evan Carrillo <evancarrillo@hotmail.com>
+Date:   Wed Oct 19 10:46:13 2016 -0500
+
+    dir cleanup and moved files
+
+commit a5438442614e034b091953d23c2a108c64a7f623
+Author: Kris Vandercook <cyberwyvern696@gmail.com>
+Date:   Wed Oct 19 09:11:06 2016 -0500
+
+    Totally forgot to do the inits for the models...
+
+commit c9a213b38ee065248f57fce402d49a1b0ca6a7ba
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Wed Oct 19 07:38:26 2016 -0500
+
+    fixed typos in database uml
+
+commit f640fd877e79e30f897b973dac366dfdd616aaea
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Wed Oct 19 07:37:43 2016 -0500
+
+    fixed typos in database uml
+
+commit 2780d3d60824bde94d0657002071f8f368eae2eb
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Wed Oct 19 06:51:54 2016 -0500
+
+    updated database uml
+
+commit aee6bc1dda6c1770b58384c976e3793633314bc5
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Wed Oct 19 06:48:00 2016 -0500
+
+    fixed some odd formatting things
+
+commit 2b610e7431361eade4ed622d02bf25e03e2bec01
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Wed Oct 19 06:46:08 2016 -0500
+
+    update the database uml
+
+commit 3abd0eabdca6468d1b76ac5244958f622af9a595
+Author: Guande Lyu <guandelyu@wireless-10-146-38-84.public.utexas.edu>
+Date:   Tue Oct 18 22:49:24 2016 -0500
+
+    about.html
+
+commit f528022321b061efe8a881d79d5fe8664b08cf9b
+Author: Kris Vandercook <cyberwyvern696@gmail.com>
+Date:   Tue Oct 18 20:50:42 2016 -0500
+
+    finished putting together the models
+
+commit 914065363a298d143d2a285f2653328c34b12429
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Tue Oct 18 15:46:31 2016 -0500
+
+    forget to delete the DS_Store in git first :(
+
+commit cc173aa2f71c7f07ab77ec47b21215a4637d71b9
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Tue Oct 18 15:37:10 2016 -0500
+
+    modifying .gitignore so that .DS_Store will never be push to github
+
+commit addd941cfa64b505c641bbb597bbdf562dcf6a41
+Merge: 9197ca1 e3b6c20
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Tue Oct 18 15:31:46 2016 -0500
+
+    Merge branch 'dev' of github.com:cs373gc-fall-2016/SweetCooking into dev
+
+commit fd5afaf2ca2a805527661b03002d52e524b00ca4
+Merge: bf79925 f931b8e
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Tue Oct 18 15:29:01 2016 -0500
+
+    :x:Merge branch 'master' of github.com:cs373gc-fall-2016/SweetCooking
+
+commit bf79925b90943c3ed6036afc4cb9c3f925225f3a
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Tue Oct 18 15:28:52 2016 -0500
+
+    ok
+
+commit f931b8eac1ffba419df1ea22f1ae52a86cdbbc53
+Author: Alex Irion <alexirion10@gmail.com>
+Date:   Tue Oct 18 14:44:00 2016 -0500
+
+    other repo updates
+
+commit 30750e05b7385979b8d770cea96e6e3b7085729c
+Author: Alex Irion <alexirion10@gmail.com>
+Date:   Tue Oct 18 14:32:56 2016 -0500
+
+    updated readme with info for About page
+
+commit f399fd86b13b4eddffab8e1d05ac1a40e7f0b3c6
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Tue Oct 18 06:36:43 2016 -0500
+
+    added about me pic
+
+commit 06b66fa28797fd41fdde72a11202ae1d793209ac
+Author: cyberwyvern696 <cyberwyvern696@gmail.com>
+Date:   Mon Oct 17 20:22:28 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit e3b6c20e0d76a233ab6f20c33050ec6feac1ebad
+Author: Evan Carrillo <evancarrillo@hotmail.com>
+Date:   Sun Oct 16 22:10:34 2016 -0500
+
+    test github/slack
+
+commit 65a46174ee2b5bb57f111a9bb2443d68f1f7d83f
+Author: Guande Lyu <guandelyu@wireless-10-146-154-24.public.utexas.edu>
+Date:   Sat Oct 15 16:47:44 2016 -0500
+
+    fix bootstrap linking
+
+commit 5da18c5a2c06af4463d7b526f71af26f2e50fa7b
+Author: Guande Lyu <guandelyu@wireless-10-146-154-24.public.utexas.edu>
+Date:   Sat Oct 15 16:22:58 2016 -0500
+
+    frontend tables set up
+
+commit 33b2d2a3e5d58631b849d22dc321170a7c42ee8c
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Sat Oct 15 11:42:13 2016 -0500
+
+    database uml diagram
+
+commit 2e220ec1f5c9c514ae6b0a46d296d752d4662b2e
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Sat Oct 15 11:41:24 2016 -0500
+
+    database uml diagram url added
+
+commit 9197ca17b4e92a8df33c30f3a6a99c98899f2d61
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Fri Oct 14 23:02:39 2016 -0500
+
+    updated db with more models
+
+commit 68a55a24d74d2b60dca814bb5dea66656a5d040b
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Fri Oct 14 22:56:59 2016 -0500
+
+    added basics for db and first table
+
+commit d2a9683907646c8ffd876d0775715382b4d4cedc
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Fri Oct 14 14:44:42 2016 -0500
+
+    changed bash file name
+
+commit 10451df8a20e41d778301d24133880d0dcb1d20c
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Fri Oct 14 14:43:21 2016 -0500
+
+    added flask basics
+
+commit c6c9b3a2f6c1b3c7885a738069b0b4cc2f5d9241
+Author: Evan Carrillo <evancarrillo@hotmail.com>
+Date:   Fri Oct 14 14:14:38 2016 -0500
+
+    travis please work
+
+commit cb2731a792c1d9a7cbe079ad55f782f7f7df7cff
+Author: Evan Carrillo <evancarrillo@hotmail.com>
+Date:   Fri Oct 14 14:07:16 2016 -0500
+
+    attempting to link to travis
+
+commit b588de3d598b9426255d1c5c309594b0b2f46519
+Author: Evan Carrillo <evancarrillo@hotmail.com>
+Date:   Fri Oct 14 13:55:24 2016 -0500
+
+    testing file permissions
+
+commit 4f3605eed16b9bf0c11ae569073cfb4607c95f69
+Merge: 894cd75 242c148
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Fri Oct 14 13:16:13 2016 -0500
+
+    :x
+    :Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit 894cd75cb079b407ae644facb5efa557d88a27d5
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Fri Oct 14 13:16:01 2016 -0500
+
+    added patrick's website
+
+commit 242c148cadf150a9ebd39fab9faec19c292e40b6
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Fri Oct 14 13:15:38 2016 -0500
+
+    Update README.md
+
+commit 29c54fd186fdf6cdf1bfe03876580cdec1301f62
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Fri Oct 14 13:14:30 2016 -0500
+
+    Update README.md
+
+commit 26f697f93794998866233686e226a6b075d1b471
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Fri Oct 14 12:09:48 2016 -0500
+
+    Add files via upload
+
+commit 402e20e2b5919f2c51823a97307211748c7fb43a
+Author: Alex Irion <alexirion10@gmail.com>
+Date:   Thu Oct 13 23:50:57 2016 -0500
+
+    added file of static content
+
+commit c1a98b6c79a1268cb270cac096750bc59fd4676c
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 13 20:54:36 2016 -0500
+
+    Add files via upload
+
+commit 6a1b2746e24dc974bd0ec92d8bac10d291d39aaf
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 13 20:53:11 2016 -0500
+
+    Add files via upload
+
+commit 1217bad25a172b92549f5c3ffe709978bf4f3ba0
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 13 20:51:47 2016 -0500
+
+    Update README.md
+
+commit 93397b984922cd364d96de3e9f32457be5d36958
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 13 20:50:53 2016 -0500
+
+    Add files via upload
+
+commit 05ead903dbea182cae0913f964128a9a147e6633
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 13 19:05:53 2016 -0500
+
+    Update README.md
+
+commit b11652de854344e3bc9508f3e5e1018ae30e4f15
+Author: Evan Carrillo <evan.carrillo@utexas.edu>
+Date:   Thu Oct 13 14:58:35 2016 -0500
+
+    Delete ev_test.txt
+
+commit 1e58157a9dd0850e9e813436f041ec72f5b3f850
+Author: Evan Carrillo <evan.carrillo@utexas.edu>
+Date:   Thu Oct 13 14:57:47 2016 -0500
+
+    Create ev_test.txt
+
+commit a4a1ff00e8efca61f6d2a696e86becf94a55907c
+Author: Alex Irion <alexirion10@gmail.com>
+Date:   Thu Oct 13 14:49:36 2016 -0500
+
+    first commit

@@ -4,8 +4,16 @@ yUML.me code snippet
 
 [Recipe|name:string;price:string;category:string;origin:string;cook_time:string;nutritional_info:string;]<->[Ingredient|name:string;price:string;ratios:string;products:string;nutritional_info:string]
 
--- Pillars --
+old database uml url:  
+http://yuml.me/edit/58e78d83  
+new database uml url:  
+http://yuml.me/edit/97febb29
 
+check word count:  
+git clone https://github.com/cs373gc-fall-2016/SweetCooking.wiki.git  
+find . -type f -name '*.md' | xargs wc -w
+
+-- Pillars --
 Lifestyle
 - weight management
 - dietary restrictions
@@ -36,23 +44,104 @@ Food Product
 - nutritional_info
 
 -- About -- 
+description of the site, its purpose, its intended users:
+- ???
+Website Name:
+- Sweet Cooking
+Website URL:
+- www.sweetcooking.me
+API's:
+- Spoonacular
+- yelp
+- youtube (tentative)
 
-** Guande Lyu **
+Group name: 
+- Sweet Cooking
+ 
+Total stats:
+total no. of commits:
+- ???  
+total no. of issues:
+- ???  
+total no. of unit tests:
+- ???  
+a link to the Apiary API:
+- http://docs.sweetcooking1.apiary.io/#  
+a link to the GitHub Issue Tracker:
+- https://github.com/cs373gc-fall-2016/SweetCooking/issues  
+a link to the GitHub Repo:
+- https://github.com/cs373gc-fall-2016/SweetCooking  
+a link to the GitHub Wiki:
+- https://github.com/cs373gc-fall-2016/SweetCooking/wiki  
 
-** Evan Carrillo **
+data:
+links to the data sources:
+- https://spoonacular.com/food-api
+- ???
 
-** Alex Irion ** 
+description of how each was scraped:
+- ???
+- 
 
-** Kristofer Vandercook **
+Tools used: 
+- AWS: Hosts our dynamic website
+- Apiary: Documents the RestfulAPI we used
+- Boostrap: Created GUI
+- React: Frontend language of choice
+- Flask: backend web development
+- SQLAlchemy: Database
+- PostgreSQL: Database
+- Slack: Team communication
 
-4th year CS student 
+Optional tools that were not required:
+- ???
 
-Likes: some things
+Team Members:
+**Guande Lyu**
+- bio:
+- major responsibilities:
+- no. of commits:
+- no. of issues:
+- no. of unit tests:
 
-Dislikes: lots of things
+**Evan Carrillo**
+- bio:
+- major responsibilities:
+- no. of commits:
+- no. of issues:
+- no. of unit tests:
 
-** Rafik Rizik **
+**Alex Irion** 
+- bio: Senior CS student and sport lover
+- major responsibilities:
+- no. of commits:
+- no. of issues:
+- no. of unit tests:
 
-** Jake Mayo **
+**Kristofer Vandercook**
+- bio: 4th year CS student
+- major responsibilities:
+- no. of commits:
+- no. of issues:
+- no. of unit tests:
 
-** Lei Lin **
+**Rafik Rizik**
+- bio:
+- major responsibilities:
+- no. of commits:
+- no. of issues:
+- no. of unit tests:
+
+**Jake Mayo**
+- bio:
+- major responsibilities:
+- no. of commits:
+- no. of issues:
+- no. of unit tests:
+
+**Lei Lin**
+- bio:
+- major responsibilities:
+- no. of commits:
+- no. of issues:
+- no. of unit tests:

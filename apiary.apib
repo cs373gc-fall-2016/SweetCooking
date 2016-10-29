@@ -1,0 +1,863 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# SweetCooking
+
+Simple API for looking up various recipes, ingredients, and food products.
+
+# Group Search
+
+## Search All Tables [/search/all{?term}]
+<code>/search/all?term={terms}</code><br>
+
+### Parameters
+- <code>term</code> *(string, required*) - terms to search for
+
++ Parameters
+    + term: brocolli (string) - terms to search for
+    
+### GET Search All Tables [GET]
++ Response 200 (application/json)
+
+        {
+            "and": {
+                "recipes": [
+                {
+                    "id": 1,
+                    "name": "brocolli casserole",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "time": 120,
+                    "ingredients": 1,
+                    "lifestyles": [1],
+                    "servings": 8,
+                    "instructions": "make it correctly..."
+                },
+                ...
+                ],
+                "ingredients": [
+                {
+                    "id": 2,
+                    "name": "brocolli",
+                    "calories": 10,
+                    "protein": 2,
+                    "fat": 0,
+                    "carbs": 5,
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "recipes": [
+                                    1,
+                                    42,
+                                    76
+                                ],
+                    "lifestyles": [1]
+                },
+                ...
+                ],
+                "products": [
+                {
+                    "id": 3,
+                    "name": "brocolli slaw",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "calories": 50,
+                    "protein": 5,
+                    "fat": 5,
+                    "satfat": 2,
+                    "transfat": 3,
+                    "carbs": 10,
+                    "sugar": 5,
+                    "lifestyles": [2],
+                    "servingsize": 20
+                },
+                ...
+                ],
+                "lifestyle": [
+                {
+                    "id": 40
+                    "name": "vegan",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "description": "no animals for you",
+                    "weightmanage": true,
+                    "glutenfree": true,
+                    "ketogenic": false,
+                    "vegetarian": true,
+                    "vegan": true,
+                    "cheap": false,
+                    "dairyfree": false,
+                    "products": [
+                                    1,
+                                    33
+                                ],
+                    "recipes": [
+                                    3,
+                                    47
+                                ],
+                    "ingredients": [1]
+                },
+                ...
+                ]
+            },
+            "or": {
+                "brocolli": {
+                "recipes": [
+                {
+                    "id": 1,
+                    "name": "brocolli casserole",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "time": 120,
+                    "ingredients": 1,
+                    "lifestyles": [1],
+                    "servings": 8,
+                    "instructions": "make it correctly..."
+                },
+                ...
+                ],
+                "ingredients": [
+                {
+                    "id": 2,
+                    "name": "brocolli",
+                    "calories": 10,
+                    "protein": 2,
+                    "fat": 0,
+                    "carbs": 5,
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "recipes": [
+                                    1,
+                                    42,
+                                    76
+                                ],
+                    "lifestyles": [1]
+                },
+                ...
+                ],
+                "products": [
+                {
+                    "id": 3,
+                    "name": "brocolli slaw",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "calories": 50,
+                    "protein": 5,
+                    "fat": 5,
+                    "satfat": 2,
+                    "transfat": 3,
+                    "carbs": 10,
+                    "sugar": 5,
+                    "lifestyles": [2],
+                    "servingsize": 20
+                },
+                ...
+                ],
+                "lifestyle": [
+                {
+                    "id": 40
+                    "name": "vegan",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "description": "no animals for you",
+                    "weightmanage": true,
+                    "glutenfree": true,
+                    "ketogenic": false,
+                    "vegetarian": true,
+                    "vegan": true,
+                    "cheap": false,
+                    "dairyfree": false,
+                    "products": [
+                                    1,
+                                    33
+                                ],
+                    "recipes": [
+                                    3,
+                                    47
+                                ],
+                    "ingredients": [1]
+                },
+                ...
+                ]
+            }
+        }
+        
+## Search Recipes [/search/recipes{?term}]
+<code>/search/recipes?term={terms}</code><br>
+
+#### Parameters
+- <code>term</code> *(string, required*) - terms to search for
+
++ Parameters
+    + term: brocolli (string) - terms to search for
+    
+### GET Search Recipes [GET]
++ Response 200 (application/json)
+
+        {
+            "and": {
+                "recipes": [
+                {
+                    "id": 1,
+                    "name": "brocolli casserole",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "time": 120,
+                    "ingredients": 1,
+                    "lifestyles": [1],
+                    "servings": 8,
+                    "instructions": "make it correctly..."
+                },
+                ...
+                ],
+            },
+            "or": {
+                "brocolli": {
+                "recipes": [
+                {
+                    "id": 1,
+                    "name": "brocolli casserole",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "time": 120,
+                    "ingredients": 1,
+                    "lifestyles": [1],
+                    "servings": 8,
+                    "instructions": "make it correctly..."
+                },
+                ...
+                ],
+            }
+        }
+        
+## Search Ingredients [/search/ingredients{?term}]
+<code>/search/ingredients?term={terms}</code><br>
+
+#### Parameters
+- <code>term</code> *(string, required*) - terms to search for
+
++ Parameters
+    + term: brocolli (string) - terms to search for
+    
+### GET Search Recipes [GET]
++ Response 200 (application/json)
+
+        {
+            "and": {
+                "ingredients": [
+                {
+                    "id": 2,
+                    "name": "brocolli",
+                    "calories": 10,
+                    "protein": 2,
+                    "fat": 0,
+                    "carbs": 5,
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "recipes": [
+                                    1,
+                                    42,
+                                    76
+                                ],
+                    "lifestyles": [1]
+                },
+                ...
+                ],
+            },
+            "or": {
+                "brocolli": {
+                "ingredients": [
+                {
+                    "id": 2,
+                    "name": "brocolli",
+                    "calories": 10,
+                    "protein": 2,
+                    "fat": 0,
+                    "carbs": 5,
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "recipes": [
+                                    1,
+                                    42,
+                                    76
+                                ],
+                    "lifestyles": [1]
+                },
+                ...
+                ],
+            }
+        }
+        
+## Search Products [/search/products{?term}]
+<code>/search/products?term={terms}</code><br>
+
+#### Parameters
+- <code>term</code> *(string, required*) - terms to search for
+
++ Parameters
+    + term: brocolli (string) - terms to search for
+    
+### GET Search Recipes [GET]
++ Response 200 (application/json)
+
+        {
+            "and": {
+                "products": [
+                {
+                    "id": 3,
+                    "name": "brocolli slaw",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "calories": 50,
+                    "protein": 5,
+                    "fat": 5,
+                    "satfat": 2,
+                    "transfat": 3,
+                    "carbs": 10,
+                    "sugar": 5,
+                    "lifestyles": [2],
+                    "servingsize": 20
+                },
+                ...
+                ],
+            },
+            "or": {
+                "brocolli": {
+                "products": [
+                {
+                    "id": 3,
+                    "name": "brocolli slaw",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "calories": 50,
+                    "protein": 5,
+                    "fat": 5,
+                    "satfat": 2,
+                    "transfat": 3,
+                    "carbs": 10,
+                    "sugar": 5,
+                    "lifestyles": [2],
+                    "servingsize": 20
+                },
+                ...
+                ],
+            }
+        }
+        
+## Search LifeStyles [/search/lifestyles{?term}]
+<code>/search/lifestyles?term={terms}</code><br>
+
+#### Parameters
+- <code>term</code> *(string, required*) - terms to search for
+
++ Parameters
+    + term: brocolli (string) - terms to search for
+    
+### GET Search Recipes [GET]
++ Response 200 (application/json)
+
+        {
+            "and": {
+                "lifestyle": [
+                {
+                    "id": 40
+                    "name": "vegan",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "description": "no animals for you",
+                    "weightmanage": true,
+                    "glutenfree": true,
+                    "ketogenic": false,
+                    "vegetarian": true,
+                    "vegan": true,
+                    "cheap": false,
+                    "dairyfree": false,
+                    "products": [
+                                    1,
+                                    33
+                                ],
+                    "recipes": [
+                                    3,
+                                    47
+                                ],
+                    "ingredients": [1]
+                },
+                ...
+                ],
+            },
+            "or": {
+                "brocolli": {
+                "lifestyle": [
+                {
+                    "id": 40
+                    "name": "vegan",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "description": "no animals for you",
+                    "weightmanage": true,
+                    "glutenfree": true,
+                    "ketogenic": false,
+                    "vegetarian": true,
+                    "vegan": true,
+                    "cheap": false,
+                    "dairyfree": false,
+                    "products": [
+                                    1,
+                                    33
+                                ],
+                    "recipes": [
+                                    3,
+                                    47
+                                ],
+                    "ingredients": [1]
+                },
+                ...
+                ]
+            }
+        }
+
+# Group Recipes
+## List Recipes [/recipes/{pagenum}{?size,col,order}]
+<code>/recipes/{pagenum}?size={size}&col={col}&order={order}</code><br>
+Get a list of recipes specified by the page number and optional page size.<br>
+Can be sorted ascending or descending by a specific column. <br>
+Defaults sorted descending by name.
+#### Parameters
+- <code>pagenum</code> *(number, required)* - which page to return
+- <code>size</code> *(number, optional)* - number of entries per page, defaults to 10
+- <code>col</code> *(string, optional)* - column to sort by, defaults to name
+- <code>order</code> *(string, opetional)* - either 'asc' or 'desc', defaults to desc
+
+#### Sort options
+- <code>name</code>
+- <code>price</code>
+- <code>origin</code>
+- <code>cooktime</code>
+
++ Parameters
+    + pagenum: 1 (number) - which page to return
+    + size: 1 (number, optional) - number of entries per page
+    + col: name (string, optional) - column to sort by
+    + order: desc (string, optional) - either 'asc' or 'desc'
+    
+### GET List Recipes [GET]
++ Response 200 (application/json)
+    + Attributes (object)
+        + name: "brocolli casserole" (string) - name of recipe
+        + img: "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg" (string) - url of image
+        + time: 120 (number) - time in minutes to prepare recipe
+        + ingredients: 1 (number) - id of ingredient list
+        + lifestyles: [1] (array[number]) - lifestyle ids
+        + servings (number) - number of servings recipe makes
+        + instuctions (string) - instructions for making the recipe
+       + Body
+        {
+            "recipes": [
+                {
+                    "id": 1,
+                    "name": "brocolli casserole",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "time": 120,
+                    "ingredients": 1,
+                    "lifestyles": [1],
+                    "servings": 8,
+                    "instructions": "make it correctly..."
+                },
+                ...
+                ],
+            "pagenum": 1,
+            "size": 1,
+            "total": 578
+        }
+
+## Specific Recipes [/recipes{?ids}]
+<code>/recipes?ids={ids}</code><br>
+Request information about recipes related to **ids**
+#### Parameters
+- <code>ids</code> *(string, required)* - comma separated list of ids
+
+
++ Parameters
+    + ids: 1 (string, required) - comma separated list of ids
+    
+### GET Specific Recipes [GET]
++ Response 200 (application/json)
+    + Attributes (object)
+        + name: "brocolli casserole" (string) - name of recipe
+        + img: "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg" (string) - url of image
+        + time: 120 (number) - time in minutes to prepare recipe
+        + ingredients: 1 (number) - id of ingredient list
+        + lifestyles: [1] (array[number]) - lifestyle ids
+        + servings (number) - number of servings recipe makes
+        + instuctions (string) - instructions for making the recipe
+       + Body
+        {
+            "recipes": [
+                {
+                    "id": 1,
+                    "name": "brocolli casserole",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "time": 120,
+                    "ingredients": 1,
+                    "lifestyles": [1],
+                    "servings": 8,
+                    "instructions": "make it correctly..."
+                },
+                ...
+                ],
+        }
+
+# Group Ingredients
+## List Ingredients [/ingredients/{pagenum}{?size,col,order}]
+<code>/ingredients/{pagenum}?size={size}&col={col}&order={order}</code><br>
+Get a list of ingredients specified by the page number and optional page size.<br>
+Can be sorted ascending or descending by a specific column. <br>
+Defaults sorted descending by name.
+#### Parameters
+- <code>pagenum</code> *(number, required)* - which page to return
+- <code>size</code> *(number, optional)* - number of entries per page, defaults to 10
+- <code>col</code> *(string, optional)* - column to sort by, defaults to name
+- <code>order</code> *(string, opetional)* - either 'asc' or 'desc', defaults to desc
+
+#### Sort options
+- <code>name</code>
+- <code>price</code>
+- <code>season</code>
+
++ Parameters
+    + pagenum: 1 (number) - which page to return
+    + size: 1 (number, optional) - number of entries per page
+    + col: name (string, optional) - column to sort by
+    + order: desc (string, optional) - either 'asc' or 'desc'
+    
+### GET List Ingredients [GET]
++ Response 200 (application/json)
+    + Attributes (object)
+        + name: "brocolli" (string) - name of recipe
+        + calories: 10 (number) - calories per serving
+        + protein: 2 (number) - protein per serving
+        + fat: 0 (number) - fat per serving
+        + carbs: 5 (number) - carbs per serving
+        + img: "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg" (string) - image url
+        + recipes: [] (array[number]) - array of ingredient list ids
+        + lifestyles: [] (array[number]) - array of lifestyle ids
+       + Body
+        {
+            "ingredients": [
+                {
+                    "id": 2,
+                    "name": "brocolli",
+                    "calories": 10,
+                    "protein": 2,
+                    "fat": 0,
+                    "carbs": 5,
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "recipes": [
+                                    1,
+                                    42,
+                                    76
+                                ],
+                    "lifestyles": [1]
+                },
+                ...
+                ],
+            "pagenum": 1,
+            "size": 1,
+            "total": 578
+        }
+
+## Specific Ingredients [/ingredients{?ids}]
+<code>/ingredients?ids={ids}</code><br>
+Request information about ingredients related to **ids**
+#### Parameters
+- <code>ids</code> *(string, required)* - comma separated list of ids
+
+
++ Parameters
+    + ids: 1 (string, required) - comma separated list of ids
+    
+### GET Specific Ingredients [GET]
++ Response 200 (application/json)
+    + Attributes (object)
+        + name: "brocolli" (string) - name of recipe
+        + calories: 10 (number) - calories per serving
+        + protein: 2 (number) - protein per serving
+        + fat: 0 (number) - fat per serving
+        + carbs: 5 (number) - carbs per serving
+        + img: "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg" (string) - image url
+        + recipes: [] (array[number]) - array of ingredient list ids
+        + lifestyles: [] (array[number]) - array of lifestyle ids
+       + Body
+        {
+            "ingredients": [
+                {
+                    "id": 2,
+                    "name": "brocolli",
+                    "calories": 10,
+                    "protein": 2,
+                    "fat": 0,
+                    "carbs": 5,
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "recipes": [
+                                    1,
+                                    42,
+                                    76
+                                ],
+                    "lifestyles": [1]
+                },
+                ...
+                ],
+        }
+
+# Group Products
+## List Products [/products/{pagenum}{?size,col,order}]
+<code>/products/{pagenum}?size={size}&col={col}&order={order}</code><br>
+Get a list of products specified by the page number and optional page size.<br>
+Can be sorted ascending or descending by a specific column. <br>
+Defaults sorted descending by name.
+#### Parameters
+- <code>pagenum</code> *(number, required)* - which page to return
+- <code>size</code> *(number, optional)* - number of entries per page, defaults to 10
+- <code>col</code> *(string, optional)* - column to sort by, defaults to name
+- <code>order</code> *(string, opetional)* - either 'asc' or 'desc', defaults to desc
+
+#### Sort options
+- <code>name</code>
+- <code>price</code>
+- <code>description</code>
+
++ Parameters
+    + pagenum: 1 (number) - which page to return
+    + size: 1 (number, optional) - number of entries per page
+    + col: name (string, optional) - column to sort by
+    + order: desc (string, optional) - either 'asc' or 'desc'
+    
+### GET List Products [GET]
++ Response 200 (application/json)
+    + Attributes (object)
+        + name: "brocolli slaw" (string) - name of product
+        + img: "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg" (string) - image url
+        + calories: 50 (number) - calories per serving
+        + protein: 5 (number) - protein per serving
+        + fat: 5 (number) - fat per serving
+        + satfat: 2 (number) - saturated fat per serving
+        + transfat: 3 (number) - trans fat per serving
+        + carbs: 10 (number) - carbs per serving
+        + sugar: 5 (number) - sugar per serving
+        + lifestyles: [2] (array[number]) - lifestyle ids
+        + servingsize: 20 (number) - serving size
+       + Body
+        {
+            "products": [
+                {
+                    "id": 3,
+                    "name": "brocolli slaw",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "calories": 50,
+                    "protein": 5,
+                    "fat": 5,
+                    "satfat": 2,
+                    "transfat": 3,
+                    "carbs": 10,
+                    "sugar": 5,
+                    "lifestyles": [2],
+                    "servingsize": 20
+                },
+                ...
+                ],
+            "pagenum": 1,
+            "size": 1,
+            "total": 578
+        }
+
+## Specific Products [/products{?ids}]
+<code>/products?ids={ids}</code><br>
+Request information about products related to **ids**
+#### Parameters
+- <code>ids</code> *(string, required)* - comma separated list of ids
+
+
++ Parameters
+    + ids: 1 (string, required) - comma separated list of ids
+    
+### GET Specific Products [GET]
++ Response 200 (application/json)
+    + Attributes (object)
+        + name: "brocolli slaw" (string) - name of product
+        + img: "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg" (string) - image url
+        + calories: 50 (number) - calories per serving
+        + protein: 5 (number) - protein per serving
+        + fat: 5 (number) - fat per serving
+        + satfat: 2 (number) - saturated fat per serving
+        + transfat: 3 (number) - trans fat per serving
+        + carbs: 10 (number) - carbs per serving
+        + sugar: 5 (number) - sugar per serving
+        + lifestyles: [2] (array[number]) - lifestyle ids
+        + servingsize: 20 (number) - serving size
+       + Body
+        {
+            "products": [
+                {
+                    "id": 3,
+                    "name": "brocolli slaw",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "calories": 50,
+                    "protein": 5,
+                    "fat": 5,
+                    "satfat": 2,
+                    "transfat": 3,
+                    "carbs": 10,
+                    "sugar": 5,
+                    "lifestyles": [2],
+                    "servingsize": 20
+                },
+                ...
+                ],
+        }
+
+# Group Lifestyles
+## List Lifestyles [/lifestyles/{pagenum}{?size,col,order}]
+<code>/lifestyles/{pagenum}?size={size}&col={col}&order={order}</code><br>
+Get a list of lifestyles specified by the page number and optional page size.<br>
+Can be sorted ascending or descending by a specific column. <br>
+Defaults sorted descending by name.
+#### Parameters
+- <code>pagenum</code> *(number, required)* - which page to return
+- <code>size</code> *(number, optional)* - number of entries per page, defaults to 10
+- <code>col</code> *(string, optional)* - column to sort by, defaults to name
+- <code>order</code> *(string, opetional)* - either 'asc' or 'desc', defaults to desc
+
+#### Sort options
+- <code>dietaryrestriction</code>
+
++ Parameters
+    + pagenum: 1 (number) - which page to return
+    + size: 1 (number, optional) - number of entries per page
+    + col: dietaryrestriction (string, optional) - column to sort by
+    + order: desc (string, optional) - either 'asc' or 'desc'
+    
+### GET List Lifestyles [GET]
++ Response 200 (application/json)
+    + Attributes (object)
+        + name: "vegan" (string) - name of lifestyle
+        + img: "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg" (string) - image url
+        + description: "no animals for you" (string) - description of lifestyle
+        + weightmanage: true (boolean)
+        + glutenfree: true (boolean)
+        + ketogenic: false (boolean)
+        + vegetarian: true (boolean)
+        + vegan: true (boolean)
+        + cheap: false (boolean)
+        + dairyfree: false (boolean)
+        + products: [1,33] (array[number]) - array of product ids
+        + recipes: [3,47] (array[number]) - array of recipe ids
+        + ingredients: [1] (array[number]) - array of ingredient ids
+       + Body
+        {
+            "lifestyle": [
+                {
+                    "id": 40
+                    "name": "vegan",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "description": "no animals for you",
+                    "weightmanage": true,
+                    "glutenfree": true,
+                    "ketogenic": false,
+                    "vegetarian": true,
+                    "vegan": true,
+                    "cheap": false,
+                    "dairyfree": false,
+                    "products": [
+                                    1,
+                                    33
+                                ],
+                    "recipes": [
+                                    3,
+                                    47
+                                ],
+                    "ingredients": [1]
+                },
+                ...
+                ]
+            "pagenum": 1,
+            "size": 1,
+            "total": 578
+        }
+
+## Specific Lifestyles [/lifestyles{?ids}]
+<code>/lifestyles?ids={ids}</code><br>
+Request information about products related to **ids**
+#### Parameters
+- <code>ids</code> *(string, required)* - comma separated list of ids
+
+
++ Parameters
+    + ids: 40 (string, required) - comma separated list of ids
+    
+### GET Specific Lifestyles [GET]
++ Response 200 (application/json)
+    + Attributes (object)
+        + name: "vegan" (string) - name of lifestyle
+        + img: "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg" (string) - image url
+        + description: "no animals for you" (string) - description of lifestyle
+        + weightmanage: true (boolean)
+        + glutenfree: true (boolean)
+        + ketogenic: false (boolean)
+        + vegetarian: true (boolean)
+        + vegan: true (boolean)
+        + cheap: false (boolean)
+        + dairyfree: false (boolean)
+        + products: [1,33] (array[number]) - array of product ids
+        + recipes: [3,47] (array[number]) - array of recipe ids
+        + ingredients: [1] (array[number]) - array of ingredient ids
+       + Body
+        {
+            "lifestyle": [
+                {
+                    "id": 40
+                    "name": "vegan",
+                    "img": "http://www.medicalnewstoday.com/content/images/articles/266/266765/two-heads-of-broccoli.jpg",
+                    "description": "no animals for you",
+                    "weightmanage": true,
+                    "glutenfree": true,
+                    "ketogenic": false,
+                    "vegetarian": true,
+                    "vegan": true,
+                    "cheap": false,
+                    "dairyfree": false,
+                    "products": [
+                                    1,
+                                    33
+                                ],
+                    "recipes": [
+                                    3,
+                                    47
+                                ],
+                    "ingredients": [1]
+                },
+                ...
+                ]
+            "pagenum": 1,
+            "size": 1,
+            "total": 578
+        }
+
+
+# Group Ingredient List
+## Specific Nutritional Info [/inglist{?ids}]
+<code>/inglist?ids={ids}</code><br>
+Request information about ingredient list related to **ids**
+#### Parameters
+- <code>ids</code> *(string, required)* - comma separated list of ids
+
+
++ Parameters
+    + ids: 1 (string, required) - comma separated list of ids
+    
+### GET Specific Nutritional Info [GET]
++ Response 200 (application/json)
+    + Attributes (object)
+        + ingredients [] (array[object]) - array of ingredients
+        + ingid: 2 (number) - ingredient id
+        + amount: 5 (number) - amount of ingredient
+        + unit: "oz" (string) - unit of measurement for ingredient
+        + recid: 1 (number) - recipe is for this ingredient list
+       + Body
+        {
+            "inglists": [
+            {
+                "id": 1,
+                "ingredients": [
+                {
+                    "ingid": 2,
+                    "amount": 5,
+                    "unit": "oz"
+                }
+                ],
+                "recid": 1,
+            }
+            ],
+        }
