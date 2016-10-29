@@ -96,8 +96,8 @@ Simple API for looking up various recipes, ingredients, and food products.
                 ]
             },
             "or": {
-                "brocolli": {
-                "recipes": [
+                "recipes": {
+                "brocolli": [
                 {
                     "id": 1,
                     "name": "brocolli casserole",
@@ -110,7 +110,9 @@ Simple API for looking up various recipes, ingredients, and food products.
                 },
                 ...
                 ],
-                "ingredients": [
+                },
+                "ingredients": {
+                "brocolli": [
                 {
                     "id": 2,
                     "name": "brocolli",
@@ -128,7 +130,9 @@ Simple API for looking up various recipes, ingredients, and food products.
                 },
                 ...
                 ],
-                "products": [
+                },
+                "products": {
+                "brocolli": [
                 {
                     "id": 3,
                     "name": "brocolli slaw",
@@ -145,7 +149,9 @@ Simple API for looking up various recipes, ingredients, and food products.
                 },
                 ...
                 ],
-                "lifestyle": [
+                },
+                "lifestyle": {
+                "brocolli": [
                 {
                     "id": 40
                     "name": "vegan",
@@ -170,6 +176,7 @@ Simple API for looking up various recipes, ingredients, and food products.
                 },
                 ...
                 ]
+                }
             }
         }
         
@@ -202,8 +209,8 @@ Simple API for looking up various recipes, ingredients, and food products.
                 ],
             },
             "or": {
-                "brocolli": {
-                "recipes": [
+                "recipes": {
+                "brocolli": [
                 {
                     "id": 1,
                     "name": "brocolli casserole",
@@ -216,6 +223,7 @@ Simple API for looking up various recipes, ingredients, and food products.
                 },
                 ...
                 ],
+                }
             }
         }
         
@@ -253,8 +261,8 @@ Simple API for looking up various recipes, ingredients, and food products.
                 ],
             },
             "or": {
-                "brocolli": {
-                "ingredients": [
+                "ingredients": {
+                "brocolli": [
                 {
                     "id": 2,
                     "name": "brocolli",
@@ -272,6 +280,7 @@ Simple API for looking up various recipes, ingredients, and food products.
                 },
                 ...
                 ],
+                }
             }
         }
         
@@ -308,8 +317,8 @@ Simple API for looking up various recipes, ingredients, and food products.
                 ],
             },
             "or": {
-                "brocolli": {
-                "products": [
+                "products": {
+                "brocolli": [
                 {
                     "id": 3,
                     "name": "brocolli slaw",
@@ -326,6 +335,7 @@ Simple API for looking up various recipes, ingredients, and food products.
                 },
                 ...
                 ],
+                }
             }
         }
         
@@ -370,8 +380,8 @@ Simple API for looking up various recipes, ingredients, and food products.
                 ],
             },
             "or": {
-                "brocolli": {
-                "lifestyle": [
+                "lifestyle": {
+                "brocolli": [
                 {
                     "id": 40
                     "name": "vegan",
@@ -396,6 +406,7 @@ Simple API for looking up various recipes, ingredients, and food products.
                 },
                 ...
                 ]
+                }
             }
         }
 
@@ -827,7 +838,7 @@ Request information about products related to **ids**
 
 
 # Group Ingredient List
-## Specific Nutritional Info [/inglist{?ids}]
+## Specific Ingredient List Info [/inglist{?ids}]
 <code>/inglist?ids={ids}</code><br>
 Request information about ingredient list related to **ids**
 #### Parameters
