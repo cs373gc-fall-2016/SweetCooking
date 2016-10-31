@@ -1,4 +1,4 @@
-from app import app 
+from app import app
 from flask import jsonify, request, render_template
 import helpers
 
@@ -81,11 +81,11 @@ def listrecipes():
         order = 'asc' if request.args.get('order') == 'asc' else 'desc'
         result = helpers.listRecipe(pagenum=pagenum, size=size, col=col, order=order)
     else:
-        result = helpers.specRecipe(request.args.get('ids')
+        result = helpers.specRecipe(request.args.get('ids'))
     return jsonify(**result)
 
 @app.route('/api/ingredients')
-def listrecipes():
+def listingredients():
     if request.args.get('pagenum'):
         pagenum = request.args.get('pagenum') if request.args.get('pagenum') else 1
         size = request.args.get('size') if request.args.get('size') else 10
@@ -93,11 +93,11 @@ def listrecipes():
         order = 'asc' if request.args.get('order') == 'asc' else 'desc'
         result = helpers.listIngredient(pagenum=pagenum, size=size, col=col, order=order)
     else:
-        result = helpers.specIngredient(request.args.get('ids')
+        result = helpers.specIngredient(request.args.get('ids'))
     return jsonify(**result)
 
 @app.route('/api/products')
-def listrecipes():
+def listproducts():
     if request.args.get('pagenum'):
         pagenum = request.args.get('pagenum') if request.args.get('pagenum') else 1
         size = request.args.get('size') if request.args.get('size') else 10
@@ -105,11 +105,11 @@ def listrecipes():
         order = 'asc' if request.args.get('order') == 'asc' else 'desc'
         result = helpers.listProduct(pagenum=pagenum, size=size, col=col, order=order)
     else:
-        result = helpers.specProduct(request.args.get('ids')
+        result = helpers.specProduct(request.args.get('ids'))
     return jsonify(**result)
 
 @app.route('/api/lifestyles')
-def listrecipes():
+def listlifestyles():
     if request.args.get('pagenum'):
         pagenum = request.args.get('pagenum') if request.args.get('pagenum') else 1
         size = request.args.get('size') if request.args.get('size') else 10
@@ -117,7 +117,7 @@ def listrecipes():
         order = 'asc' if request.args.get('order') == 'asc' else 'desc'
         result = helpers.listLifestyle(pagenum=pagenum, size=size, col=col, order=order)
     else:
-        result = helpers.specLifestyle(request.args.get('ids')
+        result = helpers.specLifestyle(request.args.get('ids'))
     return jsonify(**result)
 
 @app.route('/api/inglist')
@@ -160,11 +160,6 @@ def tostito_product():
 @app.route('/weightloss_lifestyle')
 def weightloss_lifestyle():
     return render_template('weightloss_lifestyle.html')
-
-@app.route('/sushi')
-def sushi():
-    ingredientsArray = [water, sugar, tomato]    
-return render_template('sushi.html', title='California Sushi Roll',description= 'A California roll is a makuzushi, a kind of suchi roll, usually made inside-out',price= 8, ingredients=ingredientsArray, origin='Japan', nutrition='8 pieces, Calorias 255, fat 7g, Carbs 38g, Protein 9g')
 
 @app.route('/fit_lifestyle')
 def fitness():

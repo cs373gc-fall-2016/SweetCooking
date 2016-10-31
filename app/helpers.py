@@ -235,7 +235,7 @@ def listRecipe(pagenum, size=10, col='name', order='desc'):
         recipe['lifestyles'] = [x.id for x in result.lifestyles]
         recipe['servings'] = result.servings
         recipe['instructions'] = result.instructions
-        page['recipes'.append(recipe)
+        page['recipes'.append(recipe)]
     return page
 
 def listIngredient(pagenum, size=10, col='name', order='desc'):
