@@ -75,8 +75,8 @@ def searchlifestyles():
 @app.route('/api/recipes')
 def listrecipes():
     if request.args.get('pagenum'):
-        pagenum = request.args.get('pagenum') if request.args.get('pagenum') else 1
-        size = request.args.get('size') if request.args.get('size') else 10
+        pagenum = int(request.args.get('pagenum')) if request.args.get('pagenum') else 1
+        size = int(request.args.get('size')) if request.args.get('size') else 10
         col = request.args.get('col') if request.args.get('col') else 'name'
         order = 'asc' if request.args.get('order') == 'asc' else 'desc'
         result = helpers.listRecipe(pagenum=pagenum, size=size, col=col, order=order)
@@ -87,8 +87,8 @@ def listrecipes():
 @app.route('/api/ingredients')
 def listingredients():
     if request.args.get('pagenum'):
-        pagenum = request.args.get('pagenum') if request.args.get('pagenum') else 1
-        size = request.args.get('size') if request.args.get('size') else 10
+        pagenum = int(request.args.get('pagenum')) if request.args.get('pagenum') else 1
+        size = int(request.args.get('size')) if request.args.get('size') else 10
         col = request.args.get('col') if request.args.get('col') else 'name'
         order = 'asc' if request.args.get('order') == 'asc' else 'desc'
         result = helpers.listIngredient(pagenum=pagenum, size=size, col=col, order=order)
@@ -99,8 +99,8 @@ def listingredients():
 @app.route('/api/products')
 def listproducts():
     if request.args.get('pagenum'):
-        pagenum = request.args.get('pagenum') if request.args.get('pagenum') else 1
-        size = request.args.get('size') if request.args.get('size') else 10
+        pagenum = int(request.args.get('pagenum')) if request.args.get('pagenum') else 1
+        size = int(request.args.get('size')) if request.args.get('size') else 10
         col = request.args.get('col') if request.args.get('col') else 'name'
         order = 'asc' if request.args.get('order') == 'asc' else 'desc'
         result = helpers.listProduct(pagenum=pagenum, size=size, col=col, order=order)
@@ -111,8 +111,8 @@ def listproducts():
 @app.route('/api/lifestyles')
 def listlifestyles():
     if request.args.get('pagenum'):
-        pagenum = request.args.get('pagenum') if request.args.get('pagenum') else 1
-        size = request.args.get('size') if request.args.get('size') else 10
+        pagenum = int(request.args.get('pagenum')) if request.args.get('pagenum') else 1
+        size = int(request.args.get('size')) if request.args.get('size') else 10
         col = request.args.get('col') if request.args.get('col') else 'name'
         order = 'asc' if request.args.get('order') == 'asc' else 'desc'
         result = helpers.listLifestyle(pagenum=pagenum, size=size, col=col, order=order)

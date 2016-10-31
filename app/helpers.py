@@ -1,5 +1,6 @@
 from app.models import *
 from functools import *
+from sqlalchemy import asc, desc
 
 def searchAll(terms):
     ''' search all tables '''
@@ -225,7 +226,7 @@ def listRecipe(pagenum, size=10, col='name', order='desc'):
     ''' returns a page of recipes '''
     results = Recipe.query.order_by(col + ' ' + order).paginate(page=pagenum, per_page=size)
     page = {'recipes': [], 'pagenum': pagenum, 'size': size, 'total': len(Recipe.query.all())}
-    for result in results:
+    for result in results.items:
         recipe = {}
         recipe['id'] = result.id
         recipe['name'] = result.name
@@ -235,14 +236,14 @@ def listRecipe(pagenum, size=10, col='name', order='desc'):
         recipe['lifestyles'] = [x.id for x in result.lifestyles]
         recipe['servings'] = result.servings
         recipe['instructions'] = result.instructions
-        page['recipes'.append(recipe)]
+        page['recipes'].append(recipe)
     return page
 
 def listIngredient(pagenum, size=10, col='name', order='desc'):
     ''' returns a page of ingredients '''
     results = Ingredient.query.order_by(col + ' ' + order).paginate(page=pagenum, per_page=size)
     page = {'ingredients': [], 'pagenum': pagenum, 'size': size, 'total': len(Ingredient.query.all())}
-    for result in results:
+    for result in results.items:
         ingredient = {}
         ingredient['id'] = result.id
         ingredient['name'] = result.name
@@ -260,7 +261,7 @@ def listProduct(pagenum, size=10, col='name', order='desc'):
     ''' returns a page of products '''
     results = Product.query.order_by(col + ' ' + order).paginate(page=pagenum, per_page=size)
     page = {'products': [], 'pagenum': pagenum, 'size': size, 'total': len(Product.query.all())}
-    for result in results:
+    for result in results.items:
         product = {}
         product['id'] = result.id
         product['name'] = result.name
@@ -281,7 +282,7 @@ def listLifestyle(pagenum, size=10, col='name', order='desc'):
     ''' returns a page of lifestyles '''
     results = Lifestyle.query.order_by(col + ' ' + order).paginate(page=pagenum, per_page=size)
     page = {'lifestyles': [], 'pagenum': pagenum, 'size': size, 'total': len(Lifestyle.query.all())}
-    for result in results:
+    for result in results.items:
         lifestyle = {}
         lifestyle['id'] = result.id
         lifestyle['name'] = result.name
