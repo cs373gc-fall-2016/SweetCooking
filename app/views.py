@@ -52,7 +52,7 @@ def searchall():
     result = helpers.searchAll(request.args.get('term'))
     return jsonify(**result)
 
-@app.route('/api/search/recipes')
+@app.route('/api/search/recipes', methods=['GET'])
 def searchrecipes():
     result = helpers.searchRecipes(request.args.get('term'))
     return jsonify(**result)
