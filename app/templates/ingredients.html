@@ -6,12 +6,12 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th><div class="table-header">Name</div></th>
-          <th><div class="table-header">Price</div></th>
-          <th><div class="table-header">Season</div></th>
-          <th><div class="table-header">Nutrition</div></th>
-          <th><div class="table-header">Recipes</div></th>
-          <th><div class="table-header">Products</div></th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Season</th>
+          <th>Nutrition</th>
+          <th>Recipes</th>
+          <th>Products</th>
         </tr>
       </thead>
       <tbody>
@@ -42,13 +42,14 @@
     </table>
   </div>
  
-  {% block javascript %} 
-    {{ super() }}
-    <script>
-      $("table").tablesorter({  
-        sortList: [[0,0],[2,0]] 
-      }); 
-    </script>
-  {% endblock %}
-  
+{% endblock %}
+
+{% block javascript %} 
+  {{ super() }}
+  <script>
+    $(document).ready(function() {
+      $(".table").DataTable({ 
+      });
+    });
+  </script>
 {% endblock %}

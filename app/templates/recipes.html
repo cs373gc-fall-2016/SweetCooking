@@ -6,14 +6,14 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th><div class="table-header">Name</div></th>
-          <th><div class="table-header">Price</div></th>
-          <th><div class="table-header">Category</div></th>
-          <th><div class="table-header">Origin</div></th>
-          <th><div class="table-header">Cook time</div></th>
-          <th><div class="table-header">Nutrition</div></th>
-          <th><div class="table-header">Lifestyle</div></th>
-          <th><div class="table-header">Ingredients</div></th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Origin</th>
+          <th>Cook time</th>
+          <th>Nutrition</th>
+          <th>Lifestyle</th>
+          <th>Ingredients</th>
         </tr>
       </thead>
       <tbody>
@@ -32,14 +32,15 @@
     </table>
   </div>
 
-  {% block javascript %} 
-    {{ super() }}
-    <script>
-      $('table').tablesorter({  
-        sortList: [[0,0],[2,0]] 
-      }); 
-    </script>
-  {% endblock %}
+{% endblock %}
 
+{% block javascript %} 
+  {{ super() }}
+  <script>
+    $(document).ready(function() {
+      $(".table").DataTable({ 
+      });
+    });
+  </script>
 {% endblock %}
 

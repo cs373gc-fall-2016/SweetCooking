@@ -13,10 +13,11 @@
 
     {% block stylesheets %}
       <!-- Bootstrap core CSS -->
-      <link href="/static/stylesheets/bootstrap.min.css" rel="stylesheet">
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet">
       <!-- Custom styles for this template -->
       <link href="/static/stylesheets/custom.css" rel="stylesheet">
-      <link href="/static/stylesheets/table.css" rel="stylesheet">
+      <!-- <link href="/static/stylesheets/table.css" rel="stylesheet"> -->
     {% endblock %}
   </head>
 
@@ -28,10 +29,10 @@
     {% block javascript %}
       <script src="/static/javascripts/jquery.min.js"></script>
       <script src="/static/javascripts/bootstrap.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.27.8/js/jquery.tablesorter.min.js"></script>
       <script src="/static/javascripts/ie10-viewport-bug-workaround.js"></script>
+      <script src="/static/javascripts/jquery.dataTables.min.js"></script>
+      <script src="/static/javascripts/dataTables.bootstrap.min.js"></script>
     {% endblock %}
-
   </body>
 
 </html>
