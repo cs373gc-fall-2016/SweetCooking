@@ -11,17 +11,27 @@
 
     <title>SweetCooking -{% block title %}{% endblock %}</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="/static/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="/static/starter-template.css" rel="stylesheet">
-
+    {% block stylesheets %}
+      <!-- Bootstrap core CSS -->
+      <link href="/static/stylesheets/bootstrap.min.css" rel="stylesheet">
+      <!-- Custom styles for this template -->
+      <link href="/static/stylesheets/custom.css" rel="stylesheet">
+      <link href="/static/stylesheets/table.css" rel="stylesheet">
+    {% endblock %}
   </head>
+
   <body>
     {% with active_page=active_page|default('index') %}
       {% include "navbar.html" %}
     {% endwith %}
-    {% block content %}dasdasdasdas{% endblock %}
+    {% block content %}{% endblock %}
+    {% block javascript %}
+      <script src="/static/javascripts/jquery.min.js"></script>
+      <script src="/static/javascripts/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.27.8/js/jquery.tablesorter.min.js"></script>
+      <script src="/static/javascripts/ie10-viewport-bug-workaround.js"></script>
+    {% endblock %}
+
   </body>
+
 </html>

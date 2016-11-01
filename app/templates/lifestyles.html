@@ -6,13 +6,13 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th><button class="button button1">Weight management</button></th>
-          <th><button class="button button1">Dietary restrictions</button></th>
-          <th><button class="button button1">Gluten-free</button></th>
-          <th><button class="button button1">Carb-free</button></th>
-          <th><button class="button button1">Vegetarian/vegan</button></th>
-          <th><button class="button button1">Products</button></th>
-          <th><button class="button button1">Recipes</button></th>
+          <th><div class="table-header">Weight management</div></th>
+          <th><div class="table-header">Dietary restrictions</div></th>
+          <th><div class="table-header">Gluten-free</div></th>
+          <th><div class="table-header">Carb-free</div></th>
+          <th><div class="table-header">Vegetarian/vegan</div></th>
+          <th><div class="table-header">Products</div></th>
+          <th><div class="table-header">Recipes</div></th>
         </tr>
       </thead>
       <tbody>
@@ -32,20 +32,12 @@
     </table>
   </div>
 
-  <script>
-    $(document).ready(function() { 
-    $("table").tablesorter({  
+  {% block javascript %} 
+    {{ super() }}
+    <script>
+      $("table").tablesorter({  
         sortList: [[0,0],[2,0]] 
-    }); 
-  });
-  </script>
-
-  <!-- Bootstrap core JavaScript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-
-  <script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
-  <script src="/static/bootstrap.min.js"></script>
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="ie10-viewport-bug-workaround.js"></script>
+      }); 
+    </script>
+  {% endblock %}
 {% endblock %}

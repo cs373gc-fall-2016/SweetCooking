@@ -6,12 +6,12 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th><button class="button button1">Name</button></th>
-          <th><button class="button button1">Price</button></th>
-          <th><button class="button button1">Season</button></th>
-          <th><button class="button button1">Nutrition</button></th>
-          <th><button class="button button1">Recipes</button></th>
-          <th><button class="button button1">Products</button></th>
+          <th><div class="table-header">Name</div></th>
+          <th><div class="table-header">Price</div></th>
+          <th><div class="table-header">Season</div></th>
+          <th><div class="table-header">Nutrition</div></th>
+          <th><div class="table-header">Recipes</div></th>
+          <th><div class="table-header">Products</div></th>
         </tr>
       </thead>
       <tbody>
@@ -42,21 +42,13 @@
     </table>
   </div>
  
-  <script>
-    $(document).ready(function() { 
-    $("table").tablesorter({  
+  {% block javascript %} 
+    {{ super() }}
+    <script>
+      $("table").tablesorter({  
         sortList: [[0,0],[2,0]] 
-    }); 
-  });
-  </script>
-
-
-  <!-- Bootstrap core JavaScript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
+      }); 
+    </script>
+  {% endblock %}
   
-  <script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
-  <script src="/static/bootstrap.min.js"></script>
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="ie10-viewport-bug-workaround.js"></script>
 {% endblock %}
