@@ -1,6 +1,5 @@
-from app import app
+from app import app, helpers
 from flask import jsonify, request, render_template
-import helpers
 
 @app.route('/')
 @app.route('/index')
