@@ -1,118 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="http://v4-alpha.getbootstrap.com/favicon.ico">
+{% extends "layout.html" %}
+{% set active_page = "ingredients" %}
+{% block title %}Ingredients{% endblock %}
+{% block content %}
+  <div class="container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><button class="button button1">Name</button></th>
+          <th><button class="button button1">Price</button></th>
+          <th><button class="button button1">Season</button></th>
+          <th><button class="button button1">Nutrition</button></th>
+          <th><button class="button button1">Recipes</button></th>
+          <th><button class="button button1">Products</button></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="salt_ingredient">Salt</a></td> <td> $0.81 </td> <td> Year Round </td> <td> 0 calories in 1 tbsp </td> 
+          <td> Sushi </td> <td> Oreo </td>
+        </tr> 
+        <tr>
+          <td><a href="tomato_ingredient">Tomato</a></td> <td> $0.12 </td> <td> Spring and Summer </td> <td> 22 calories in 1 medium whole Red Tomato. Calorie breakdown: 9% fat, 78% carbs, 13% protein. Other Common Serving </td> <td> Pizza </td> <td> ketchup </td>
+        </tr>
 
-    <title>Ingredients</title>
+        <tr>
+          <td><a href="sugar_ingredient">Sugar</a></td> <td> $0.81 </td> <td> Year Round </td> <td> 0 calories in 1 tbsp </td> <td> Pizza </td> <td> Oreo </td>
+        </tr>
+        
+        <tr>
+          <td><a href="onion_ingredient">Onion</a></td> <td> $1.40 </td> <td> Year Round </td> <td> 30 calories per bulb </td> <td> Pizza </td> <td> </td>
+        </tr>
 
-    <!-- Bootstrap core CSS -->
-    <link href="/static/bootstrap.min.css" rel="stylesheet">
+        <tr>
+          <td><a href="chicken_ingredient">Chicken</a></td> <td> $7.99 </td> <td> Year Round </td> <td> 200 calories per ounce </td> <td> Pizza </td> <td> </td>
+        </tr>
 
-    <!-- Custom styles for this template -->
-    <link href="/static/starter-template.css" rel="stylesheet">
-    <link href="/static/myButton.css" rel="stylesheet">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script type="text/javascript" src="http://tablesorter.com/__jquery.tablesorter.js"></script>
-    <script type="text/javascript" src="http://tablesorter.com/addons/pager/jquery.tablesorter.pager.js"></script>
-  </head>
-
-  <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">SweetCooking</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="recipes.html">Recipes</a></li>
-            <li class="active"><a href="ingredients.html">Ingredients</a></li>
-            <li><a href="foodproducts.html">FoodProducts</a></li>
-            <li><a href="lifestyles.html">LifeStyles</a></li>
-
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="about.html">About</a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-
-      </div>
-    </nav>
-
-    <div class="container">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th><button class="button button1">Name</button></th>
-            <th><button class="button button1">Price</button></th>
-            <th><button class="button button1">Season</button></th>
-            <th><button class="button button1">Nutrition</button></th>
-            <th><button class="button button1">Recipes</button></th>
-            <th><button class="button button1">Products</button></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><a href="salt_ingredient.html">Salt</a></td> <td> $0.81 </td> <td> Year Round </td> <td> 0 calories in 1 tbsp </td> 
-            <td> Sushi </td> <td> Oreo </td>
-          </tr> 
-          <tr>
-            <td><a href="tomato_ingredient.html">Tomato</a></td> <td> $0.12 </td> <td> Spring and Summer </td> <td> 22 calories in 1 medium whole Red Tomato. Calorie breakdown: 9% fat, 78% carbs, 13% protein. Other Common Serving </td> <td> Pizza </td> <td> ketchup </td>
-          </tr>
-
-          <tr>
-            <td><a href="sugar_ingredient.html">Sugar</a></td> <td> $0.81 </td> <td> Year Round </td> <td> 0 calories in 1 tbsp </td> <td> Pizza </td> <td> Oreo </td>
-          </tr>
-          
-          <tr>
-            <td><a href="onion_ingredient.html">Onion</a></td> <td> $1.40 </td> <td> Year Round </td> <td> 30 calories per bulb </td> <td> Pizza </td> <td> </td>
-          </tr>
-
-          <tr>
-            <td><a href="chicken_ingredient.html">Chicken</a></td> <td> $7.99 </td> <td> Year Round </td> <td> 200 calories per ounce </td> <td> Pizza </td> <td> </td>
-          </tr>
-
-          <tr>
-            <td><a href="cheese_ingredient.html">Cheese</a></td> <td> $0.81 </td> <td> Year Round </td> <td> 0 calories in 1 tbsp </td> <td> Pizza </td> <td>  </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-   
-    <script>
-      $(document).ready(function() { 
-      $("table").tablesorter({  
-          sortList: [[0,0],[2,0]] 
-      }); 
-    });
-    </script>
+        <tr>
+          <td><a href="cheese_ingredient">Cheese</a></td> <td> $0.81 </td> <td> Year Round </td> <td> 0 calories in 1 tbsp </td> <td> Pizza </td> <td>  </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+ 
+  <script>
+    $(document).ready(function() { 
+    $("table").tablesorter({  
+        sortList: [[0,0],[2,0]] 
+    }); 
+  });
+  </script>
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    
-    <script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
-    <script src="/static/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="ie10-viewport-bug-workaround.js"></script>
-  </body>
-</html>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  
+  <script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
+  <script src="/static/bootstrap.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="ie10-viewport-bug-workaround.js"></script>
+{% endblock %}

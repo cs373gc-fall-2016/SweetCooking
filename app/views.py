@@ -1,6 +1,5 @@
-from app import app
+from app import app, helpers
 from flask import jsonify, request, render_template
-import helpers
 
 @app.route('/')
 @app.route('/index')
@@ -29,8 +28,8 @@ def ingredients(page_id):
     else:
         return render_template('ingredient.html', id=this_id)
 
-@app.route('/lifestyle', defaults={'page_id': -1})
-@app.route('/lifestyle/<int:page_id>')
+@app.route('/lifestyles', defaults={'page_id': -1})
+@app.route('/lifestyles/<int:page_id>')
 def lifestyles(page_id):
     this_id = page_id
     if(this_id == -1):
