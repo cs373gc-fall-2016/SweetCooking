@@ -1,4 +1,7 @@
-SweetCooking www.sweetcooking.me
+![Travis](https://travis-ci.org/cs373gc-fall-2016/SweetCooking.svg?branch=master)
+
+# SweetCooking 
+www.sweetcooking.me
 
 yUML.me code snippet
 
@@ -9,43 +12,47 @@ http://yuml.me/edit/58e78d83
 new database uml url:  
 http://yuml.me/edit/97febb29
 
-check word count:  
+check word count: 
+```bash
 git clone https://github.com/cs373gc-fall-2016/SweetCooking.wiki.git  
 find . -type f -name '*.md' | xargs wc -w
+```
 
--- Pillars --
-Lifestyle
-- weight management
-- dietary restrictions
-- gluten-free
-- carb-free
-- vegetarian/vegan
+## Pillars
 
-Recipe
-- name
-- price
-- category
-- origin
-- cook_time
-- nutritional_info
+ - **Lifestyle**
+  * weight management
+  * dietary restrictions
+  * gluten-free
+  * carb-free
+  * vegetarian/vegan
 
-Ingredient
-- name
-- price
-- ratios
-- products
-- nutritional_info
+ - **Recipe**
+  * name
+  * price
+  * category
+  * origin
+  * cook_time
+  * nutritional_info
 
-Food Product
-- name
-- price
-- description
-- similiar_foods
-- nutritional_info
+ - **Ingredient**
+  * name
+  * price
+  * ratios
+  * products
+  * nutritional_info
 
--- About -- 
-description of the site, its purpose, its intended users:
-- ???
+ - **Food Product**
+  * name
+  * price
+  * description
+  * similiar_foods
+  * nutritional_info
+
+ - **About**
+  * description of the site, its purpose, its intended users:
+  * ???
+  
 Website Name:
 - Sweet Cooking
 Website URL:
@@ -55,7 +62,7 @@ API's:
 - yelp
 - youtube (tentative)
 
-Group name: 
+## Group name: 
 - Sweet Cooking
  
 Total stats:
