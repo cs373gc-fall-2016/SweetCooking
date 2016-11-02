@@ -65,7 +65,8 @@ def andRecipes(terms):
     searches through recipes using and logic
     """
     recipes = []
-    results = Recipe.query.filter(reduce(lambda x, y: x and y, map(lambda z: z.lower() in str(Recipe.name).lower(), terms), True))
+    results = Recipe.query.filter(reduce(lambda x, y: x and y,
+        map(lambda z: z.lower() in str(Recipe.name).lower(), terms), True))
     for result in results:
         recipe = {}
         recipe['id'] = result.id
@@ -106,7 +107,8 @@ def andIngredients(terms):
     searches through ingredients using and logic
     """
     ingredients = []
-    results = Ingredient.query.filter(reduce(lambda x, y: x and y, map(lambda z: z.lower() in str(Ingredient.name).lower(), terms), True))
+    results = Ingredient.query.filter(reduce(lambda x, y: x and y,
+        map(lambda z: z.lower() in str(Ingredient.name).lower(), terms), True))
     for result in results:
         ingredient = {}
         ingredient['id'] = result.id
@@ -149,7 +151,8 @@ def andProducts(terms):
     searches through products using and logic
     """
     products = []
-    results = Product.query.filter(reduce(lambda x, y: x and y, map(lambda z: z.lower() in str(Product.name).lower(), terms), True))
+    results = Product.query.filter(reduce(lambda x, y: x and y,
+        map(lambda z: z.lower() in str(Product.name).lower(), terms), True))
     for result in results:
         product = {}
         product['id'] = result.id
@@ -198,7 +201,8 @@ def andLifestyles(terms):
     searches through lifestyles using and logic
     """
     lifestyles = []
-    results = Lifestyle.query.filter(reduce(lambda x, y: x and y, map(lambda z: z.lower() in str(Lifestyle.name).lower(), terms), True))
+    results = Lifestyle.query.filter(reduce(lambda x, y: x and y,
+        map(lambda z: z.lower() in str(Lifestyle.name).lower(), terms), True))
     for result in results:
         lifestyle = {}
         lifestyle['id'] = result.id
