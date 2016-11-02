@@ -16,7 +16,7 @@ git clone https://github.com/cs373gc-fall-2016/SweetCooking.wiki.git
 find . -type f -name '*.md' | xargs wc -w
 ```
 
-# Pillars
+## Pillars
 
  - **Lifestyle**
   * weight management
@@ -58,9 +58,7 @@ find . -type f -name '*.md' | xargs wc -w
  - yelp
  - youtube (tentative)
 
-## Group name: 
-- Sweet Cooking
- 
+## Group statistic: 
 Total stats:
 total no. of commits:
 - ???  
