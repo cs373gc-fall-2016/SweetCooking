@@ -70,11 +70,9 @@ https://github.com/cs373gc-fall-2016/SweetCooking/issues
 https://github.com/cs373gc-fall-2016/SweetCooking  
 - **a link to the GitHub Wiki:**
 https://github.com/cs373gc-fall-2016/SweetCooking/wiki  
-
 - **links to the data sources:**
  * https://spoonacular.com/food-api
  * ???
-
 - **description of how each was scraped:** ???
 
 ## Develping Environment: 
