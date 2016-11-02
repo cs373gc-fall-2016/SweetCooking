@@ -318,7 +318,7 @@ def specRecipe(ids):
         recipe['lifestyles'] = [x.id for x in result.lifestyles]
         recipe['servings'] = result.servings
         recipe['instructions'] = result.instructions
-        recipes.append(recipe)
+        recipes['recipes'].append(recipe)
     return recipes
 
 def specIngredient(ids):
@@ -339,7 +339,7 @@ def specIngredient(ids):
         ingredient['carbs'] = result.carbs
         ingredient['recipes'] = [x.recipe_id for x in result.ingredientlists]
         ingredient['lifestyles'] = [x.id for x in result.lifestyles]
-        ingredients.append(ingredient)
+        ingredients['ingredients'].append(ingredient)
     return ingredients
 
 def specProduct(ids):
@@ -363,7 +363,7 @@ def specProduct(ids):
         product['sugar'] = result.sugar
         product['lifestyles'] = [x.id for x in result.lifestyles]
         product['servingsize'] = result.servingsize
-        products.append(product)
+        products['products'].append(product)
     return products
 
 def specLifestyle(ids):
@@ -389,7 +389,7 @@ def specLifestyle(ids):
         lifestyle['products'] = [x.id for x in result.products]
         lifestyle['recipes'] = [x.id for x in result.recipes]
         lifestyle['ingredients'] = [x.id for x in result.ingredients]
-        lifestyles.append(lifestyle)
+        lifestyles['lifestyles'].append(lifestyle)
     return lifestyles
 
 def specInglist(ids):
@@ -406,6 +406,6 @@ def specInglist(ids):
         inglist['recid'] = result.recipe_id
         inglist['amount'] = result.amount
         inglist['unit'] = result.unit
-        inglists.append(inglist)
+        inglists['inglists'].append(inglist)
     return inglists
 
