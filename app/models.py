@@ -17,6 +17,7 @@ pltable = db.Table('pltable',
         db.Column('lif_id', db.Integer, db.ForeignKey('lifestyle.id')))
 
 class Ingredient(db.Model):
+
     """ Ingredient table"""
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200))

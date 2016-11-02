@@ -1,29 +1,17 @@
 {% extends "layout.html" %}
 {% block title %}Index{% endblock %}
-<style type="text/css">
-  img {
-    max-width: 100%;
-    height: auto;
-    width: auto\9; /* ie8 */
-  }
-</style>
-
 {% block content %}
   <div class="container">
-    <div class="starter-template">
-   <!--      <h1>Sweek Cooking</h1>
-      <p class="lead"> Apple-Pen, Pineapple-Pen Uh! Pen-Pineapple-Apple-Pen Pen-Pineapple-Apple-Pen </p> -->
-    <img src="/static/images/Logo.png"><br><br>
-    <div class="input-group">
-    <input type="text" class="form-control" placeholder="Search for...">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
-      </span>
+    <div class="index-image-container">
+      <img src="/static/images/Logo.png">
+    </div>
+
+    <p class="lead text-center"> Apple-Pen, Pineapple-Pen Uh! Pen-Pineapple-Apple-Pen Pen-Pineapple-Apple-Pen </p>
+
+    <br><br>
+
+    <div id="search-box">
+    <!-- Required to have space in between for DOM render -->
     </div>
   </div>
 {% endblock %}
-
-
-
-
-
