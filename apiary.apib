@@ -7,8 +7,8 @@ Simple API for looking up various recipes, ingredients, and food products.
 
 # Group Search
 
-## Search All Tables [/search/all{?term}]
-<code>/search/all?term={terms}</code><br>
+## Search All Tables [/api/search/all{?term}]
+<code>/api/search/all?term={terms}</code><br>
 
 ### Parameters
 - <code>term</code> *(string, required*) - terms to search for
@@ -96,8 +96,8 @@ Simple API for looking up various recipes, ingredients, and food products.
                 ]
             },
             "or": {
-                "brocolli": {
-                "recipes": [
+                "recipes": {
+                "brocolli": [
                 {
                     "id": 1,
                     "name": "brocolli casserole",
@@ -110,7 +110,9 @@ Simple API for looking up various recipes, ingredients, and food products.
                 },
                 ...
                 ],
-                "ingredients": [
+                },
+                "ingredients": {
+                "brocolli": [
                 {
                     "id": 2,
                     "name": "brocolli",
@@ -128,7 +130,9 @@ Simple API for looking up various recipes, ingredients, and food products.
                 },
                 ...
                 ],
-                "products": [
+                },
+                "products": {
+                "brocolli": [
                 {
                     "id": 3,
                     "name": "brocolli slaw",
@@ -145,7 +149,9 @@ Simple API for looking up various recipes, ingredients, and food products.
                 },
                 ...
                 ],
-                "lifestyle": [
+                },
+                "lifestyle": {
+                "brocolli": [
                 {
                     "id": 40
                     "name": "vegan",
@@ -170,11 +176,12 @@ Simple API for looking up various recipes, ingredients, and food products.
                 },
                 ...
                 ]
+                }
             }
         }
         
-## Search Recipes [/search/recipes{?term}]
-<code>/search/recipes?term={terms}</code><br>
+## Search Recipes [/api/search/recipes{?term}]
+<code>/api/search/recipes?term={terms}</code><br>
 
 #### Parameters
 - <code>term</code> *(string, required*) - terms to search for
@@ -202,8 +209,8 @@ Simple API for looking up various recipes, ingredients, and food products.
                 ],
             },
             "or": {
-                "brocolli": {
-                "recipes": [
+                "recipes": {
+                "brocolli": [
                 {
                     "id": 1,
                     "name": "brocolli casserole",
@@ -216,11 +223,12 @@ Simple API for looking up various recipes, ingredients, and food products.
                 },
                 ...
                 ],
+                }
             }
         }
         
-## Search Ingredients [/search/ingredients{?term}]
-<code>/search/ingredients?term={terms}</code><br>
+## Search Ingredients [/api/search/ingredients{?term}]
+<code>/api/search/ingredients?term={terms}</code><br>
 
 #### Parameters
 - <code>term</code> *(string, required*) - terms to search for
@@ -253,8 +261,8 @@ Simple API for looking up various recipes, ingredients, and food products.
                 ],
             },
             "or": {
-                "brocolli": {
-                "ingredients": [
+                "ingredients": {
+                "brocolli": [
                 {
                     "id": 2,
                     "name": "brocolli",
@@ -272,11 +280,12 @@ Simple API for looking up various recipes, ingredients, and food products.
                 },
                 ...
                 ],
+                }
             }
         }
         
-## Search Products [/search/products{?term}]
-<code>/search/products?term={terms}</code><br>
+## Search Products [/api/search/products{?term}]
+<code>/api/search/products?term={terms}</code><br>
 
 #### Parameters
 - <code>term</code> *(string, required*) - terms to search for
@@ -308,8 +317,8 @@ Simple API for looking up various recipes, ingredients, and food products.
                 ],
             },
             "or": {
-                "brocolli": {
-                "products": [
+                "products": {
+                "brocolli": [
                 {
                     "id": 3,
                     "name": "brocolli slaw",
@@ -326,11 +335,12 @@ Simple API for looking up various recipes, ingredients, and food products.
                 },
                 ...
                 ],
+                }
             }
         }
         
-## Search LifeStyles [/search/lifestyles{?term}]
-<code>/search/lifestyles?term={terms}</code><br>
+## Search LifeStyles [/api/search/lifestyles{?term}]
+<code>/api/search/lifestyles?term={terms}</code><br>
 
 #### Parameters
 - <code>term</code> *(string, required*) - terms to search for
@@ -370,8 +380,8 @@ Simple API for looking up various recipes, ingredients, and food products.
                 ],
             },
             "or": {
-                "brocolli": {
-                "lifestyle": [
+                "lifestyle": {
+                "brocolli": [
                 {
                     "id": 40
                     "name": "vegan",
@@ -396,12 +406,13 @@ Simple API for looking up various recipes, ingredients, and food products.
                 },
                 ...
                 ]
+                }
             }
         }
 
 # Group Recipes
-## List Recipes [/recipes/{pagenum}{?size,col,order}]
-<code>/recipes/{pagenum}?size={size}&col={col}&order={order}</code><br>
+## List Recipes [/api/recipes?pagenum={pagenum}&size={size}&col={col}&order={order}]
+<code>/api/recipes?pagenum={pagenum}&size={size}&col={col}&order={order}</code><br>
 Get a list of recipes specified by the page number and optional page size.<br>
 Can be sorted ascending or descending by a specific column. <br>
 Defaults sorted descending by name.
@@ -453,8 +464,8 @@ Defaults sorted descending by name.
             "total": 578
         }
 
-## Specific Recipes [/recipes{?ids}]
-<code>/recipes?ids={ids}</code><br>
+## Specific Recipes [/api/recipes{?ids}]
+<code>/api/recipes?ids={ids}</code><br>
 Request information about recipes related to **ids**
 #### Parameters
 - <code>ids</code> *(string, required)* - comma separated list of ids
@@ -491,8 +502,8 @@ Request information about recipes related to **ids**
         }
 
 # Group Ingredients
-## List Ingredients [/ingredients/{pagenum}{?size,col,order}]
-<code>/ingredients/{pagenum}?size={size}&col={col}&order={order}</code><br>
+## List Ingredients [/api/ingredients?pagenum={pagenum}&size={size}&col={col}&order={order}]
+<code>/api/ingredients?pagenum={pagenum}&size={size}&col={col}&order={order}</code><br>
 Get a list of ingredients specified by the page number and optional page size.<br>
 Can be sorted ascending or descending by a specific column. <br>
 Defaults sorted descending by name.
@@ -549,8 +560,8 @@ Defaults sorted descending by name.
             "total": 578
         }
 
-## Specific Ingredients [/ingredients{?ids}]
-<code>/ingredients?ids={ids}</code><br>
+## Specific Ingredients [/api/ingredients{?ids}]
+<code>/api/ingredients?ids={ids}</code><br>
 Request information about ingredients related to **ids**
 #### Parameters
 - <code>ids</code> *(string, required)* - comma separated list of ids
@@ -593,8 +604,8 @@ Request information about ingredients related to **ids**
         }
 
 # Group Products
-## List Products [/products/{pagenum}{?size,col,order}]
-<code>/products/{pagenum}?size={size}&col={col}&order={order}</code><br>
+## List Products [/api/products?pagenum={pagenum}&size={size}&col={col}&order={order}]
+<code>/api/products?pagenum={pagenum}&size={size}&col={col}&order={order}</code><br>
 Get a list of products specified by the page number and optional page size.<br>
 Can be sorted ascending or descending by a specific column. <br>
 Defaults sorted descending by name.
@@ -653,8 +664,8 @@ Defaults sorted descending by name.
             "total": 578
         }
 
-## Specific Products [/products{?ids}]
-<code>/products?ids={ids}</code><br>
+## Specific Products [/api/products{?ids}]
+<code>/api/products?ids={ids}</code><br>
 Request information about products related to **ids**
 #### Parameters
 - <code>ids</code> *(string, required)* - comma separated list of ids
@@ -699,8 +710,8 @@ Request information about products related to **ids**
         }
 
 # Group Lifestyles
-## List Lifestyles [/lifestyles/{pagenum}{?size,col,order}]
-<code>/lifestyles/{pagenum}?size={size}&col={col}&order={order}</code><br>
+## List Lifestyles [/api/lifestyles?pagenum={pagenum}&size={size}&col={col}&order={order}]
+<code>/api/lifestyles?pagenum={pagenum}&size={size}&col={col}&order={order}</code><br>
 Get a list of lifestyles specified by the page number and optional page size.<br>
 Can be sorted ascending or descending by a specific column. <br>
 Defaults sorted descending by name.
@@ -767,8 +778,8 @@ Defaults sorted descending by name.
             "total": 578
         }
 
-## Specific Lifestyles [/lifestyles{?ids}]
-<code>/lifestyles?ids={ids}</code><br>
+## Specific Lifestyles [/api/lifestyles{?ids}]
+<code>/api/lifestyles?ids={ids}</code><br>
 Request information about products related to **ids**
 #### Parameters
 - <code>ids</code> *(string, required)* - comma separated list of ids
@@ -827,8 +838,8 @@ Request information about products related to **ids**
 
 
 # Group Ingredient List
-## Specific Nutritional Info [/inglist{?ids}]
-<code>/inglist?ids={ids}</code><br>
+## Specific Ingredient List Info [/api/inglist{?ids}]
+<code>/api/inglist?ids={ids}</code><br>
 Request information about ingredient list related to **ids**
 #### Parameters
 - <code>ids</code> *(string, required)* - comma separated list of ids
@@ -837,7 +848,7 @@ Request information about ingredient list related to **ids**
 + Parameters
     + ids: 1 (string, required) - comma separated list of ids
     
-### GET Specific Nutritional Info [GET]
+### GET Specific Ingredient List Info [GET]
 + Response 200 (application/json)
     + Attributes (object)
         + ingredients [] (array[object]) - array of ingredients
@@ -850,13 +861,9 @@ Request information about ingredient list related to **ids**
             "inglists": [
             {
                 "id": 1,
-                "ingredients": [
-                {
-                    "ingid": 2,
-                    "amount": 5,
-                    "unit": "oz"
-                }
-                ],
+                "ingid": 2,
+                "amount": 5,
+                "unit": "oz"
                 "recid": 1,
             }
             ],
