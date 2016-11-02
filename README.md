@@ -18,7 +18,7 @@ git clone https://github.com/cs373gc-fall-2016/SweetCooking.wiki.git
 find . -type f -name '*.md' | xargs wc -w
 ```
 
-## Pillars
+# Pillars
 
  - **Lifestyle**
   * weight management
@@ -99,7 +99,7 @@ Tools used:
 Optional tools that were not required:
 - ???
 
-Team Members:
+# Team Members:
 
 **Guande Lyu**
 - bio:
