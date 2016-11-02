@@ -4366,7 +4366,7 @@
 	  },
 
 	  doSearch: function doSearch() {
-	    console.log(this.state.message + " kimyung");
+	    console.log(this.state.message);
 	  },
 
 	  render: function render() {

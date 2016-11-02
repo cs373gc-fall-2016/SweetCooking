@@ -7,15 +7,14 @@
       <thead>
         <tr>
           <th>Name</th>
-          <th>Price</th>
-          <th>Season</th>
-          <th>Nutrition</th>
-          <th>Recipes</th>
-          <th>Products</th>
+          <th>Calories</th>
+          <th>Protein</th>
+          <th>Fat</th>
+          <th>Carbs</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
+<!--         <tr>
           <td><a href="salt_ingredient">Salt</a></td> <td> $0.81 </td> <td> Year Round </td> <td> 0 calories in 1 tbsp </td> 
           <td> Sushi </td> <td> Oreo </td>
         </tr> 
@@ -38,7 +37,7 @@
 
         <tr>
           <td><a href="cheese_ingredient">Cheese</a></td> <td> $0.81 </td> <td> Year Round </td> <td> 0 calories in 1 tbsp </td> <td> Pizza </td> <td>  </td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
   </div>
@@ -49,7 +48,20 @@
   {{ super() }}
   <script>
     $(document).ready(function() {
-      $(".table").DataTable({ 
+      var myIngredients = [];
+      $.ajax({
+        url: '/api/ingredients/',
+        type: 'GET',
+
+      })
+      .done(function(data){
+        for (var i in data) {
+          myIngredients.push(data[i]);
+        }
+        console.log(myIngredients[1]);
+        $(".table").DataTable({ 
+          data: myIngredients,
+        });
       });
     });
   </script>
