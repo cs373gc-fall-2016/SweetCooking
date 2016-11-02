@@ -331,7 +331,7 @@ class TestIngredient(TestCase):
 
     def test_specrecipe_1id(self):
         ''' testing one id '''
-        expected = Recipe.query.first()
+        expected = Recipe.query.limit(2).first()
         actual = specRecipe(str(expected.id))
         self.assertEqual(len(actual['recipes']), 1)
         actual = actual['recipes'][0]
@@ -340,8 +340,7 @@ class TestIngredient(TestCase):
 
     def test_specrecipe_2ids(self):
         ''' testing two ids '''
-        expected = Recipe.query.all()
-        expected = [expected[0], expected[1]]
+        expected = [x for x in Recipe.query.limit(2).all()]
         actual = specRecipe(str(expected[0].id) + ',' + str(expected[1].id))
         self.assertEqual(len(actual['recipes']), 2)
         for x in range(2):
@@ -355,7 +354,7 @@ class TestIngredient(TestCase):
 
     def test_specproduct_1id(self):
         ''' testing one id '''
-        expected = Product.query.first()
+        expected = Product.query.limit(2).first()
         actual = specProduct(str(expected.id))
         self.assertEqual(len(actual['products']), 1)
         actual = actual['products'][0]
@@ -364,8 +363,7 @@ class TestIngredient(TestCase):
 
     def test_specproduct_2ids(self):
         ''' testing two ids '''
-        expected = Product.query.all()
-        expected = [expected[0], expected[1]]
+        expected = [x for x in Product.query.limit(2).all()]
         actual = specProduct(str(expected[0].id) + ',' + str(expected[1].id))
         self.assertEqual(len(actual['products']), 2)
         for x in range(2):
@@ -379,7 +377,7 @@ class TestIngredient(TestCase):
 
     def test_specingredient_1id(self):
         ''' testing one id '''
-        expected = Ingredient.query.first()
+        expected = Ingredient.query.limit(2).first()
         actual = specIngredient(str(expected.id))
         self.assertEqual(len(actual['ingredients']), 1)
         actual = actual['ingredients'][0]
@@ -388,8 +386,7 @@ class TestIngredient(TestCase):
 
     def test_specingredient_2ids(self):
         ''' testing two ids '''
-        expected = Ingredient.query.all()
-        expected = [expected[0], expected[1]]
+        expected = [x for x in Ingredient.query.limit(2).all()]
         actual = specIngredient(str(expected[0].id) + ',' + str(expected[1].id))
         self.assertEqual(len(actual['ingredients']), 2)
         for x in range(2):
@@ -403,7 +400,7 @@ class TestIngredient(TestCase):
 
     def test_speclifestyle_1id(self):
         ''' testing one id '''
-        expected = Lifestyle.query.first()
+        expected = Lifestyle.query.limit(2).first()
         actual = specLifestyle(str(expected.id))
         self.assertEqual(len(actual['lifestyles']), 1)
         actual = actual['lifestyles'][0]
@@ -412,13 +409,34 @@ class TestIngredient(TestCase):
 
     def test_speclifestyle_2ids(self):
         ''' testing two ids '''
-        expected = Lifestyle.query.all()
-        expected = [expected[0], expected[1]]
+        expected = [x for x in Lifestyle.query.limit(2).all()]
         actual = specLifestyle(str(expected[0].id) + ',' + str(expected[1].id))
         self.assertEqual(len(actual['lifestyles']), 2)
         for x in range(2):
             self.assertEqual(expected[x].id,  actual['lifestyles'][x]['id'])
             self.assertEqual(expected[x].name,  actual['lifestyles'][x]['name'])
+
+    def test_specinglist_noid(self):
+        ''' testing no ids passed in '''
+        result = specInglist('')
+        self.assertFalse(result['inglists'])
+
+    def test_specinglist_1id(self):
+        ''' testing one id '''
+        expected = Ingredientlist.query.limit(2).first()
+        actual = specInglist(str(expected.id))
+        self.assertEqual(len(actual['inglists']), 1)
+        actual = actual['inglists'][0]
+        self.assertEqual(expected.id, actual['id'])
+
+    def test_specinglist_2ids(self):
+        ''' testing two ids '''
+        expected = [x for x in Ingredientlist.query.limit(2).all()]
+        #expected = [expected[0], expected[1]]
+        actual = specInglist(str(expected[0].id) + ',' + str(expected[1].id))
+        self.assertEqual(len(actual['inglists']), 2)
+        for x in range(2):
+            self.assertEqual(expected[x].id,  actual['inglists'][x]['id'])
 
 # ----
 # main

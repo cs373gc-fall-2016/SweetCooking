@@ -16,7 +16,7 @@ git clone https://github.com/cs373gc-fall-2016/SweetCooking.wiki.git
 find . -type f -name '*.md' | xargs wc -w
 ```
 
-# Pillars
+## Pillars
 
  - **Lifestyle**
   * weight management
@@ -58,32 +58,22 @@ find . -type f -name '*.md' | xargs wc -w
  - yelp
  - youtube (tentative)
 
-## Group name: 
-- Sweet Cooking
- 
-Total stats:
-total no. of commits:
-- ???  
-total no. of issues:
-- ???  
-total no. of unit tests:
-- ???  
-a link to the Apiary API:
-- http://docs.sweetcooking1.apiary.io/#  
-a link to the GitHub Issue Tracker:
-- https://github.com/cs373gc-fall-2016/SweetCooking/issues  
-a link to the GitHub Repo:
-- https://github.com/cs373gc-fall-2016/SweetCooking  
-a link to the GitHub Wiki:
-- https://github.com/cs373gc-fall-2016/SweetCooking/wiki  
-
-data:
-links to the data sources:
-- https://spoonacular.com/food-api
-- ???
-
-description of how each was scraped:
- - **???**
+## Total stats: 
+- **total no. of commits:** ???
+- **total no. of issues:** ???  
+- **total no. of unit tests:** ???  
+- **a link to the Apiary API:** 
+http://docs.sweetcooking1.apiary.io/#  
+- **a link to the GitHub Issue Tracker:**
+https://github.com/cs373gc-fall-2016/SweetCooking/issues  
+- **a link to the GitHub Repo:**
+https://github.com/cs373gc-fall-2016/SweetCooking  
+- **a link to the GitHub Wiki:**
+https://github.com/cs373gc-fall-2016/SweetCooking/wiki  
+- **links to the data sources:**
+ * https://spoonacular.com/food-api
+ * ???
+- **description of how each was scraped:** ???
 
 ## Develping Environment: 
  - **AWS** : Hosts our dynamic website
@@ -98,7 +88,7 @@ description of how each was scraped:
 Optional tools that were not required:
  - **???**
  
-# Team Members:
+## Team Members:
 
 **Guande Lyu**
 - bio:
