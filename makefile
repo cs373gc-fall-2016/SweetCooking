@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := test
 
 FILES :=                              \
-    SweetCooking.html                      \
+    html/SweetCooking.html                      \
     SweetCooking.log                       
 
 ifeq ($(shell uname), Darwin)          # Apple

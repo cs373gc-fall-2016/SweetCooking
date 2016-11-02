@@ -1,3 +1,41 @@
+commit 1cc16d2cc3d0c8b0bf680fdc39cca15b6ce1da14
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Wed Nov 2 17:47:44 2016 -0500
+
+    html folder
+
+commit 81f311ce7f15f042e1d35b722e604cc3b66bd9ad
+Merge: 6fe1afb a829ad5
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Wed Nov 2 17:38:46 2016 -0500
+
+    merge conflict
+
+commit 6fe1afb8d1982127308cd174ea0a95f14ce49ef1
+Merge: 378ffd8 a35d943
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Wed Nov 2 17:37:42 2016 -0500
+
+    merge conflicts
+
+commit 378ffd8c8fd41262c8920c66686ba6f60656d8ab
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Wed Nov 2 17:33:32 2016 -0500
+
+    ok
+
+commit a829ad545d3918de6aa4168d7dbd15e730bb42a2
+Author: kris <cyberwyvern696@gmail.com>
+Date:   Wed Nov 2 16:57:27 2016 -0500
+
+    tests and tests.out
+
+commit 4e071bae4b6f9372efeb1cb825823259ef73a17f
+Author: Alex Irion <alexirion10@gmail.com>
+Date:   Wed Nov 2 16:46:11 2016 -0500
+
+    updated log
+
 commit efcce167014773c9e0ed91b6818dc7b301db5115
 Merge: 07d46d9 c9f9f0f
 Author: Alex Irion <alexirion10@gmail.com>
@@ -53,6 +91,19 @@ Author: kris <cyberwyvern696@gmail.com>
 Date:   Wed Nov 2 15:33:21 2016 -0500
 
     tests and some quick helpers fixes
+
+commit 394d45be0bafa6e5c0f2534a0adca0e2d1c407af
+Merge: 9825f13 cfbb779
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Wed Nov 2 15:22:14 2016 -0500
+
+    ok
+
+commit 9825f1395d1c11cbf446d6ad17f5f9556b651fc9
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Wed Nov 2 15:21:43 2016 -0500
+
+    ok
 
 commit cfbb7798be17542b4691faada4526334eec82a65
 Author: kris <cyberwyvern696@gmail.com>
