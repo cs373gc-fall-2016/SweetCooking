@@ -52,7 +52,7 @@ def andRecipes(terms):
     ''' searches through recipes using and logic '''
     recipes = []
     results = Recipe.query.filter(reduce(lambda x, y: x and y, 
-        map(lambda z: z.lower() in Recipe.name.lower(), terms), True))
+        map(lambda z: z.lower() in str(Recipe.name).lower(), terms), True))
     for result in results:
         recipe = {}
         recipe['id'] = result.id
@@ -71,7 +71,7 @@ def orRecipes(terms):
     everything = {}
     for word in terms:
         recipes = []
-        results = Recipe.query.filter(word.lower() in Recipe.name.lower())
+        results = Recipe.query.filter(word.lower() in str(Recipe.name).lower())
         for result in results:
             recipe = {}
             recipe['id'] = result.id
@@ -90,7 +90,7 @@ def andIngredients(terms):
     ''' searches through ingredients using and logic '''
     ingredients = []
     results = Ingredient.query.filter(reduce(lambda x, y: x and y, 
-        map(lambda z: z.lower() in Ingredient.name.lower(), terms), True))
+        map(lambda z: z.lower() in str(Ingredient.name).lower(), terms), True))
     for result in results:
         ingredient = {}
         ingredient['id'] = result.id
@@ -110,7 +110,7 @@ def orIngredients(terms):
     everything = {}
     for word in terms:
         ingredients = []
-        results = Ingredient.query.filter(word.lower() in Ingredient.name.lower())
+        results = Ingredient.query.filter(word.lower() in str(Ingredient.name).lower())
         for result in results:
             ingredient = {}
             ingredient['id'] = result.id
@@ -130,7 +130,7 @@ def andProducts(terms):
     ''' searches through products using and logic '''
     products = []
     results = Product.query.filter(reduce(lambda x, y: x and y, 
-        map(lambda z: z.lower() in Product.name.lower(), terms), True))
+        map(lambda z: z.lower() in str(Product.name).lower(), terms), True))
     for result in results:
         product = {}
         product['id'] = result.id
@@ -153,7 +153,7 @@ def orProducts(terms):
     everything = {}
     for word in terms:
         products = []
-        results = Product.query.filter(word.lower() in Product.name.lower())
+        results = Product.query.filter(word.lower() in str(Product.name).lower())
         for result in results:
             product = {}
             product['id'] = result.id
@@ -176,7 +176,7 @@ def andLifestyles(terms):
     ''' searches through lifestyles using and logic '''
     lifestyles = []
     results = Lifestyle.query.filter(reduce(lambda x, y: x and y, 
-        map(lambda z: z.lower() in Lifestyle.name.lower(), terms), True))
+        map(lambda z: z.lower() in str(Lifestyle.name).lower(), terms), True))
     for result in results:
         lifestyle = {}
         lifestyle['id'] = result.id
@@ -201,7 +201,7 @@ def orLifestyles(terms):
     everything = {}
     for word in terms:
         lifestyles = []
-        results = Lifestyle.query.filter(word.lower() in Lifestyle.name.lower())
+        results = Lifestyle.query.filter(word.lower() in str(Lifestyle.name).lower())
         for result in results:
             lifestyle = {}
             lifestyle['id'] = result.id
@@ -303,8 +303,10 @@ def listLifestyle(pagenum, size=10, col='name', order='desc'):
 
 def specRecipe(ids):
     ''' returns recipes based off ids '''
-    ids = ids.split(',')
     recipes = {'recipes': []}
+    if(not ids):
+        return recipes
+    ids = ids.split(',')
     for num in ids:
         result = Recipe.query.filter_by(id=num).first()
         if not result:
