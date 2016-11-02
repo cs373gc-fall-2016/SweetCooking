@@ -50,7 +50,9 @@ find . -type f -name '*.md' | xargs wc -w
   * nutritional_info
 
  - **About**
-  * description of the site, its purpose, its intended users:
+  * description of the site
+  * its purpose
+  * its intended users:
   * ???
 
 ## API's:
@@ -83,8 +85,7 @@ links to the data sources:
 - ???
 
 description of how each was scraped:
-- ???
-- 
+ - **???**
 
 ## Develping Environment: 
  - **AWS** : Hosts our dynamic website
@@ -98,7 +99,7 @@ description of how each was scraped:
 
 Optional tools that were not required:
  - **???**
-
+ 
 # Team Members:
 
 **Guande Lyu**
