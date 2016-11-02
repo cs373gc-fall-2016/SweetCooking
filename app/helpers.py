@@ -325,8 +325,10 @@ def specRecipe(ids):
 
 def specIngredient(ids):
     ''' returns ingredients based off ids '''
-    ids = ids.split(',')
     ingredients = {'ingredients': []}
+    if(not ids):
+        return ingredients
+    ids = ids.split(',')
     for num in ids:
         result = Ingredient.query.filter_by(id=num).first()
         if not result:
@@ -346,8 +348,10 @@ def specIngredient(ids):
 
 def specProduct(ids):
     ''' returns products based off ids '''
-    ids = ids.split(',')
     products = {'products': []}
+    if(not ids):
+        return products
+    ids = ids.split(',')
     for num in ids:
         result = Product.query.filter_by(id=num).first()
         if not result:
@@ -370,8 +374,10 @@ def specProduct(ids):
 
 def specLifestyle(ids):
     ''' returns lifestyles based off ids '''
-    ids = ids.split(',')
     lifestyles = {'lifestyles': []}
+    if(not ids):
+        return lifestyles
+    ids = ids.split(',')
     for num in ids:
         result = Lifestyle.query.filter_by(id=num).first()
         if not result:
@@ -396,8 +402,10 @@ def specLifestyle(ids):
 
 def specInglist(ids):
     ''' returns ingredient lists based off ids '''
-    ids = ids.split(',')
     inglists = {'inglists': []}
+    if(not ids):
+        return inglists
+    ids = ids.split(',')
     for num in ids:
         result = Ingredientlist.query.filter_by(id=num).first()
         if not result:
