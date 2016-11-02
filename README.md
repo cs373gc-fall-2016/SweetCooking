@@ -52,15 +52,11 @@ find . -type f -name '*.md' | xargs wc -w
  - **About**
   * description of the site, its purpose, its intended users:
   * ???
-  
-Website Name:
-- Sweet Cooking
-Website URL:
-- www.sweetcooking.me
-API's:
-- Spoonacular
-- yelp
-- youtube (tentative)
+
+## API's:
+ - Spoonacular
+ - yelp
+ - youtube (tentative)
 
 ## Group name: 
 - Sweet Cooking
