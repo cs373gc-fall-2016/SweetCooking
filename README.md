@@ -86,18 +86,18 @@ description of how each was scraped:
 - ???
 - 
 
-Tools used: 
-- AWS: Hosts our dynamic website
-- Apiary: Documents the RestfulAPI we used
-- Boostrap: Created GUI
-- React: Frontend language of choice
-- Flask: backend web development
-- SQLAlchemy: Database
-- PostgreSQL: Database
-- Slack: Team communication
+## Develping Environment: 
+ - **AWS** : Hosts our dynamic website
+ - **Apiary** : Documents the RestfulAPI we used
+ - **Boostrap** : Created GUI
+ - **React** : Frontend language of choice
+ - **Flask** : backend web development
+ - **SQLAlchemy** : Database
+ - **PostgreSQL** : Database
+ - **Slack** : Team communication
 
 Optional tools that were not required:
-- ???
+ - **???**
 
 # Team Members:
 
