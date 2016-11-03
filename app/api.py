@@ -70,7 +70,6 @@ class LifestyleHandler(flask_restful.Resource):
     lifestyles_lib = {}
 
     for lifestyle in lifestyles:
-      print(lifestyle.name)
       lifestyle_data = []
       lifestyle_data.append(lifestyle.name)
       lifestyle_data.append(lifestyle.description)

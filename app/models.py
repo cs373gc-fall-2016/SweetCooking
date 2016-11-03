@@ -12,12 +12,7 @@ pltable = db.Table('pltable', db.Column('pro_id', db.Integer, db.ForeignKey('pro
 
 #Ingredient pillar
 class Ingredient(db.Model):
-<<<<<<< HEAD
-
-    """ Ingredient table"""
-=======
     """ Ingredient table default types"""
->>>>>>> master
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200))
     img = db.Column(db.String(200))
