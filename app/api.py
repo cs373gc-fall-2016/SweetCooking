@@ -10,10 +10,9 @@ class IngredientHandler(flask_restful.Resource):
   def get(self):
     ingredients = Ingredient.query.all()
     ingredients_lib = {}
-
     for ingredient in ingredients:
       ingredient_data = []
-      ingredient_data.append(ingredient.name)
+      ingredient_data.append('<a href=' + ingredient.img + '>' + ingredient.name + '</a>')
       ingredient_data.append(str(ingredient.calories))
       ingredient_data.append(str(ingredient.protein))
       ingredient_data.append(str(ingredient.fat))
@@ -31,7 +30,7 @@ class RecipeHandler(flask_restful.Resource):
 
     for recipe in recipes:
       recipe_data = []
-      recipe_data.append(recipe.name)
+      recipe_data.append('<a href=' + recipe.img + '>' + recipe.name + '</a>')
       recipe_data.append(str(recipe.time))
       recipe_data.append(recipe.instructions)
       recipe_data.append(recipe.servings)
@@ -48,7 +47,7 @@ class ProductHandler(flask_restful.Resource):
 
     for product in products:
       product_data = []
-      product_data.append(product.name)
+      product_data.append('<a href=' + product.img + '>' + product.name + '</a>')
       product_data.append(product.servingsize)
       product_data.append(product.calories)
       product_data.append(product.protein)
@@ -71,7 +70,7 @@ class LifestyleHandler(flask_restful.Resource):
 
     for lifestyle in lifestyles:
       lifestyle_data = []
-      lifestyle_data.append(lifestyle.name)
+      lifestyle_data.append('<a href=' + lifestyle.img + '>' + lifestyle.name + '</a>')
       lifestyle_data.append(lifestyle.description)
       lifestyle_data.append(lifestyle.weight_management)
       lifestyle_data.append(lifestyle.gluten_free)
