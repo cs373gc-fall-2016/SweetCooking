@@ -15,7 +15,12 @@ check word count:
 git clone https://github.com/cs373gc-fall-2016/SweetCooking.wiki.git  
 find . -type f -name '*.md' | xargs wc -w
 ```
-
+Necessary import and package install
+```bash
+pip3 install -r requirements.txt
+npm install
+npm install webpack -g
+```
 ## Pillars
 
  - **Lifestyle**
