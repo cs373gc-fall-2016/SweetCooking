@@ -28,15 +28,17 @@
   {{ super() }}
   <script>
     $(document).ready(function() {
-      var myLifestyles = [];
       $.ajax({
-        url: '/api/lifestyles',
+        url: '/api/lifestyles/',
         type: 'GET',
       })
       .done(function(data){
-        for (var i in data) {
-          myLifestyles.push(data[i]);
-        }
+        var keys = Object.keys(data);
+        var values = keys.map(function(v) { return data[v]; });
+        var myLifestyles = values.map(function(ele) {
+          var link = '<a href="/lifestyles/' + ele.id + '">' + ele.name + '</a>';
+          return [link, ele.description, ele.weight_management, ele.gluten_free, ele.ketogenic, ele.vegetarian, ele.vegan, ele.cheap,ele.dairy_free];
+        });
         $(".table").DataTable({ 
           data: myLifestyles,
         });

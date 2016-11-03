@@ -141,28 +141,56 @@ class ProductHandler(flask_restful.Resource):
 
 api.add_resource(ProductHandler, '/api/foodproducts/<int:product_id>') 
 
-class LifestyleHandler(flask_restful.Resource):
+class LifestylesHandler(flask_restful.Resource):
   def get(self):
-    lifestyles = Lifestyle.query.all()
-    lifestyles_lib = {}
+      lifestyles = Lifestyle.query.all()
+      lifestyles_response = {}
 
-    for lifestyle in lifestyles:
-      lifestyle_data = []
-      lifestyle_data.append('<a href=' + lifestyle.img + '>' + lifestyle.name + '</a>')
-      lifestyle_data.append(lifestyle.description)
-      lifestyle_data.append(lifestyle.weight_management)
-      lifestyle_data.append(lifestyle.gluten_free)
-      lifestyle_data.append(lifestyle.ketogenic)
-      lifestyle_data.append(lifestyle.vegetarian)
-      lifestyle_data.append(lifestyle.vegan)
-      lifestyle_data.append(lifestyle.cheap)
-      lifestyle_data.append(lifestyle.dairy_free)
-      lifestyles_lib[lifestyle.id] = lifestyle_data
+      for lifestyle in lifestyles:
+        lifestyle_data = {
+          'id': lifestyle.id,
+          'name': lifestyle.name,
+          'img': lifestyle.img,
+          'description': lifestyle.description,
+          'weight_management': lifestyle.weight_management,
+          'gluten_free': lifestyle.gluten_free,
+          'ketogenic': lifestyle.ketogenic,
+          'vegetarian': lifestyle.vegetarian,
+          'vegan': lifestyle.vegan,
+          'cheap': lifestyle.cheap,
+          'dairy_free': lifestyle.dairy_free,
+        }
+        lifestyles_response[lifestyle.id] = lifestyle_data
 
-    return jsonify(lifestyles_lib)
+      return jsonify(lifestyles_response)
 
-api.add_resource(LifestyleHandler, '/api/lifestyles/')   
+api.add_resource(LifestylesHandler, '/api/lifestyles/')   
 
+
+class LifestyleHandler(flask_restful.Resource):
+  def get(self, lifestyle_id):
+    lifestyle = Lifestyle.query.filter_by(id=lifestyle_id)
+    lifestyle = lifestyle.first()
+    lifestyle_response = {}
+
+    if lifestyle:
+      lifestyle_response = {
+        'id': lifestyle.id,
+        'name': lifestyle.name,
+        'img': lifestyle.img,
+        'description': lifestyle.description,
+        'weight_management': lifestyle.weight_management,
+        'gluten_free': lifestyle.gluten_free,
+        'ketogenic': lifestyle.ketogenic,
+        'vegetarian': lifestyle.vegetarian,
+        'vegan': lifestyle.vegan,
+        'cheap': lifestyle.cheap,
+        'dairy_free': lifestyle.dairy_free,
+      }
+
+    return jsonify(lifestyle_response)
+
+api.add_resource(LifestyleHandler, '/api/lifestyles/<int:lifestyle_id>')  
 
   
 
