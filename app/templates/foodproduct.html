@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-  <div class="container ingredient-container">    
+  <div class="container foodproduct-container">    
     <div class="row">
       <div class="col-md-4">
         <img class="img-responsive"></img>
@@ -17,15 +17,19 @@
   {{ super() }}
   <script>
     $(document).ready(function(){
-      var url = '/api/ingredients/{{ id }}';
+      var url = '/api/foodproducts/{{ id }}';
       $.get(url).done(function(data){
-        $('.ingredient-container img').attr('src', data.img);
-        $('.ingredient-container ul')
+        $('.foodproduct-container img').attr('src', data.img);
+        $('.foodproduct-container ul')
           .append('<li><h4> name: ' + data.name + '</h4></li>')
+          .append('<li><h4> servingsize: ' + data.servingsize + '</h4></li>')
           .append('<li><h4> calories: ' + data.calories + '</h4></li>')
           .append('<li><h4> protein: ' + data.protein + '</h4></li>')
           .append('<li><h4> fat: ' + data.fat + '</h4></li>')
-          .append('<li><h4> carbs: ' + data.carbs + '</h4></li>');
+          .append('<li><h4> satfat: ' + data.satfat + '</h4></li>')
+          .append('<li><h4> transfat: ' + data.transfat + '</h4></li>')
+          .append('<li><h4> carbs: ' + data.carbs + '</h4></li>')
+          .append('<li><h4> sugar: ' + data.sugar + '</h4></li>');
       });
     });
   </script>

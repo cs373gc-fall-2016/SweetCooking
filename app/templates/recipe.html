@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-  <div class="container ingredient-container">    
+  <div class="container recipe-container">    
     <div class="row">
       <div class="col-md-4">
         <img class="img-responsive"></img>
@@ -17,15 +17,14 @@
   {{ super() }}
   <script>
     $(document).ready(function(){
-      var url = '/api/ingredients/{{ id }}';
+      var url = '/api/recipes/{{ id }}';
       $.get(url).done(function(data){
-        $('.ingredient-container img').attr('src', data.img);
-        $('.ingredient-container ul')
+        $('.recipe-container img').attr('src', data.img);
+        $('.recipe-container ul')
           .append('<li><h4> name: ' + data.name + '</h4></li>')
-          .append('<li><h4> calories: ' + data.calories + '</h4></li>')
-          .append('<li><h4> protein: ' + data.protein + '</h4></li>')
-          .append('<li><h4> fat: ' + data.fat + '</h4></li>')
-          .append('<li><h4> carbs: ' + data.carbs + '</h4></li>');
+          .append('<li><h4> time: ' + data.time + '</h4></li>')
+          .append('<li><h4> instructions: ' + data.instructions + '</h4></li>')
+          .append('<li><h4> servings: ' + data.servings + '</h4></li>');
       });
     });
   </script>

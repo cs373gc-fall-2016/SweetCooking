@@ -23,15 +23,18 @@
   {{ super() }}
   <script>
     $(document).ready(function() {
-      var myRecipes = [];
       $.ajax({
-        url: '/api/recipes',
+        url: '/api/recipes/',
         type: 'GET',
       })
       .done(function(data){
-        for (var i in data) {
-          myRecipes.push(data[i]);
-        }
+        var keys = Object.keys(data);
+        var values = keys.map(function(v) { return data[v]; });
+        debugger;
+        var myRecipes = values.map(function(ele) {
+          var link = '<a href="/recipes/' + ele.id + '">' + ele.name + '</a>';
+          return [link, ele.time, ele.instructions, ele.servings];
+        });
         $(".table").DataTable({ 
           data: myRecipes,
         });
