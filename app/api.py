@@ -6,22 +6,48 @@ import pdb
 
 api = flask_restful.Api(app)
 
-class IngredientHandler(flask_restful.Resource):
+class IngredientsHandler(flask_restful.Resource):
   def get(self):
     ingredients = Ingredient.query.all()
-    ingredients_lib = {}
+    
+    ingredients_response = {}
     for ingredient in ingredients:
-      ingredient_data = []
-      ingredient_data.append('<a href=' + ingredient.img + '>' + ingredient.name + '</a>')
-      ingredient_data.append(str(ingredient.calories))
-      ingredient_data.append(str(ingredient.protein))
-      ingredient_data.append(str(ingredient.fat))
-      ingredient_data.append(str(ingredient.carbs))
-      ingredients_lib[ingredient.id] = ingredient_data
+      ingredient_data = {
+        'id': ingredient.id,
+        'name': ingredient.name,
+        'img': ingredient.img,
+        'calories': ingredient.calories,
+        'protein': ingredient.protein,
+        'fat': ingredient.fat,
+        'carbs': ingredient.carbs,
+      }
+      ingredients_response[ingredient.id] = ingredient_data
 
-    return jsonify(ingredients_lib)
+    return jsonify(ingredients_response)
 
-api.add_resource(IngredientHandler, '/api/ingredients/')   
+api.add_resource(IngredientsHandler, '/api/ingredients/')   
+
+class IngredientHandler(flask_restful.Resource):
+  def get(self, ingredient_id):
+    ingredient = Ingredient.query.filter_by(id=ingredient_id)
+    ingredient = ingredient.first()
+    ingredient_response = {}
+
+    if ingredient:
+      ingredient_response = {
+        'id': ingredient.id,
+        'name': ingredient.name,
+        'img': ingredient.img,
+        'calories': ingredient.calories,
+        'protein': ingredient.protein,
+        'fat': ingredient.fat,
+        'carbs': ingredient.carbs,
+      }
+    
+    return jsonify(ingredient_response)
+
+api.add_resource(IngredientHandler, '/api/ingredients/<int:ingredient_id>')  
+
 
 class RecipeHandler(flask_restful.Resource):
   def get(self):
@@ -64,7 +90,6 @@ api.add_resource(ProductHandler, '/api/products/')
 
 class LifestyleHandler(flask_restful.Resource):
   def get(self):
-    # pdb.set_trace()
     lifestyles = Lifestyle.query.all()
     lifestyles_lib = {}
 

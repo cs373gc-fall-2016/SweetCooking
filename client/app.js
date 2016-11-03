@@ -2,14 +2,12 @@ import routes from './config/routes';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-var ServiceChooser = React.createClass({
-    render: function() {
-        return 
-        <div>
-            <h1>Our services</h1>
-        </div>
-    }
-
+var Hello = React.createClass({
+ render: function() {
+    return (
+      <div> Anyway, Hello World </div>
+    )
+  }
 });
 
 ReactDOM.render(

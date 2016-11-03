@@ -30,7 +30,7 @@
     $(document).ready(function() {
       var myProducts = [];
       $.ajax({
-        url: '/api/products/',
+        url: '/api/products',
         type: 'GET',
       })
       .done(function(data){

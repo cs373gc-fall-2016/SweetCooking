@@ -67,22 +67,16 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var ServiceChooser = _react2.default.createClass({
-	    displayName: 'ServiceChooser',
+	var Hello = _react2.default.createClass({
+	  displayName: 'Hello',
 
-	    render: function render() {
-	        return;
-	        _react2.default.createElement(
-	            'div',
-	            null,
-	            _react2.default.createElement(
-	                'h1',
-	                null,
-	                'Our services'
-	            )
-	        );
-	    }
-
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      ' Anyway, Hello World '
+	    );
+	  }
 	});
 
 	_reactDom2.default.render(_routes2.default, document.getElementById('search-box'));
@@ -96,6 +90,10 @@
 	var _react = __webpack_require__(3);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(92);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
 
 	var _searchBox = __webpack_require__(36);
 
@@ -115,24 +113,20 @@
 	      _react2.default.createElement(
 	        'h1',
 	        null,
-	        ' HHHHHHHHHHHH '
+	        ' Hello People '
 	      )
 	    );
 	  }
 	});
 
-	var Home = _react2.default.createClass({
-	  displayName: 'Home',
+	var Hello = _react2.default.createClass({
+	  displayName: 'Hello',
 
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
 	      null,
-	      _react2.default.createElement(
-	        'h1',
-	        null,
-	        'Hello there'
-	      )
+	      ' Hello World '
 	    );
 	  }
 	});
@@ -144,7 +138,7 @@
 	    return _react2.default.createElement(
 	      'h1',
 	      null,
-	      ' LLLLLLLLLLLLL '
+	      ' Hello YOYOYOYYO '
 	    );
 	  }
 	});
@@ -155,7 +149,7 @@
 	  _react2.default.createElement(
 	    _reactRouter.Route,
 	    { path: '/', component: _searchBox2.default },
-	    _react2.default.createElement(_reactRouter.IndexRoute, { component: Home }),
+	    _react2.default.createElement(_reactRouter.IndexRoute, { component: Hello }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'view', component: ViewContainer })
 	  )
 	);

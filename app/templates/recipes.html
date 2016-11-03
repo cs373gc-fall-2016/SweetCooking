@@ -25,7 +25,7 @@
     $(document).ready(function() {
       var myRecipes = [];
       $.ajax({
-        url: '/api/recipes/',
+        url: '/api/recipes',
         type: 'GET',
       })
       .done(function(data){

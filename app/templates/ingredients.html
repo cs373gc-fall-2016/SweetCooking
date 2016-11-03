@@ -24,15 +24,17 @@
   {{ super() }}
   <script>
     $(document).ready(function() {
-      var myIngredients = [];
       $.ajax({
-        url: '/api/ingredients/',
+        url: '/api/ingredients',
         type: 'GET',
       })
       .done(function(data){
-        for (var i in data) {
-          myIngredients.push(data[i]);
-        }
+        var keys = Object.keys(data);
+        var values = keys.map(function(v) { return data[v]; });
+        var myIngredients = values.map(function(ele) {
+          var link = '<a href="/ingredients/' + ele.id + '">' + ele.name + '</a>';
+          return [link, ele.calories, ele.protein, ele.fat, ele.carbs];
+        });
         $(".table").DataTable({ 
           data: myIngredients,
         });

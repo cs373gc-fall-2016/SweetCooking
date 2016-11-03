@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import searchBox from '../components/searchBox';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 
@@ -6,18 +7,17 @@ var Main = React.createClass({
   render: function() {
     return (
       <div>
-        <h1> HHHHHHHHHHHH </h1>
+        <h1> Hello People </h1>
       </div>
     )
   }
 });
 
-var Home = React.createClass({
-  render: function() {
+
+var Hello = React.createClass({
+ render: function() {
     return (
-      <div>
-        <h1>Hello there</h1>
-      </div>
+      <div> Hello World </div>
     )
   }
 });
@@ -26,7 +26,7 @@ var Home = React.createClass({
 var ViewContainer = React.createClass({
   render: function() {
     return (
-      <h1> LLLLLLLLLLLLL </h1>
+      <h1> Hello YOYOYOYYO </h1>
     )
   }
 });
@@ -34,7 +34,7 @@ var ViewContainer = React.createClass({
 var routes = (
   <Router history={hashHistory}>
     <Route path='/' component={searchBox}>
-      <IndexRoute component={Home} />
+      <IndexRoute component={Hello} />
       <Route path='view' component={ViewContainer} />
     </Route>
   </Router>
