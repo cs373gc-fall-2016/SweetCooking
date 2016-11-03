@@ -14,6 +14,7 @@ var searchBox = React.createClass({
   },
 
   doSearch: function() {
+    $.get(url)
     console.log(this.state.message);  
   },
 

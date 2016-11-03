@@ -1,6 +1,6 @@
 """DB models file"""
 from app import db
-
+import flask_whooshalchemy
 # join table for ingredients and lifestyles
 iltable = db.Table('iltable', db.Column('ing_id', db.Integer, db.ForeignKey('ingredient.id')), db.Column('lif_id', db.Integer, db.ForeignKey('lifestyle.id')))
 
@@ -10,8 +10,46 @@ rltable = db.Table('rltable', db.Column('rec_id', db.Integer, db.ForeignKey('rec
 # join table for products and lifestyles
 pltable = db.Table('pltable', db.Column('pro_id', db.Integer, db.ForeignKey('product.id')), db.Column('lif_id', db.Integer, db.ForeignKey('lifestyle.id')))
 
+def parse_query(query):
+    """
+    Helper method to parse the queries
+    This function is invoked in Drink, Ingredient, and Users' search functions
+    """
+    terms = query.lower().split()
+    query = "\"" + query.lower() + "\""
+    and_term = ""
+    or_term = ""
+
+    for i, term in enumerate(terms):
+        if i != 0:
+            and_term += " AND " + term
+            or_term += " OR " + term
+        else:
+            and_term += term
+            or_term += term
+
+    return (and_term, or_term)
+
+
+def parse_results(and_results, or_results):
+    """
+    A helper function that takes in the results lists
+    and returns the id: name key pair values
+    """
+
+    result = []
+    for item in and_results:
+        result.append({'id': item.id, 'name': item.name})
+    for item in or_results:
+        result.append({'id': item.id, 'name': item.name})
+
+    return results
+
 #Ingredient pillar
 class Ingredient(db.Model):
+
+    __searchable__ = ["name"]
+
     """ Ingredient table default types"""
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200))
@@ -37,6 +75,20 @@ class Ingredient(db.Model):
 
     def __repr__(self):
         return 'Ingredient: {}'.format(self.name)
+    
+    @staticmethod
+    def search(query, limit=50):
+        if query is None or not query.strip():
+            return []
+
+        and_term, or_term = parse_query(query)
+        and_results = Ingredient.query.whoosh_search(and_term) \
+                                 .limit(limit).all()
+        or_results = Ingredient.query.whoosh_search(or_term) \
+                                .limit(limit).all()
+        or_results = list(set(and_results).symmetric_difference(or_results))
+
+        return parse_results(and_results, or_results)
 
 #Recipe pillar
 class Recipe(db.Model):

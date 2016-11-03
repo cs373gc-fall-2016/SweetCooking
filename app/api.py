@@ -25,7 +25,6 @@ class IngredientsHandler(flask_restful.Resource):
 
     return jsonify(ingredients_response)
 
-api.add_resource(IngredientsHandler, '/api/ingredients/')   
 
 class IngredientHandler(flask_restful.Resource):
   def get(self, ingredient_id):
@@ -46,10 +45,9 @@ class IngredientHandler(flask_restful.Resource):
     
     return jsonify(ingredient_response)
 
-api.add_resource(IngredientHandler, '/api/ingredients/<int:ingredient_id>')  
 
 
-class RecipeHandler(flask_restful.Resource):
+class RecipesHandler(flask_restful.Resource):
   def get(self):
     recipes = Recipe.query.all()
     recipes_lib = {}
@@ -64,9 +62,9 @@ class RecipeHandler(flask_restful.Resource):
 
     return jsonify(recipes_lib)
 
-api.add_resource(RecipeHandler, '/api/recipes/')   
 
-class ProductHandler(flask_restful.Resource):
+
+class ProductsHandler(flask_restful.Resource):
   def get(self):
     products = Product.query.all()
     products_lib = {}
@@ -86,9 +84,9 @@ class ProductHandler(flask_restful.Resource):
 
     return jsonify(products_lib)
 
-api.add_resource(ProductHandler, '/api/products/') 
 
-class LifestyleHandler(flask_restful.Resource):
+
+class LifestylesHandler(flask_restful.Resource):
   def get(self):
     lifestyles = Lifestyle.query.all()
     lifestyles_lib = {}
@@ -108,7 +106,50 @@ class LifestyleHandler(flask_restful.Resource):
 
     return jsonify(lifestyles_lib)
 
-api.add_resource(LifestyleHandler, '/api/lifestyles/')   
+
+class CSearchHandler(flask_restful.Resource):
+  def get(self, query):
+    print('kkkkkkkkk')
+    print(query)
+    if query is None:
+      return "query cannot be empty"
+    elif query.strip() == "":
+      return "query cannot be empty"
+
+    results = []
+
+    ingredients = Ingredient.search(query)
+    # recipes = Recipe.search(query)
+    # products = Product.search(query)
+    # lifestyles = Lifestyle.search(query)
+
+    results.append(ingredients)
+    # results.append(recipes)
+    # results.append(products)
+    # results.append(lifestyles)
+
+    return jsonify(results=results)
+
+
+
+
+api.add_resource(IngredientsHandler, '/api/ingredients/')   
+api.add_resource(IngredientHandler, '/api/ingredients/<int:ingredient_id>')  
+
+api.add_resource(RecipesHandler, '/api/recipes/')   
+# api.add_resource(RecipeHandler, '/api/recipes/<int:recipe_id>') 
+
+api.add_resource(ProductsHandler, '/api/products/') 
+# api.add_resource(ProductHandler, '/api/products/<int:product_id>') 
+
+api.add_resource(LifestylesHandler, '/api/lifestyles/')  
+# api.add_resource(LifestyleHandler, '/api/lifestyles/<int:lifestyle_id>') 
+
+api.add_resource(CSearchHandler, '/api/csearch/<string:query>')
+
+
+
+
 
 
   
