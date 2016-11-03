@@ -7,36 +7,17 @@
       <thead>
         <tr>
           <th>Name</th>
-          <th>Price</th>
-          <th>Desciption</th>
-          <th>Similiar foods</th>
-          <th>Nutrition</th>
-          <th>Ingredients</th>
-          <th>Category</th>
-          <th>Lifestyle</th>
+          <th>Servingsize</th>
+          <th>Calories</th>
+          <th>Protein</th>
+          <th>Fat</th>
+          <th>Satfat</th>
+          <th>Transfat</th>
+          <th>Carbs</th>
+          <th>Sugar</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><a href="oreo_product">Oreo</a></td> <td>$4</td> <td>delicious icing sandwhich in chocolate crackers</td> <td> Chips Ahoy! </td>  <td>Calories 140 Sodium 90 mgTotal Fat 7 g Potassium 35 mg Saturated 2 g Total Carbs 21 g</td> <td> sugar</td> <td> snack</td> <td> unhealthy</td>
-        </tr>
-
-        <tr>
-          <td><a href="peanutbutter_product">Jiff Peanut Butter</a></td> <td>$2.48</td> <td>Peanuts crushed into a cream</td> <td> Nutella, Jelly</td>  <td>16 g fat 190 calories per serving</td> <td> sugar</td> <td> snack</td> <td> unhealthy</td>
-        </tr>
-        
-        <tr>
-          <td><a href="tostito_product">Tostitos Chips</a></td> <td>$3.99</td> <td>Restaurant style tortilla chips</td> <td> Doritos, Fritos</td>  <td>7g fat 140 calories per serving</td> <td> sugar</td> <td> snack</td> <td> healthy</td>
-        </tr>
-        
-        <tr>
-          <td><a href="tomato_sauce_product">Tomato Sauce</a></td> <td> $0.81 </td> <td> tomoato product </td> <td> Year Round </td> <td> 10 calories in 1 tbsp </td> <td> sugar</td> <td> snack</td> <td> healthy</td>
-        </tr> 
-
-        <tr>
-          <td><a href="bbq_sauce_product">Bbq Sauce</a></td> <td> $5.09 </td> <td> BBQ product </td>  <td> Year Round </td> <td> 50 calories in 1 tbsp </td> <td> sugar</td> <td> snack</td> <td> unhealthy</td> 
-        </tr>
-
       </tbody>
     </table>
   </div>
@@ -47,7 +28,18 @@
   {{ super() }}
   <script>
     $(document).ready(function() {
-      $(".table").DataTable({ 
+      var myProducts = [];
+      $.ajax({
+        url: '/api/products/',
+        type: 'GET',
+      })
+      .done(function(data){
+        for (var i in data) {
+          myProducts.push(data[i]);
+        }
+        $(".table").DataTable({ 
+          data: myProducts,
+        });
       });
     });
   </script>

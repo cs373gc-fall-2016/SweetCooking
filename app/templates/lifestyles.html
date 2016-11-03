@@ -6,28 +6,18 @@
     <table class="table table-striped" >
       <thead>
         <tr>
+          <th>Name</th>
+          <th>Description</th>
           <th>Weight management</th>
-          <th>Dietary restrictions</th>
           <th>Gluten-free</th>
-          <th>Carb-free</th>
-          <th>Vegetarian/vegan</th>
-          <th>Products</th>
-          <th>Recipes</th>
+          <th>Ketogenic</th>
+          <th>Vegetarian</th>
+          <th>Vegan</th>
+          <th>Cheap</th>
+          <th>Dairy_free</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><a href="weightloss_lifestyle">Weight loss</a></td> <td>Consume less than 2000 Calories per day</td> <td>Depends on Person</td> <td>No</td>  <td>Depends</td> <td></td> <td>sushi</td>
-        </tr>
-
-        <tr>
-          <td><a href="vegan_lifestyle">Vegan</a></td> <td>Do not consume anything from animals</td> <td>No</td> <td>No</td>  <td>All Vegans are Vegetarians</td> <td>Oreo</td> <td>sushi</td>
-        </tr>
-
-        <tr>
-          <td><a href="fit_lifestyle">Fit</a></td> <td> Consume higher protein and less carbs</td> <td> Depends </td> <td> Depends </td>  <td>It is possible </td> <td></td> <td>sushi</td>
-        </tr>
-
       </tbody>
     </table>
   </div>
@@ -37,7 +27,18 @@
   {{ super() }}
   <script>
     $(document).ready(function() {
-      $(".table").DataTable({ 
+      var myLifestyles = [];
+      $.ajax({
+        url: '/api/lifestyles/',
+        type: 'GET',
+      })
+      .done(function(data){
+        for (var i in data) {
+          myLifestyles.push(data[i]);
+        }
+        $(".table").DataTable({ 
+          data: myLifestyles,
+        });
       });
     });
   </script>

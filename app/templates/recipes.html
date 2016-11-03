@@ -7,27 +7,12 @@
       <thead>
         <tr>
           <th>Name</th>
-          <th>Price</th>
-          <th>Category</th>
-          <th>Origin</th>
-          <th>Cook time</th>
-          <th>Nutrition</th>
-          <th>Lifestyle</th>
-          <th>Ingredients</th>
+          <th>Time</th>
+          <th>Instructions</th>
+          <th>Servings</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><a href="/sushi">California Sushi Roll</a></td> <td>$8</td> <td>sushi</td> <td>Japan</td>  <td>1.5 hours</td> <td>8 Pieces, Calories: 255, Fat: 7g, Carbs: 38g, Protein: 9g</td> <td>fit, vegan</td> <td>rice</td> 
-        </tr>
-
-        <tr>
-          <td><a href="/spaghetti_meatballs">Spaghetti meatballs</a></td> <td>$7</td> <td>spaghetti</td> <td>Italian - American</td>  <td>1 hour</td> <td>220 Calories per serving, 8g Protein, 183mg Sodium</td> <td>healthy</td> <td>pork floor</td> 
-        </tr>
-
-        <tr>
-          <td><a href="/pizza">Chicken pizza</a></td> <td>$6</td> <td>pizza</td> <td>Italian</td>  <td>1.5 hours</td> <td>184 Calories per serving, 13g Protein, 382mg Sodium</td> <td>healthy</td> <td>cheese</td> 
-        </tr>
       </tbody>
     </table>
   </div>
@@ -38,7 +23,18 @@
   {{ super() }}
   <script>
     $(document).ready(function() {
-      $(".table").DataTable({ 
+      var myRecipes = [];
+      $.ajax({
+        url: '/api/recipes/',
+        type: 'GET',
+      })
+      .done(function(data){
+        for (var i in data) {
+          myRecipes.push(data[i]);
+        }
+        $(".table").DataTable({ 
+          data: myRecipes,
+        });
       });
     });
   </script>

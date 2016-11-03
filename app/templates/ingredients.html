@@ -14,30 +14,6 @@
         </tr>
       </thead>
       <tbody>
-<!--         <tr>
-          <td><a href="salt_ingredient">Salt</a></td> <td> $0.81 </td> <td> Year Round </td> <td> 0 calories in 1 tbsp </td> 
-          <td> Sushi </td> <td> Oreo </td>
-        </tr> 
-        
-        <tr>
-          <td><a href="tomato_ingredient">Tomato</a></td> <td> $0.12 </td> <td> Spring and Summer </td> <td> 22 calories in 1 medium whole Red Tomato. Calorie breakdown: 9% fat, 78% carbs, 13% protein. Other Common Serving </td> <td> Pizza </td> <td> ketchup </td>
-        </tr>
-
-        <tr>
-          <td><a href="sugar_ingredient">Sugar</a></td> <td> $0.81 </td> <td> Year Round </td> <td> 0 calories in 1 tbsp </td> <td> Pizza </td> <td> Oreo </td>
-        </tr>
-        
-        <tr>
-          <td><a href="onion_ingredient">Onion</a></td> <td> $1.40 </td> <td> Year Round </td> <td> 30 calories per bulb </td> <td> Pizza </td> <td> </td>
-        </tr>
-
-        <tr>
-          <td><a href="chicken_ingredient">Chicken</a></td> <td> $7.99 </td> <td> Year Round </td> <td> 200 calories per ounce </td> <td> Pizza </td> <td> </td>
-        </tr>
-
-        <tr>
-          <td><a href="cheese_ingredient">Cheese</a></td> <td> $0.81 </td> <td> Year Round </td> <td> 0 calories in 1 tbsp </td> <td> Pizza </td> <td>  </td>
-        </tr> -->
       </tbody>
     </table>
   </div>
@@ -52,13 +28,11 @@
       $.ajax({
         url: '/api/ingredients/',
         type: 'GET',
-
       })
       .done(function(data){
         for (var i in data) {
           myIngredients.push(data[i]);
         }
-        console.log(myIngredients[1]);
         $(".table").DataTable({ 
           data: myIngredients,
         });
