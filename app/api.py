@@ -167,6 +167,30 @@ class LifestylesHandler(flask_restful.Resource):
 api.add_resource(LifestylesHandler, '/api/lifestyles/')   
 
 
+class LifestyleHandler(flask_restful.Resource):
+  def get(self, lifestyle_id):
+    lifestyle = Lifestyle.query.filter_by(id=lifestyle_id)
+    lifestyle = lifestyle.first()
+    lifestyle_response = {}
+
+    if lifestyle:
+      lifestyle_response = {
+        'id': lifestyle.id,
+        'name': lifestyle.name,
+        'img': lifestyle.img,
+        'description': lifestyle.description,
+        'weight_management': lifestyle.weight_management,
+        'gluten_free': lifestyle.gluten_free,
+        'ketogenic': lifestyle.ketogenic,
+        'vegetarian': lifestyle.vegetarian,
+        'vegan': lifestyle.vegan,
+        'cheap': lifestyle.cheap,
+        'dairy_free': lifestyle.dairy_free,
+      }
+
+    return jsonify(lifestyle_response)
+
+api.add_resource(LifestyleHandler, '/api/lifestyles/<int:lifestyle_id>')  
 
   
 
