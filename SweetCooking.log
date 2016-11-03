@@ -1,3 +1,398 @@
+commit 1cc16d2cc3d0c8b0bf680fdc39cca15b6ce1da14
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Wed Nov 2 17:47:44 2016 -0500
+
+    html folder
+
+commit 81f311ce7f15f042e1d35b722e604cc3b66bd9ad
+Merge: 6fe1afb a829ad5
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Wed Nov 2 17:38:46 2016 -0500
+
+    merge conflict
+
+commit 6fe1afb8d1982127308cd174ea0a95f14ce49ef1
+Merge: 378ffd8 a35d943
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Wed Nov 2 17:37:42 2016 -0500
+
+    merge conflicts
+
+commit 378ffd8c8fd41262c8920c66686ba6f60656d8ab
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Wed Nov 2 17:33:32 2016 -0500
+
+    ok
+
+commit a829ad545d3918de6aa4168d7dbd15e730bb42a2
+Author: kris <cyberwyvern696@gmail.com>
+Date:   Wed Nov 2 16:57:27 2016 -0500
+
+    tests and tests.out
+
+commit 4e071bae4b6f9372efeb1cb825823259ef73a17f
+Author: Alex Irion <alexirion10@gmail.com>
+Date:   Wed Nov 2 16:46:11 2016 -0500
+
+    updated log
+
+commit efcce167014773c9e0ed91b6818dc7b301db5115
+Merge: 07d46d9 c9f9f0f
+Author: Alex Irion <alexirion10@gmail.com>
+Date:   Wed Nov 2 16:38:15 2016 -0500
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit c9f9f0f4d0684e4c858c84db9a20fdccdb06b92e
+Author: Guande <patricklyu216@gmail.com>
+Date:   Wed Nov 2 16:35:43 2016 -0500
+
+    Update README.md
+
+commit 5d422bb450ef9fd0933a8f8b6b1c28e8ef3bb930
+Author: Guande <patricklyu216@gmail.com>
+Date:   Wed Nov 2 16:34:53 2016 -0500
+
+    Update README.md
+
+commit 3cf6285e8cc9500c479e50ef7cfbd7c3bad8af90
+Merge: a9142c2 16d8fbf
+Author: kris <cyberwyvern696@gmail.com>
+Date:   Wed Nov 2 16:31:32 2016 -0500
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit a9142c24f36b898b64e21b560e425327503acb97
+Author: kris <cyberwyvern696@gmail.com>
+Date:   Wed Nov 2 16:30:51 2016 -0500
+
+    unit tests
+
+commit 16d8fbf16779bf00d88d102546b226eb4c9291ba
+Author: Guande <patricklyu216@gmail.com>
+Date:   Wed Nov 2 16:22:15 2016 -0500
+
+    Update README.md
+
+commit 07d46d9fb237124d7f9ef50c8e434b3099ab4c0f
+Author: Alex Irion <alexirion10@gmail.com>
+Date:   Wed Nov 2 16:17:42 2016 -0500
+
+    cleaned up models.py and ran pylint
+
+commit b327553fc0e763e6c7f184f84a39cf281ab68a35
+Author: Evan Carrillo <evancarrillo@hotmail.com>
+Date:   Wed Nov 2 16:10:54 2016 -0500
+
+    helper.py, still working on pydoc
+
+commit a35d943cb0275c047b62b9494555e64d542a409d
+Author: kris <cyberwyvern696@gmail.com>
+Date:   Wed Nov 2 15:33:21 2016 -0500
+
+    tests and some quick helpers fixes
+
+commit 394d45be0bafa6e5c0f2534a0adca0e2d1c407af
+Merge: 9825f13 cfbb779
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Wed Nov 2 15:22:14 2016 -0500
+
+    ok
+
+commit 9825f1395d1c11cbf446d6ad17f5f9556b651fc9
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Wed Nov 2 15:21:43 2016 -0500
+
+    ok
+
+commit cfbb7798be17542b4691faada4526334eec82a65
+Author: kris <cyberwyvern696@gmail.com>
+Date:   Wed Nov 2 10:00:55 2016 -0500
+
+    fixed a problem with the api stuffs
+
+commit 31a4dddece5b78959a37167de11bb691f189b5e5
+Author: kris <cyberwyvern696@gmail.com>
+Date:   Wed Nov 2 09:47:04 2016 -0500
+
+    updated the uml pdf closes #34
+
+commit 5a76c2dddd1ace37839606d16098fc945bf28f7c
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Wed Nov 2 07:10:46 2016 -0500
+
+    fixed the db uml
+
+commit 371af9e3a964da21f9f8d37e9c8dc9f0ea6acf6b
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Wed Nov 2 07:05:04 2016 -0500
+
+    removed old data uml stuff
+
+commit 86357efdf14a5b418addef05a17a9bcba33ff40d
+Author: chrislin1994 <kris_lin@utexas.edu>
+Date:   Wed Nov 2 03:19:25 2016 -0500
+
+    Update README.md
+
+commit e31731748ee483b1ae973f872925b00c2a15b4f1
+Author: chrislin1994 <kris_lin@utexas.edu>
+Date:   Wed Nov 2 03:16:50 2016 -0500
+
+    Update README.md
+
+commit 793ec16598ebb43093a32f0fc230033286d70fe1
+Author: chrislin1994 <kris_lin@utexas.edu>
+Date:   Wed Nov 2 03:12:47 2016 -0500
+
+    Update README.md
+
+commit e0a1949915a56326007de1db6f91ae9b7f116b4e
+Author: chrislin1994 <kris_lin@utexas.edu>
+Date:   Wed Nov 2 03:11:24 2016 -0500
+
+    Update README.md
+
+commit c4ef084a308acc656bbeda9e93a5ee1b727f44e9
+Author: chrislin1994 <kris_lin@utexas.edu>
+Date:   Wed Nov 2 02:37:09 2016 -0500
+
+    Update README.md
+
+commit ddfe17f747a5911c609bdd9a98413dc661fb8aee
+Author: chrislin1994 <kris_lin@utexas.edu>
+Date:   Wed Nov 2 02:36:12 2016 -0500
+
+    Update README.md
+
+commit af671027772146fa7a98dfa6f51a97cd6ae97d67
+Author: kris <cyberwyvern696@gmail.com>
+Date:   Mon Oct 31 20:30:57 2016 -0500
+
+    fixed db and added scraper code
+
+commit ed0315734d9ca99bece864bab8e8cbf9a5cca9a0
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Mon Oct 31 21:29:23 2016 +0000
+
+    api is up and running
+
+commit c8a753405c36afbb5faae860bc9e834883e2f8a1
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Mon Oct 31 18:06:05 2016 +0000
+
+    some views stuff
+
+commit cb416ca29a5e12459b30061573ff839d750f1759
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Mon Oct 31 17:49:53 2016 +0000
+
+    fixing app to work with the postgre db
+
+commit cf046fd067f7f55e8e426c77ae076546b5037aaf
+Merge: 5241a0e 63f228b
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Mon Oct 31 17:11:51 2016 +0000
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit 5241a0e6d2d8a5504ecc8d09cdb9a665877f00d0
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Mon Oct 31 17:11:35 2016 +0000
+
+    updated app/config.py for postgresql
+
+commit 63f228b34f9746c0bb8300d2e5b111a613ce1cf1
+Author: Kris Vandercook <cyberwyvern696@gmail.com>
+Date:   Mon Oct 31 12:06:31 2016 -0500
+
+    added postgres file
+
+commit 687c46efa66a04845db6b138cddc45c0e749f462
+Merge: 0198c8f 9731389
+Author: Kris Vandercook <cyberwyvern696@gmail.com>
+Date:   Sat Oct 29 18:22:50 2016 -0500
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit 0198c8f289b493890f0df54781ba5051390e3dff
+Merge: c9fd250 813bef5
+Author: Kris Vandercook <cyberwyvern696@gmail.com>
+Date:   Sat Oct 29 18:20:17 2016 -0500
+
+    api should hopefully be working
+
+commit 9731389cbfef3605a8e54f5de3647ed144b997b7
+Author: cyberwyvern696 <cyberwyvern696@gmail.com>
+Date:   Sat Oct 29 18:12:47 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit c1c0a1662d28da600258200be8eb550803408420
+Author: cyberwyvern696 <cyberwyvern696@gmail.com>
+Date:   Sat Oct 29 17:48:31 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit c9fd25006b11c65a6a91a8dd3c19c990cfbf11ba
+Author: Kris Vandercook <cyberwyvern696@gmail.com>
+Date:   Sat Oct 29 17:38:50 2016 -0500
+
+    helper methods for the api
+
+commit c0178a0ec9a9b4fcde9c0d024221a7949caa10f4
+Author: cyberwyvern696 <cyberwyvern696@gmail.com>
+Date:   Sat Oct 29 17:35:15 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 9a82932a632091312a76a27060ac8c3de7b6ca37
+Author: cyberwyvern696 <cyberwyvern696@gmail.com>
+Date:   Sat Oct 29 16:13:49 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 78a76a6d4b320a23a58f18f93e1d89f2a9beceea
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Fri Oct 28 11:00:27 2016 -0500
+
+    had to change servings for products to a string
+
+commit c17e7d3156093ed08adb312b3c8287a7a26fe364
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Fri Oct 28 10:57:26 2016 -0500
+
+    stupid gluten typo...
+
+commit 8a21030ac8c3f03bc88641a04867d6b55893e235
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Fri Oct 28 10:23:28 2016 -0500
+
+    omg... unit needs to be longer too
+
+commit 6b592f7b14792a499dc027387f91611323d70837
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Fri Oct 28 07:50:37 2016 -0500
+
+    *sigh* had to make the names longer
+
+commit 6ce65a1fd88a962ea3951e843a973c3b2ceb5382
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Fri Oct 28 07:12:05 2016 -0500
+
+    changed amount in ingredientlist to float
+
+commit 20daf83714f5edded1b4286fbb703accd772bf97
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Fri Oct 28 06:53:42 2016 -0500
+
+    had to increase the size of the instructions for recipes
+
+commit b7d89762715433bff077ca14a20f25d27bd7dc02
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 27 01:54:52 2016 -0500
+
+    Add files via upload
+
+commit 813bef598eb30a761a9f9c0778051ed966279d94
+Merge: df00e26 3db6e49
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Wed Oct 26 22:04:57 2016 +0000
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit 3db6e4996f1b44f921de8a9f7c0279c10e4f4fd9
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Wed Oct 26 17:04:46 2016 -0500
+
+    updated views
+
+commit df00e262916c79aa0e228d668c847cf3639a1158
+Merge: 53dfa51 fd32751
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Wed Oct 26 22:03:31 2016 +0000
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit 53dfa5122a3343328d9d3e1b90fb18dda8f22642
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Wed Oct 26 22:03:28 2016 +0000
+
+    rendering templates
+
+commit fd32751c4596ac35b9f2f7c93aee1b895f7196ea
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Wed Oct 26 17:00:21 2016 -0500
+
+    updated views
+
+commit 20ef808e55117ea245b0f90272d984bc8a680b96
+Author: Kris Vandercook <cyberwyvern696@gmail.com>
+Date:   Wed Oct 26 08:28:43 2016 -0500
+
+    some very basic unit tests and messed around with the models a little
+
+commit 10b29935783860b630e14882744335af95043c6e
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Wed Oct 26 07:28:44 2016 -0500
+
+    Update README.md
+
+commit ecbc78a6dd8a582be89937c8ee2b75a32a980f8e
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Wed Oct 26 07:26:48 2016 -0500
+
+    Update README.md
+
+commit 30e71d0644f61cc3da57f6b02a9860531f83721f
+Author: Kris Vandercook <cyberwyvern696@gmail.com>
+Date:   Tue Oct 25 11:20:09 2016 -0500
+
+    new models
+
+commit a3e30f242739fe9e9332145dcf3fd811db17337f
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Tue Oct 25 08:14:51 2016 -0500
+
+    Update README.md
+
+commit efccaf8d833a237010c6c1a83206d4573b5c5b22
+Author: cyberwyvern696 <cyberwyvern696@gmail.com>
+Date:   Tue Oct 25 07:58:26 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 9f46de6d2b046a53c41faaa207f5623d8528da8a
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Tue Oct 25 07:00:54 2016 -0500
+
+    Update README.md
+
+commit 19e9525a504f06f07db3806eda7b22ac838afbfe
+Merge: 532a0e6 0a00962
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Fri Oct 21 00:40:54 2016 +0000
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit 532a0e60d3a6ff613c40255a4f30fd77ea36cc48
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Fri Oct 21 00:40:52 2016 +0000
+
+    ok
+
+commit 0a009628c069ce539bf99fd626fbd56da30afe91
+Author: jakemayo254 <jakemayo254@gmail.com>
+Date:   Thu Oct 20 19:40:30 2016 -0500
+
+    Update pasta_product.html
+
+commit ddd3e65170230f1fcf3c26ff51676986b4d20fe8
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Thu Oct 20 19:39:34 2016 -0500
+
+    OK
+
 commit 4f19aaaa3780cef3820c893bde7947b43d86e988
 Author: Rafik Rizik <rizik944@gmail.com>
 Date:   Thu Oct 20 19:37:57 2016 -0500

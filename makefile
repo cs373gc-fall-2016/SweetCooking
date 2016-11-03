@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := test
 
 FILES :=                              \
-    SweetCooking.html                      \
+    html/SweetCooking.html                      \
     SweetCooking.log                       
 
 ifeq ($(shell uname), Darwin)          # Apple
@@ -37,10 +37,7 @@ endif
 .pylintrc:
 	$(PYLINT) --disable=locally-disabled --reports=no --generate-rcfile > $@
 
-# SweetCooking-tests:
-# 	git clone https://github.com/cs373g-fall-2016/SweetCooking-tests.git
-
-SweetCooking.html: SweetCooking.py
+SweetCooking.html: app/helpers.py
 	pydoc3 -w SweetCooking
 
 SweetCooking.log:
@@ -102,7 +99,4 @@ status:
 	git remote -v
 	git status
 
-#test: SweetCooking.html SweetCooking.log RunSweetCooking.tmp TestSweetCooking.tmp SweetCooking-tests check
-
-test: check
-
+test: SweetCooking.html SweetCooking.log check

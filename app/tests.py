@@ -3,167 +3,441 @@
 # -------
 # imports
 # -------
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-
-app = Flask(__name__)
-app.config.from_object('app.config')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
-
-db = SQLAlchemy(app)
 import unittest
+from app.helpers import *
+from app.models import *
 from unittest import main, TestCase
-from app.models import Ingredient, Recipe, Product, Lifestyle
-
 
 # ----------------
 # TestIngredient
 # ----------------
 class TestIngredient(TestCase):
 
-    def setUp(self):
-        db.create_all()
-        ingredient1 = Ingredient('name1')
-        ingredient2 = Ingredient('name2', 5, 'all of the seasons')
-        db.session.add(ingredient1)
-        db.session.add(ingredient2)
-
-    def tearDown(self):
-        db.session.remove()
-        db.drop_all()
-
-    def test_get_all(self):
-        ingredients = Ingredient.query.all()
-        self.assertEqual(len(ingredients), 2)
+    def test_searchall_and(self):
+        ''' testing for and '''
+        result = searchAll('a e i o u')
+        self.assertTrue('and' in result)
         
-    def test_filter_1(self):
-        ingredient = Ingredient.query.filter(Ingredient.name == 'name1').first()
-        self.assertEqual(ingredient.price, 0)
-
-    def test_filter_2(self):
-        ingredient = Ingredient.query.filter(Ingredient.price == 5).first()
-        self.assertEqual(ingredient.name, 'name2')
-
-    def test_add_delete(self):
-        ingredient = Ingredient('name3')
-        db.session.add(ingredient)
-        db.session.commit()
-        self.assertEqual(len(Ingredient.query.all()), 3)
-        Ingredient.query.filter(Ingredient.name == 'name3').delete()
-        db.session.commit()
-        self.assertEqual(len(Ingredient.query.all()), 2)
+    def test_searchall_or(self):
+        ''' testing for or '''
+        result = searchAll('a e i o u')
+        self.assertTrue('or' in result)
         
-# ----------------
-# TestRecipe
-# ----------------
-class TestRecipe(TestCase):
-
-    def setUp(self):
-        db.create_all()
-        recipe1 = Recipe('name1')
-        recipe2 = Recipe('name2', 5, 'Amurrica', 10)
-        db.session.add(recipe1)
-        db.session.add(recipe2)
-
-    def tearDown(self):
-        db.session.remove()
-        db.drop_all()
-
-    def test_get_all(self):
-        recipes = Recipe.query.all()
-        self.assertEqual(len(recipes), 2)
+    def test_searchall_empty(self):
+        ''' testing for empty string '''
+        result = searchAll('a e i o u')
+        assert('and' in result and 'or' in result)
+        for pillar in result['and']:
+            self.assertTrue(len(pillar) > 0)
+        for pillar in result['or']:
+            self.assertTrue(len(pillar) > 0)
         
-    def test_filter_1(self):
-        recipe = Recipe.query.filter(Recipe.name == 'name1').first()
-        self.assertEqual(recipe.price, 0)
-
-    def test_filter_2(self):
-        recipe = Recipe.query.filter(Recipe.price == 5).first()
-        self.assertEqual(recipe.name, 'name2')
-
-    def test_add_delete(self):
-        recipe = Recipe('name3')
-        db.session.add(recipe)
-        db.session.commit()
-        self.assertEqual(len(Recipe.query.all()), 3)
-        Recipe.query.filter(Recipe.name == 'name3').delete()
-        db.session.commit()
-        self.assertEqual(len(Recipe.query.all()), 2)
+    def test_searchrecipes_and(self):
+        ''' testing for and '''
+        result = searchRecipes('a e i o u')
+        self.assertTrue('and' in result)
         
-# ----------------
-# TestProduct
-# ----------------
-class TestProduct(TestCase):
-
-    def setUp(self):
-        db.create_all()
-        product1 = Product('name1')
-        product2 = Product('name2', 5, 'super fancy creamcakes!')
-        db.session.add(product1)
-        db.session.add(product2)
-
-    def tearDown(self):
-        db.session.remove()
-        db.drop_all()
-
-    def test_get_all(self):
-        products = Product.query.all()
-        self.assertEqual(len(products), 2)
+    def test_searchrecipes_or(self):
+        ''' testing for or '''
+        result = searchRecipes('a e i o u')
+        self.assertTrue('or' in result)
         
-    def test_filter_1(self):
-        product = Product.query.filter(Product.name == 'name1').first()
-        self.assertEqual(product.price, 0)
-
-    def test_filter_2(self):
-        product = Product.query.filter(Product.price == 5).first()
-        self.assertEqual(product.name, 'name2')
-
-    def test_add_delete(self):
-        product = Product('name3')
-        db.session.add(product)
-        db.session.commit()
-        self.assertEqual(len(Product.query.all()), 3)
-        Product.query.filter(Product.name == 'name3').delete()
-        db.session.commit()
-        self.assertEqual(len(Product.query.all()), 2)
+    def test_searchrecipes_empty(self):
+        ''' testing for empty string '''
+        result = searchRecipes('a e i o u')
+        assert('and' in result and 'or' in result)
+        for pillar in result['and']:
+            self.assertTrue(len(pillar) > 0)
+        for pillar in result['or']:
+            self.assertTrue(len(pillar) > 0)
         
-# ----------------
-# TestLifestyle
-# ----------------
-class TestLifestyle(TestCase):
+    def test_searchingredients_and(self):
+        ''' testing for and '''
+        result = searchIngredients('a e i o u')
+        self.assertTrue('and' in result)
 
-    def setUp(self):
-        db.create_all()
-        lifestyle1 = Lifestyle()
-        lifestyle2 = Lifestyle(True, 'nadda', True, True)
-        db.session.add(lifestyle1)
-        db.session.add(lifestyle2)
+    def test_searchingredients_or(self):
+        ''' testing for or '''
+        result = searchIngredients('a e i o u')
+        self.assertTrue('or' in result)
 
-    def tearDown(self):
-        db.session.remove()
-        db.drop_all()
+    def test_searchingredients_empty(self):
+        ''' testing for empty string '''
+        result = searchIngredients('a e i o u')
+        assert('and' in result and 'or' in result)
+        for pillar in result['and']:
+            self.assertTrue(len(pillar) > 0)
+        for pillar in result['or']:
+            self.assertTrue(len(pillar) > 0)
 
-    def test_get_all(self):
-        lifestyles = Lifestyle.query.all()
-        self.assertEqual(len(lifestyles), 2)
-        
-    def test_filter_1(self):
-        lifestyle = Lifestyle.query.filter(Lifestyle.dietary_restriction == 'none').first()
-        self.assertEqual(lifestyle.price, 0)
+    def test_searchproducts_and(self):
+        ''' testing for and '''
+        result = searchProducts('a e i o u')
+        self.assertTrue('and' in result)
 
-    def test_filter_2(self):
-        lifestyle = Lifestyle.query.filter(Lifestyle.gluten_free == True).first()
-        self.assertEqual(lifestyle.dietary_restriction, 'nadda')
+    def test_searchproducts_or(self):
+        ''' testing for or '''
+        result = searchProducts('a e i o u')
+        self.assertTrue('or' in result)
 
-    def test_add_delete(self):
-        lifestyle = Lifestyle(dietary_restriction='delete me')
-        db.session.add(lifestyle)
-        db.session.commit()
-        self.assertEqual(len(Lifestyle.query.all()), 3)
-        Lifestyle.query.filter(Lifestyle.dietary_restriction == 'delete me').delete()
-        db.session.commit()
-        self.assertEqual(len(Lifestyle.query.all()), 2)
-        
+    def test_searchproducts_empty(self):
+        ''' testing for empty string '''
+        result = searchProducts('a e i o u')
+        assert('and' in result and 'or' in result)
+        for pillar in result['and']:
+            self.assertTrue(len(pillar) > 0)
+        for pillar in result['or']:
+            self.assertTrue(len(pillar) > 0)
+
+    def test_searchlifestyles_and(self):
+        ''' testing for and '''
+        result = searchLifestyles('a e i o u')
+        self.assertTrue('and' in result)
+
+    def test_searchlifestyles_or(self):
+        ''' testing for or '''
+        result = searchLifestyles('a e i o u')
+        self.assertTrue('or' in result)
+
+    def test_searchlifestyles_empty(self):
+        ''' testing for empty string '''
+        result = searchLifestyles('a e i o u')
+        assert('and' in result and 'or' in result)
+        for pillar in result['and']:
+            self.assertTrue(len(pillar) > 0)
+        for pillar in result['or']:
+            self.assertTrue(len(pillar) > 0)
+
+    def test_andrecipes_empty(self):
+        ''' testing for empty string '''
+        result = andRecipes('')
+        self.assertTrue(len(result) > 0)
+
+    def test_andrecipes_none(self):
+        ''' testing for no results '''
+        result = andRecipes('thisshoulddefinitelynotreturnanything')
+        self.assertEqual(len(result), 0)
+
+    def test_andrecipes_result(self):
+        ''' testing for regular results '''
+        result = andRecipes('a')
+        self.assertTrue(len(result) > 0)
+
+    def test_orrecipes_empty(self):
+        ''' testing for empty string '''
+        result = orRecipes([''])
+        self.assertTrue(len(result) > 0)
+
+    def test_orrecipes_none(self):
+        ''' testing for no results '''
+        termstring = 'thisshoulddefinitelynotreturnanything'
+        result = orRecipes([termstring])
+        result = result[termstring]
+        self.assertEqual(len(result), 0)
+
+    def test_orrecipes_result(self):
+        ''' testing for regular results '''
+        result = orRecipes(['a'])
+        self.assertTrue(len(result) > 0)
+
+    def test_andingredients_empty(self):
+        ''' testing for empty string '''
+        result = andIngredients('')
+        self.assertTrue(len(result) > 0)
+
+    def test_andingredients_none(self):
+        ''' testing for no results '''
+        result = andIngredients('thisshoulddefinitelynotreturnanything')
+        self.assertEqual(len(result), 0)
+
+    def test_andingredients_result(self):
+        ''' testing for regular results '''
+        result = andIngredients('a')
+        self.assertTrue(len(result) > 0)
+
+    def test_oringredients_empty(self):
+        ''' testing for empty string '''
+        result = orIngredients([''])
+        self.assertTrue(len(result) > 0)
+
+    def test_oringredients_none(self):
+        ''' testing for no results '''
+        termstring = 'thisshoulddefinitelynotreturnanything'
+        result = orIngredients([termstring])
+        result = result[termstring]
+        self.assertEqual(len(result), 0)
+
+    def test_oringredients_result(self):
+        ''' testing for regular results '''
+        result = orIngredients(['a'])
+        self.assertTrue(len(result) > 0)
+
+    def test_andproducts_empty(self):
+        ''' testing for empty string '''
+        result = andProducts('')
+        self.assertTrue(len(result) > 0)
+
+    def test_andproducts_none(self):
+        ''' testing for no results '''
+        result = andProducts('thisshoulddefinitelynotreturnanything')
+        self.assertEqual(len(result), 0)
+
+    def test_andproducts_result(self):
+        ''' testing for regular results '''
+        result = andProducts('a')
+        self.assertTrue(len(result) > 0)
+
+    def test_orproducts_empty(self):
+        ''' testing for empty string '''
+        result = orProducts([''])
+        self.assertTrue(len(result) > 0)
+
+    def test_orproducts_none(self):
+        ''' testing for no results '''
+        termstring = 'thisshoulddefinitelynotreturnanything'
+        result = orProducts([termstring])
+        result = result[termstring]
+        self.assertEqual(len(result), 0)
+
+    def test_orproducts_result(self):
+        ''' testing for regular results '''
+        result = orProducts(['a'])
+        self.assertTrue(len(result) > 0)
+
+    def test_andlifestyles_empty(self):
+        ''' testing for empty string '''
+        result = andLifestyles('')
+        self.assertTrue(len(result) > 0)
+
+    def test_andlifestyles_none(self):
+        ''' testing for no results '''
+        result = andLifestyles('thisshoulddefinitelynotreturnanything')
+        self.assertEqual(len(result), 0)
+
+    def test_andlifestyles_result(self):
+        ''' testing for regular results '''
+        result = andLifestyles('a')
+        self.assertTrue(len(result) > 0)
+
+    def test_orlifestyles_empty(self):
+        ''' testing for empty string '''
+        result = orLifestyles([''])
+        self.assertTrue(len(result) > 0)
+
+    def test_orlifestyles_none(self):
+        ''' testing for no results '''
+        termstring = 'thisshoulddefinitelynotreturnanything'
+        result = orLifestyles([termstring])
+        result = result[termstring]
+        self.assertEqual(len(result), 0)
+
+    def test_orlifestyles_result(self):
+        ''' testing for regular results '''
+        result = orLifestyles(['a'])
+        self.assertTrue(len(result) > 0)
+
+    def test_listRecipe_pagesize(self):
+        ''' testing size of pages returned '''
+        result = listRecipe(1, size=20)
+        self.assertEqual(len(result['recipes']), 20)
+        self.assertEqual(result['size'], 20)
+
+    def test_listRecipe_ascending(self):
+        ''' testing ascending sort '''
+        result1 = listRecipe(1, size=1, order='asc')
+        result1 = result1['recipes'][0]['name']
+        result2 = listRecipe(2, size=1, order='asc')
+        result2 = result2['recipes'][0]['name']
+        self.assertTrue(result1 < result2)
+
+    def test_listRecipe_descending(self):
+        ''' testing ascending sort '''
+        result1 = listRecipe(1, size=1, order='desc')
+        result1 = result1['recipes'][0]['name']
+        result2 = listRecipe(2, size=1, order='desc')
+        result2 = result2['recipes'][0]['name']
+        self.assertTrue(result1 > result2)
+
+    def test_listIngredient_pagesize(self):
+        ''' testing size of pages returned '''
+        result = listIngredient(1, size=20)
+        self.assertEqual(len(result['ingredients']), 20)
+        self.assertEqual(result['size'], 20)
+
+    def test_listIngredient_ascending(self):
+        ''' testing ascending sort '''
+        result1 = listIngredient(1, size=1, order='asc')
+        result1 = result1['ingredients'][0]['name']
+        result2 = listIngredient(2, size=1, order='asc')
+        result2 = result2['ingredients'][0]['name']
+        self.assertTrue(result1 < result2)
+
+    def test_listIngredient_descending(self):
+        ''' testing ascending sort '''
+        result1 = listIngredient(1, size=1, order='desc')
+        result1 = result1['ingredients'][0]['name']
+        result2 = listIngredient(2, size=1, order='desc')
+        result2 = result2['ingredients'][0]['name']
+        self.assertTrue(result1 > result2)
+
+    def test_listProduct_pagesize(self):
+        ''' testing size of pages returned '''
+        result = listProduct(1, size=20)
+        self.assertEqual(len(result['products']), 20)
+        self.assertEqual(result['size'], 20)
+
+    def test_listProduct_ascending(self):
+        ''' testing ascending sort '''
+        result1 = listProduct(1, size=1, order='asc')
+        result1 = result1['products'][0]['name']
+        result2 = listProduct(50, size=1, order='asc')
+        result2 = result2['products'][0]['name']
+        self.assertTrue(result1 < result2)
+
+    def test_listProduct_descending(self):
+        ''' testing ascending sort '''
+        result1 = listProduct(1, size=1, order='desc')
+        result1 = result1['products'][0]['name']
+        result2 = listProduct(50, size=1, order='desc')
+        result2 = result2['products'][0]['name']
+        self.assertTrue(result1 > result2)
+
+    def test_listLifestyle_pagesize(self):
+        ''' testing size of pages returned '''
+        result = listLifestyle(1, size=5)
+        self.assertEqual(len(result['lifestyles']), 5)
+        self.assertEqual(result['size'], 5)
+
+    def test_listLifestyle_ascending(self):
+        ''' testing ascending sort '''
+        result1 = listLifestyle(1, size=1, order='asc')
+        result1 = result1['lifestyles'][0]['name']
+        result2 = listLifestyle(2, size=1, order='asc')
+        result2 = result2['lifestyles'][0]['name']
+        self.assertTrue(result1 < result2)
+
+    def test_listLifestyle_descending(self):
+        ''' testing ascending sort '''
+        result1 = listLifestyle(1, size=1, order='desc')
+        result1 = result1['lifestyles'][0]['name']
+        result2 = listLifestyle(2, size=1, order='desc')
+        result2 = result2['lifestyles'][0]['name']
+        self.assertTrue(result1 > result2)
+
+    def test_specrecipe_noid(self):
+        ''' testing no ids passed in '''
+        result = specRecipe('')
+        self.assertFalse(result['recipes'])
+
+    def test_specrecipe_1id(self):
+        ''' testing one id '''
+        expected = Recipe.query.limit(2).first()
+        actual = specRecipe(str(expected.id))
+        self.assertEqual(len(actual['recipes']), 1)
+        actual = actual['recipes'][0]
+        self.assertEqual(expected.id, actual['id'])
+        self.assertEqual(expected.name, actual['name'])
+
+    def test_specrecipe_2ids(self):
+        ''' testing two ids '''
+        expected = [x for x in Recipe.query.limit(2).all()]
+        actual = specRecipe(str(expected[0].id) + ',' + str(expected[1].id))
+        self.assertEqual(len(actual['recipes']), 2)
+        for x in range(2):
+            self.assertEqual(expected[x].id,  actual['recipes'][x]['id'])
+            self.assertEqual(expected[x].name,  actual['recipes'][x]['name'])
+
+    def test_specproduct_noid(self):
+        ''' testing no ids passed in '''
+        result = specProduct('')
+        self.assertFalse(result['products'])
+
+    def test_specproduct_1id(self):
+        ''' testing one id '''
+        expected = Product.query.limit(2).first()
+        actual = specProduct(str(expected.id))
+        self.assertEqual(len(actual['products']), 1)
+        actual = actual['products'][0]
+        self.assertEqual(expected.id, actual['id'])
+        self.assertEqual(expected.name, actual['name'])
+
+    def test_specproduct_2ids(self):
+        ''' testing two ids '''
+        expected = [x for x in Product.query.limit(2).all()]
+        actual = specProduct(str(expected[0].id) + ',' + str(expected[1].id))
+        self.assertEqual(len(actual['products']), 2)
+        for x in range(2):
+            self.assertEqual(expected[x].id,  actual['products'][x]['id'])
+            self.assertEqual(expected[x].name,  actual['products'][x]['name'])
+
+    def test_specingredient_noid(self):
+        ''' testing no ids passed in '''
+        result = specIngredient('')
+        self.assertFalse(result['ingredients'])
+
+    def test_specingredient_1id(self):
+        ''' testing one id '''
+        expected = Ingredient.query.limit(2).first()
+        actual = specIngredient(str(expected.id))
+        self.assertEqual(len(actual['ingredients']), 1)
+        actual = actual['ingredients'][0]
+        self.assertEqual(expected.id, actual['id'])
+        self.assertEqual(expected.name, actual['name'])
+
+    def test_specingredient_2ids(self):
+        ''' testing two ids '''
+        expected = [x for x in Ingredient.query.limit(2).all()]
+        actual = specIngredient(str(expected[0].id) + ',' + str(expected[1].id))
+        self.assertEqual(len(actual['ingredients']), 2)
+        for x in range(2):
+            self.assertEqual(expected[x].id,  actual['ingredients'][x]['id'])
+            self.assertEqual(expected[x].name,  actual['ingredients'][x]['name'])
+
+    def test_speclifestyle_noid(self):
+        ''' testing no ids passed in '''
+        result = specLifestyle('')
+        self.assertFalse(result['lifestyles'])
+
+    def test_speclifestyle_1id(self):
+        ''' testing one id '''
+        expected = Lifestyle.query.limit(2).first()
+        actual = specLifestyle(str(expected.id))
+        self.assertEqual(len(actual['lifestyles']), 1)
+        actual = actual['lifestyles'][0]
+        self.assertEqual(expected.id, actual['id'])
+        self.assertEqual(expected.name, actual['name'])
+
+    def test_speclifestyle_2ids(self):
+        ''' testing two ids '''
+        expected = [x for x in Lifestyle.query.limit(2).all()]
+        actual = specLifestyle(str(expected[0].id) + ',' + str(expected[1].id))
+        self.assertEqual(len(actual['lifestyles']), 2)
+        for x in range(2):
+            self.assertEqual(expected[x].id,  actual['lifestyles'][x]['id'])
+            self.assertEqual(expected[x].name,  actual['lifestyles'][x]['name'])
+
+    def test_specinglist_noid(self):
+        ''' testing no ids passed in '''
+        result = specInglist('')
+        self.assertFalse(result['inglists'])
+
+    def test_specinglist_1id(self):
+        ''' testing one id '''
+        expected = Ingredientlist.query.limit(2).first()
+        actual = specInglist(str(expected.id))
+        self.assertEqual(len(actual['inglists']), 1)
+        actual = actual['inglists'][0]
+        self.assertEqual(expected.id, actual['id'])
+
+    def test_specinglist_2ids(self):
+        ''' testing two ids '''
+        expected = [x for x in Ingredientlist.query.limit(2).all()]
+        #expected = [expected[0], expected[1]]
+        actual = specInglist(str(expected[0].id) + ',' + str(expected[1].id))
+        self.assertEqual(len(actual['inglists']), 2)
+        for x in range(2):
+            self.assertEqual(expected[x].id,  actual['inglists'][x]['id'])
+
 # ----
 # main
 # ----

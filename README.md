@@ -1,102 +1,95 @@
-SweetCooking www.sweetcooking.me
+![Travis](https://travis-ci.org/cs373gc-fall-2016/SweetCooking.svg?branch=master)
+
+# SweetCooking 
+www.sweetcooking.me
 
 yUML.me code snippet
 
 [Recipe|name:string;price:string;category:string;origin:string;cook_time:string;nutritional_info:string;]<->[Ingredient|name:string;price:string;ratios:string;products:string;nutritional_info:string]
 
-old database uml url:  
-http://yuml.me/edit/58e78d83  
-new database uml url:  
-http://yuml.me/edit/97febb29
+database uml url:  
+http://yuml.me/edit/34598ae0
 
-check word count:  
+check word count: 
+```bash
 git clone https://github.com/cs373gc-fall-2016/SweetCooking.wiki.git  
 find . -type f -name '*.md' | xargs wc -w
+```
 
--- Pillars --
-Lifestyle
-- weight management
-- dietary restrictions
-- gluten-free
-- carb-free
-- vegetarian/vegan
+## Pillars
 
-Recipe
-- name
-- price
-- category
-- origin
-- cook_time
-- nutritional_info
+ - **Lifestyle**
+  * weight management
+  * dietary restrictions
+  * gluten-free
+  * carb-free
+  * vegetarian/vegan
 
-Ingredient
-- name
-- price
-- ratios
-- products
-- nutritional_info
+ - **Recipe**
+  * name
+  * price
+  * category
+  * origin
+  * cook_time
+  * nutritional_info
 
-Food Product
-- name
-- price
-- description
-- similiar_foods
-- nutritional_info
+ - **Ingredient**
+  * name
+  * price
+  * ratios
+  * products
+  * nutritional_info
 
--- About -- 
-description of the site, its purpose, its intended users:
-- ???
-Website Name:
-- Sweet Cooking
-Website URL:
-- www.sweetcooking.me
-API's:
-- Spoonacular
-- yelp
-- youtube (tentative)
+ - **Food Product**
+  * name
+  * price
+  * description
+  * similiar_foods
+  * nutritional_info
 
-Group name: 
-- Sweet Cooking
- 
-Total stats:
-total no. of commits:
-- ???  
-total no. of issues:
-- ???  
-total no. of unit tests:
-- ???  
-a link to the Apiary API:
-- http://docs.sweetcooking1.apiary.io/#  
-a link to the GitHub Issue Tracker:
-- https://github.com/cs373gc-fall-2016/SweetCooking/issues  
-a link to the GitHub Repo:
-- https://github.com/cs373gc-fall-2016/SweetCooking  
-a link to the GitHub Wiki:
-- https://github.com/cs373gc-fall-2016/SweetCooking/wiki  
+ - **About**
+  * description of the site
+  * its purpose
+  * its intended users:
+  * ???
 
-data:
-links to the data sources:
-- https://spoonacular.com/food-api
-- ???
+## API's:
+ - Spoonacular
+ - yelp
+ - youtube (tentative)
 
-description of how each was scraped:
-- ???
-- 
+## Total stats: 
+- **total no. of commits:** ???
+- **total no. of issues:** ???  
+- **total no. of unit tests:** ???  
+- **a link to the Apiary API:** 
+http://docs.sweetcooking1.apiary.io/#  
+- **a link to the GitHub Issue Tracker:**
+https://github.com/cs373gc-fall-2016/SweetCooking/issues  
+- **a link to the GitHub Repo:**
+https://github.com/cs373gc-fall-2016/SweetCooking  
+- **a link to the GitHub Wiki:**
+https://github.com/cs373gc-fall-2016/SweetCooking/wiki  
+- **links to the data sources:**
+ * https://spoonacular.com/food-api
+ * ???
+- **description of how each was scraped:** ???
 
-Tools used: 
-- AWS: Hosts our dynamic website
-- Apiary: Documents the RestfulAPI we used
-- Boostrap: Created GUI
-- React: Frontend language of choice
-- Flask: backend web development
-- SQLAlchemy: Database
-- PostgreSQL: Database
-- Slack: Team communication
+## Develping Environment: 
+ - **AWS** : Hosts our dynamic website
+ - **Apiary** : Documents the RestfulAPI we used
+ - **Boostrap** : Created GUI
+ - **React** : Frontend language of choice
+ - **Flask** : backend web development
+ - **SQLAlchemy** : Database
+ - **PostgreSQL** : Database
+ - **Slack** : Team communication
 
 Optional tools that were not required:
-- ???
+ - **???**
+ 
+## Team Members:
 
-Team Members:
 **Guande Lyu**
 - bio:
 - major responsibilities:

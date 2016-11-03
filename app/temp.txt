@@ -1,0 +1,177 @@
+************* Module app.helpers
+C: 68, 0: Line too long (130/100) (line-too-long)
+C:109, 0: Line too long (138/100) (line-too-long)
+C:152, 0: Line too long (132/100) (line-too-long)
+C:201, 0: Line too long (136/100) (line-too-long)
+C:267, 0: Line too long (102/100) (line-too-long)
+C:  1, 0: Missing module docstring (missing-docstring)
+W:  1, 0: Wildcard import functools (wildcard-import)
+W:  2, 0: Wildcard import app.models (wildcard-import)
+E:  3, 0: Unable to import 'sqlalchemy' (import-error)
+W:  5, 0: String statement has no effect (pointless-string-statement)
+C:  7, 0: Invalid function name "searchAll" (invalid-name)
+C: 23, 0: Invalid function name "searchRecipes" (invalid-name)
+C: 33, 0: Invalid function name "searchIngredients" (invalid-name)
+C: 43, 0: Invalid function name "searchProducts" (invalid-name)
+C: 53, 0: Invalid function name "searchLifestyles" (invalid-name)
+C: 63, 0: Invalid function name "andRecipes" (invalid-name)
+E: 68,14: Class 'Recipe' has no 'query' member (no-member)
+W: 68,63: Used builtin function 'map'. Using a list comprehension can be clearer. (bad-builtin)
+C: 82, 0: Invalid function name "orRecipes" (invalid-name)
+E: 89,18: Class 'Recipe' has no 'query' member (no-member)
+C:104, 0: Invalid function name "andIngredients" (invalid-name)
+E:109,14: Class 'Ingredient' has no 'query' member (no-member)
+W:109,67: Used builtin function 'map'. Using a list comprehension can be clearer. (bad-builtin)
+C:124, 0: Invalid function name "orIngredients" (invalid-name)
+E:131,18: Class 'Ingredient' has no 'query' member (no-member)
+C:147, 0: Invalid function name "andProducts" (invalid-name)
+E:152,14: Class 'Product' has no 'query' member (no-member)
+W:152,64: Used builtin function 'map'. Using a list comprehension can be clearer. (bad-builtin)
+C:170, 0: Invalid function name "orProducts" (invalid-name)
+E:177,18: Class 'Product' has no 'query' member (no-member)
+C:196, 0: Invalid function name "andLifestyles" (invalid-name)
+E:201,14: Class 'Lifestyle' has no 'query' member (no-member)
+W:201,66: Used builtin function 'map'. Using a list comprehension can be clearer. (bad-builtin)
+C:221, 0: Invalid function name "orLifestyles" (invalid-name)
+E:226,18: Class 'Lifestyle' has no 'query' member (no-member)
+C:247, 0: Invalid function name "listRecipe" (invalid-name)
+E:249,14: Class 'Recipe' has no 'query' member (no-member)
+E:250,74: Class 'Recipe' has no 'query' member (no-member)
+C:264, 0: Invalid function name "listIngredient" (invalid-name)
+E:266,14: Class 'Ingredient' has no 'query' member (no-member)
+E:267,78: Class 'Ingredient' has no 'query' member (no-member)
+C:282, 0: Invalid function name "listProduct" (invalid-name)
+E:284,14: Class 'Product' has no 'query' member (no-member)
+E:285,75: Class 'Product' has no 'query' member (no-member)
+C:303, 0: Invalid function name "listLifestyle" (invalid-name)
+E:305,14: Class 'Lifestyle' has no 'query' member (no-member)
+E:306,77: Class 'Lifestyle' has no 'query' member (no-member)
+C:326, 0: Invalid function name "specRecipe" (invalid-name)
+E:333,17: Class 'Recipe' has no 'query' member (no-member)
+C:348, 0: Invalid function name "specIngredient" (invalid-name)
+E:353,17: Class 'Ingredient' has no 'query' member (no-member)
+C:369, 0: Invalid function name "specProduct" (invalid-name)
+E:374,17: Class 'Product' has no 'query' member (no-member)
+C:393, 0: Invalid function name "specLifestyle" (invalid-name)
+E:398,17: Class 'Lifestyle' has no 'query' member (no-member)
+C:419, 0: Invalid function name "specInglist" (invalid-name)
+E:424,17: Class 'Ingredientlist' has no 'query' member (no-member)
+W:  1, 0: Unused import update_wrapper from wildcard import (unused-wildcard-import)
+W:  1, 0: Unused import WRAPPER_UPDATES from wildcard import (unused-wildcard-import)
+W:  1, 0: Unused import wraps from wildcard import (unused-wildcard-import)
+W:  1, 0: Unused import partial from wildcard import (unused-wildcard-import)
+W:  1, 0: Unused import singledispatch from wildcard import (unused-wildcard-import)
+W:  1, 0: Unused import total_ordering from wildcard import (unused-wildcard-import)
+W:  1, 0: Unused import WRAPPER_ASSIGNMENTS from wildcard import (unused-wildcard-import)
+W:  1, 0: Unused import lru_cache from wildcard import (unused-wildcard-import)
+W:  1, 0: Unused import cmp_to_key from wildcard import (unused-wildcard-import)
+W:  1, 0: Unused import partialmethod from wildcard import (unused-wildcard-import)
+W:  2, 0: Unused import db from wildcard import (unused-wildcard-import)
+W:  2, 0: Unused import iltable from wildcard import (unused-wildcard-import)
+W:  2, 0: Unused import pltable from wildcard import (unused-wildcard-import)
+W:  2, 0: Unused import rltable from wildcard import (unused-wildcard-import)
+W:  3, 0: Unused asc imported from sqlalchemy (unused-import)
+W:  3, 0: Unused desc imported from sqlalchemy (unused-import)
+
+
+Report
+======
+365 statements analysed.
+
+Statistics by type
+------------------
+
++---------+-------+-----------+-----------+------------+---------+
+|type     |number |old number |difference |%documented |%badname |
++=========+=======+===========+===========+============+=========+
+|module   |1      |1          |=          |0.00        |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|class    |0      |0          |=          |0           |0        |
++---------+-------+-----------+-----------+------------+---------+
+|method   |0      |0          |=          |0           |0        |
++---------+-------+-----------+-----------+------------+---------+
+|function |22     |22         |=          |100.00      |100.00   |
++---------+-------+-----------+-----------+------------+---------+
+
+
+
+Raw metrics
+-----------
+
++----------+-------+------+---------+-----------+
+|type      |number |%     |previous |difference |
++==========+=======+======+=========+===========+
+|code      |366    |83.75 |366      |=          |
++----------+-------+------+---------+-----------+
+|docstring |47     |10.76 |47       |=          |
++----------+-------+------+---------+-----------+
+|comment   |0      |0.00  |0        |=          |
++----------+-------+------+---------+-----------+
+|empty     |24     |5.49  |24       |=          |
++----------+-------+------+---------+-----------+
+
+
+
+Duplication
+-----------
+
++-------------------------+------+---------+-----------+
+|                         |now   |previous |difference |
++=========================+======+=========+===========+
+|nb duplicated lines      |0     |0        |=          |
++-------------------------+------+---------+-----------+
+|percent duplicated lines |0.000 |0.000    |=          |
++-------------------------+------+---------+-----------+
+
+
+
+Messages by category
+--------------------
+
++-----------+-------+---------+-----------+
+|type       |number |previous |difference |
++===========+=======+=========+===========+
+|convention |28     |29       |-1.00      |
++-----------+-------+---------+-----------+
+|refactor   |0      |0        |=          |
++-----------+-------+---------+-----------+
+|warning    |23     |23       |=          |
++-----------+-------+---------+-----------+
+|error      |22     |22       |=          |
++-----------+-------+---------+-----------+
+
+
+
+Messages
+--------
+
++---------------------------+------------+
+|message id                 |occurrences |
++===========================+============+
+|invalid-name               |22          |
++---------------------------+------------+
+|no-member                  |21          |
++---------------------------+------------+
+|unused-wildcard-import     |14          |
++---------------------------+------------+
+|line-too-long              |5           |
++---------------------------+------------+
+|bad-builtin                |4           |
++---------------------------+------------+
+|wildcard-import            |2           |
++---------------------------+------------+
+|unused-import              |2           |
++---------------------------+------------+
+|pointless-string-statement |1           |
++---------------------------+------------+
+|missing-docstring          |1           |
++---------------------------+------------+
+|import-error               |1           |
++---------------------------+------------+
+
+
+
+Global evaluation
+-----------------
+Your code has been rated at 5.59/10 (previous run: 5.56/10, +0.03)
+
