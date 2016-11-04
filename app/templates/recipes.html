@@ -30,10 +30,9 @@
       .done(function(data){
         var keys = Object.keys(data);
         var values = keys.map(function(v) { return data[v]; });
-        debugger;
         var myRecipes = values.map(function(ele) {
           var link = '<a href="/recipes/' + ele.id + '">' + ele.name + '</a>';
-          return [link, ele.time, ele.instructions, ele.servings];
+          return [link, ele.time, ele.instructions, ele.servings, ele.ingredients_name, ele.ingredients_id, ele.lifestyles_name, ele.lifestyles_id];
         });
         $(".table").DataTable({ 
           data: myRecipes,

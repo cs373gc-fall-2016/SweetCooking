@@ -11,6 +11,8 @@
           <th>Protein</th>
           <th>Fat</th>
           <th>Carbs</th>
+          <th>IngredientsList</th>
+          <th>LifeStyles</th>
         </tr>
       </thead>
       <tbody>
@@ -33,7 +35,7 @@
         var values = keys.map(function(v) { return data[v]; });
         var myIngredients = values.map(function(ele) {
           var link = '<a href="/ingredients/' + ele.id + '">' + ele.name + '</a>';
-          return [link, ele.calories, ele.protein, ele.fat, ele.carbs];
+          return [link, ele.calories, ele.protein, ele.fat, ele.carbs, ele.ingredientlists, ele.lifestyles];
         });
         $(".table").DataTable({ 
           data: myIngredients,

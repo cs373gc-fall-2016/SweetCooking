@@ -124,6 +124,23 @@
     </div>
       
     <hr class="featurette-divider">
+    <button onclick="myFunction()" class="btn btn-primary clearBtn">Run Unit Tests</button>
+        <p id="demo"></p>
+          <script>
+          function myFunction() {
+           $(document).ready(function(){
+            var url = '/testinate/';
+            $.get(url).done(function(data){
+              document.getElementById("demo").innerHTML = data[0];
+            });
+          });
+         }
+        </script>
+   </div>
+
+
+
+    <hr class="featurette-divider">
     <div class="row featurette">
       <div class="col-md-7 col-md-push-5">
         <h2 class="featurette-heading">Data <span class="text-muted">Sources</span></h2>

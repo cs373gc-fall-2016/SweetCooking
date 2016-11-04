@@ -34,6 +34,7 @@ class IngredientHandler(flask_restful.Resource):
     ingredient_response = {}
 
     if ingredient:
+      # pdb.set_trace()
       ingredient_response = {
         'id': ingredient.id,
         'name': ingredient.name,
@@ -42,6 +43,8 @@ class IngredientHandler(flask_restful.Resource):
         'protein': ingredient.protein,
         'fat': ingredient.fat,
         'carbs': ingredient.carbs,
+        # 'ingredientlists': ingredient.ingredientlists.all(),
+        # 'lifestyles': ingredient.lifestyles.all(),
       }
     
     return jsonify(ingredient_response)
@@ -77,6 +80,7 @@ class RecipeHandler(flask_restful.Resource):
     recipe = recipe.first()
     recipe_response = {}
     if recipe:
+      # pdb.set_trace()
       recipe_response = {
         'id': recipe.id,
         'name': recipe.name,
@@ -84,6 +88,10 @@ class RecipeHandler(flask_restful.Resource):
         'time': recipe.time,
         'instructions': recipe.instructions,
         'servings': recipe.servings,
+        'ingredients_name': [Ingredient.query.filter_by(id=x.ingredient_id).first().name for x in recipe.ingredientlists],
+        'ingredients_id': [x.ingredient_id for x in recipe.ingredientlists],
+        'lifestyles_name': [Lifestyle.query.filter_by(id=x.lifestyle_id).first().name for x in recipe.lifestyles],
+        'lifestyles_id': [x.lifestyles_id for x in recipe.lifestyles],
       }
 
     return jsonify(recipe_response)
