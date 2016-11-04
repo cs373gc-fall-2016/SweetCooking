@@ -198,6 +198,8 @@ class LifestyleHandler(flask_restful.Resource):
         'dairy_free': lifestyle.dairy_free,
         'recipes_name': [x.name for x in lifestyle.recipes],
         'recipe_id': [x.id for x in lifestyle.recipes],
+        'products_name': [x.name for x in lifestyle.products],
+        'products_id': [x.id for x in lifestyle.products],
       }
 
     return jsonify(lifestyle_response)

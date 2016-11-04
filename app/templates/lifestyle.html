@@ -35,6 +35,12 @@
             $('.lifestyle-container ul')
               .append('<li><h4><a href="/recipes/' + data.recipe_id[i] + '">' + data.recipes_name[i] + '</a></h4></li>');
           }
+          $('.lifestyle-container ul')
+          .append('<li><h4> products: </h4></li>')
+          for(var i = 0; i < data.products_name.length; i++) {
+            $('.lifestyle-container ul')
+              .append('<li><h4><a href="/foodproducts/' + data.products_id[i] + '">' + data.products_name[i] + '</a></h4></li>');
+          }
       });
     });
   </script>
