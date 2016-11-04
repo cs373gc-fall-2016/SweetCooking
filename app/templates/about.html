@@ -132,7 +132,7 @@
             $(document).ready(function(){
             var url = '/testinate';
             $.get(url).done(function(data){
-              document.getElementById("demo").innerHTML = data[0];
+              document.getElementById("demo").innerHTML = data["result"];
             });
           });
          }
