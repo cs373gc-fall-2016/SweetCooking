@@ -25,13 +25,17 @@
           .append('<li><h4> time: ' + data.time + '</h4></li>')
           .append('<li><h4> instructions: ' + data.instructions + '</h4></li>')
           .append('<li><h4> servings: ' + data.servings + '</h4></li>')
-          .append('<li><h4> ingredients: ' + '</a></h4></li>');          
+          .append('<li><h4> ingredients: ' + '</h4></li>');          
           for(var i = 0; i < data.ingredients_name.length; i++) {
             $('.recipe-container ul')
               .append('<li><h4><a href="/ingredients/' + data.ingredients_id[i] + '">' + data.ingredients_name[i] + '</a></h4></li>');
-          }
-
-
+          }          
+          $('.recipe-container ul')
+            .append('<li><h4> lifestyles: </h4></li>');   
+            for(var i = 0; i < data.lifestyles_name.length; i++) {
+            $('.recipe-container ul')
+              .append('<li><h4><a href="/lifestyles/' + data.lifestyles_id[i] + '">' + data.lifestyles_name[i] + '</a></h4></li>');
+          } 
       });
     });
   </script>

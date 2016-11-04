@@ -29,7 +29,12 @@
           .append('<li><h4> vegetarian: ' + data.vegetarian + '</h4></li>')
           .append('<li><h4> vegan: ' + data.vegan + '</h4></li>')
           .append('<li><h4> cheap: ' + data.cheap + '</h4></li>')
-          .append('<li><h4> dairy_free: ' + data.dairy_free + '</h4></li>');
+          .append('<li><h4> dairy_free: ' + data.dairy_free + '</h4></li>')
+          .append('<li><h4> recipes: </h4></li>');
+          for(var i = 0; i < data.recipes_name.length; i++) {
+            $('.lifestyle-container ul')
+              .append('<li><h4><a href="/recipes/' + data.recipes_id[i] + '">' + data.recipes_name[i] + '</a></h4></li>');
+          }
       });
     });
   </script>

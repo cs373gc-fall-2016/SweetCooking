@@ -128,8 +128,9 @@
         <p id="demo"></p>
           <script>
           function myFunction() {
-           $(document).ready(function(){
-            var url = '/testinate/';
+            document.getElementById("demo").innerHTML = "loading...";
+            $(document).ready(function(){
+            var url = '/testinate';
             $.get(url).done(function(data){
               document.getElementById("demo").innerHTML = data[0];
             });

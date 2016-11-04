@@ -167,6 +167,8 @@ class LifestylesHandler(flask_restful.Resource):
           'vegan': lifestyle.vegan,
           'cheap': lifestyle.cheap,
           'dairy_free': lifestyle.dairy_free,
+          'recipes_name': [Recipe.query.filter_by(id=x.recipe_id).first().name for x in lifestyle.recipes],
+          'recipe_id': [x.recipe_id for x in lifestyle.recipes],
         }
         lifestyles_response[lifestyle.id] = lifestyle_data
 
