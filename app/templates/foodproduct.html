@@ -29,7 +29,12 @@
           .append('<li><h4> satfat: ' + data.satfat + '</h4></li>')
           .append('<li><h4> transfat: ' + data.transfat + '</h4></li>')
           .append('<li><h4> carbs: ' + data.carbs + '</h4></li>')
-          .append('<li><h4> sugar: ' + data.sugar + '</h4></li>');
+          .append('<li><h4> sugar: ' + data.sugar + '</h4></li>')
+          .append('<li><h4> lifestyles: </h4></li>');   
+            for(var i = 0; i < data.lifestyles_name.length; i++) {
+            $('.foodproduct-container ul')
+              .append('<li><h4><a href="/lifestyles/' + data.lifestyles_id[i] + '">' + data.lifestyles_name[i] + '</a></h4></li>');
+          } 
       });
     });
   </script>

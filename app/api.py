@@ -143,6 +143,8 @@ class ProductHandler(flask_restful.Resource):
         'transfat': product.transfat,
         'carbs': product.carbs,
         'sugar': product.sugar,
+        'lifestyles_name': [x.name for x in product.lifestyles],
+        'lifestyles_id': [x.id for x in product.lifestyles],
       }
 
     return jsonify(product_response)
