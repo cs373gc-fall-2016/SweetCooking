@@ -26,8 +26,17 @@
           .append('<li><h4> protein: ' + data.protein + '</h4></li>')
           .append('<li><h4> fat: ' + data.fat + '</h4></li>')
           .append('<li><h4> carbs: ' + data.carbs + '</h4></li>')
-          .append('<li><h4> ingredientlists: ' + data.ingredientlists + '</h4></li>')
-          .append('<li><h4> lifestyles: ' + data.lifestyles + '</h4></li>');
+          .append('<li><h4> recipes: </h4></li>')
+          for(var i = 0; i < data.recipes_name.length; i++) {
+            $('.ingredient-container ul')
+              .append('<li><h4><a href="/recipes/' + data.recipe_id[i] + '">' + data.recipes_name[i] + '</a></h4></li>');
+          }
+          $('.ingredient-container ul')
+            .append('<li><h4> lifestyles: </h4></li>');   
+            for(var i = 0; i < data.lifestyles_name.length; i++) {
+            $('.ingredient-container ul')
+              .append('<li><h4><a href="/lifestyles/' + data.lifestyles_id[i] + '">' + data.lifestyles_name[i] + '</a></h4></li>');
+          }  
       });
     });
   </script>

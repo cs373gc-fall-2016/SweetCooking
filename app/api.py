@@ -34,7 +34,6 @@ class IngredientHandler(flask_restful.Resource):
     ingredient_response = {}
 
     if ingredient:
-      # pdb.set_trace()
       ingredient_response = {
         'id': ingredient.id,
         'name': ingredient.name,
@@ -43,8 +42,10 @@ class IngredientHandler(flask_restful.Resource):
         'protein': ingredient.protein,
         'fat': ingredient.fat,
         'carbs': ingredient.carbs,
-        # 'ingredientlists': ingredient.ingredientlists.all(),
-        # 'lifestyles': ingredient.lifestyles.all(),
+        'recipes_name': [Recipe.query.filter_by(id=x.recipe_id).first().name for x in ingredient.ingredientlists],
+        'recipe_id': [x.recipe_id for x in ingredient.ingredientlists],
+        'lifestyles_name': [x.name for x in ingredient.lifestyles],
+        'lifestyles_id': [x.id for x in ingredient.lifestyles],
       }
     
     return jsonify(ingredient_response)
@@ -80,7 +81,6 @@ class RecipeHandler(flask_restful.Resource):
     recipe = recipe.first()
     recipe_response = {}
     if recipe:
-      # pdb.set_trace()
       recipe_response = {
         'id': recipe.id,
         'name': recipe.name,
@@ -90,8 +90,8 @@ class RecipeHandler(flask_restful.Resource):
         'servings': recipe.servings,
         'ingredients_name': [Ingredient.query.filter_by(id=x.ingredient_id).first().name for x in recipe.ingredientlists],
         'ingredients_id': [x.ingredient_id for x in recipe.ingredientlists],
-        'lifestyles_name': [Lifestyle.query.filter_by(id=x.lifestyle_id).first().name for x in recipe.lifestyles],
-        'lifestyles_id': [x.lifestyles_id for x in recipe.lifestyles],
+        'lifestyles_name': [x.name for x in recipe.lifestyles],
+        'lifestyles_id': [x.id for x in recipe.lifestyles],
       }
 
     return jsonify(recipe_response)
