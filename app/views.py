@@ -1,5 +1,6 @@
 from app import app, helpers
 from flask import jsonify, request, render_template
+import subprocess
 
 @app.route('/')
 @app.route('/index')
@@ -123,6 +124,13 @@ def listlifestyles():
 def listinglists():
     result = helpers.specInglist(request.args.get('ids'))
     return jsonify(**result)
+
+@app.route('/testinate')
+def testinate():
+    output = subprocess.Popen('python /home/ubuntu/SweetCooking/tests.py'.split(' '), stdout=subprocess.PIPE, stderr=subprocess.PIPE,)
+    output.wait()
+    stuff, output = output.communicate()
+    return jsonify(**{'result': str(output)})
 
 @app.route('/oreo_product')
 def oreo_product():
