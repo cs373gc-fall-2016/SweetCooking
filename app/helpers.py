@@ -1,6 +1,7 @@
 from app.models import *
 from functools import *
 from sqlalchemy import asc, desc
+import re
 
 """ Helper Methods to traverse tables for various parameters"""
 
@@ -65,8 +66,9 @@ def andRecipes(terms):
     searches through recipes using and logic
     """
     recipes = []
-    results = Recipe.query.filter(reduce(lambda x, y: x and y,
-        map(lambda z: z.lower() in str(Recipe.name).lower(), terms), True))
+    results = [Recipe.query.filter(Recipe.name.ilike('%'+term+'%')) for term in terms]
+    if results:
+        results = [result for result in results[0] if reduce(lambda x, y: x and result in y, results, True)]
     for result in results:
         recipe = {}
         recipe['id'] = result.id
@@ -87,7 +89,7 @@ def orRecipes(terms):
     everything = {}
     for word in terms:
         recipes = []
-        results = Recipe.query.filter(word.lower() in str(Recipe.name).lower())
+        results = Recipe.query.filter(Recipe.name.ilike('%'+word+'%'))
         for result in results:
             recipe = {}
             recipe['id'] = result.id
@@ -107,8 +109,9 @@ def andIngredients(terms):
     searches through ingredients using and logic
     """
     ingredients = []
-    results = Ingredient.query.filter(reduce(lambda x, y: x and y,
-        map(lambda z: z.lower() in str(Ingredient.name).lower(), terms), True))
+    results = [Ingredient.query.filter(Ingredient.name.ilike('%'+term+'%')) for term in terms]
+    if results:
+        results = [result for result in results[0] if reduce(lambda x, y: x and result in y, results, True)]
     for result in results:
         ingredient = {}
         ingredient['id'] = result.id
@@ -130,7 +133,7 @@ def orIngredients(terms):
     everything = {}
     for word in terms:
         ingredients = []
-        results = Ingredient.query.filter(word.lower() in str(Ingredient.name).lower())
+        results = Ingredient.query.filter(Ingredient.name.ilike('%'+word+'%'))
         for result in results:
             ingredient = {}
             ingredient['id'] = result.id
@@ -151,8 +154,9 @@ def andProducts(terms):
     searches through products using and logic
     """
     products = []
-    results = Product.query.filter(reduce(lambda x, y: x and y,
-        map(lambda z: z.lower() in str(Product.name).lower(), terms), True))
+    results = [Product.query.filter(Product.name.ilike('%'+term+'%')) for term in terms]
+    if results:
+        results = [result for result in results[0] if reduce(lambda x, y: x and result in y, results, True)]
     for result in results:
         product = {}
         product['id'] = result.id
@@ -177,7 +181,7 @@ def orProducts(terms):
     everything = {}
     for word in terms:
         products = []
-        results = Product.query.filter(word.lower() in str(Product.name).lower())
+        results = Product.query.filter(Product.name.ilike('%'+word+'%'))
         for result in results:
             product = {}
             product['id'] = result.id
@@ -201,8 +205,9 @@ def andLifestyles(terms):
     searches through lifestyles using and logic
     """
     lifestyles = []
-    results = Lifestyle.query.filter(reduce(lambda x, y: x and y,
-        map(lambda z: z.lower() in str(Lifestyle.name).lower(), terms), True))
+    results = [Lifestyle.query.filter(Lifestyle.name.ilike('%'+term+'%')) for term in terms]
+    if results:
+        results = [result for result in results[0] if reduce(lambda x, y: x and result in y, results, True)]
     for result in results:
         lifestyle = {}
         lifestyle['id'] = result.id
@@ -227,7 +232,7 @@ def orLifestyles(terms):
     everything = {}
     for word in terms:
         lifestyles = []
-        results = Lifestyle.query.filter(word.lower() in str(Lifestyle.name).lower())
+        results = Lifestyle.query.filter(Lifestyle.name.ilike('%'+word+'%'))
         for result in results:
             lifestyle = {}
             lifestyle['id'] = result.id
