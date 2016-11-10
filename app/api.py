@@ -50,7 +50,6 @@ class IngredientHandler(flask_restful.Resource):
     return jsonify(ingredient_response)
 
 
-
 class RecipesHandler(flask_restful.Resource):
   def get(self):
     recipes = Recipe.query.all()
