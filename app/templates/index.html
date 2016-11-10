@@ -16,5 +16,7 @@
 {% endblock %}
 
 {% block javascript %}
-<script src="/static/javascripts/bundle.js"></script>
+	{{ super() }}
+	<script src="/static/javascripts/bundle.js"></script>
 {% endblock %}
+

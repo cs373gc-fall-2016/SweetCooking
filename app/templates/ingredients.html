@@ -33,7 +33,7 @@
         var values = keys.map(function(v) { return data[v]; });
         var myIngredients = values.map(function(ele) {
           var link = '<a href="/ingredients/' + ele.id + '">' + ele.name + '</a>';
-          return [link, ele.calories, ele.protein, ele.fat, ele.carbs];
+          return [link, ele.calories, ele.protein, ele.fat, ele.carbs, ele.recipes_name, ele.recipe_id, ele.lifestyles_name, ele.lifestyles_id];
         });
         $(".table").DataTable({ 
           data: myIngredients,

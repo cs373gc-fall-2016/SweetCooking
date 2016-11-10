@@ -1,3 +1,159 @@
+commit 11d8081cd7c1dbd0ba1e7261c1136baa3ae22184
+Author: Guande <patricklyu216@gmail.com>
+Date:   Thu Nov 3 21:28:24 2016 -0500
+
+    all dynamic
+
+commit 3d9da96533954da81e4b12db46c7f1930b15b37a
+Author: Guande <patricklyu216@gmail.com>
+Date:   Thu Nov 3 21:22:55 2016 -0500
+
+    everything should be good with dynamic page
+
+commit 85bd8a3b47b72fa705c5086a09197cb30478d384
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Fri Nov 4 02:19:05 2016 +0000
+
+    warble
+
+commit 8faa3e53d85b6cb81b1135f39690410c048abb29
+Merge: b98fa61 a0b063c
+Author: Guande <patricklyu216@gmail.com>
+Date:   Thu Nov 3 21:05:26 2016 -0500
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit b98fa61ee5dbdc214da833441e9bc53ad50160e8
+Author: Guande <patricklyu216@gmail.com>
+Date:   Thu Nov 3 21:05:16 2016 -0500
+
+    data result
+
+commit a0b063c31b02115b13b3281725669671238ff54e
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Fri Nov 4 02:03:55 2016 +0000
+
+    blarg
+
+commit e42860cc8acf743991559174abfa43e0ea19b281
+Author: Guande <patricklyu216@gmail.com>
+Date:   Thu Nov 3 20:47:12 2016 -0500
+
+    adding recipes in lifestyle dynamic page
+
+commit 59cc84250f52da3bb46a9921d2ad261421569b5d
+Author: Guande <patricklyu216@gmail.com>
+Date:   Thu Nov 3 20:37:41 2016 -0500
+
+    fixed the pop up thing in ingredient table
+
+commit b1323212a2f82a5d9622f2f11e3b9c240adfb775
+Author: Guande <patricklyu216@gmail.com>
+Date:   Thu Nov 3 20:06:47 2016 -0500
+
+    dynamic for table
+
+commit d62bd5a47c49545246f55f96505a3ac6ef4829c6
+Author: Guande <patricklyu216@gmail.com>
+Date:   Thu Nov 3 16:46:15 2016 -0500
+
+    remove unnecessary html pages
+
+commit 6ab2692613670f25100188a7d3c03791bdc5e586
+Merge: 87c6114 384b2c1
+Author: Guande <patricklyu216@gmail.com>
+Date:   Thu Nov 3 16:42:40 2016 -0500
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit 87c6114955d70118a2e89b9e365448adb2abe99f
+Author: Guande <patricklyu216@gmail.com>
+Date:   Thu Nov 3 16:42:18 2016 -0500
+
+    fix bugs
+
+commit 384b2c1e1ce4c999a51ce7d0eae09d62ab400152
+Merge: f0c29b5 8eb9a41
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Thu Nov 3 21:41:08 2016 +0000
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit f0c29b5e39bc225173914a4bcdfcaec7059625bf
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Thu Nov 3 21:40:40 2016 +0000
+
+    made a copy of tests
+
+commit 8eb9a415ace105ca3938df6125487313c81b51b9
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Thu Nov 3 16:38:19 2016 -0500
+
+    lifestyle table complete
+
+commit d13c9d0afe30b5ebc3a2d3ff4620665b831438e8
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Thu Nov 3 16:03:15 2016 -0500
+
+    dynamic page for foodproducts and recipes is working perfect
+
+commit e971596375acbd46acacabb9e1aee53d1877333e
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Thu Nov 3 02:54:21 2016 -0500
+
+    ingredients table completely dynamic
+
+commit a471047a4deed8f0e8be5691b2d76272c401edb1
+Merge: a9bf511 b2fe601
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Wed Nov 2 22:52:19 2016 -0500
+
+    Merge branch 'master' of github.com:cs373gc-fall-2016/SweetCooking
+
+commit a9bf511361dd773c655dac403723e8d0259eb923
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Wed Nov 2 22:51:39 2016 -0500
+
+    basic dynamic page set up for all the tables close #22 close #23 close #24 close #25
+
+commit b2fe601f8c0ddc310900b8dcee03a69a5ee93599
+Author: chrislin1994 <kris_lin@utexas.edu>
+Date:   Wed Nov 2 22:16:31 2016 -0500
+
+    Update README.md
+
+commit 3f99152cd6280e5a57445736f6f0e2db6c68bb49
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Wed Nov 2 22:13:12 2016 -0500
+
+    commit before merge to master
+
+commit 6f35bc153313e85d908cdd1277565a6402292b40
+Merge: 37ab1da 69c1c26
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Wed Nov 2 22:01:08 2016 -0500
+
+    merge master to chris_lin branch for testing purpose
+
+commit 37ab1da89e75c79243a90677a3521abcae904e1d
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Wed Nov 2 21:53:11 2016 -0500
+
+     retrieveing all the data from backend
+
+commit a9b354e2faeb9b1ffc23096171253f703fb2c0db
+Merge: 84afc3d af67102
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Wed Nov 2 21:49:46 2016 -0500
+
+    Merge branch 'master' into chris_lin
+
+commit 69c1c2639c58e2d04b7f0a6ce819cff2896603e7
+Author: Rafik Rizik <rizik944@gmail.com>
+Date:   Wed Nov 2 17:49:48 2016 -0500
+
+     ok
+
 commit 1cc16d2cc3d0c8b0bf680fdc39cca15b6ce1da14
 Author: Rafik Rizik <rizik944@gmail.com>
 Date:   Wed Nov 2 17:47:44 2016 -0500
@@ -23,6 +179,12 @@ Author: Rafik Rizik <rizik944@gmail.com>
 Date:   Wed Nov 2 17:33:32 2016 -0500
 
     ok
+
+commit 84afc3d3f2a215c070ad19f6a7e86d9d9a8a4cb3
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Wed Nov 2 17:03:26 2016 -0500
+
+    retrieving ingredient successful
 
 commit a829ad545d3918de6aa4168d7dbd15e730bb42a2
 Author: kris <cyberwyvern696@gmail.com>
@@ -164,6 +326,30 @@ Author: chrislin1994 <kris_lin@utexas.edu>
 Date:   Wed Nov 2 02:36:12 2016 -0500
 
     Update README.md
+
+commit 09e6e5f92491d42116013222a62a155f69aea1d7
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Wed Nov 2 02:20:19 2016 -0500
+
+    successfully retrieved all the data from backend and apply react to search
+
+commit 327bbf5b439246531c463ee8c4c060b157d9543a
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Tue Nov 1 03:34:40 2016 -0500
+
+    better sorting and UI table
+
+commit 4198b41d117c491ac015f4e1cef0265cdd917cb6
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Tue Nov 1 02:24:48 2016 -0500
+
+    more refactoring javascripts
+
+commit 178ff8d4b42154dfc62a3a9471bc8fb7b4d85351
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Tue Nov 1 01:39:37 2016 -0500
+
+    apply jinja2 and refactor html
 
 commit af671027772146fa7a98dfa6f51a97cd6ae97d67
 Author: kris <cyberwyvern696@gmail.com>

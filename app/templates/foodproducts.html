@@ -28,17 +28,19 @@
   {{ super() }}
   <script>
     $(document).ready(function() {
-      var myProducts = [];
       $.ajax({
-        url: '/api/products',
+        url: '/api/foodproducts/',
         type: 'GET',
       })
       .done(function(data){
-        for (var i in data) {
-          myProducts.push(data[i]);
-        }
+        var keys = Object.keys(data);
+        var values = keys.map(function(v) { return data[v]; });
+        var myFoodProducts = values.map(function(ele) {
+          var link = '<a href="/foodproducts/' + ele.id + '">' + ele.name + '</a>';
+          return [link, ele.servingsize, ele.calories, ele.protein, ele.fat, ele.satfat, ele.transfat, ele.carbs, ele.sugar, ele.lifestyles_name, ele.lifestyles_id];
+        });
         $(".table").DataTable({ 
-          data: myProducts,
+          data: myFoodProducts,
         });
       });
     });

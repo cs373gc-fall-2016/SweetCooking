@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
-
+{% set active_page = "ingredients" %}
 {% block content %}
-  <div class="container ingredient-container">    
-    <div class="row">
-      <div class="col-md-4">
-        <img class="img-responsive"></img>
+  <div class="container ingredient-container text-center">    
+    <div class="text-center">
+      <div class="text-center">
+        <img class="text-center"></img>
       </div>
-      <div class="col-md-8">
+      <div class="text-center">
         <ul></ul>
       </div>
     </div>
@@ -21,11 +21,22 @@
       $.get(url).done(function(data){
         $('.ingredient-container img').attr('src', data.img);
         $('.ingredient-container ul')
-          .append('<li><h4> name:' + data.name + '</h4></li>')
-          .append('<li><h4> calories:' + data.calories + '</h4></li>')
-          .append('<li><h4> protein:' + data.protein + '</h4></li>')
-          .append('<li><h4> fat:' + data.fat + '</h4></li>')
-          .append('<li><h4> carbs:' + data.carbs + '</h4></li>');
+          .append('<li><h1>' + data.name + '</h1></li>')
+          .append('<li><h4> calories: ' + data.calories + '</h4></li>')
+          .append('<li><h4> protein: ' + data.protein + '</h4></li>')
+          .append('<li><h4> fat: ' + data.fat + '</h4></li>')
+          .append('<li><h4> carbs: ' + data.carbs + '</h4></li>')
+          .append('<li><h4> recipes: </h4></li>')
+          for(var i = 0; i < data.recipes_name.length; i++) {
+            $('.ingredient-container ul')
+              .append('<li><h4><a href="/recipes/' + data.recipe_id[i] + '">' + data.recipes_name[i] + '</a></h4></li>');
+          }
+          $('.ingredient-container ul')
+            .append('<li><h4> lifestyles: </h4></li>');   
+            for(var i = 0; i < data.lifestyles_name.length; i++) {
+            $('.ingredient-container ul')
+              .append('<li><h4><a href="/lifestyles/' + data.lifestyles_id[i] + '">' + data.lifestyles_name[i] + '</a></h4></li>');
+          }  
       });
     });
   </script>

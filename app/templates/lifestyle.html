@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% set active_page = "lifestyles" %}
+{% block content %}
+  <div class="container lifestyle-container">    
+    <div class="row">
+      <div class="col-md-4">
+        <img class="img-responsive"></img>
+      </div>
+      <div class="col-md-8">
+        <ul></ul>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascript %} 
+  {{ super() }}
+  <script>
+    $(document).ready(function(){
+      var url = '/api/lifestyles/{{ id }}';
+      $.get(url).done(function(data){
+        $('.lifestyle-container img').attr('src', data.img);
+        $('.lifestyle-container ul')
+          .append('<li><h4> name: ' + data.name + '</h4></li>')
+          .append('<li><h4> description: ' + data.description + '</h4></li>')
+          .append('<li><h4> weight_management: ' + data.weight_management + '</h4></li>')
+          .append('<li><h4> gluten_free: ' + data.gluten_free + '</h4></li>')
+          .append('<li><h4> ketogenic: ' + data.ketogenic + '</h4></li>')
+          .append('<li><h4> vegetarian: ' + data.vegetarian + '</h4></li>')
+          .append('<li><h4> vegan: ' + data.vegan + '</h4></li>')
+          .append('<li><h4> cheap: ' + data.cheap + '</h4></li>')
+          .append('<li><h4> dairy_free: ' + data.dairy_free + '</h4></li>')
+          .append('<li><h4> recipes: </h4></li>')
+          for(var i = 0; i < data.recipes_name.length; i++) {
+            $('.lifestyle-container ul')
+              .append('<li><h4><a href="/recipes/' + data.recipe_id[i] + '">' + data.recipes_name[i] + '</a></h4></li>');
+          }
+          $('.lifestyle-container ul')
+          .append('<li><h4> products: </h4></li>')
+          for(var i = 0; i < data.products_name.length; i++) {
+            $('.lifestyle-container ul')
+              .append('<li><h4><a href="/foodproducts/' + data.products_id[i] + '">' + data.products_name[i] + '</a></h4></li>');
+          }
+      });
+    });
+  </script>
+{% endblock %}

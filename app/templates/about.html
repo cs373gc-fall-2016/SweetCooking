@@ -101,6 +101,23 @@
       </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
 
+      
+    <hr class="featurette-divider">
+    <button onclick="myFunction()" class="btn btn-primary clearBtn">Run Unit Tests</button>
+        <p id="demo"></p>
+          <script>
+          function myFunction() {
+            document.getElementById("demo").innerHTML = "loading...";
+            $(document).ready(function(){
+            var url = '/testinate';
+            $.get(url).done(function(data){
+              document.getElementById("demo").innerHTML = data["result"].replace(/(?:\r\n|\r|\n)/g, '<br />');
+            });
+          });
+         }
+        </script>
+   </div>
+
     <hr class="featurette-divider">
     <div class="row featurette">
       <div class="col-md-7">
@@ -122,7 +139,8 @@
         <img class="featurette-image img-responsive center-block" src="static/images/01.jpg" width="500" height="500">
       </div>
     </div>
-      
+
+
     <hr class="featurette-divider">
     <div class="row featurette">
       <div class="col-md-7 col-md-push-5">
