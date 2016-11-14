@@ -5,18 +5,34 @@
     <div class="index-image-container">
       <img src="/static/images/Logo.png">
     </div>
-    <p class="lead text-center"> Apple-Pen, Pineapple-Pen Uh! Pen-Pineapple-Apple-Pen Pen-Pineapple-Apple-Pen </p>
-
-    <br><br>
+    <p class="lead text-center" style="padding-bottom: 20px"> Apple-Pen, Pineapple-Pen Uh! Pen-Pineapple-Apple-Pen Pen-Pineapple-Apple-Pen </p>
 
     <div id="search-box">
     <!-- Required to have space in between for DOM render -->
     </div>
+
+    <div class='row'>
+      <div id='spinner' class='text-center'>
+      </div>
+    </div>
+
+    <br><br>
+    <div class='row'> 
+
+      <div id="search-and" class='col-md-6'>
+      </div>
+
+      <div id="search-or" class='col-md-6'>
+      </div>
+    </div>
+
+
+
   </div>
 {% endblock %}
 
 {% block javascript %}
-	{{ super() }}
-	<script src="/static/javascripts/bundle.js"></script>
+  {{ super() }}
+  <script src="/static/javascripts/bundle.js"></script>
 {% endblock %}
 
