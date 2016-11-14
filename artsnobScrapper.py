@@ -7,7 +7,7 @@ print()
 URL = 'http://artsnob.me/'
 
 
-request = Request(URL + 'Artist')
+request = Request(URL + 'artist')
 try:
     response = urlopen(request)
     data = response.read()
@@ -15,7 +15,7 @@ try:
 except URLError, e:
     print('#### Error in Artist: ', e)
 
-request = Request(URL + 'Artwork')
+request = Request(URL + 'artwork')
 try:
     response = urlopen(request)
     data = response.read()
@@ -25,7 +25,7 @@ except URLError, e:
 
 
 
-request = Request(URL + 'Style')
+request = Request(URL + 'style')
 try:
     response = urlopen(request)
     data = response.read()
@@ -35,7 +35,7 @@ except URLError, e:
 
 
 collection_id = 1
-request = Request(URL + 'Collection/' + str(collection_id))
+request = Request(URL + 'collection/' + str(collection_id))
 try:
     response = urlopen(request)
     data = response.read()
