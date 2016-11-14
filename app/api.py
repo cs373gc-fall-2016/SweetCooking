@@ -25,6 +25,8 @@ class IngredientsHandler(flask_restful.Resource):
 
     return jsonify(ingredients_response)
 
+api.add_resource(IngredientsHandler, '/api/ingredients/') 
+
 
 class IngredientHandler(flask_restful.Resource):
   def get(self, ingredient_id):
@@ -48,6 +50,7 @@ class IngredientHandler(flask_restful.Resource):
       }
     
     return jsonify(ingredient_response)
+api.add_resource(IngredientHandler, '/api/ingredients/<int:ingredient_id>') 
 
 
 class RecipesHandler(flask_restful.Resource):
