@@ -26,6 +26,7 @@ var searchBox = React.createClass({
     }
     if($('.fa-spinner').length < 1) {
       $('#spinner').html('<i class="fa fa-spinner fa-pulse fa-4x fa-fw"></i>');
+      $('#spinner').css("padding-top", "20px");
     }
     // console.log("this is outside: " + this.state.message);
     // run only once per search
@@ -51,7 +52,9 @@ var searchBox = React.createClass({
       },
     }).done(function(data) {
       that.resetUI();
-
+      $('#search-and').append('<p>And :</p>');
+      $('#search-or').append('<p>Or :</p>');
+      
       that.searchDriver({
         data: data,
         searchType: 'and'
@@ -72,8 +75,10 @@ var searchBox = React.createClass({
     var data = args.data;
     var searchType = args.searchType;
 
+
     var ingredientsHtml = '<ol class="ingredients-list"></ol>';
     var ingredientHtml = 'Ingredient';
+
     that.searchHelper({
       data: data,
       typeName: 'ingredients',
@@ -121,11 +126,9 @@ var searchBox = React.createClass({
     var elemHtml = args.elemHtml;
     var elemsHtml = args.elemsHtml;
 
-    // console.log(searchType);
-    // console.log(elemsHtml);
-    
     if(searchType == 'and') {
       data = data['and'][typeName]; 
+
       that.searchDataProcess({
         data: data,
         typeName: typeName,
@@ -176,7 +179,6 @@ var searchBox = React.createClass({
         }
         var title = `<ol class="${key}">${key}</ol>`;
         $(`#search-${searchType} .${typeName}-list`).append(title);
-        // debugger
         $(`#search-${searchType} .${typeName}-list .${key}`).html(elemHtml);
       } else {
         if($(`#search-${searchType} .${typeName}-list`).length < 1) {
@@ -190,6 +192,7 @@ var searchBox = React.createClass({
 
   resetUI: function() {
     $('#spinner').html('');
+    $('#spinner').removeAttr('style');
     $('#search-and').html('');
     $('#search-or').html('');
   },

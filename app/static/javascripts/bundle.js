@@ -21565,6 +21565,7 @@
 	    }
 	    if ((0, _jquery2.default)('.fa-spinner').length < 1) {
 	      (0, _jquery2.default)('#spinner').html('<i class="fa fa-spinner fa-pulse fa-4x fa-fw"></i>');
+	      (0, _jquery2.default)('#spinner').css("padding-top", "20px");
 	    }
 	    // console.log("this is outside: " + this.state.message);
 	    // run only once per search
@@ -21589,6 +21590,8 @@
 	      }
 	    }).done(function (data) {
 	      that.resetUI();
+	      (0, _jquery2.default)('#search-and').append('<p>And :</p>');
+	      (0, _jquery2.default)('#search-or').append('<p>Or :</p>');
 
 	      that.searchDriver({
 	        data: data,
@@ -21610,6 +21613,7 @@
 
 	    var ingredientsHtml = '<ol class="ingredients-list"></ol>';
 	    var ingredientHtml = 'Ingredient';
+
 	    that.searchHelper({
 	      data: data,
 	      typeName: 'ingredients',
@@ -21657,11 +21661,9 @@
 	    var elemHtml = args.elemHtml;
 	    var elemsHtml = args.elemsHtml;
 
-	    // console.log(searchType);
-	    // console.log(elemsHtml);
-
 	    if (searchType == 'and') {
 	      data = data['and'][typeName];
+
 	      that.searchDataProcess({
 	        data: data,
 	        typeName: typeName,
@@ -21712,7 +21714,6 @@
 	        }
 	        var title = '<ol class="' + key + '">' + key + '</ol>';
 	        (0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list').append(title);
-	        // debugger
 	        (0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list .' + key).html(elemHtml);
 	      } else {
 	        if ((0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list').length < 1) {
@@ -21725,6 +21726,7 @@
 
 	  resetUI: function resetUI() {
 	    (0, _jquery2.default)('#spinner').html('');
+	    (0, _jquery2.default)('#spinner').removeAttr('style');
 	    (0, _jquery2.default)('#search-and').html('');
 	    (0, _jquery2.default)('#search-or').html('');
 	  },
