@@ -13,8 +13,7 @@ var searchBox = React.createClass({
     var msg = event.target.value;
     this.setState({message: msg});
     if(this.state.message === ''){
-      $('#search-and').html('');
-      $('#search-or').html('');
+      that.resetUI();
     }
     // console.log("testing: " + this.state.message);
 
@@ -23,24 +22,20 @@ var searchBox = React.createClass({
   handleKeyUp: function() {
     var that = this;
     if(this.state.message === ''){
-      $('#search-and').html('');
-      $('#search-or').html('');
+      that.resetUI();
     }
     if($('.fa-spinner').length < 1) {
-      $('#search-and').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>');
-      $('#search-or').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>');
+      $('#spinner').html('<i class="fa fa-spinner fa-pulse fa-4x fa-fw"></i>');
     }
     // console.log("this is outside: " + this.state.message);
     // run only once per search
     clearTimeout(window.timer);
     window.timer = setTimeout(function() {
       if(that.state.message !== '') {
-      // console.log(that.state.message);
         that.doSearch(that.state.message);
       }
       else {
-        $('#search-and').html('');
-        $('#search-or').html('');
+        that.resetUI();
       }
     }, 1000);
   },
@@ -55,10 +50,7 @@ var searchBox = React.createClass({
         // $('#search-and').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>');
       },
     }).done(function(data) {
-      // debugger;
-      // console.log("ajax finished: " );
-      $('#search-and').html('');
-      $('#search-or').html('');
+      that.resetUI();
 
       that.searchDriver({
         data: data,
@@ -129,8 +121,8 @@ var searchBox = React.createClass({
     var elemHtml = args.elemHtml;
     var elemsHtml = args.elemsHtml;
 
-    console.log(searchType);
-    console.log(elemsHtml);
+    // console.log(searchType);
+    // console.log(elemsHtml);
     
     if(searchType == 'and') {
       data = data['and'][typeName]; 
@@ -147,7 +139,7 @@ var searchBox = React.createClass({
 
       $.each(keys, function(index, key) {
         var temp = data[key];
-        debugger
+        // debugger
         that.searchDataProcess({
           data: temp,
           typeName: typeName,
@@ -180,32 +172,29 @@ var searchBox = React.createClass({
 
       if(searchType == 'or') {
         if($(`#search-${searchType} .${typeName}-list`).length < 1) {
-
           $(`#search-${searchType}`).append(`<p style="text-transform: capitalize">${typeName}</p>`).append(elemsHtml);
-
-          var title = `<ol class="${key}">${key}</ol>`;
-          $(`#search-${searchType} .${typeName}-list`).append(title);
-          debugger
-          $(`#search-${searchType} .${typeName}-list .${key}`).html(elemHtml);
-        } else {
-          var title = `<ol class="${key}">${key}</ol>`;
-          $(`#search-${searchType} .${typeName}-list`).append(title);
-          debugger
-          $(`#search-${searchType} .${typeName}-list .${key}`).html(elemHtml);
         }
+        var title = `<ol class="${key}">${key}</ol>`;
+        $(`#search-${searchType} .${typeName}-list`).append(title);
+        // debugger
+        $(`#search-${searchType} .${typeName}-list .${key}`).html(elemHtml);
       } else {
         if($(`#search-${searchType} .${typeName}-list`).length < 1) {
           $(`#search-${searchType}`).append(elemsHtml);
-          $(`#search-${searchType} .${typeName}-list`).html(elemHtml);
-        } else {
-          $(`#search-${searchType} .${typeName}-list`).html(elemHtml);
         }
+        $(`#search-${searchType} .${typeName}-list`).html(elemHtml);
       }
 
     }
   },
 
-  render:function(){
+  resetUI: function() {
+    $('#spinner').html('');
+    $('#search-and').html('');
+    $('#search-or').html('');
+  },
+
+  render: function(){
     var message = this.state.message;
     return (
       <div className="input-group">

@@ -21553,8 +21553,7 @@
 	    var msg = event.target.value;
 	    this.setState({ message: msg });
 	    if (this.state.message === '') {
-	      (0, _jquery2.default)('#search-and').html('');
-	      (0, _jquery2.default)('#search-or').html('');
+	      that.resetUI();
 	    }
 	    // console.log("testing: " + this.state.message);
 	  },
@@ -21562,23 +21561,19 @@
 	  handleKeyUp: function handleKeyUp() {
 	    var that = this;
 	    if (this.state.message === '') {
-	      (0, _jquery2.default)('#search-and').html('');
-	      (0, _jquery2.default)('#search-or').html('');
+	      that.resetUI();
 	    }
 	    if ((0, _jquery2.default)('.fa-spinner').length < 1) {
-	      (0, _jquery2.default)('#search-and').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>');
-	      (0, _jquery2.default)('#search-or').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>');
+	      (0, _jquery2.default)('#spinner').html('<i class="fa fa-spinner fa-pulse fa-4x fa-fw"></i>');
 	    }
 	    // console.log("this is outside: " + this.state.message);
 	    // run only once per search
 	    clearTimeout(window.timer);
 	    window.timer = setTimeout(function () {
 	      if (that.state.message !== '') {
-	        // console.log(that.state.message);
 	        that.doSearch(that.state.message);
 	      } else {
-	        (0, _jquery2.default)('#search-and').html('');
-	        (0, _jquery2.default)('#search-or').html('');
+	        that.resetUI();
 	      }
 	    }, 1000);
 	  },
@@ -21593,10 +21588,7 @@
 	        // $('#search-and').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>');
 	      }
 	    }).done(function (data) {
-	      // debugger;
-	      // console.log("ajax finished: " );
-	      (0, _jquery2.default)('#search-and').html('');
-	      (0, _jquery2.default)('#search-or').html('');
+	      that.resetUI();
 
 	      that.searchDriver({
 	        data: data,
@@ -21665,8 +21657,8 @@
 	    var elemHtml = args.elemHtml;
 	    var elemsHtml = args.elemsHtml;
 
-	    console.log(searchType);
-	    console.log(elemsHtml);
+	    // console.log(searchType);
+	    // console.log(elemsHtml);
 
 	    if (searchType == 'and') {
 	      data = data['and'][typeName];
@@ -21683,7 +21675,7 @@
 
 	      _jquery2.default.each(keys, function (index, key) {
 	        var temp = data[key];
-	        debugger;
+	        // debugger
 	        that.searchDataProcess({
 	          data: temp,
 	          typeName: typeName,
@@ -21716,28 +21708,25 @@
 
 	      if (searchType == 'or') {
 	        if ((0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list').length < 1) {
-
 	          (0, _jquery2.default)('#search-' + searchType).append('<p style="text-transform: capitalize">' + typeName + '</p>').append(elemsHtml);
-
-	          var title = '<ol class="' + key + '">' + key + '</ol>';
-	          (0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list').append(title);
-	          debugger;
-	          (0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list .' + key).html(elemHtml);
-	        } else {
-	          var title = '<ol class="' + key + '">' + key + '</ol>';
-	          (0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list').append(title);
-	          debugger;
-	          (0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list .' + key).html(elemHtml);
 	        }
+	        var title = '<ol class="' + key + '">' + key + '</ol>';
+	        (0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list').append(title);
+	        // debugger
+	        (0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list .' + key).html(elemHtml);
 	      } else {
 	        if ((0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list').length < 1) {
 	          (0, _jquery2.default)('#search-' + searchType).append(elemsHtml);
-	          (0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list').html(elemHtml);
-	        } else {
-	          (0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list').html(elemHtml);
 	        }
+	        (0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list').html(elemHtml);
 	      }
 	    }
+	  },
+
+	  resetUI: function resetUI() {
+	    (0, _jquery2.default)('#spinner').html('');
+	    (0, _jquery2.default)('#search-and').html('');
+	    (0, _jquery2.default)('#search-or').html('');
 	  },
 
 	  render: function render() {
