@@ -21554,6 +21554,7 @@
 	    this.setState({ message: msg });
 	    if (this.state.message === '') {
 	      (0, _jquery2.default)('#search-and').html('');
+	      (0, _jquery2.default)('#search-or').html('');
 	    }
 	    // console.log("testing: " + this.state.message);
 	  },
@@ -21562,9 +21563,11 @@
 	    var that = this;
 	    if (this.state.message === '') {
 	      (0, _jquery2.default)('#search-and').html('');
+	      (0, _jquery2.default)('#search-or').html('');
 	    }
 	    if ((0, _jquery2.default)('.fa-spinner').length < 1) {
 	      (0, _jquery2.default)('#search-and').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>');
+	      (0, _jquery2.default)('#search-or').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>');
 	    }
 	    // console.log("this is outside: " + this.state.message);
 	    // run only once per search
@@ -21575,6 +21578,7 @@
 	        that.doSearch(that.state.message);
 	      } else {
 	        (0, _jquery2.default)('#search-and').html('');
+	        (0, _jquery2.default)('#search-or').html('');
 	      }
 	    }, 1000);
 	  },
@@ -21592,64 +21596,147 @@
 	      // debugger;
 	      // console.log("ajax finished: " );
 	      (0, _jquery2.default)('#search-and').html('');
-	      var ingredientsHtml = '<ol id="ingredients-list"></ol>';
-	      var ingredientHtml = 'Ingredient';
-	      that.searchHelper({
+	      (0, _jquery2.default)('#search-or').html('');
+
+	      that.searchDriver({
 	        data: data,
-	        typeName: 'ingredients',
-	        elemHtml: ingredientHtml,
-	        elemsHtml: ingredientsHtml,
-	        searchName: 'and'
+	        searchType: 'and'
 	      });
 
-	      var recipesHtml = '<ol id="recipes-list"></ol>';
-	      var recipeHtml = 'recipe';
-	      that.searchHelper({
+	      that.searchDriver({
 	        data: data,
-	        typeName: 'recipes',
-	        elemHtml: recipeHtml,
-	        elemsHtml: recipesHtml,
-	        searchName: 'and'
-	      });
-
-	      var productsHtml = '<ol id="products-list"></ol>';
-	      var productHtml = 'product';
-	      that.searchHelper({
-	        data: data,
-	        typeName: 'products',
-	        elemHtml: productHtml,
-	        elemsHtml: productsHtml,
-	        searchName: 'and'
-	      });
-
-	      var lifeStylesHtml = '<ol id="lifeStyles-list"></ol>';
-	      var lifeStyleHtml = 'lifeStyle';
-	      that.searchHelper({
-	        data: data,
-	        typeName: 'lifestyle',
-	        elemHtml: lifeStyleHtml,
-	        elemsHtml: lifeStylesHtml,
-	        searchName: 'and'
+	        searchType: 'or'
 	      });
 	    });
 	  },
 
+	  searchDriver: function searchDriver(args) {
+	    var that = this;
+
+	    var data = args.data;
+	    var searchType = args.searchType;
+
+	    var ingredientsHtml = '<ol class="ingredients-list"></ol>';
+	    var ingredientHtml = 'Ingredient';
+	    that.searchHelper({
+	      data: data,
+	      typeName: 'ingredients',
+	      searchType: searchType,
+	      elemHtml: ingredientHtml,
+	      elemsHtml: ingredientsHtml
+	    });
+
+	    var recipesHtml = '<ol class="recipes-list"></ol>';
+	    var recipeHtml = 'recipe';
+	    that.searchHelper({
+	      data: data,
+	      typeName: 'recipes',
+	      searchType: searchType,
+	      elemHtml: recipeHtml,
+	      elemsHtml: recipesHtml
+	    });
+
+	    var productsHtml = '<ol class="products-list"></ol>';
+	    var productHtml = 'product';
+	    that.searchHelper({
+	      data: data,
+	      typeName: 'products',
+	      searchType: searchType,
+	      elemHtml: productHtml,
+	      elemsHtml: productsHtml
+	    });
+
+	    var lifeStylesHtml = '<ol class="lifeStyles-list"></ol>';
+	    var lifeStyleHtml = 'lifeStyle';
+	    that.searchHelper({
+	      data: data,
+	      typeName: 'lifestyle',
+	      searchType: searchType,
+	      elemHtml: lifeStyleHtml,
+	      elemsHtml: lifeStylesHtml
+	    });
+	  },
+
 	  searchHelper: function searchHelper(args) {
+	    var that = this;
 	    var data = args.data;
 	    var typeName = args.typeName;
+	    var searchType = args.searchType;
 	    var elemHtml = args.elemHtml;
 	    var elemsHtml = args.elemsHtml;
-	    var searchName = args.searchName;
-	    data = data[searchName][typeName];
+
+	    console.log(searchType);
+	    console.log(elemsHtml);
+
+	    if (searchType == 'and') {
+	      data = data['and'][typeName];
+	      that.searchDataProcess({
+	        data: data,
+	        typeName: typeName,
+	        searchType: searchType,
+	        elemHtml: elemHtml,
+	        elemsHtml: elemsHtml
+	      });
+	    } else {
+	      data = data['or'][typeName];
+	      var keys = Object.keys(data);
+
+	      _jquery2.default.each(keys, function (index, key) {
+	        var temp = data[key];
+	        debugger;
+	        that.searchDataProcess({
+	          data: temp,
+	          typeName: typeName,
+	          key: key,
+	          searchType: searchType,
+	          elemHtml: elemHtml,
+	          elemsHtml: elemsHtml
+	        });
+	      });
+	    }
+	  },
+
+	  searchDataProcess: function searchDataProcess(args) {
+	    var that = this;
+	    var data = args.data;
+	    var typeName = args.typeName;
+	    var searchType = args.searchType;
+	    var key = args.key;
+	    var elemHtml = args.elemHtml;
+	    var elemsHtml = args.elemsHtml;
 
 	    if (data.length > 0) {
+	      if (searchType == 'or') {
+	        elemHtml = key;
+	      }
 	      data = data.slice(0, 3);
 	      (0, _jquery2.default)(data).each(function (i, ele) {
 	        elemHtml += '<li><a href="/' + typeName + '/' + ele.id + '">' + ele.name + '</a></li>';
 	      });
 
-	      (0, _jquery2.default)('#search-' + searchName).append(elemsHtml);
-	      (0, _jquery2.default)('#' + typeName + '-list').html(elemHtml);
+	      if (searchType == 'or') {
+	        if ((0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list').length < 1) {
+
+	          (0, _jquery2.default)('#search-' + searchType).append('<p style="text-transform: capitalize">' + typeName + '</p>').append(elemsHtml);
+
+	          var title = '<ol class="' + key + '">' + key + '</ol>';
+	          (0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list').append(title);
+	          debugger;
+	          (0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list .' + key).html(elemHtml);
+	        } else {
+	          var title = '<ol class="' + key + '">' + key + '</ol>';
+	          (0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list').append(title);
+	          debugger;
+	          (0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list .' + key).html(elemHtml);
+	        }
+	      } else {
+	        if ((0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list').length < 1) {
+	          (0, _jquery2.default)('#search-' + searchType).append(elemsHtml);
+	          (0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list').html(elemHtml);
+	        } else {
+	          (0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list').html(elemHtml);
+	        }
+	      }
 	    }
 	  },
 
