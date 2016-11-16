@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+
+      #changeColor {
+        background-color: #D4D4D4;
+        text-align: center;
+      }
+
+      #title {
+        text-align: center;
+      }
+
+      #icons {
+        height: 20px;
+        width: 25px;
+      }
+
+      #table-wrapper {
+        position:relative;
+      }
+      #table-scroll {
+        height:150px;
+        overflow:auto;  
+        margin-top:20px;
+      }
+      #table-wrapper table {
+        width:100%;
+
+      }
+      #table-wrapper table * {
+        /*background:yellow;*/
+        color:black;
+      }
+      #table-wrapper table thead th .text {
+        position:absolute;   
+        top:-20px;
+        z-index:2;
+        height:20px;
+        width:35%;
+        border:1px solid red;
+      }
+    </style>
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="bootstrap/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="bootstrap/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="bootstrap/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="bootstrap/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="bootstrap/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="bootstrap/ico/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Project name</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="nav-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="navbar-form pull-right">
+              <input class="span2" type="text" placeholder="Email">
+              <input class="span2" type="password" placeholder="Password">
+              <button type="submit" class="btn">Sign in</button>
+            </form>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="span6">
+
+          <h1>French Toast</h1>
+
+          <div class="span1"><img src="bootstrap/img/clock.png" id="icons">
+          </div>
+          <div class="span2">
+          <p>20 minutes</p></div>
+
+          <div class="span6"></div>
+
+          <div class="span1"> 
+          <img src="bootstrap/img/people.png" id="icons">
+        </div>
+          <div class="span2">
+            <p>Serves 2 people</p></div>
+        </div>
+
+        <div class="span6">
+          <img src="bootstrap/img/frenchToast.jpg">
+        </div>
+
+        <div class="span6"> 
+          <h3>Life Styles</h3>
+          <div><a href="">Dairy Free</a></div>
+          <div><a href="">Everyday</a></div>
+          <div><a href="">Gluten Free</a></div>
+          <div><a href="">Ketogenic</a></div>
+          <div><a href="">Vegan</a></div>
+          <div><a href="">Vegetarian</a></div>
+          <div><a href="">Weight Management</a></div>
+        </div>
+
+        <div class="span6">
+            <h3>Ingredients</h3>
+              <div id="table-wrapper">
+                <div id="table-scroll">
+                  <table>
+                      <tbody>
+                        <tr><a href="butte">buttermilk</a></tr><br>
+                        <tr><a href="butte">eggs</a></tr><br>
+                        <tr><a href="butte">ground cinnamon</a></tr><br>
+                        <tr><a href="butte">ground nutmeg</a></tr><br>
+                        <tr><a href="butte">light brown sugar</a></tr><br>
+                        <tr><a href="butte">maple syrups</a></tr><br>
+                        <tr><a href="butte">whole milk</a></tr><br>    
+                        <tr><a href="butte">bread</a></tr><br>
+                        <tr><a href="butte">vanilla extract</a></tr><br>
+                        <tr><a href="butte">sugar</a></tr><br>
+                        <tr><a href="butte">cream</a></tr><br>
+                        <tr><a href="butte">love</a></tr><br>
+                      </tbody>
+                  </table>
+                </div>
+              </div>
+        </div> 
+
+        <div class="span12">
+          <h3>Instructions</h3>
+          <p>instructions: a 9 x 13 inch casserole dish. Cut or tear challah bread, excluding the end pieces, into 1-inch chunks and spread evenly in the dish. In a large bowl, combine the eggs, milk, buttermilk, cinnamon, nutmeg, light brown sugar, and salt. Whisk together until smooth, then pour evenly over the bread chunks in the casserole dish. Using the back of a large spoon, press the bread down into the custard so that each piece of bread is moistened. Cover with foil and refrigerate for 12 hours or overnight. When ready to bake, preheat oven to 350 degrees. Bake the casserole, still covered with the foil, for 30 minutes. Remove foil and bake for another 20-25 minutes, until puffed and set and lightly browned on top</p>
+        </div>
+      </div>
+      <hr>
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="bootstrap/js/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap-transition.js"></script>
+    <script src="bootstrap/js/bootstrap-alert.js"></script>
+    <script src="bootstrap/js/bootstrap-modal.js"></script>
+    <script src="bootstrap/js/bootstrap-dropdown.js"></script>
+    <script src="bootstrap/js/bootstrap-scrollspy.js"></script>
+    <script src="bootstrap/js/bootstrap-tab.js"></script>
+    <script src="bootstrap/js/bootstrap-tooltip.js"></script>
+    <script src="bootstrap/js/bootstrap-popover.js"></script>
+    <script src="bootstrap/js/bootstrap-button.js"></script>
+    <script src="bootstrap/js/bootstrap-collapse.js"></script>
+    <script src="bootstrap/js/bootstrap-carousel.js"></script>
+    <script src="bootstrap/js/bootstrap-typeahead.js"></script>
+
+  </body>
+</html>
