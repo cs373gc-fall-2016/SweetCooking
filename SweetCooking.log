@@ -1,3 +1,178 @@
+commit 2078f9ae81aa80cccdd849899c93555f0da50057
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Thu Nov 17 21:35:11 2016 +0000
+
+    working link to presentation
+
+commit 68dc3caaf5f37b7643b1cfaf067e1dec324b2457
+Merge: 0d7054d 523e17b
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Thu Nov 17 21:25:05 2016 +0000
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit 0d7054d546ae0e2e3d88a7e19b5e9c636aee31a8
+Author: Ubuntu <ubuntu@ip-172-31-35-219.us-west-2.compute.internal>
+Date:   Thu Nov 17 21:24:50 2016 +0000
+
+    button to presentation (only relative path)
+
+commit 523e17b32215a0a8a7eac10e18d406da1488a97a
+Merge: 6bbd29f e0c5f00
+Author: Alex Irion <alexirion10@gmail.com>
+Date:   Thu Nov 17 15:18:17 2016 -0600
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit 6bbd29fa181a6b284ca8a1e8950f5143fb5b2964
+Author: Alex Irion <alexirion10@gmail.com>
+Date:   Thu Nov 17 15:17:57 2016 -0600
+
+    updated other group api scraper
+
+commit e0c5f0042bf3ca85f54894bc11b6263af4725bfa
+Author: Guande Lyu <patricklyu216@gmail.com>
+Date:   Thu Nov 17 14:34:54 2016 -0600
+
+    link to presentation
+
+commit e32a4668ab7ef51358c6dafce76d935e066dcb74
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Thu Nov 17 01:17:05 2016 -0600
+
+    bring up table for searching result
+
+commit ed5d21fb04612e1871f7fffadb16c06fba2475ca
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Wed Nov 16 18:19:48 2016 -0600
+
+    changing index to home fixed #60
+
+commit 0334bc335e799d192a0e0b4cb445e3e6f852da30
+Merge: baa2405 a375c99
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Mon Nov 14 12:07:15 2016 -0600
+
+    Merge branch 'master' of github.com:cs373gc-fall-2016/SweetCooking
+
+commit baa24051a3b2cd8605a2d8fd68648bf55e4cb1cb
+Merge: 6cc408f ed906b2
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Mon Nov 14 12:06:25 2016 -0600
+
+    Merge branch 'chris_lin'
+
+commit ed906b2ea21c56ee78d38c09f74f00664de67c21
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Mon Nov 14 12:05:55 2016 -0600
+
+    fixing the ingredients table
+
+commit a375c99443dfcd7a4679a06bd3027ba26231ae72
+Author: Alex Irion <alexirion10@gmail.com>
+Date:   Mon Nov 14 12:04:47 2016 -0600
+
+    updated scraper.  P
+
+commit 6cc408fe681fb822ca155dc9ba28be8dd1b57ce8
+Merge: afebd17 a4a0ce3
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Mon Nov 14 12:00:20 2016 -0600
+
+    Merge branch 'chris_lin'
+
+commit a4a0ce3229807726a015adee6fed266d26bd4bec
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Mon Nov 14 00:22:08 2016 -0600
+
+    more refactor and better UI experience
+
+commit a881951f8fe70136f4d03bc793f5e06223645348
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Sun Nov 13 23:17:41 2016 -0600
+
+    code refactor and UI prettify
+
+commit 14c9baa5d6fefa1c7497ff9db84500e1e7fd484e
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Sun Nov 13 22:57:43 2016 -0600
+
+    search box works with and&or
+
+commit afebd17e711ac8cb3fb9d8687c52333b54b2ba00
+Author: cyberwyvern696 <cyberwyvern696@users.noreply.github.com>
+Date:   Thu Nov 10 09:02:09 2016 -0600
+
+    Update README.md
+
+commit 352254f8e3e69bb4cdd919cd3b310af5455aa789
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Thu Nov 10 02:02:01 2016 -0600
+
+    including necessary package in package.json
+
+commit 159f92b45044b6bf4787bc0723119cc27da77d00
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Thu Nov 10 01:57:44 2016 -0600
+
+    partial implementation for searching in home page
+
+commit 47fa80c72ba9da5efffe98cb752e7187ae17f0ad
+Merge: dc24ebb 9d9400e
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Thu Nov 10 01:55:45 2016 -0600
+
+    merging with master
+
+commit 9d9400e00823661fd378b3a18d0a1488adc1f5a5
+Author: cyberwyvern696 <cyberwyvern696@gmail.com>
+Date:   Wed Nov 9 20:45:27 2016 -0600
+
+    Transferring API Description file from Apiary.io
+
+commit e05d51cd15520720d7de8882f9e65b63fb49b964
+Author: kris <cyberwyvern696@gmail.com>
+Date:   Wed Nov 9 20:38:57 2016 -0600
+
+    Fixed the search API
+
+commit e58052b8964864f68ec5f3e47e7fa1896f0ad1ff
+Author: Guande Lyu <patricklyu216@gmail.com>
+Date:   Wed Nov 9 16:18:26 2016 -0600
+
+    highlights corrected
+
+commit 48d0c851fee7f37d3f442378ccdfb9ab98db61f7
+Merge: 61ad44b 283f0de
+Author: Alex Irion <alexirion10@gmail.com>
+Date:   Wed Nov 9 16:16:49 2016 -0600
+
+    Merge branch 'master' of https://github.com/cs373gc-fall-2016/SweetCooking
+
+commit 61ad44bed4ec7831f35ded931e272e09cc223036
+Author: Alex Irion <alexirion10@gmail.com>
+Date:   Wed Nov 9 16:16:32 2016 -0600
+
+    added api scraper for artsnob api
+
+commit 283f0dee855b495b4f9a702436d180e6612d83e7
+Author: Guande Lyu <guandelyu@wireless-10-147-246-191.public.utexas.edu>
+Date:   Wed Nov 9 15:57:00 2016 -0600
+
+    unit test result formatting
+
+commit 28c1f16759b8813d9e292b8a102b9a532999df38
+Author: Guande Lyu <guandelyu@wireless-10-147-246-191.public.utexas.edu>
+Date:   Wed Nov 9 15:36:33 2016 -0600
+
+    close #49
+
+commit 04172a3deb1edd064d2bc1d47d90ac1d52af0f18
+Author: Guande <patricklyu216@gmail.com>
+Date:   Thu Nov 3 21:31:40 2016 -0500
+
+    update the log
+
 commit 11d8081cd7c1dbd0ba1e7261c1136baa3ae22184
 Author: Guande <patricklyu216@gmail.com>
 Date:   Thu Nov 3 21:28:24 2016 -0500
@@ -96,6 +271,12 @@ Author: Lei Lin <kris_lin@utexas.edu>
 Date:   Thu Nov 3 16:03:15 2016 -0500
 
     dynamic page for foodproducts and recipes is working perfect
+
+commit dc24ebb633b9c31ce1fa95cac2688a74c4052a85
+Author: Lei Lin <kris_lin@utexas.edu>
+Date:   Thu Nov 3 15:05:45 2016 -0500
+
+    try to rewrite some of the api
 
 commit e971596375acbd46acacabb9e1aee53d1877333e
 Author: Lei Lin <kris_lin@utexas.edu>
