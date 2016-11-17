@@ -11,6 +11,10 @@ def index():
 def about():
     return render_template('about.html')
 
+@app.route('/artsnob')
+def artsnob():
+    return render_template('artsnob.html')
+
 @app.route('/foodproducts', defaults={'page_id': -1})
 @app.route('/foodproducts/<int:page_id>')
 def foodproducts(page_id):
