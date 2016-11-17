@@ -1,14 +1,9 @@
 import routes from './config/routes';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import TablePaging from './components/TablePaging';
+import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
-var Hello = React.createClass({
- render: function() {
-    return (
-      <div> Anyway, Hello World </div>
-    )
-  }
-});
 
 ReactDOM.render(
     routes,
