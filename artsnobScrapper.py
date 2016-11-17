@@ -1,10 +1,7 @@
 from urllib2 import Request, urlopen, URLError
 
-print('artsnob.me api scraper')
-print()
 
-
-URL = 'http://artsnob.me/'
+URL = 'http://artsnob.me:5000/api/'
 
 
 request = Request(URL + 'artist')
@@ -34,8 +31,7 @@ except URLError, e:
     print('#### Error in Style: ', e)
 
 
-collection_id = 1
-request = Request(URL + 'collection/' + str(collection_id))
+request = Request(URL + 'collection')
 try:
     response = urlopen(request)
     data = response.read()

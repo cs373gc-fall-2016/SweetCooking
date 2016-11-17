@@ -23,16 +23,17 @@
     "axios": "*",
     "css-loader": "^0.23.1",
     "draft-js": "*",
-    "react": "*",
-    "react-dom": "*",
+    "jquery": "3.1.1",
+    "react": "^15.4.0",
+    "react-bootstrap-table": "^2.5.8",
+    "react-dom": "^15.4.0",
     "react-router": "*",
-    "style-loader": "^0.13.1",
-    "jquery": "3.1.1"
-  }, 
+    "style-loader": "^0.13.1"
+  },
   "author": "Lei Lin",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/cs373gc-fall-2016/SweetCooking/issues"
   },
-  "homepage": "www.sweetcooking.me" 
+  "homepage": "www.sweetcooking.me"
 }
