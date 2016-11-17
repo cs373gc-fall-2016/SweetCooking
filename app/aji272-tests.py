@@ -13,229 +13,229 @@ from unittest import main, TestCase
 # ----------------
 class TestIngredient(TestCase):
 
-#    def test_searchall_and(self):
-#        ''' testing for and '''
-#        result = searchAll('a e i o u')
-#        self.assertTrue('and' in result)
-#        
-#    def test_searchall_or(self):
-#        ''' testing for or '''
-#        result = searchAll('a e i o u')
-#        self.assertTrue('or' in result)
-#        
-#    def test_searchall_empty(self):
-#        ''' testing for empty string '''
-#        result = searchAll('a e i o u')
-#        assert('and' in result and 'or' in result)
-#        for pillar in result['and']:
-#            self.assertTrue(len(pillar) > 0)
-#        for pillar in result['or']:
-#            self.assertTrue(len(pillar) > 0)
-#        
-#    def test_searchrecipes_and(self):
-#        ''' testing for and '''
-#        result = searchRecipes('a e i o u')
-#        self.assertTrue('and' in result)
-#        
-#    def test_searchrecipes_or(self):
-#        ''' testing for or '''
-#        result = searchRecipes('a e i o u')
-#        self.assertTrue('or' in result)
-#        
-#    def test_searchrecipes_empty(self):
-#        ''' testing for empty string '''
-#        result = searchRecipes('a e i o u')
-#        assert('and' in result and 'or' in result)
-#        for pillar in result['and']:
-#            self.assertTrue(len(pillar) > 0)
-#        for pillar in result['or']:
-#            self.assertTrue(len(pillar) > 0)
-#        
-#    def test_searchingredients_and(self):
-#        ''' testing for and '''
-#        result = searchIngredients('a e i o u')
-#        self.assertTrue('and' in result)
-#
-#    def test_searchingredients_or(self):
-#        ''' testing for or '''
-#        result = searchIngredients('a e i o u')
-#        self.assertTrue('or' in result)
-#
-#    def test_searchingredients_empty(self):
-#        ''' testing for empty string '''
-#        result = searchIngredients('a e i o u')
-#        assert('and' in result and 'or' in result)
-#        for pillar in result['and']:
-#            self.assertTrue(len(pillar) > 0)
-#        for pillar in result['or']:
-#            self.assertTrue(len(pillar) > 0)
-#
-#    def test_searchproducts_and(self):
-#        ''' testing for and '''
-#        result = searchProducts('a e i o u')
-#        self.assertTrue('and' in result)
-#
-#    def test_searchproducts_or(self):
-#        ''' testing for or '''
-#        result = searchProducts('a e i o u')
-#        self.assertTrue('or' in result)
-#
-#    def test_searchproducts_empty(self):
-#        ''' testing for empty string '''
-#        result = searchProducts('a e i o u')
-#        assert('and' in result and 'or' in result)
-#        for pillar in result['and']:
-#            self.assertTrue(len(pillar) > 0)
-#        for pillar in result['or']:
-#            self.assertTrue(len(pillar) > 0)
-#
-#    def test_searchlifestyles_and(self):
-#        ''' testing for and '''
-#        result = searchLifestyles('a e i o u')
-#        self.assertTrue('and' in result)
-#
-#    def test_searchlifestyles_or(self):
-#        ''' testing for or '''
-#        result = searchLifestyles('a e i o u')
-#        self.assertTrue('or' in result)
-#
-#    def test_searchlifestyles_empty(self):
-#        ''' testing for empty string '''
-#        result = searchLifestyles('a e i o u')
-#        assert('and' in result and 'or' in result)
-#        for pillar in result['and']:
-#            self.assertTrue(len(pillar) > 0)
-#        for pillar in result['or']:
-#            self.assertTrue(len(pillar) > 0)
-#
-#    def test_andrecipes_empty(self):
-#        ''' testing for empty string '''
-#        result = andRecipes('')
-#        self.assertTrue(len(result) > 0)
-#
-#    def test_andrecipes_none(self):
-#        ''' testing for no results '''
-#        result = andRecipes('thisshoulddefinitelynotreturnanything')
-#        self.assertEqual(len(result), 0)
-#
-#    def test_andrecipes_result(self):
-#        ''' testing for regular results '''
-#        result = andRecipes('a')
-#        self.assertTrue(len(result) > 0)
-#
-#    def test_orrecipes_empty(self):
-#        ''' testing for empty string '''
-#        result = orRecipes([''])
-#        self.assertTrue(len(result) > 0)
-#
-#    def test_orrecipes_none(self):
-#        ''' testing for no results '''
-#        termstring = 'thisshoulddefinitelynotreturnanything'
-#        result = orRecipes([termstring])
-#        result = result[termstring]
-#        self.assertEqual(len(result), 0)
-#
-#    def test_orrecipes_result(self):
-#        ''' testing for regular results '''
-#        result = orRecipes(['a'])
-#        self.assertTrue(len(result) > 0)
-#
-#    def test_andingredients_empty(self):
-#        ''' testing for empty string '''
-#        result = andIngredients('')
-#        self.assertTrue(len(result) > 0)
-#
-#    def test_andingredients_none(self):
-#        ''' testing for no results '''
-#        result = andIngredients('thisshoulddefinitelynotreturnanything')
-#        self.assertEqual(len(result), 0)
-#
-#    def test_andingredients_result(self):
-#        ''' testing for regular results '''
-#        result = andIngredients('a')
-#        self.assertTrue(len(result) > 0)
-#
-#    def test_oringredients_empty(self):
-#        ''' testing for empty string '''
-#        result = orIngredients([''])
-#        self.assertTrue(len(result) > 0)
-#
-#    def test_oringredients_none(self):
-#        ''' testing for no results '''
-#        termstring = 'thisshoulddefinitelynotreturnanything'
-#        result = orIngredients([termstring])
-#        result = result[termstring]
-#        self.assertEqual(len(result), 0)
-#
-#    def test_oringredients_result(self):
-#        ''' testing for regular results '''
-#        result = orIngredients(['a'])
-#        self.assertTrue(len(result) > 0)
-#
-#    def test_andproducts_empty(self):
-#        ''' testing for empty string '''
-#        result = andProducts('')
-#        self.assertTrue(len(result) > 0)
-#
-#    def test_andproducts_none(self):
-#        ''' testing for no results '''
-#        result = andProducts('thisshoulddefinitelynotreturnanything')
-#        self.assertEqual(len(result), 0)
-#
-#    def test_andproducts_result(self):
-#        ''' testing for regular results '''
-#        result = andProducts('a')
-#        self.assertTrue(len(result) > 0)
-#
-#    def test_orproducts_empty(self):
-#        ''' testing for empty string '''
-#        result = orProducts([''])
-#        self.assertTrue(len(result) > 0)
-#
-#    def test_orproducts_none(self):
-#        ''' testing for no results '''
-#        termstring = 'thisshoulddefinitelynotreturnanything'
-#        result = orProducts([termstring])
-#        result = result[termstring]
-#        self.assertEqual(len(result), 0)
-#
-#    def test_orproducts_result(self):
-#        ''' testing for regular results '''
-#        result = orProducts(['a'])
-#        self.assertTrue(len(result) > 0)
-#
-#    def test_andlifestyles_empty(self):
-#        ''' testing for empty string '''
-#        result = andLifestyles('')
-#        self.assertTrue(len(result) > 0)
-#
-#    def test_andlifestyles_none(self):
-#        ''' testing for no results '''
-#        result = andLifestyles('thisshoulddefinitelynotreturnanything')
-#        self.assertEqual(len(result), 0)
-#
-#    def test_andlifestyles_result(self):
-#        ''' testing for regular results '''
-#        result = andLifestyles('a')
-#        self.assertTrue(len(result) > 0)
-#
-#    def test_orlifestyles_empty(self):
-#        ''' testing for empty string '''
-#        result = orLifestyles([''])
-#        self.assertTrue(len(result) > 0)
-#
-#    def test_orlifestyles_none(self):
-#        ''' testing for no results '''
-#        termstring = 'thisshoulddefinitelynotreturnanything'
-#        result = orLifestyles([termstring])
-#        result = result[termstring]
-#        self.assertEqual(len(result), 0)
-#
-#    def test_orlifestyles_result(self):
-#        ''' testing for regular results '''
-#        result = orLifestyles(['a'])
-#        self.assertTrue(len(result) > 0)
-#
+    def test_searchall_and(self):
+        ''' testing for and '''
+        result = searchAll('a e i o u')
+        self.assertTrue('and' in result)
+        
+    def test_searchall_or(self):
+        ''' testing for or '''
+        result = searchAll('a e i o u')
+        self.assertTrue('or' in result)
+        
+    def test_searchall_empty(self):
+        ''' testing for empty string '''
+        result = searchAll('a e i o u')
+        assert('and' in result and 'or' in result)
+        for pillar in result['and']:
+            self.assertTrue(len(pillar) > 0)
+        for pillar in result['or']:
+            self.assertTrue(len(pillar) > 0)
+        
+    def test_searchrecipes_and(self):
+        ''' testing for and '''
+        result = searchRecipes('a e i o u')
+        self.assertTrue('and' in result)
+        
+    def test_searchrecipes_or(self):
+        ''' testing for or '''
+        result = searchRecipes('a e i o u')
+        self.assertTrue('or' in result)
+        
+    def test_searchrecipes_empty(self):
+        ''' testing for empty string '''
+        result = searchRecipes('a e i o u')
+        assert('and' in result and 'or' in result)
+        for pillar in result['and']:
+            self.assertTrue(len(pillar) > 0)
+        for pillar in result['or']:
+            self.assertTrue(len(pillar) > 0)
+        
+    def test_searchingredients_and(self):
+        ''' testing for and '''
+        result = searchIngredients('a e i o u')
+        self.assertTrue('and' in result)
+
+    def test_searchingredients_or(self):
+        ''' testing for or '''
+        result = searchIngredients('a e i o u')
+        self.assertTrue('or' in result)
+
+    def test_searchingredients_empty(self):
+        ''' testing for empty string '''
+        result = searchIngredients('a e i o u')
+        assert('and' in result and 'or' in result)
+        for pillar in result['and']:
+            self.assertTrue(len(pillar) > 0)
+        for pillar in result['or']:
+            self.assertTrue(len(pillar) > 0)
+
+    def test_searchproducts_and(self):
+        ''' testing for and '''
+        result = searchProducts('a e i o u')
+        self.assertTrue('and' in result)
+
+    def test_searchproducts_or(self):
+        ''' testing for or '''
+        result = searchProducts('a e i o u')
+        self.assertTrue('or' in result)
+
+    def test_searchproducts_empty(self):
+        ''' testing for empty string '''
+        result = searchProducts('a e i o u')
+        assert('and' in result and 'or' in result)
+        for pillar in result['and']:
+            self.assertTrue(len(pillar) > 0)
+        for pillar in result['or']:
+            self.assertTrue(len(pillar) > 0)
+
+    def test_searchlifestyles_and(self):
+        ''' testing for and '''
+        result = searchLifestyles('a e i o u')
+        self.assertTrue('and' in result)
+
+    def test_searchlifestyles_or(self):
+        ''' testing for or '''
+        result = searchLifestyles('a e i o u')
+        self.assertTrue('or' in result)
+
+    def test_searchlifestyles_empty(self):
+        ''' testing for empty string '''
+        result = searchLifestyles('a e i o u')
+        assert('and' in result and 'or' in result)
+        for pillar in result['and']:
+            self.assertTrue(len(pillar) > 0)
+        for pillar in result['or']:
+            self.assertTrue(len(pillar) > 0)
+
+    def test_andrecipes_empty(self):
+        ''' testing for empty string '''
+        result = andRecipes('')
+        self.assertTrue(len(result) > 0)
+
+    def test_andrecipes_none(self):
+        ''' testing for no results '''
+        result = andRecipes('thisshoulddefinitelynotreturnanything')
+        self.assertEqual(len(result), 0)
+
+    def test_andrecipes_result(self):
+        ''' testing for regular results '''
+        result = andRecipes('a')
+        self.assertTrue(len(result) > 0)
+
+    def test_orrecipes_empty(self):
+        ''' testing for empty string '''
+        result = orRecipes([''])
+        self.assertTrue(len(result) > 0)
+
+    def test_orrecipes_none(self):
+        ''' testing for no results '''
+        termstring = 'thisshoulddefinitelynotreturnanything'
+        result = orRecipes([termstring])
+        result = result[termstring]
+        self.assertEqual(len(result), 0)
+
+    def test_orrecipes_result(self):
+        ''' testing for regular results '''
+        result = orRecipes(['a'])
+        self.assertTrue(len(result) > 0)
+
+    def test_andingredients_empty(self):
+        ''' testing for empty string '''
+        result = andIngredients('')
+        self.assertTrue(len(result) > 0)
+
+    def test_andingredients_none(self):
+        ''' testing for no results '''
+        result = andIngredients('thisshoulddefinitelynotreturnanything')
+        self.assertEqual(len(result), 0)
+
+    def test_andingredients_result(self):
+        ''' testing for regular results '''
+        result = andIngredients('a')
+        self.assertTrue(len(result) > 0)
+
+    def test_oringredients_empty(self):
+        ''' testing for empty string '''
+        result = orIngredients([''])
+        self.assertTrue(len(result) > 0)
+
+    def test_oringredients_none(self):
+        ''' testing for no results '''
+        termstring = 'thisshoulddefinitelynotreturnanything'
+        result = orIngredients([termstring])
+        result = result[termstring]
+        self.assertEqual(len(result), 0)
+
+    def test_oringredients_result(self):
+        ''' testing for regular results '''
+        result = orIngredients(['a'])
+        self.assertTrue(len(result) > 0)
+
+    def test_andproducts_empty(self):
+        ''' testing for empty string '''
+        result = andProducts('')
+        self.assertTrue(len(result) > 0)
+
+    def test_andproducts_none(self):
+        ''' testing for no results '''
+        result = andProducts('thisshoulddefinitelynotreturnanything')
+        self.assertEqual(len(result), 0)
+
+    def test_andproducts_result(self):
+        ''' testing for regular results '''
+        result = andProducts('a')
+        self.assertTrue(len(result) > 0)
+
+    def test_orproducts_empty(self):
+        ''' testing for empty string '''
+        result = orProducts([''])
+        self.assertTrue(len(result) > 0)
+
+    def test_orproducts_none(self):
+        ''' testing for no results '''
+        termstring = 'thisshoulddefinitelynotreturnanything'
+        result = orProducts([termstring])
+        result = result[termstring]
+        self.assertEqual(len(result), 0)
+
+    def test_orproducts_result(self):
+        ''' testing for regular results '''
+        result = orProducts(['a'])
+        self.assertTrue(len(result) > 0)
+
+    def test_andlifestyles_empty(self):
+        ''' testing for empty string '''
+        result = andLifestyles('')
+        self.assertTrue(len(result) > 0)
+
+    def test_andlifestyles_none(self):
+        ''' testing for no results '''
+        result = andLifestyles('thisshoulddefinitelynotreturnanything')
+        self.assertEqual(len(result), 0)
+
+    def test_andlifestyles_result(self):
+        ''' testing for regular results '''
+        result = andLifestyles('a')
+        self.assertTrue(len(result) > 0)
+
+    def test_orlifestyles_empty(self):
+        ''' testing for empty string '''
+        result = orLifestyles([''])
+        self.assertTrue(len(result) > 0)
+
+    def test_orlifestyles_none(self):
+        ''' testing for no results '''
+        termstring = 'thisshoulddefinitelynotreturnanything'
+        result = orLifestyles([termstring])
+        result = result[termstring]
+        self.assertEqual(len(result), 0)
+
+    def test_orlifestyles_result(self):
+        ''' testing for regular results '''
+        result = orLifestyles(['a'])
+        self.assertTrue(len(result) > 0)
+
     def test_listRecipe_pagesize(self):
         ''' testing size of pages returned '''
         result = listRecipe(1, size=20)
