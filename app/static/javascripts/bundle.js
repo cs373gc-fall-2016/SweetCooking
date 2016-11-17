@@ -31872,34 +31872,34 @@
 	    var _this = _possibleConstructorReturn(this, (TablePaging.__proto__ || Object.getPrototypeOf(TablePaging)).call(this, props));
 
 	    _this.state = {
-	      products: [{
-	        id: 1,
-	        name: "Item name 1",
-	        price: 100
-	      }, {
-	        id: 2,
-	        name: "Item name 2",
-	        price: 100
-	      }],
-	      searchPhrase: ''
+	      searchPhrase: '',
+	      searchRe: [{ ingredient_name: 'a',
+	        recipe_name: 'b',
+	        product_name: 'c',
+	        lifestyle_name: 'd' }, { ingredient_name: 'e',
+	        recipe_name: 'f',
+	        product_name: 'g',
+	        lifestyle_name: 'h' }]
 	    };
-	    console.log("before");
 	    return _this;
 	  }
 
 	  _createClass(TablePaging, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
-	      console.log("not con");
+	      var searchPhrase = this.state.searchPhrase;
+	      searchPhrase = this.props.params.message;
 	      this.setState({
-	        searchPhrase: this.props.params.message
+	        searchPhrase: searchPhrase
 	      });
-	      this.doSearch(this.props.params.message);
+
+	      this.doSearch(searchPhrase);
 	    }
 	  }, {
 	    key: 'doSearch',
 	    value: function doSearch(searchPhrase) {
 	      var that = this;
+	      var searchRe = this.state.searchRe;
 	      // console.log("before ajax: " + searchPhrase);
 	      _jquery2.default.ajax({
 	        url: '/api/search/all?term=' + searchPhrase,
@@ -31908,18 +31908,20 @@
 	        }
 	      }).done(function (data) {
 	        // that.resetUI();
-	        debugger;
+
 	        (0, _jquery2.default)('#search-and').append('<p>And :</p>');
 	        (0, _jquery2.default)('#search-or').append('<p>Or :</p>');
 
 	        that.searchDriver({
 	          data: data,
-	          searchType: 'and'
+	          searchType: 'and',
+	          searchP: searchPhrase
 	        });
 
 	        that.searchDriver({
 	          data: data,
-	          searchType: 'or'
+	          searchType: 'or',
+	          searchP: searchPhrase
 	        });
 	      });
 	    }
@@ -31930,6 +31932,7 @@
 
 	      var data = args.data;
 	      var searchType = args.searchType;
+	      var searchP = args.searchP;
 
 	      var ingredientsHtml = '<ol class="ingredients-list"></ol>';
 	      var ingredientHtml = 'Ingredient';
@@ -31937,6 +31940,7 @@
 	      that.searchHelper({
 	        data: data,
 	        typeName: 'ingredients',
+	        searchP: searchP,
 	        searchType: searchType,
 	        elemHtml: ingredientHtml,
 	        elemsHtml: ingredientsHtml
@@ -31947,6 +31951,7 @@
 	      that.searchHelper({
 	        data: data,
 	        typeName: 'recipes',
+	        searchP: searchP,
 	        searchType: searchType,
 	        elemHtml: recipeHtml,
 	        elemsHtml: recipesHtml
@@ -31957,6 +31962,7 @@
 	      that.searchHelper({
 	        data: data,
 	        typeName: 'products',
+	        searchP: searchP,
 	        searchType: searchType,
 	        elemHtml: productHtml,
 	        elemsHtml: productsHtml
@@ -31967,6 +31973,7 @@
 	      that.searchHelper({
 	        data: data,
 	        typeName: 'lifestyle',
+	        searchP: searchP,
 	        searchType: searchType,
 	        elemHtml: lifeStyleHtml,
 	        elemsHtml: lifeStylesHtml
@@ -31981,6 +31988,7 @@
 	      var searchType = args.searchType;
 	      var elemHtml = args.elemHtml;
 	      var elemsHtml = args.elemsHtml;
+	      var searchP = args.searchP;
 
 	      if (searchType == 'and') {
 	        data = data['and'][typeName];
@@ -31988,6 +31996,7 @@
 	        that.searchDataProcess({
 	          data: data,
 	          typeName: typeName,
+	          searchP: searchP,
 	          searchType: searchType,
 	          elemHtml: elemHtml,
 	          elemsHtml: elemsHtml
@@ -32003,6 +32012,7 @@
 	            data: temp,
 	            typeName: typeName,
 	            key: key,
+	            searchP: searchP,
 	            searchType: searchType,
 	            elemHtml: elemHtml,
 	            elemsHtml: elemsHtml
@@ -32016,6 +32026,7 @@
 	      var that = this;
 	      var data = args.data;
 	      var typeName = args.typeName;
+	      var searchP = args.searchP;
 	      var searchType = args.searchType;
 	      var key = args.key;
 	      var elemHtml = args.elemHtml;
@@ -32025,9 +32036,19 @@
 	        if (searchType == 'or') {
 	          elemHtml = key;
 	        }
-	        data = data.slice(0, 3);
-	        (0, _jquery2.default)(data).each(function (i, ele) {
-	          elemHtml += '<li><a href="/' + typeName + '/' + ele.id + '">' + ele.name + '</a></li>';
+
+	        console.log(that);
+	        console.log(searchP);
+	        data = data.slice(0, 10);
+	        _jquery2.default.each(data, function (i, ele) {
+	          // debugger
+	          if (ele.name.indexOf("beef") > 0) {
+	            var x = ele.name.split("beef");
+	          } else {
+	            var x = ele.name.split("Beef");
+	          }
+	          // debugger
+	          elemHtml += '<li><a href="/' + typeName + '/' + ele.id + '">' + x[0] + '<span style="background-color: yellow;">beef</span>' + x[1] + '</a></li>';
 	        });
 
 	        if (searchType == 'or') {
@@ -32049,24 +32070,29 @@
 	    key: 'render',
 	    value: function render() {
 	      var searchPhrase = this.state.searchPhrase;
-	      var products = this.state.products;
+	      var searchRe = this.state.searchRe;
 	      return _react2.default.createElement(
 	        _reactBootstrapTable.BootstrapTable,
-	        { data: products, striped: true, hover: true },
+	        { data: searchRe, pagination: true },
 	        _react2.default.createElement(
 	          _reactBootstrapTable.TableHeaderColumn,
-	          { dataField: 'id', isKey: true, dataAlign: 'center', dataSort: true },
-	          'Product ID'
+	          { dataField: 'ingredient_name', isKey: true, dataAlign: 'center', dataSort: true },
+	          'Ingredients'
 	        ),
 	        _react2.default.createElement(
 	          _reactBootstrapTable.TableHeaderColumn,
-	          { dataField: 'name', dataSort: true },
-	          'Product Name'
+	          { dataField: 'recipe_name', dataAlign: 'center', dataSort: true },
+	          'Recipes'
 	        ),
 	        _react2.default.createElement(
 	          _reactBootstrapTable.TableHeaderColumn,
-	          { dataField: 'price', dataFormat: this.priceFormatter },
-	          'Product Price'
+	          { dataField: 'product_name', dataAlign: 'center', dataSort: true },
+	          'Products'
+	        ),
+	        _react2.default.createElement(
+	          _reactBootstrapTable.TableHeaderColumn,
+	          { dataField: 'lifestyle_name', dataAlign: 'center', dataSort: true },
+	          'Lifestyles'
 	        )
 	      );
 	    }

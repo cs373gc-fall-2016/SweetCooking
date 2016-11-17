@@ -6,30 +6,33 @@ export default class TablePaging extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: [{
-            id: 1,
-            name: "Item name 1",
-            price: 100
-        },{
-            id: 2,
-            name: "Item name 2",
-            price: 100
-      }],
       searchPhrase: '',
+      searchRe: [
+        {ingredient_name: 'a',
+         recipe_name: 'b',
+         product_name: 'c',
+         lifestyle_name: 'd'},
+        {ingredient_name: 'e',
+         recipe_name: 'f',
+         product_name: 'g',
+         lifestyle_name: 'h'}
+      ],
     }
-    console.log("before");
   }
 
   componentDidMount() {
-    console.log("not con");
+    var searchPhrase = this.state.searchPhrase;
+    searchPhrase = this.props.params.message
     this.setState ({
-      searchPhrase: this.props.params.message,
+      searchPhrase: searchPhrase,
     });
-    this.doSearch(this.props.params.message);
+
+    this.doSearch(searchPhrase);
   }
 
   doSearch(searchPhrase) {
     var that = this;
+    var searchRe = this.state.searchRe;
     // console.log("before ajax: " + searchPhrase);
     $.ajax({
       url: `/api/search/all?term=${searchPhrase}`,
@@ -38,22 +41,22 @@ export default class TablePaging extends React.Component {
       },
     }).done(function(data) {
       // that.resetUI();
-      debugger;
+
       $('#search-and').append('<p>And :</p>');
       $('#search-or').append('<p>Or :</p>');
       
       that.searchDriver({
         data: data,
-        searchType: 'and'
+        searchType: 'and',
+        searchP: searchPhrase
       });
 
       that.searchDriver({
         data: data,
-        searchType: 'or'
+        searchType: 'or',
+        searchP: searchPhrase
       });
-
     });
- 
   }
 
   searchDriver(args) {
@@ -61,7 +64,7 @@ export default class TablePaging extends React.Component {
 
     var data = args.data;
     var searchType = args.searchType;
-
+    var searchP = args.searchP;
 
     var ingredientsHtml = '<ol class="ingredients-list"></ol>';
     var ingredientHtml = 'Ingredient';
@@ -69,6 +72,7 @@ export default class TablePaging extends React.Component {
     that.searchHelper({
       data: data,
       typeName: 'ingredients',
+      searchP: searchP,
       searchType: searchType,
       elemHtml: ingredientHtml,
       elemsHtml: ingredientsHtml
@@ -79,6 +83,7 @@ export default class TablePaging extends React.Component {
     that.searchHelper({
       data: data,
       typeName: 'recipes',
+      searchP: searchP,
       searchType: searchType,
       elemHtml: recipeHtml,
       elemsHtml: recipesHtml
@@ -89,6 +94,7 @@ export default class TablePaging extends React.Component {
     that.searchHelper({
       data: data,
       typeName: 'products',
+      searchP: searchP,
       searchType: searchType,
       elemHtml: productHtml,
       elemsHtml: productsHtml
@@ -99,6 +105,7 @@ export default class TablePaging extends React.Component {
     that.searchHelper({
       data: data,
       typeName: 'lifestyle',
+      searchP: searchP,
       searchType: searchType,
       elemHtml: lifeStyleHtml,
       elemsHtml: lifeStylesHtml
@@ -112,6 +119,8 @@ export default class TablePaging extends React.Component {
     var searchType = args.searchType;
     var elemHtml = args.elemHtml;
     var elemsHtml = args.elemsHtml;
+    var searchP = args.searchP;
+
 
     if(searchType == 'and') {
       data = data['and'][typeName]; 
@@ -119,6 +128,7 @@ export default class TablePaging extends React.Component {
       that.searchDataProcess({
         data: data,
         typeName: typeName,
+        searchP: searchP,
         searchType: searchType,
         elemHtml: elemHtml,
         elemsHtml: elemsHtml
@@ -134,6 +144,7 @@ export default class TablePaging extends React.Component {
           data: temp,
           typeName: typeName,
           key: key,
+          searchP: searchP,
           searchType: searchType,
           elemHtml: elemHtml,
           elemsHtml: elemsHtml
@@ -146,6 +157,7 @@ export default class TablePaging extends React.Component {
     var that = this;
     var data = args.data;
     var typeName = args.typeName;
+    var searchP = args.searchP;
     var searchType = args.searchType;
     var key = args.key;
     var elemHtml = args.elemHtml;
@@ -154,10 +166,21 @@ export default class TablePaging extends React.Component {
     if(data.length > 0) {
       if(searchType == 'or') {
         elemHtml = key;
-      }
-      data = data.slice(0,3);
-      $(data).each(function(i, ele){
-        elemHtml += `<li><a href="/${typeName}/${ele.id}">${ele.name}</a></li>`;
+      }      
+      
+      console.log(that);
+      console.log(searchP);
+      data = data.slice(0,10);
+      $.each(data, function(i, ele){
+        // debugger
+        if(ele.name.indexOf("beef") > 0) {
+          var x = ele.name.split("beef");
+        } else {
+          var x = ele.name.split("Beef");
+        }
+        // debugger
+        elemHtml += `<li><a href="/${typeName}/${ele.id}">${x[0]}<span style="background-color: yellow;">beef</span>${x[1]}</a></li>`;
+        
       });
 
       if(searchType == 'or') {
@@ -176,15 +199,15 @@ export default class TablePaging extends React.Component {
     }
   }
 
-
   render() {
     var searchPhrase = this.state.searchPhrase;
-    var products = this.state.products;
+    var searchRe = this.state.searchRe;
     return (
-      <BootstrapTable data={products} striped={true} hover={true}>
-        <TableHeaderColumn dataField="id" isKey={true} dataAlign="center" dataSort={true}>Product ID</TableHeaderColumn>
-        <TableHeaderColumn dataField="name" dataSort={true}>Product Name</TableHeaderColumn>
-        <TableHeaderColumn dataField="price" dataFormat={this.priceFormatter}>Product Price</TableHeaderColumn>
+      <BootstrapTable data={searchRe} pagination={true}>
+        <TableHeaderColumn dataField="ingredient_name" isKey={true} dataAlign="center" dataSort={true}>Ingredients</TableHeaderColumn>
+        <TableHeaderColumn dataField="recipe_name" dataAlign="center" dataSort={true}>Recipes</TableHeaderColumn>
+        <TableHeaderColumn dataField="product_name" dataAlign="center" dataSort={true}>Products</TableHeaderColumn>
+        <TableHeaderColumn dataField="lifestyle_name" dataAlign="center" dataSort={true}>Lifestyles</TableHeaderColumn>
       </BootstrapTable>
     )
   }
