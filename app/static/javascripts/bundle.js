@@ -21503,12 +21503,6 @@
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	var _react = __webpack_require__(3);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -21519,93 +21513,240 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	var searchBox = _react2.default.createClass({
+	  displayName: 'searchBox',
 
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var SearchBox = function (_React$Component) {
-	  _inherits(SearchBox, _React$Component);
-
-	  function SearchBox(props) {
-	    _classCallCheck(this, SearchBox);
-
-	    var _this = _possibleConstructorReturn(this, (SearchBox.__proto__ || Object.getPrototypeOf(SearchBox)).call(this, props));
-
-	    _this.state = {
+	  getInitialState: function getInitialState() {
+	    return {
 	      message: ''
 	    };
-	    _this.handleChange = _this.handleChange.bind(_this);
-	    _this.handleKeyUp = _this.handleKeyUp.bind(_this);
-	    return _this;
-	  }
+	  },
 
-	  _createClass(SearchBox, [{
-	    key: 'handleChange',
-	    value: function handleChange(event) {
-	      var that = this;
-	      var msg = event.target.value;
-	      this.setState({ message: msg });
-	      if (this.state.message === '') {
-	        that.resetUI();
-	      }
+	  handleChange: function handleChange(event) {
+	    var that = this;
+	    var msg = event.target.value;
+	    this.setState({ message: msg });
+	    if (this.state.message === '') {
+	      that.resetUI();
 	    }
-	  }, {
-	    key: 'handleKeyUp',
-	    value: function handleKeyUp() {
-	      var that = this;
-	      if (this.state.message === '') {
+	  },
+
+	  handleKeyUp: function handleKeyUp() {
+	    var that = this;
+	    if (this.state.message === '') {
+	      that.resetUI();
+	    }
+	    if ((0, _jquery2.default)('.fa-spinner').length < 1) {
+	      (0, _jquery2.default)('#spinner').html('<i class="fa fa-spinner fa-pulse fa-4x fa-fw"></i>');
+	      (0, _jquery2.default)('#spinner').css("padding-top", "20px");
+	    }
+	    clearTimeout(window.timer);
+	    window.timer = setTimeout(function () {
+	      if (that.state.message !== '') {
+	        that.doSearch(that.state.message);
+	      } else {
 	        that.resetUI();
 	      }
-	      if ((0, _jquery2.default)('.fa-spinner').length < 1) {
-	        (0, _jquery2.default)('#spinner').html('<i class="fa fa-spinner fa-pulse fa-4x fa-fw"></i>');
-	        (0, _jquery2.default)('#spinner').css("padding-top", "20px");
+	    }, 1000);
+	  },
+
+	  doSearch: function doSearch(searchPhrase) {
+	    var that = this;
+	    _jquery2.default.ajax({
+	      url: '/api/search/all?term=' + searchPhrase,
+	      beforeSend: function beforeSend() {}
+	    }).done(function (data) {
+	      that.resetUI();
+	      (0, _jquery2.default)('#search-and').append('<p>And :</p>');
+	      (0, _jquery2.default)('#search-or').append('<p>Or :</p>');
+
+	      that.searchDriver({
+	        data: data,
+	        searchType: 'and',
+	        searchP: searchPhrase
+	      });
+
+	      that.searchDriver({
+	        data: data,
+	        searchType: 'or',
+	        searchP: searchPhrase
+	      });
+	    });
+	  },
+
+	  searchDriver: function searchDriver(args) {
+	    var that = this;
+
+	    var data = args.data;
+	    var searchType = args.searchType;
+	    var searchP = args.searchP;
+
+	    var ingredientsHtml = '<ol class="ingredients-list"></ol>';
+	    var ingredientHtml = 'Ingredient';
+
+	    that.searchHelper({
+	      data: data,
+	      typeName: 'ingredients',
+	      searchType: searchType,
+	      searchP: searchP,
+	      elemHtml: ingredientHtml,
+	      elemsHtml: ingredientsHtml
+	    });
+
+	    var recipesHtml = '<ol class="recipes-list"></ol>';
+	    var recipeHtml = 'recipe';
+	    that.searchHelper({
+	      data: data,
+	      typeName: 'recipes',
+	      searchP: searchP,
+	      searchType: searchType,
+	      elemHtml: recipeHtml,
+	      elemsHtml: recipesHtml
+	    });
+
+	    var productsHtml = '<ol class="products-list"></ol>';
+	    var productHtml = 'product';
+	    that.searchHelper({
+	      data: data,
+	      typeName: 'products',
+	      searchP: searchP,
+	      searchType: searchType,
+	      elemHtml: productHtml,
+	      elemsHtml: productsHtml
+	    });
+
+	    var lifeStylesHtml = '<ol class="lifeStyles-list"></ol>';
+	    var lifeStyleHtml = 'lifeStyle';
+	    that.searchHelper({
+	      data: data,
+	      typeName: 'lifestyle',
+	      searchP: searchP,
+	      searchType: searchType,
+	      elemHtml: lifeStyleHtml,
+	      elemsHtml: lifeStylesHtml
+	    });
+	  },
+
+	  searchHelper: function searchHelper(args) {
+	    var that = this;
+	    var data = args.data;
+	    var searchP = args.searchP;
+	    var typeName = args.typeName;
+	    var searchType = args.searchType;
+	    var elemHtml = args.elemHtml;
+	    var elemsHtml = args.elemsHtml;
+
+	    if (searchType == 'and') {
+	      data = data['and'][typeName];
+
+	      that.searchDataProcess({
+	        data: data,
+	        typeName: typeName,
+	        searchP: searchP,
+	        searchType: searchType,
+	        elemHtml: elemHtml,
+	        elemsHtml: elemsHtml
+	      });
+	    } else {
+	      data = data['or'][typeName];
+	      var keys = Object.keys(data);
+
+	      _jquery2.default.each(keys, function (index, key) {
+	        var temp = data[key];
+	        that.searchDataProcess({
+	          data: temp,
+	          typeName: typeName,
+	          searchP: searchP,
+	          key: key,
+	          searchType: searchType,
+	          elemHtml: elemHtml,
+	          elemsHtml: elemsHtml
+	        });
+	      });
+	    }
+	  },
+
+	  searchDataProcess: function searchDataProcess(args) {
+	    var that = this;
+	    var data = args.data;
+	    var typeName = args.typeName;
+	    var searchType = args.searchType;
+	    var key = args.key;
+	    var elemHtml = args.elemHtml;
+	    var elemsHtml = args.elemsHtml;
+	    var searchP = args.searchP;
+
+	    if (data.length > 0) {
+	      if (searchType == 'or') {
+	        elemHtml = key;
 	      }
-	      // console.log("this is outside: " + this.state.message);
-	      // run only once per search
-	      clearTimeout(window.timer);
-	      window.timer = setTimeout(function () {
-	        if (that.state.message !== '') {
-	          that.doSearch(that.state.message);
-	        } else {
-	          that.resetUI();
+	      data = data.slice(0, 10);
+
+	      for (var i = 0; i < data.length; i++) {
+	        data[i]['searchP'] = searchP;
+	      }
+
+	      (0, _jquery2.default)(data).each(function (i, ele) {
+	        ele.name = ele.name.toLowerCase();
+	        ele.searchP = ele.searchP.toLowerCase();
+	        var y = ele.searchP.split(" ");
+	        for (var i = 0; i < y.length; i++) {
+	          ele.name = ele.name.split(y[i]).join('<span style="background-color: yellow;">' + y[i] + '</span>');
 	        }
-	      }, 1000);
+	        if (typeName == "products") {
+	          typeName = 'foodproducts';
+	          elemHtml += '<li><a href="/' + typeName + '/' + ele.id + '">' + ele.name + '</a></li>';
+	          typeName = 'products';
+	        } else {
+	          elemHtml += '<li><a href="/' + typeName + '/' + ele.id + '">' + ele.name + '</a></li>';
+	        }
+	      });
+
+	      if (searchType == 'or') {
+	        if ((0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list').length < 1) {
+	          (0, _jquery2.default)('#search-' + searchType).append('<p style="text-transform: capitalize">' + typeName + '</p>').append(elemsHtml);
+	        }
+	        var title = '<ol class="' + key + '">' + key + '</ol>';
+	        (0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list').append(title);
+	        (0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list .' + key).html(elemHtml);
+	      } else {
+	        if ((0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list').length < 1) {
+	          (0, _jquery2.default)('#search-' + searchType).append(elemsHtml);
+	        }
+	        (0, _jquery2.default)('#search-' + searchType + ' .' + typeName + '-list').html(elemHtml);
+	      }
 	    }
-	  }, {
-	    key: 'resetUI',
-	    value: function resetUI() {
-	      (0, _jquery2.default)('#spinner').html('');
-	      (0, _jquery2.default)('#spinner').removeAttr('style');
-	      (0, _jquery2.default)('#search-and').html('');
-	      (0, _jquery2.default)('#search-or').html('');
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var message = this.state.message;
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'input-group' },
-	        _react2.default.createElement('input', { type: 'text', className: 'form-control', value: message, onChange: this.handleChange, placeholder: 'Search for...' }),
+	  },
+
+	  highlightSearchPhrase: function highlightSearchPhrase(elementName, searchPhrase) {},
+
+	  resetUI: function resetUI() {
+	    (0, _jquery2.default)('#spinner').html('');
+	    (0, _jquery2.default)('#spinner').removeAttr('style');
+	    (0, _jquery2.default)('#search-and').html('');
+	    (0, _jquery2.default)('#search-or').html('');
+	  },
+
+	  render: function render() {
+	    var message = this.state.message;
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'input-group' },
+	      _react2.default.createElement('input', { type: 'text', className: 'form-control', value: message, onChange: this.handleChange, onKeyUp: this.handleKeyUp, placeholder: 'Search for...' }),
+	      _react2.default.createElement(
+	        'span',
+	        { className: 'input-group-btn' },
 	        _react2.default.createElement(
-	          'span',
-	          { className: 'input-group-btn' },
-	          _react2.default.createElement(
-	            'a',
-	            { href: '/#/result/' + message, className: 'btn btn-default' },
-	            'GO!'
-	          )
+	          'button',
+	          { className: 'btn btn-default', type: 'button' },
+	          'Go!'
 	        )
-	      );
-	    }
-	  }]);
+	      )
+	    );
+	  }
+	});
 
-	  return SearchBox;
-	}(_react2.default.Component);
-
-	exports.default = SearchBox;
+	module.exports = searchBox;
 
 /***/ },
 /* 181 */
