@@ -15,8 +15,6 @@ var searchBox = React.createClass({
     if(this.state.message === ''){
       that.resetUI();
     }
-    // console.log("testing: " + this.state.message);
-
   },
 
   handleKeyUp: function() {
@@ -28,8 +26,6 @@ var searchBox = React.createClass({
       $('#spinner').html('<i class="fa fa-spinner fa-pulse fa-4x fa-fw"></i>');
       $('#spinner').css("padding-top", "20px");
     }
-    // console.log("this is outside: " + this.state.message);
-    // run only once per search
     clearTimeout(window.timer);
     window.timer = setTimeout(function() {
       if(that.state.message !== '') {
@@ -43,12 +39,9 @@ var searchBox = React.createClass({
 
   doSearch: function(searchPhrase) {
     var that = this;
-    // debugger;
-    // console.log("before ajax: " + searchPhrase);
     $.ajax({
       url: `/api/search/all?term=${searchPhrase}`,
       beforeSend: function() {
-        // $('#search-and').html('<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>');
       },
     }).done(function(data) {
       that.resetUI();
@@ -57,14 +50,15 @@ var searchBox = React.createClass({
       
       that.searchDriver({
         data: data,
-        searchType: 'and'
+        searchType: 'and',
+        searchP: searchPhrase
       });
 
       that.searchDriver({
         data: data,
-        searchType: 'or'
+        searchType: 'or',
+        searchP: searchPhrase
       });
-
     });
  
   },
@@ -74,6 +68,7 @@ var searchBox = React.createClass({
 
     var data = args.data;
     var searchType = args.searchType;
+    var searchP = args.searchP;
 
 
     var ingredientsHtml = '<ol class="ingredients-list"></ol>';
@@ -83,6 +78,7 @@ var searchBox = React.createClass({
       data: data,
       typeName: 'ingredients',
       searchType: searchType,
+      searchP: searchP,
       elemHtml: ingredientHtml,
       elemsHtml: ingredientsHtml
     });
@@ -92,6 +88,7 @@ var searchBox = React.createClass({
     that.searchHelper({
       data: data,
       typeName: 'recipes',
+      searchP: searchP,
       searchType: searchType,
       elemHtml: recipeHtml,
       elemsHtml: recipesHtml
@@ -102,6 +99,7 @@ var searchBox = React.createClass({
     that.searchHelper({
       data: data,
       typeName: 'products',
+      searchP: searchP,
       searchType: searchType,
       elemHtml: productHtml,
       elemsHtml: productsHtml
@@ -112,6 +110,7 @@ var searchBox = React.createClass({
     that.searchHelper({
       data: data,
       typeName: 'lifestyle',
+      searchP: searchP,
       searchType: searchType,
       elemHtml: lifeStyleHtml,
       elemsHtml: lifeStylesHtml
@@ -121,6 +120,7 @@ var searchBox = React.createClass({
   searchHelper: function(args) {
     var that = this;
     var data = args.data;
+    var searchP = args.searchP;
     var typeName = args.typeName;
     var searchType = args.searchType;
     var elemHtml = args.elemHtml;
@@ -132,6 +132,7 @@ var searchBox = React.createClass({
       that.searchDataProcess({
         data: data,
         typeName: typeName,
+        searchP: searchP,
         searchType: searchType,
         elemHtml: elemHtml,
         elemsHtml: elemsHtml
@@ -142,10 +143,10 @@ var searchBox = React.createClass({
 
       $.each(keys, function(index, key) {
         var temp = data[key];
-        // debugger
         that.searchDataProcess({
           data: temp,
           typeName: typeName,
+          searchP: searchP,
           key: key,
           searchType: searchType,
           elemHtml: elemHtml,
@@ -163,17 +164,36 @@ var searchBox = React.createClass({
     var key = args.key;
     var elemHtml = args.elemHtml;
     var elemsHtml = args.elemsHtml;
-
+    var searchP = args.searchP;
+    
     if(data.length > 0) {
       if(searchType == 'or') {
         elemHtml = key;
       }
-      data = data.slice(0,3);
+      data = data.slice(0,10);
+
+      for(var i =0; i<data.length; i++){
+        data[i]['searchP'] = searchP;
+      }
+
+      
       $(data).each(function(i, ele){
-        elemHtml += `<li><a href="/${typeName}/${ele.id}">${ele.name}</a></li>`;
+        ele.name = ele.name.toLowerCase();
+        ele.searchP = ele.searchP.toLowerCase();
+        var y = ele.searchP.split(" ");
+        for(var i = 0; i < y.length; i++) {
+          ele.name = ele.name.split(y[i]).join('<span style="background-color: yellow;">'+y[i]+'</span>')
+          }
+          if(typeName == "products" ) {
+            typeName = 'foodproducts';
+            elemHtml += `<li><a href="/${typeName}/${ele.id}">${ele.name}</a></li>`;
+            typeName = 'products';
+          } else {
+            elemHtml += `<li><a href="/${typeName}/${ele.id}">${ele.name}</a></li>`; 
+          }
       });
 
-      if(searchType == 'or') {
+      if(searchType == 'or') { 
         if($(`#search-${searchType} .${typeName}-list`).length < 1) {
           $(`#search-${searchType}`).append(`<p style="text-transform: capitalize">${typeName}</p>`).append(elemsHtml);
         }
@@ -186,8 +206,11 @@ var searchBox = React.createClass({
         }
         $(`#search-${searchType} .${typeName}-list`).html(elemHtml);
       }
-
     }
+  },
+
+  highlightSearchPhrase: function(elementName, searchPhrase) {
+
   },
 
   resetUI: function() {
