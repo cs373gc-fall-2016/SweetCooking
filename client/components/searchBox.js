@@ -209,9 +209,6 @@ var searchBox = React.createClass({
     }
   },
 
-  highlightSearchPhrase: function(elementName, searchPhrase) {
-
-  },
 
   resetUI: function() {
     $('#spinner').html('');
